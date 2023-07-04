@@ -7,8 +7,7 @@
   <title>ic</title>
 </head>
 <body>
-<div class='main-wrap'>
-
+  <div class='main-wrap'>
   <header class="header">
   <div class="header__container container">
     <div class="header__logo">
@@ -27,98 +26,101 @@
     </div>
   </div>
 </header>
-<main>
+  <main>
+<section class="pick"> 
+<div class="pick__container container">
+  <div class="choose__top">
+    <h2 class="choose__top-title h2">Зaбронировать домик № 3</h2>
+    <div class="choose__top-info">Стоимость посуточной аренды — 15 000 руб. <br>
+      В домике 9 спальных мест. Он рассчитан на 20 человек.</div>
+  </div>
 
-  <section class="pick"> 
-    <div class="pick__container container">
-      <div class="choose__top">
-        <h2 class="choose__top-title h2">Зaбронировать домик №3</h2>
-        <div class="choose__top-info">Стоимость посуточной аренды — 15 000 руб. <br>
-          В домике 9 спальных мест. Он рассчитан на 20 человек.</div>
-      </div>
-
-      <div class="pick__content">
-        <div class="pick__content-img">
-          <img src="assets/pick-img.svg" alt="">
-        </div>
-
-        <div class="pick__content-book">
-
-          <div class="pick__date"> 
-            <h3 class="h3 pick__date-title"> Дата бронирования</h3>
-            <div class="pick__date-wrap">
-              <input class="pick__date-calendar input-small input"  type="text" placeholder="выберете дату" value='выберете дату'>
-              <div class="pick__date-picked input-small  input" type="text"> </div>
-
-              <div class="pick__date-days">
-                <div class="pick__date-days-count input-small  input" type="text" value="" > <span class='text-hide'>срок:</span> <span><span class='counter'>1</span> день </span>
-                        <button class="pick__date-days-btn increase"></button>
-                <button class="pick__date-days-btn decrease"></button>
-                </div>
-        
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="pick__confirm">
-            <h3 class="pick__confirm-title h3">Подтверждения телефона</h3>
-
-            <div class="pick__confirm-txt txt-light">
-                    Укажите номер, отправте запрос, sms с кодом прыйдет в течени 60 сек. 
-            После отправки кода, вам придет sms код с 4 цифр для подтверждения.  
-            Лимит до 3х sms в день. Если не приходит код, то <a href='#'> оборатитесь к оператору. </a>
-            </div>
-
-            <div class="pick__confirm-input-wrap">
-            
-                <div class='input-wrap' data-type='tel'>
-                  <input class="pick__confirm-input js-tel input" type="text">
-                  <span class='input-text'>error</span>
-                  <span class='input-confirm'></span>
-                </div>
-              <button class="pick__confirm-btn btn"><span>отправить &nbsp; </span> sms код </button>
-            </div>
-
-          </div>
-
-          <div class="pick__payment">
-            <h3 class="pick__payment-title h3">15 000 руб</h3>
-            <div class="pick__payment-txt txt-light">После оплаты вы автоматически регистрируетесь и попадаете в кабинет</div>
-
-            <div class="pick__payment-promo">
-              <div class='input-wrap' data-type='promo'>
-                <input class="pick__payment-promo-input input" type="text" placeholder="Промокод">
-                <span class='input-text'>error</span>
-                <span class='input-confirm'></span>
-              </div>
-              <button class="pick__payment-promo-btn btn">проверить</button>
-            </div>
-
-            <div class="pick__payment-choose">
-              <div class="pick__payment-choose-info">Подтвердите оплату одним 
-                из&nbsp;указанных способов</div>
-
-              <div class="pick__payment-choose-method">
-                <a class="visa" href="#"></a>
-                <a class="masterCard" href="#"></a>
-                <a class="qiwi"  href="#"></a>
-              </div>
-            </div>
-
-
-          </div>
-      
-
-        </div>
-      </div>
+  <div class="pick__content">
+    <div class="pick__content-img">
+      <img src="assets/pick-img.svg" alt="">
     </div>
 
-  </section>
-   
-</main>
+    <div class="pick__content-book">
 
+      <div class="pick__date"> 
+        <h3 class="h3 pick__date-title"> Дата бронирования</h3>
+        <div class="pick__date-wrap">
+          <input class="pick__date-calendar input-small input"  type="text" placeholder="выберете дату" value='выберете дату'>
+          <div class="pick__date-picked input-small  input" type="text"> </div>
+
+          <div class="pick__date-days">
+            <div class="pick__date-days-count input-small  input" type="text" value="" > <span class='text-hide'>срок:</span> <span><span class='counter'>1</span> день </span>
+                    <button class="pick__date-days-btn increase"></button>
+            <button class="pick__date-days-btn decrease"></button>
+            </div>
+    
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="pick__confirm book">
+        <h3 class="pick__confirm-title h3">Подтверждения телефона</h3>
+
+        <div class="pick__confirm-txt txt-light">
+                Укажите номер, отправте запрос, sms с кодом прыйдет в течени 60 сек. 
+        После отправки кода, вам придет sms код с 4 цифр для подтверждения.  
+        Лимит до 3х sms в день. Если не приходит код, то <a href='#'> оборатитесь к оператору. </a>
+        </div>
+
+        <div class="pick__confirm-input-wrap">
+          <div class='input-wrap confirm' data-type='sms'>
+            <input class="pick__confirm-input js-tel input" type="text" value='3412'>
+            <span class='input-text'>error</span>
+             <span class='input-confirm'></span>
+          </div>
+          <button class="pick__confirm-btn btn"><span>отправить &nbsp; </span> sms код </button>
+          <div class="pick__confirm-book-btns">
+            <button class="book-btn btn reset">отмена</button>
+            <button class="book-btn btn send">ввести</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pick__payment">
+        <h3 class="pick__payment-title h3">15 000 руб</h3>
+        <div class="pick__payment-txt txt-light">После оплаты вы автоматически регистрируетесь и попадаете в кабинет</div>
+
+        <div class="pick__payment-promo">
+          <div class='input-wrap confirm' data-type='promo'>
+            <input class="pick__payment-promo-input input" type="text" placeholder="Промокод">
+            <span class='input-text'>error</span>
+            <span class='input-confirm'></span>
+          </div>
+          <button class="pick__payment-promo-btn btn">проверить</button>
+        </div>
+
+        <div class="pick__payment-choose">
+          <div class="pick__payment-choose-info">Подтвердите оплату одним 
+            из&nbsp;указанных способов</div>
+
+          <div class="pick__payment-choose-method">
+            <a class="visa" href="#"></a>
+            <a class="masterCard" href="#"></a>
+            <a class="qiwi"  href="#"></a>
+          </div>
+        </div>
+
+
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+</section>
+    
+    
+  </main>
+ 
 <footer class="footer"> 
   <div class="footer__container container">
     <div class="footer__left">
@@ -150,8 +152,8 @@
       </a>
     </div>
   </div>
-</footer>  
-</div>
+</footer>
+ </div>
      <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script defer src="main.js"></script></body>
 </html>
