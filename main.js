@@ -369,6 +369,41 @@ var enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
 /***/ }),
 
+/***/ "./src/modules/slider.js":
+/*!*******************************!*\
+  !*** ./src/modules/slider.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  init: function init() {
+    var slider = document.querySelector('.swiper');
+    if (!slider) return;
+    var swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+      modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+      // spaceBetween: 100,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./src/modules/tooltip.js":
 /*!********************************!*\
   !*** ./src/modules/tooltip.js ***!
@@ -1173,21 +1208,24 @@ var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./img/confirm-icon.svg */ "./src/img/confirm-icon.svg"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ./img/before.svg */ "./src/img/before.svg"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./img/book-close-btn.svg */ "./src/img/book-close-btn.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-icon.svg */ "./src/img/warning-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-gradient.png */ "./src/img/bg-gradient.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms-white.svg */ "./src/img/sms-white.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./img/show-password-icon.svg */ "./src/img/show-password-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pick-bg.png */ "./src/img/pick-bg.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./img/calendat-icon.svg */ "./src/img/calendat-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-i.svg */ "./src/img/change-days-icon-i.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-d.svg */ "./src/img/change-days-icon-d.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-gray-icon.svg */ "./src/img/warning-gray-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ./img/visa.svg */ "./src/img/visa.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ./img/mcard.svg */ "./src/img/mcard.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ./img/qiwi.svg */ "./src/img/qiwi.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-aside.png */ "./src/img/bg-aside.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ./img/back-icon.svg */ "./src/img/back-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_19___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms.svg */ "./src/img/sms.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./img/card-icon.svg */ "./src/img/card-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/visa.svg */ "./src/img/visa.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/mcard.svg */ "./src/img/mcard.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./img/clock.svg */ "./src/img/clock.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-icon.svg */ "./src/img/warning-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-gradient.png */ "./src/img/bg-gradient.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms-white.svg */ "./src/img/sms-white.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ./img/show-password-icon.svg */ "./src/img/show-password-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pick-bg.png */ "./src/img/pick-bg.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ./img/calendat-icon.svg */ "./src/img/calendat-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-i.svg */ "./src/img/change-days-icon-i.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-d.svg */ "./src/img/change-days-icon-d.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-gray-icon.svg */ "./src/img/warning-gray-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ./img/qiwi.svg */ "./src/img/qiwi.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_19___ = new URL(/* asset import */ __webpack_require__(/*! ./img/file-icon.svg */ "./src/img/file-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_20___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-aside.png */ "./src/img/bg-aside.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_21___ = new URL(/* asset import */ __webpack_require__(/*! ./img/back-icon.svg */ "./src/img/back-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_22___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms.svg */ "./src/img/sms.svg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_node_modules_normalize_css_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_style_libs_reset_css__WEBPACK_IMPORTED_MODULE_3__["default"]);
@@ -1215,6 +1253,9 @@ var ___CSS_LOADER_URL_REPLACEMENT_16___ = _node_modules_css_loader_dist_runtime_
 var ___CSS_LOADER_URL_REPLACEMENT_17___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_17___);
 var ___CSS_LOADER_URL_REPLACEMENT_18___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_18___);
 var ___CSS_LOADER_URL_REPLACEMENT_19___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_19___);
+var ___CSS_LOADER_URL_REPLACEMENT_20___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_20___);
+var ___CSS_LOADER_URL_REPLACEMENT_21___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_21___);
+var ___CSS_LOADER_URL_REPLACEMENT_22___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_22___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
   font-family: "Gilroy-Regular";
@@ -1253,7 +1294,7 @@ svg {
 }
 
 a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
   color: inherit;
 }
@@ -1489,6 +1530,18 @@ body.active main::after {
   display: block;
 }
 
+.page-list {
+  padding: 0.5rem;
+  list-style-type: decimal;
+}
+
+.page-title {
+  color: teal;
+  font-family: "Gilroy-Medium";
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
 .error__container {
   display: flex;
   flex-direction: column;
@@ -1579,6 +1632,12 @@ body.active main::after {
 }
 .aside__item.profile {
   display: none;
+}
+.aside__item.active {
+  color: #7EA373;
+}
+.aside__item.active svg path {
+  fill: #7EA373;
 }
 .aside__logout {
   font-size: 0.16rem;
@@ -1673,6 +1732,133 @@ body.active main::after {
 }
 .main .header__notification:hover svg path {
   fill: #7EA373;
+}
+
+.balance .ref-link__info {
+  height: 7.69rem;
+  position: relative;
+}
+.balance .ref-link__top {
+  justify-content: flex-start;
+}
+.balance .ref-link__history:first-child {
+  margin-right: 0.08rem;
+}
+.balance .choose__top-info a {
+  color: #7EA373;
+}
+.balance .balance-top-info {
+  margin-bottom: 0.08rem;
+}
+.balance .ref-link__info.ref {
+  padding-bottom: 0;
+  border: none;
+  margin-bottom: 0;
+}
+.balance .balance-input-wrap {
+  position: relative;
+  padding: 0.16rem;
+  border-radius: 0.24rem;
+  background-color: #F6F8FC;
+  width: 100%;
+}
+.balance .balance-input-wrap::before {
+  content: "";
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_5___});
+  width: 0.25rem;
+  height: 0.18rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0.16rem;
+  top: 50%;
+}
+.balance .balance-input-lable {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  color: #B5BBDB;
+  display: block;
+}
+.balance .balance-input {
+  height: 0.3rem;
+  background-color: transparent;
+  outline: none;
+}
+.balance .balance-input::-webkit-input-placeholder {
+  padding-left: 0.2rem;
+  font-size: 0.2rem;
+  line-height: 0.26rem;
+  color: #1B2E3F;
+}
+.balance .balance-input::placeholder {
+  padding-left: 0.2rem;
+  font-size: 0.2rem;
+  line-height: 0.26rem;
+  color: #1B2E3F;
+}
+.balance .ref-link__info-btn {
+  position: absolute;
+  right: 0.16rem;
+  background-color: #fff;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.balance .ref-link__info-btn span {
+  display: inline-block;
+}
+.balance .ref-link__info-field-wrap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.balance.balance-2 .ref-link__info-field-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.balance.balance-2 .balance-input-wrap {
+  margin-bottom: 0.04rem;
+}
+.balance.balance-2 .balance-out {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.16rem;
+  border-radius: 0.24rem;
+  background-color: #F6F8FC;
+  width: 100%;
+  margin-bottom: 0.24rem;
+}
+.balance.balance-2 .balance-out-card {
+  width: 0.49rem;
+  height: 0.22rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-top: 0.08rem;
+  margin-right: 0.08rem;
+  background-position: center;
+}
+.balance.balance-2 .balance-out-card.visa {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_6___});
+}
+.balance.balance-2 .balance-out-card.mc {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_7___});
+}
+.balance .balance-out-min {
+  margin-bottom: 0.16rem;
+}
+.balance .ref-link-task__next {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.balance .ref-link-task-input {
+  width: 2.26rem;
+}
+.balance .ref-link-task-next-btn {
+  height: 0.6rem;
+  background-color: #7EA373;
+  color: #fff;
 }
 
 .book-authorized .header__container {
@@ -1781,6 +1967,175 @@ body.active main::after {
   background-color: #eaf0e9;
 }
 
+.booked-header .header__right {
+  display: flex;
+}
+.booked-header .header__waiter {
+  background-color: #7EA373;
+  color: #fff;
+  margin-right: 0.16rem;
+}
+.booked-header .header__book {
+  display: none;
+}
+.booked-header .header__logo {
+  display: none;
+}
+.booked-header .header__booked-home {
+  display: flex;
+}
+.booked-header .header__booked-home-inner {
+  margin-left: 0.12rem;
+}
+.booked-header .header__booked-home-inner .date {
+  font-size: 0.12rem;
+  line-height: 0.16rem;
+  color: #B5BBDB;
+}
+.booked-header .header.add-tablet {
+  display: none;
+}
+.booked-header .header.add-tablet .rest-time {
+  display: flex;
+  align-items: flex-start;
+}
+.booked-header .header.add-tablet .rest-time-img {
+  width: 0.48rem;
+  height: 0.48rem;
+  background-color: #F6F8FC;
+  border-radius: 0.16rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_8___});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.22rem 0.22rem;
+  margin-right: 0.16rem;
+}
+.booked-header .header.add-tablet .rest-time-info {
+  display: flex;
+  flex-direction: column;
+}
+.booked-header .header.add-tablet .rest-time-info .txt {
+  font-size: 0.12rem;
+  line-height: 0.16rem;
+  color: #B5BBDB;
+}
+.booked-header .header.add-tablet .rest-time-info .time {
+  font-size: 0.2rem;
+  line-height: 0.26rem;
+}
+
+.booked-home .pick {
+  border-radius: 0.24rem;
+  padding: 0.48rem;
+  background-color: #fff;
+}
+.booked-home .pick__content {
+  border-radius: none;
+  padding: 0;
+}
+.booked-home .swiper {
+  width: 14.52rem !important;
+}
+.booked-home .pick__content-img {
+  width: 7.44rem;
+}
+.booked-home .pick__content-img img {
+  width: 100%;
+  height: 4.77rem;
+  object-fit: contain;
+}
+.booked-home .pick__content-book {
+  padding: 0;
+  background: none;
+  position: relative;
+}
+.booked-home .pick__content-book .pick__content-img {
+  display: none;
+}
+.booked-home .tag-list {
+  display: flex;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  color: #B5BBDB;
+  margin-bottom: 0.48rem;
+}
+.booked-home .tag-item {
+  width: 2.27rem;
+  height: 0.48rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F8FC;
+  border-radius: 0.24rem;
+  margin-right: 0.08rem;
+}
+.booked-home .tag-item:last-child {
+  margin-right: 0;
+}
+.booked-home .book-authorized__step {
+  margin-bottom: 0.12rem;
+}
+.booked-home .swiper-nav {
+  position: absolute;
+  bottom: 0;
+  width: 6.6rem;
+  height: 0.48rem;
+  right: 0;
+}
+.booked-home .swiper-button-next,
+.booked-home .swiper-button-prev {
+  top: auto;
+  top: initial;
+  bottom: 0;
+  width: 0.48rem;
+  height: 0.48rem;
+  background-color: #7EA373;
+  border-radius: 100%;
+}
+.booked-home .swiper-button-next::after,
+.booked-home .swiper-button-prev::after {
+  content: "";
+}
+.booked-home .swiper-button-next svg,
+.booked-home .swiper-button-prev svg {
+  width: 0.12rem;
+  height: 0.12rem;
+}
+.booked-home .swiper-button-next {
+  right: 0;
+}
+.booked-home .swiper-button-prev {
+  right: auto;
+  right: initial;
+  left: 0;
+}
+.booked-home .swiper-button-prev svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.booked-home .swiper-button-disabled {
+  background-color: #F1F3FB;
+}
+.booked-home .swiper-button-disabled svg path {
+  fill: #B5BBDB;
+}
+.booked-home .swiper-pagination {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.booked-home .swiper-pagination-bullet {
+  width: 0.6rem;
+  height: 0.08rem;
+  border-radius: 0.04rem;
+  background-color: #B5BBDB;
+}
+.booked-home .swiper-pagination-bullet-active {
+  background-color: #B5BBDB;
+}
+
 .choose {
   margin-bottom: 0.48rem;
 }
@@ -1810,7 +2165,7 @@ body.active main::after {
 .choose__top-info::after {
   content: "";
   position: absolute;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_5___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_9___});
   background-repeat: repeat;
   background-size: contain;
   width: 0.24rem;
@@ -1909,7 +2264,7 @@ body.active main::after {
   color: #1B2E3F;
 }
 .event__img {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_6___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_10___});
   background-color: #F6F8FC;
   width: 58%;
   height: 4.32rem;
@@ -2050,7 +2405,7 @@ body.active main::after {
   background-color: #7EA373;
 }
 .login .pick__confirm-btn::before {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_7___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_11___});
 }
 .login .pick__content-img {
   width: 57%;
@@ -2079,7 +2434,7 @@ body.active main::after {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 0.24rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_8___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_12___});
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -2118,7 +2473,7 @@ body.active main::after {
   flex-shrink: 0;
   border-radius: 0.24rem;
   overflow: hidden;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_9___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_13___});
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2151,7 +2506,7 @@ body.active main::after {
   position: absolute;
   top: 1.27rem;
   left: 0.7rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_10___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_14___});
   width: 0.24rem;
   height: 0.24rem;
   z-index: 15;
@@ -2209,12 +2564,12 @@ body.active main::after {
 .pick__date-days-btn.decrease {
   top: 0.3rem;
   border-bottom-right-radius: 0.3rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_11___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_15___});
   background-position: center;
 }
 .pick__date-days-btn.increase {
   border-top-right-radius: 0.3rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_12___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_16___});
   background-position: center;
 }
 .pick__confirm {
@@ -2297,7 +2652,7 @@ body.active main::after {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_13___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_17___});
   width: 0.24rem;
   height: 0.24rem;
   background-repeat: no-repeat;
@@ -2326,14 +2681,14 @@ body.active main::after {
   margin-right: 0;
 }
 .pick__payment-choose-method a.visa {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_14___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_6___});
 }
 .pick__payment-choose-method a.masterCard {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_15___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_7___});
   background-size: 0.5rem, 0.2rem;
 }
 .pick__payment-choose-method a.qiwi {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_16___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_18___});
   background-size: 0.7rem, 0.3rem;
 }
 .pick .air-datepicker {
@@ -2434,6 +2789,266 @@ body.active main::after {
   background-color: #eaf0e9;
   border-radius: 0.24rem;
 }
+
+.ref-link__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.08rem;
+  background-color: #F1F3FB;
+  height: 0.48rem;
+  border-top-left-radius: 0.24rem;
+  border-top-right-radius: 0.24rem;
+}
+.ref-link__tabs {
+  display: flex;
+}
+.ref-link__tab {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  width: 1.58rem;
+  height: 0.48rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B5BBDB;
+  border-radius: 0.24rem;
+  background-color: #F6F8FC;
+}
+.ref-link__tab:first-child {
+  margin-right: 0.08rem;
+}
+.ref-link__tab.active {
+  color: #1B2E3F;
+  background-color: #fff;
+}
+.ref-link__history {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.49rem;
+  padding-right: 0.16rem;
+  width: 1.55rem;
+  border-radius: 0.24rem;
+  color: #7EA373;
+  background-color: #fff;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  position: relative;
+  height: 0.48rem;
+}
+.ref-link__history svg {
+  position: absolute;
+  width: 0.2rem;
+  height: 0.2rem;
+  left: 0.16rem;
+}
+.ref-link__info.ref {
+  padding-bottom: 0.24rem;
+  border-bottom: 1px solid #DDE0F0;
+  margin-bottom: 0.2rem;
+}
+.ref-link__info-txt {
+  margin-bottom: 0.24rem;
+}
+.ref-link__info-txt a {
+  display: inline-block;
+  color: #7EA373;
+}
+.ref-link__info-field-wrap {
+  display: flex;
+}
+.ref-link__info-field {
+  display: flex;
+  position: relative;
+  align-items: center;
+  color: #7EA373;
+  background-color: #eaf0e9;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  padding: 0 0.24rem;
+  height: 0.6rem;
+  margin-right: 0.16rem;
+  border-radius: 0.3rem;
+  width: 3.44rem;
+}
+.ref-link__info-field .copy-btn {
+  position: absolute;
+  right: 0.24rem;
+  width: 0.24rem;
+  height: 0.24rem;
+}
+.ref-link__info-field .copy-btn svg {
+  width: 100%;
+  height: 100%;
+}
+.ref-link__info-btn {
+  height: 0.6rem;
+  color: #7EA373;
+}
+.ref-link .pick__content {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ref-link .pick__content-book {
+  display: flex;
+  flex-direction: column;
+  order: -1;
+  width: 7.48rem;
+  padding: 0;
+  background: #fff;
+}
+.ref-link .pick__content-img {
+  margin-right: 0;
+  margin-left: 0.48rem;
+  width: 56%;
+  position: relative;
+}
+.ref-link .choose__top-info {
+  position: absolute;
+  width: 6rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0.48rem;
+}
+
+.ref-link-tasks .pick__content-book._1 .step-2 {
+  display: none;
+}
+.ref-link-tasks .pick__content-book._1 .step-3 {
+  display: none;
+}
+.ref-link-tasks .pick__content-book._2 .step-1 {
+  display: none;
+}
+.ref-link-tasks .pick__content-book._2 .step-3 {
+  display: none;
+}
+.ref-link-tasks .pick__content-book._3 .step-1 {
+  display: none;
+}
+.ref-link-tasks .pick__content-book._3 .step-2 {
+  display: none;
+}
+.ref-link-tasks .pick__content-book._3 .ref-link-task-next-btn {
+  color: #fff;
+  background-color: #7EA373;
+  border-radius: 0.3rem;
+}
+.ref-link-tasks .ref-link__info-title {
+  margin-bottom: 0.08rem;
+}
+.ref-link-tasks .pick__content-book {
+  height: 7.69rem;
+}
+.ref-link-tasks .book-authorized__step {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  height: 0.48rem;
+  width: 0.92rem;
+  color: #B5BBDB;
+  background-color: #F6F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.24rem;
+  margin-bottom: 0.08rem;
+  padding: 0 0.08rem;
+}
+.ref-link-tasks .book-authorized__step-info {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+}
+.ref-link-tasks__bottom {
+  margin-top: auto;
+}
+.ref-link-tasks__progress {
+  margin-bottom: 0.12rem;
+}
+.ref-link-tasks__progress svg {
+  max-width: 100%;
+}
+.ref-link-tasks .ref-link-task__next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ref-link-tasks .ref-link-task-list {
+  display: flex;
+  align-items: center;
+}
+.ref-link-tasks .ref-link-task-item {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F8FC;
+  margin-right: 0.08rem;
+}
+.ref-link-tasks .ref-link-task-item svg {
+  max-width: 0.25rem;
+  max-height: 0.25rem;
+}
+.ref-link-tasks .ref-link-task-next-btn {
+  height: 0.6rem;
+  background-color: #eaf0e9;
+  color: #7EA373;
+}
+.ref-link-tasks .defaulf {
+  display: none;
+}
+.ref-link-tasks .ref-link-task-download {
+  display: flex;
+  align-items: center;
+}
+.ref-link-tasks .download-icon {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: #F6F8FC;
+  border-radius: 0.16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.32rem;
+}
+.ref-link-tasks .download-icon svg {
+  max-width: 0.25rem;
+  max-height: 0.25rem;
+  width: 100%;
+}
+.ref-link-tasks .download-filename {
+  font-size: 0.12rem;
+  line-height: 0.16rem;
+  position: relative;
+}
+.ref-link-tasks .download-filename::before {
+  content: "";
+  position: absolute;
+  width: 0.14rem;
+  height: 0.14rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_19___});
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: -0.22rem;
+}
+.ref-link-tasks .ref-link-task-input {
+  width: 3.57rem;
+}
+.ref-link-tasks .ref-link-task-input::-webkit-input-placeholder {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ref-link-tasks .ref-link-task-input::placeholder {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media screen and (max-width: 1919px){
   html {
     font-size: 100px !important;
@@ -2479,7 +3094,7 @@ body.active main::after {
     flex-direction: column;
   }
   .authorized__aside {
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_17___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_20___});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2528,6 +3143,12 @@ body.active main::after {
   }
   .aside__btn-tablet-wrap {
     display: flex;
+  }
+  .aside__btn-tablet {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-bottom: 0.1rem;
+    /*       background-position-y: rem(-5px) ; */
   }
   .footer {
     display: none;
@@ -2599,13 +3220,60 @@ body.active main::after {
   .book-authorized .book-authorized__back {
     width: 0.48rem;
     height: 48px;
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_18___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_21___});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
   .book-authorized .pick__date-wrap::before {
     top: 1.55rem;
+  }
+  .booked-header .header__waiter {
+    display: none;
+  }
+  .booked-header .header__logo {
+    display: block;
+  }
+  .booked-header .header__booked-home {
+    display: none;
+  }
+  .booked-header .header__booked-home-inner .number {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+  }
+  .booked-header .header.add-tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.24rem;
+    height: 0.9rem;
+    border-radius: 0.24rem;
+    margin-bottom: 0.16rem;
+  }
+  .booked-header .header.add-tablet .header__booked-home {
+    display: flex;
+  }
+  .booked-home .pick {
+    padding: 0.24rem;
+  }
+  .booked-home .swiper {
+    width: 6.72rem !important;
+  }
+  .booked-home .pick__content-book .pick__content-img {
+    display: flex;
+    width: 100%;
+    height: 2.88rem;
+    margin-bottom: 0.24rem;
+  }
+  .booked-home .pick__content-book .pick__content-img img {
+    height: 2.4rem;
+  }
+  .booked-home .tag-item {
+    margin-bottom: 0.16rem;
+  }
+  .booked-home .book-authorized__step.info {
+    margin-bottom: 1.26rem;
   }
   .choose__top {
     flex-direction: column;
@@ -2723,6 +3391,16 @@ body.active main::after {
     font-size: 0.14rem;
     line-height: 0.2rem;
     height: 0.36rem;
+  }
+  .ref-link__info-field {
+    width: 4.2rem;
+  }
+  .ref-link .pick__content-book {
+    padding: 0.24rem;
+  }
+  .ref-link-tasks .ref-link-task-input {
+    width: 1.6rem;
+    height: 0.48rem;
   }
 }
 @media screen and (max-width: 899px) and (max-width: 768px){
@@ -2862,6 +3540,69 @@ body.active main::after {
     width: 0.15rem;
     height: 0.15rem;
   }
+  .balance .ref-link__info {
+    height: 4.6rem;
+  }
+  .balance .ref-link__history {
+    display: flex;
+    padding: 0 0.1rem;
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .balance .ref-link__history svg {
+    display: none;
+  }
+  .balance .balance-input-wrap::before {
+    width: 0.16rem;
+    height: 0.12rem;
+  }
+  .balance .balance-input-lable {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .balance .balance-input::-webkit-input-placeholder {
+    padding-left: 0.12rem;
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .balance .balance-input::placeholder {
+    padding-left: 0.12rem;
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .balance .ref-link__info-btn span {
+    display: none;
+  }
+  .balance .ref-link__info-btn {
+    width: 1.06rem;
+  }
+  .balance.balance-2 .balance-input-wrap {
+    width: calc(100% - 0.24rem);
+    padding: 0.12rem;
+  }
+  .balance.balance-2 .balance-out {
+    width: calc(100% - 0.24rem);
+    padding: 0.12rem;
+    margin-bottom: 0.12rem;
+  }
+  .balance.balance-2 .balance-out-card {
+    width: 0.28rem;
+    height: 0.12rem;
+  }
+  .balance .balance-out-min {
+    display: none;
+  }
+  .balance .ref-link-task-input {
+    width: 1.66rem;
+    height: 0.48rem;
+  }
+  .balance .ref-link-task-next-btn {
+    width: 1.06rem;
+    height: 0.48rem;
+  }
+  .balance .ref-link__info {
+    height: 6rem;
+  }
   .book-authorized .book-authorized__steps {
     margin-bottom: 0.13rem;
   }
@@ -2920,6 +3661,66 @@ body.active main::after {
   }
   .book .pick__confirm-input {
     width: 1.4rem;
+  }
+  .booked-header .header__booked-home img {
+    width: 0.44rem;
+    height: 0.24rem;
+    object-fit: contain;
+  }
+  .booked-header .header.add-tablet .rest-time {
+    align-items: center;
+  }
+  .booked-header .header.add-tablet .rest-time-img {
+    width: 0.22rem;
+    height: 0.22rem;
+    background-color: transparent;
+    margin-right: 0.06rem;
+  }
+  .booked-header .header.add-tablet .rest-time-info .time {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+  }
+  .booked-home .pick {
+    padding: 0.16rem;
+  }
+  .booked-home .swiper {
+    width: 2.96rem !important;
+  }
+  .booked-home .pick__content-book .pick__content-img {
+    height: 1.27rem;
+    margin-bottom: 0.16rem;
+  }
+  .booked-home .pick__content-book .pick__content-img img {
+    height: 1.03rem;
+  }
+  .booked-home .tag-list {
+    display: none;
+  }
+  .booked-home .book-authorized__step.info {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    margin-bottom: 0.6rem;
+  }
+  .booked-home .book-authorized__step.h3 {
+    font-size: 0.2rem;
+    line-height: 0.26rem;
+  }
+  .booked-home .swiper-nav {
+    width: 100%;
+  }
+  .booked-home .swiper-button-next,
+  .booked-home .swiper-button-prev {
+    width: 0.36rem;
+    height: 0.36rem;
+  }
+  .booked-home .swiper-button-next svg,
+  .booked-home .swiper-button-prev svg {
+    width: 0.08rem;
+    height: 0.08rem;
+  }
+  .booked-home .swiper-pagination-bullet {
+    width: 0.24rem;
+    height: 0.06rem;
   }
   .choose {
     margin-bottom: 0.24rem;
@@ -3104,7 +3905,7 @@ body.active main::after {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_19___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_22___});
     background-repeat: no-repeat;
     background-size: contain;
     width: 0.15rem;
@@ -3157,6 +3958,97 @@ body.active main::after {
     height: 0.36rem;
     width: 95%;
   }
+  .ref-link__tab:first-child {
+    margin-right: 0.06rem;
+  }
+  .ref-link__tab {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    height: 0.36rem;
+    width: 1.55rem;
+  }
+  .ref-link__history {
+    display: none;
+  }
+  .ref-link__info-txt {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+    margin-bottom: 0.12rem;
+  }
+  .ref-link__info-field .copy-btn {
+    right: 0.16rem;
+    width: 0.16rem;
+    height: 0.16rem;
+  }
+  .ref-link__info-field {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    margin-right: 0.06rem;
+    height: 0.48rem;
+    padding: 0 0.16rem;
+    width: 1.52rem;
+  }
+  .ref-link__info-field .text {
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ref-link__info-btn {
+    height: 0.48rem;
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+  }
+  .ref-link .pick__content-book {
+    padding: 0.16rem;
+    width: 2.96rem;
+  }
+  .ref-link-tasks .pick__content-book._3 .ref-link-task-next-btn {
+    width: 1.06rem;
+  }
+  .ref-link-tasks .pick__content-book {
+    height: 4rem;
+  }
+  .ref-link-tasks .book-authorized__step {
+    height: 0.48rem;
+  }
+  .ref-link-tasks .book-authorized__step-info {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+    margin-bottom: 0;
+  }
+  .ref-link-tasks__progress {
+    width: 2.96rem;
+    margin-bottom: 0.12rem;
+  }
+  .ref-link-tasks__progress svg {
+    width: 100%;
+  }
+  .ref-link-tasks .ref-link-task-item {
+    width: 0.48rem;
+    height: 0.48rem;
+  }
+  .ref-link-tasks .ref-link-task-item svg {
+    width: 0.18rem;
+    height: 0.18rem;
+  }
+  .ref-link-tasks .ref-link-task-next-btn {
+    height: 0.48rem;
+  }
+  .ref-link-tasks .download-icon {
+    width: 0.48rem;
+    height: 0.48rem;
+    margin-right: 0.28rem;
+  }
+  .ref-link-tasks .download-icon svg {
+    width: 0.18rem;
+    height: 0.18rem;
+  }
+  .ref-link-tasks .download-filename {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+    margin-bottom: 0;
+  }
 }
 @media screen and (max-width: 767px) and (max-width: 300px){
   html {
@@ -3166,6 +4058,11 @@ body.active main::after {
 @media screen and (max-width: 899px) and (max-width: 767px){
   .aside__item-wrap-left .aside__item:first-child, .aside__item-wrap-right .aside__item:first-child {
     margin-right: 0.2rem;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 767px){
+  .ref-link-tasks .download-filename {
+    margin-right: 0.1rem;
   }
 }
 @media screen and (max-width: 1919px) and (min-width: 1915px){
@@ -3192,7 +4089,7 @@ body.active main::after {
   html {
     font-size: 211.1111111111px !important;
   }
-}`, "",{"version":3,"sources":["webpack://./src/style/_settings/_fonts.scss","webpack://./src/index.scss","webpack://./src/style/_style.scss","webpack://./src/style/_var.scss","webpack://./src/style/_parts/404.scss","webpack://./src/style/_parts/authorized.scss","webpack://./src/style/_parts/book-authorized.scss","webpack://./src/style/_parts/book.scss","webpack://./src/style/_parts/choose.scss","webpack://./src/style/_parts/event.scss","webpack://./src/style/_parts/footer.scss","webpack://./src/style/_parts/header.scss","webpack://./src/style/_parts/login.scss","webpack://./src/style/_parts/pick.scss","webpack://./<no source>","webpack://./src/style/scale/scale.scss"],"names":[],"mappings":"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","sourcesContent":["@font-face {\n  font-family: 'Gilroy-Regular';\n  src: \n    url('../../fonts/Gilroy-Regular.woff') format('woff');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Gilroy-Medium';\n  src: url('../../fonts/Gilroy-Medium.woff') format('woff');\n  font-weight: 500;\n  font-style: normal;\n  font-display: swap;\n}\n\n\n","@import '~normalize.css';\n@import 'style/libs/*';\n@import 'air-datepicker/air-datepicker.css';\n@import '../node_modules/swiper/swiper-bundle.css';\n@import '../node_modules/swiper/modules/pagination/pagination.min.css';\n@import '../node_modules/swiper/modules/autoplay/autoplay.min.css';\n@import 'style/_settings/*.scss';\n@import 'style/_var';\n@import 'style/_style';\n@import 'style/_parts/*.scss'; \n@import 'style/_blocks/*.scss'; \n\n\n\n","@use 'sass:math';\n@import 'scale/scale.scss'; \n@import 'scale/settings.scss'; \n@import 'scale/breakpoints.scss'; \n\n$root-font-size: 100;\n/* $wide-desktop-width: 1920px; */\n$low-desktop-width: 900px;\n$desktop-width: 1920px;\n$tablet-width: 768px;\n$mobile-width: 360px;\n\nhtml {\n  --root-font-size: #{$root-font-size}px;\n  font-size: #{$root-font-size}px;\n\n  @include low-desktop {\n    $min-screen-width: 500;\n    $mid-screen-width: 1915;\n\n    @include css-lock(#{$min-screen-width * calc($root-font-size / $mid-screen-width)}, $root-font-size, $min-screen-width, $mid-screen-width);\n  }\n\n\n  @include tablet {\n    $mid-screen-width: 768;\n    $max-screen-width: 1023;\n\n    @include css-lock(\n      $root-font-size, #{$root-font-size * calc($max-screen-width / $mid-screen-width)},\n      $mid-screen-width,\n      $max-screen-width\n    );\n  }\n\n  @include mobile {\n    $min-screen-width: 300;\n    $mid-screen-width: 360;\n    $max-screen-width: 760;\n\n    @include css-lock-full(#{calc($min-screen-width * $root-font-size / $mid-screen-width)}, $root-font-size, #{calc($max-screen-width * $root-font-size / $mid-screen-width)}, $min-screen-width, $mid-screen-width, $max-screen-width);\n  }\n}\n\nmain {\n  max-width: rem(1920px);\n  margin-right: auto;\n  margin-left: auto;\n}\n\nmain, header, footer {\n  /* overflow: hidden; */\n}\n\nsvg {\n  display: inline-block;\n/*   width: 100%;\n  height: 100%; */\n}\n\na {\n  display: block;\n  text-decoration: none;\n  color: inherit;\n}\n\nbody {\n  font-family: $y-font-regular;\n  background: $y-bg-gradient-1;\n  font-size: rem(20px);\n  line-height: 130%;\n  // color:  #1B1F28;\n  height: 100%;\n  max-width: rem(1920px);\n  margin: 0 auto;\n\n \n\n  &.active {\n   \n\n    main {\n      position: relative;\n   \n\n      &::after {\n        content: '';\n        position: absolute;\n        background: rgba(1, 5, 13, 0.7);\n        backdrop-filter: blur(rem(7px));\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 1;\n      }\n    }\n\n  }\n}\n\n.main-wrap {\n  height: 100%;\n  padding: 0 rem(48px);\n\n  @include tablet {\n    padding: 0 rem(24px);\n  }\n\n  @include mobile {\n    padding: 0 rem(16px);\n  }\n}\n\n// отличные от проекта настройки\n.container {\n  max-width: rem(1826px);\n  margin: 0 auto;\n  // padding: 0 rem(48px);\n\n}\n\n.h1 {\n  font-family: $y-font-medium;\n  font-weight: 700;\n  font-size: rem(72px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  margin-bottom: rem(34px);\n  max-width: rem(960px);\n  color: #fff;\n\n  @include mobile {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    font-weight: 400;\n    margin-bottom: rem(10px);\n    color: #1B1F28;\n  }\n}\n\n.h2 {\n  font-family: $y-font-regular;\n  font-size: rem(66px);\n  line-height: rem(72px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    line-height: rem(34px);\n  }\n}\n\n.h3 {\n  font-family: $y-font-regular;\n  font-size: rem(40px);\n  line-height: rem(46px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(4px);\n  }\n}\n\n.h4 {\n  font-family: $y-font-regular;\n  font-size: rem(48px);\n  line-height: 120%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(22px);\n  }\n}\n\n.h5 {\n  font-family: $y-font-regular;\n  font-size: rem(46px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(24px);\n  }\n}\n\n.h6 {\n  font-family: $y-font-regular;\n  font-size: rem(42px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  color: #1B1F28;\n  max-width: rem(600px);\n\n  @include mobile {\n    font-size: rem(22px);\n    max-width: rem(340px);\n  }\n}\n\n.middle {\n  margin-right: auto;\n  margin-left: auto;\n}\n\n\n.btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: $y-dop-1-bg;\n  border-radius: rem(24px);\n  color: $y-body-1;\n  height: rem(48px);\n  font-size: rem(16px);\n  line-height: rem(22px);\n  font-family: $y-font-medium;\n  width: rem(192px);\n  transition: all 0.3s ease-in;\n\n  svg {\n    path {\n      transition: all 0.3s ease-in;\n      fill: #B5BBDB;\n    }\n  }\n\n  @include mobile {\n    width: rem(158px);\n    height: rem(36px);\n    font-size: rem(14px);\n    line-height: rem(20px);\n  }\n\n\n  &:hover {\n    cursor: pointer;\n    background: $y-body-3;\n    color:  #fff;\n    transition: all 0.3s ease-in;\n\n    svg {\n      path {\n        transition: all 0.3s ease-in;\n        fill: #fff;\n      }\n    }\n  }\n}\n\n\n.input {\n  border: none;\n  outline: 1px solid $y-dop-2-bg;\n  height: rem(60px);\n  font-family: $y-font-regular;\n  font-size: rem(20px);\n  line-height: rem(29px);\n  border-radius: rem(30px);\n  padding-left: rem(15px);\n  vertical-align: middle;\n\n  &::placeholder {\n    font-family: $y-font-regular;\n    color: #81899B;\n    font-size: rem(16px);\n    line-height: rem(22px)\n  }\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(18px);\n  }\n\n\n}\n\n.input-small {\n  width: rem(164px);\n}\n\n.txt-light {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n}\n\n.js-tel {\n  color: #81899B;\n}\n\n.input-wrap {\n  position: relative;\n\n  &.error {\n    .input-text {\n      display: block;\n    }\n\n    .input {\n      outline: 1px solid $y-special-1;\n    }\n  }\n\n  &.confirm {\n    .input-confirm  {\n      display: block;\n    }\n  }\n}\n\n.input-text {\n  position: absolute;\n  left: rem(24px);\n  top: rem(-10px);\n  color: $y-special-1;\n  font-size: rem(12px);\n  line-height: rem(14px);\n  background-color: #fff;\n  padding: rem(2px);\n  display: none;\n\n  @include mobile {\n    font-size: rem(8px);\n    line-height: rem(12px);\n  }\n}\n\n.input-confirm {\n  position: absolute;\n  width: rem(22px);\n  height: rem(22px);\n  right: rem(39px);\n  top: 50%;\n  transform: translateY(-50%);\n  background-image: url('../img/confirm-icon.svg');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: none;\n\n  @include mobile {\n    width: rem(17px);\n    height: rem(17px);\n    right: rem(19px);\n  }\n}\n\n\n.tooltip {\n  display: block;\n  background-color: #fff;\n /*  width: rem(216px);\n  height: rem(114px); */\n  padding: rem(24px);\n  border-radius: rem(24px);\n  position: absolute;\n  top: rem(-192px);\n  left: rem(-50px);\n  z-index: 5;\n\n  display: none;\n\n\n  @include tablet {\n    top: initial;\n    bottom: rem(-162px);\n  }\n\n  @include mobile {\n    padding: rem(16px);\n    bottom: rem(-110px);\n    left: rem(-20px);\n  }\n\n  &::after {\n    content: '';\n    position: absolute;\n    bottom: rem(-20px);\n    background-image: url('../img/before.svg');\n    left: rem(48px);\n    width: rem(30px);\n    height: rem(24px);\n    background-repeat: no-repeat;\n    background-size: contain;\n\n\n  @include tablet {\n    top: rem(-20px);\n    transform: rotate(180deg);\n    left: rem(58px);\n  }\n\n  @include mobile {\n    left: rem(18px);\n  }\n  }\n\n  &__title {\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      font-size: rem(16px);\n      line-height: rem(22px);\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__btn {\n    color: #fff;\n    background-color: $y-body-3;\n  }\n\n  &._active {\n    display: block;\n  }\n}\n\n\n","$y-text: #1B2E3F;\n\n$y-font-regular:  'Gilroy-Regular';\n$y-font-medium:  'Gilroy-Medium';\n\n$y-bg-gradient-1: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);\n$y-dop-1-bg: #F6F8FC;\n$y-dop-2-bg: #F1F3FB;\n$y-dop-3: #DDE0F0;\n$y-dop-4-element: #B5BBDB;\n$y-body-1: #1B2E3F;\n$y-body-2: #fff;\n$y-body-3: #7EA373;\n$y-body-4: #eaf0e9;\n$y-special-1: #DF536C;\n\n\n\n$y-border-radius: 24px;\n\n\n\n\n\n\n","$b: '.error';\n\n#{$b} {\n  &__container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: rem(120px);\n\n    @include tablet {\n      padding: rem(120px) rem(45px);\n    }\n\n    @include mobile {\n      padding: rem(80px) rem(16px);\n    }\n  }\n\n  &__title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n    }\n\n    @include mobile {\n      font-size: rem(28px);\n      line-height: rem(34px);\n    }\n  }\n\n  &__subtitle {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    max-width: rem(600px);\n    margin-bottom: rem(24px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      max-width: rem(328px);\n      margin-bottom: rem(16px);\n    }\n  }\n\n  &__btn {\n    background-color: $y-body-3;\n    color: #fff;\n    margin-bottom: rem(60px);\n\n    @include mobile {\n      margin-bottom: rem(48px);\n    }\n  }\n\n  &__img {\n    width: rem(1013px);\n    height: rem(326px);\n\n    @include tablet {\n      width: rem(678px);\n      height: rem(218px);\n    }\n\n    @include mobile {\n      width: rem(328px);\n      height: rem(106px);\n    }\n  }\n}","$b: '.authorized';\n\n#{$b} {\n  display: flex;\n  @include tablet {\n    flex-direction: column;\n  }\n\n  &__aside {\n    width: rem(240px);\n    padding: rem(24px);\n    background-color: #fff;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n\n    @include tablet {\n      background-image: url('../../img/bg-aside.png');\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat;\n      order: 2;\n      width: calc(100% - rem(48px));\n      background-color:#f7f8fc;\n      margin-top: rem(120px);\n    }\n\n    @include tablet {\n      padding: rem(8px) rem(18px);\n       width: calc(100% - rem(36px));\n    }\n  }\n\n  &__main {\n    padding: 0 rem(48px);\n/*     width: calc(100% - rem(96px)); */\n\n    @include tablet {\n      padding: 0 rem(24px);\n      width: calc(100% - rem(48px));\n    }\n\n    @include mobile {\n       padding: 0 rem(16px);\n       width: calc(100% - rem(32px));\n    }\n  }\n\n  .pick__content-img {\n    width: 50%;\n  }\n}\n\n.aside {\n  position: relative;\n\n  &__logo {\n    margin-bottom: rem(28px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__list {\n    padding: rem(24px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(24px);\n    display: flex;\n    flex-direction: column;\n    width: calc(100% - rem(48px));\n\n    @include tablet {\n      flex-direction: row;\n      padding: 0;\n      justify-content: space-between;\n      background-color:transparent;\n    }\n\n    @include mobile {\n      padding: 0;\n      width: 100%;\n    }\n  }\n\n  &__item-wrap-left,\n  &__item-wrap-right {\n    display: flex;\n    flex-direction: column;\n\n    @include tablet {\n      flex-direction: row;\n      justify-content: space-between;\n\n      .aside__item  {\n        &:first-child {\n          margin-right: rem(70px);\n\n             @include mobile {\n              margin-right: rem(20px);\n            }\n        }\n      }\n    }\n\n \n  }\n\n  &__item-wrap-right {\n    .aside__item {\n      margin-bottom: 0;\n      &:last-child {\n        margin-bottom: 0;\n      }\n    }\n\n  }\n\n  &__item {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    margin-bottom: rem(24px);\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      flex-direction: column;\n      margin-bottom: 0;\n    }\n\n    @include mobile {\n        font-size: rem(10px);\n    line-height: rem(14px);\n    }\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n\n      @include tablet {\n        margin-bottom: rem(5px);\n        margin-right:0;\n      }\n\n      @include mobile {\n        width: rem(22px);\n        height: rem(22px);\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    &.profile {\n      display: none;\n\n      @include tablet {\n        display: flex;\n      }\n    }\n  }\n\n  &__logout {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    display: flex;\n    align-items: center;\n    background-color: $y-dop-1-bg;\n    padding: rem(12px) 0;\n    border-radius: rem(24px);\n    width: calc(100% - rem(48px));\n    justify-content: center;\n    position: absolute;\n    bottom: rem(24px);\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__btn-tablet-wrap {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    top: rem(-15px); \n    flex-direction: column;\n    align-items: center;\n    display: none;\n\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  &__btn-tablet {\n    width: rem(48px);\n    height: rem(48px);\n    background-image: url('../../img/book-close-btn.svg');\n    background-repeat: no-repeat;\n    background-size: contain;\n    margin-bottom: rem(15px);\n\n     @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n        margin-bottom: rem(13px);\n     }\n  }\n\n  &__btn-tablet-text {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    .pc {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    .mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n\n    @include mobile {\n      font-size: rem(10px);\n      line-height: rem(14px);\n    }\n  }\n}\n\n.main {\n  .header__notifications {\n    display: flex;\n  }\n\n  .header__container {\n    padding: rem(16px) rem(24px);\n    width: calc(100% - rem(48px));\n\n    @include mobile {\n      padding: rem(6px) rem(12px);\n      width: calc(100% - rem(24px));\n    }\n  }\n\n  .header__notification {\n    position: relative;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n    }\n\n    &.messages {\n      margin-right: rem(8px);\n \n    }\n\n    .messages-txt {\n      position: absolute;\n      font-size: rem(10px);\n      line-height: rem(15px);\n      color: #fff;\n      background-color: $y-special-1;\n      border: 2px solid $y-dop-1-bg;\n      border-radius: 100%;\n      width: rem(20px);\n      height: rem(20px);\n      text-align: center;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      right: 0;\n      bottom: rem(5px);\n\n      @include mobile {\n         font-size: rem(8px);\n        line-height: rem(8px);\n         width: rem(15px);\n      height: rem(15px);\n      }\n    }\n\n    &:hover {\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n}\n\n.footer {\n  @include tablet {\n    display: none;\n  }\n}","\n$b: '.book-authorized';\n\n#{$b} {\n\n  .header__container {\n    justify-content: space-between;\n  }\n\n  .header__logo {\n    display: none;\n\n    @include tablet {\n      display: block;\n    }\n  }\n\n  .header__booked-home {\n    display: none;\n  }\n\n  .header__waiter {\n    display: none;\n  }\n\n  .header__book {\n    width: rem(192px);\n    background-color: $y-dop-1-bg;\n    color: $y-dop-4-element;\n\n    &.active {\n      background: $y-body-3;\n      color: #fff;\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  //\n\n  .pick__content {\n    @include tablet {\n      display: flex;\n      flex-direction: column;\n      background-color: transparent;\n    }\n  }\n\n  .book-authorized__steps {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      align-items: center;\n      margin-bottom: rem(27px);\n    }\n\n    @include mobile {\n      margin-bottom: rem(13px);\n    }\n\n    &.step-2 {\n      justify-content: space-between;\n    }\n  }\n\n  .book-authorized__step {\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(18px);\n      background-color: #fff;\n      color: $y-dop-4-element;\n      padding: rem(8px) rem(12px);\n      border-radius: rem(24px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      margin-right: rem(16px);\n    }\n  }\n\n  .book-authorized__title {\n    margin-bottom: 0;\n  }\n  .pick__content-img {\n    background-image: none;\n    position: relative;\n\n    @include tablet {\n      display: block;\n      width: 100%;\n      margin-right: 0;\n\n      &.hidden {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: 100%;\n      overflow: visible;\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    \n\n      &.pc {\n        @include mobile {\n          display: none;\n        }\n      }\n\n      &.mob {\n        display: none;\n\n        @include mobile {\n          display: block;\n          object-fit: contain;\n        }\n      }\n    }\n\n\n\n  }\n\n  .pick__content-book {\n    @include tablet {\n      display: none;\n\n      &.next {\n        display: block;\n      }\n    }\n  }\n\n  .choose__map-btn-wrap {\n    width: rem(713px);\n    height: rem(315px);\n    top: rem(190px);\n\n    @include tablet {\n      top: rem(270px);\n    }\n\n    @include mobile {\n      top: rem(50px);\n      width: rem(350px);\n    }\n  }\n\n  .choose__map-btn {\n\n    .tooltip {\n      top: rem(-162px);\n\n      @include tablet {\n        top: initial;\n      }\n    }\n\n    &._1 {\n      top: rem(60px);\n      left: rem(28px);\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n    }\n\n    &._2 {\n      top: rem(112px);\n      left: rem(183px);\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(100px);\n      }\n    }\n\n    &._3 {\n      top: rem(220px);\n      left: rem(353px);\n\n      @include mobile {\n        top: rem(123px);\n        left: rem(183px);\n      }\n    }\n\n    &._4 {\n      top: rem(250px);\n      left: rem(495px);\n\n      @include mobile {\n        top: rem(150px);\n        left: rem(235px);\n      }\n\n      .tooltip {\n  \n        @include mobile {\n          bottom: rem(-70px);\n        }\n      }\n    }\n\n    &._5 {\n      top: rem(120px);\n      left: rem(620px);\n\n      @include mobile {\n        top: rem(90px);\n        left: rem(300px);\n      }\n\n      .tooltip {\n        left: rem(-140px);\n\n        &::after {\n          left: rem(148px);\n        }\n      }\n    }\n  }\n\n  .choose__top-info {\n    position: absolute;\n    bottom: rem(88px);\n    width: rem(560px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  .book-authorized__btn-next {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      position: absolute;\n      bottom: rem(48px);\n      background-color: $y-body-3;\n      color: #fff;\n      width: calc(100% - rem(48px));\n      left: 50%;\n      transform: translateX(-50%);\n      height: rem(60px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      width: calc(100% - rem(32px));\n      bottom: rem(-60px);\n    }\n  }\n\n  .book-authorized__back {\n\n    @include tablet {\n      width: rem(48px);\n      height: 48px;\n      background-image: url('../../img/back-icon.svg');\n      background-size: contain;\n      background-position: center;\n      background-repeat: no-repeat;\n    }\n\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n  }\n\n  .pick__date-wrap {\n    &::before {\n      @include tablet {\n        top: rem(155px);\n      }\n\n      @include mobile {\n        top: rem(98px);\n      }\n    }\n  }\n}","$b: '.book';\n\n#{$b} {\n  .pick__confirm-book-btns {\n    display: flex;\n    justify-content: space-between;\n  }\n\n  .pick__confirm-btn {\n    display: none;\n  }\n  .book-btn {\n    padding: 0 rem(18px);\n    width: 100%;\n    min-height: rem(60px);\n    color: $y-body-3;\n\n    &.reset {\n      background-color: #fff;\n      margin-right: rem(8px);\n    }\n\n    &.send {\n      background-color: $y-body-4;\n    }\n    @include mobile {\n      min-height: rem(48px);\n    }\n  }\n\n  .pick__confirm-input {\n    @include mobile {\n      width: rem(140px);\n    }\n  }\n}","$b: '.choose';\n\n#{$b} {\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n  \n  &__top {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    margin-bottom: rem(24px);\n\n\n  @include tablet {\n    flex-direction: column;\n  }\n  }\n\n  &__map {\n    position: relative;\n    border-radius: rem(24px);\n  }\n\n  &__top-title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n      margin-bottom: rem(26px);\n    }\n  }\n\n  &__top-info {\n    background-color: #fff;\n    padding: rem(24px) rem(24px) rem(24px) rem(59px);\n    font-size: rem(20px);\n    line-height: rem(26px);\n    position: relative;\n    border-radius: rem(24px);\n    max-width: rem(662px);\n\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(22px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding: rem(12px) rem(12px) rem(12px) rem(38px);\n    }\n\n    &::after {\n      content: '';\n      position: absolute;\n      background-image: url('../../img/warning-icon.svg');\n      background-repeat: repeat;\n      background-size: contain;\n      width: rem(24px);\n      height: rem(24px);\n      top: 50%;\n      transform: translateY(-50%);\n      left: rem(24px);\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        left: rem(12px);\n      }\n     \n    }\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(-20px);\n      left: rem(48px);\n      background-image: url('../../img/before.svg');\n      width: rem(30px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      transform: rotate(180deg);\n\n\n      @include mobile {\n        left: rem(24px);\n      }\n    }\n  }\n\n  &__map-bg {\n    width: 100%;\n    height: rem(625px);\n    object-fit: cover;\n    position: relative;\n    border-radius: rem(24px);\n\n    @include tablet {\n      height: rem(424px);\n    }\n\n    @include mobile {\n      height: rem(212px);\n    }\n\n    &._desk {\n      @include tablet {\n        display: none;\n      }\n    }\n\n    &._tablet {\n      display: none;\n\n      @include tablet {\n        display: block;\n      }\n\n      @include mobile {\n        display: none;\n      }\n    }\n\n    &._mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n  }\n\n  &__map-btn-wrap {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n    width: rem(1000px);\n    height: rem(500px);\n\n    @include tablet {\n      width: rem(710px);\n      height: rem(300px);\n    }\n\n    @include mobile {\n      width: rem(330px);\n      height: rem(145px);\n    }\n  }\n\n  &__map-btn {\n    width: rem(48px);\n    height: rem(48px);\n    position: absolute;\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n\n    &._1 {\n      top: rem(152px);\n      left: rem(48px);\n\n      @include tablet {\n        top: rem(80px);\n        left: rem(38px);\n      }\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n\n      .tooltip {\n        top: rem(-152px);\n\n        @include tablet {\n          top: initial;\n          bottom: rem(-162px);\n        }\n\n        @include mobile {\n          bottom: rem(-122px);\n        }\n      }\n    }\n\n    &._2 {\n      top: rem(242px);\n      left: rem(283px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(198px);\n      }\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(88px);\n      }\n    }\n\n    &._3 {\n      top: rem(340px);\n      left: rem(513px);\n\n      @include tablet {\n        top: rem(230px);\n        left: rem(360px);\n      }\n\n      @include mobile {\n        top: rem(110px);\n        left: rem(158px);\n      }\n    }\n\n    &._4 {\n      top: rem(420px);\n      left: rem(695px);\n\n      @include tablet {\n        top: rem(280px);\n        left: rem(480px);\n      }\n\n      @include mobile {\n        top: rem(140px);\n        left: rem(228px);\n      }\n    }\n\n    &._5 {\n      top: rem(285px);\n      left: rem(875px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(595px);\n      }\n\n      @include mobile {\n        top: rem(70px);\n        left: rem(278px);\n      }\n\n      .tooltip {\n        @include tablet {\n          left: rem(-122px);\n        }\n\n        @include mobile {\n          &::after {\n            left: rem(120px);\n          }\n        }\n      }\n    }\n  }\n\n  &__container  {\n/*     padding: 0 48px; */\n    max-width: 1826px;\n  }\n\n\n\n}","$b: '.event';\n\n#{$b} {\n  &__container {\n    border-radius: rem(24px);\n    background-color: #fff;\n    display: flex;\n    padding: rem(24px);\n    color: $y-body-1;\n\n    @include tablet {\n     flex-direction: column;\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  &__img {\n    background-image: url('../../img/bg-gradient.png');\n    background-color: $y-dop-1-bg;\n    width: 58%;\n    height: rem(432px);\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-right: rem(48px);\n    border-radius: rem(24px);\n    overflow: hidden;\n\n    @include tablet {\n      width: 100%;\n      margin-right: 0;\n      margin-bottom: rem(24px);\n      height: rem(288px);\n     }\n\n    @include mobile {\n      height: rem(127px);\n      margin-bottom: rem(16px);\n    }\n\n    img {\n      width: rem(702px);\n      height: rem(331px);\n      object-fit: contain;\n\n\n    @include tablet {\n      width: rem(540px);\n      height: rem(240px);\n     }\n\n     @include mobile {\n      width: rem(225px);\n      height: rem(105px);\n     }\n    }\n  }\n\n  &__info {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 41%;\n\n    @include tablet {\n      width: 100%;\n     }\n  }\n\n  &__info-title {\n    margin-bottom: rem(15px);\n    padding-top: rem(24px);\n\n    @include tablet {\n      padding-top: 0;\n      margin-bottom: 0;\n     }\n  }\n\n  &__info-txt {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    max-width: rem(696px);\n\n    @include tablet {\n      max-width: rem(620px);\n      margin-bottom: rem(52px);\n     }\n\n     @include mobile  {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-bottom: rem(4px);\n    }\n  }\n\n  &__info-date {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    color: $y-dop-4-element;\n\n    @include mobile  {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n}","$b: '.footer';\n\n#{$b} {\n  &__container {\n    padding: rem(25px) 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    @include mobile  {\n      flex-direction: column;\n    }\n  }\n\n  &__left {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n\n    @include mobile {\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__link {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-right: rem(16px);\n    border-bottom: 1px solid $y-dop-4-element;\n\n    @include mobile {\n      font-size: rem(12px);\n    line-height: rem(16px);\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n  }\n\n  &__social-list {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n  }\n\n  &__social-item {\n    width: rem(30px);\n    height: rem(30px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n  }\n}","$b: '.header';\n\n#{$b} {\n  background-color: #fff;\n  border-bottom-left-radius: rem(24px);\n  border-bottom-right-radius: rem(24px);\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n\n\n  &__container {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(16px) rem(24px);\n    padding-bottom: rem(10px);\n  }\n\n  &__login {\n    display: flex;\n    align-items: center;\n  }\n\n  &__logo {\n    width: rem(98px);\n    height: rem(56px);\n\n    @include mobile {\n      width: rem(56px);\n      height: rem(36px);\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n    }\n  }\n\n  &__login-icon {\n    width: rem(18px);\n    height: rem(21px);\n    margin-right: rem(11px);\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(16px);\n      height: rem(16px);\n      margin-right: rem(8px);\n\n   \n    }\n  }\n}\n\n","$b: '.login';\n\n#{$b} {\n  .pick__content-img {\n    img {\n      width: rem(570px);\n      height: rem(504px);\n    }\n  }\n\n  .pick__content-book {\n    height: rem(673px);\n\n\n  }\n\n  .pick__confirm {\n    margin-bottom: 0;\n    padding-bottom: 0;\n    border-bottom: none;\n  }\n\n  .pick__confirm-btn {\n    color: #fff;\n    background-color: $y-body-3;\n\n    &::before {\n      background-image: url('../../img/sms-white.svg');\n    }\n  }\n\n  .pick__content-img {\n    width: 57%;\n  }\n\n  &-tel {\n    @include mobile {\n      height: rem(350px);\n    }\n  }\n\n  &-mail {\n\n    .pick__content-book {\n      @include mobile {\n        height: 100%;\n      }\n    }\n\n    .pick__confirm {\n      height: 100%;\n    }\n\n    .login-lable {\n        margin-bottom: rem(16px);\n      }\n    }\n\n    .login-wrap {\n      margin-bottom: rem(16px);\n      &:first-child {\n        border-bottom: 1px solid $y-dop-3;\n        padding-bottom: rem(24px);\n      }\n    }\n\n    .login-input-wrap {\n      position: relative;\n    }\n\n    .login-show-password {\n      position: absolute;\n      width: rem(22px);\n      height: rem(16px);\n      top: 50%;\n      transform: translateY(-50%);\n      right: rem(24px);\n      background-image: url('../../img/show-password-icon.svg');\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n      display: none;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n\n    .login-input {\n      width: calc(100% - rem(15px));\n    }\n\n    .login-confirm {\n      width: 100%;\n      background-color: $y-body-3;\n      color: #fff;\n      height: rem(60px);\n      position: absolute;\n      bottom: 0;\n\n      @include mobile {\n        position: relative;\n      }\n    }\n}","$b: '.pick';\n\n#{$b} {\n  .choose__top-info {\n    max-width: rem(744px);\n\n    @include tablet {\n      width: 87%;\n    }\n  }\n\n  &__content {\n    display: flex;\n    align-items: flex-start;\n    justify-content: flex-start;\n    padding: rem(48px);\n    background-color: #fff;\n    border-radius: rem(24px);\n\n    @include tablet {\n      padding: 0;\n    }\n  }\n\n  &__content-img {\n    width: 57%;\n    height: rem(769px);\n    margin-right: rem(48px);\n    flex-shrink: 0;\n    border-radius: rem(24px);\n    overflow: hidden;\n    background-image: url('../../img/pick-bg.png');\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include tablet {\n      display: none;\n    }\n    \n\n    img {\n      width: rem(648px);\n      height: rem(520px);\n      object-fit: contain;\n      object-position: top;\n    }\n  }\n\n  &__content-book {\n    width: rem(600px);\n    background: $y-bg-gradient-1;\n    padding: rem(48px);\n    border-radius: rem($y-border-radius);\n    position: relative;\n\n    @include tablet {\n      width: 100%;\n      padding: 0;\n    }\n  }\n\n  &__date-title {\n    margin-bottom: rem(16px);\n  }\n\n  &__date-wrap {\n    display: flex;\n    padding-bottom: rem(24px);\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    flex-wrap: nowrap;\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(127px);\n      left: rem(70px);\n      background-image: url('../../img/calendat-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      z-index: 15;\n      background-size: contain;\n\n      @include tablet {\n        top: rem(78px);\n        left: rem(20px);\n      }\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        top: rem(46px);\n        left: rem(27px);\n      }\n    }\n  }\n\n  &__date-calendar {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding-left: rem(56px);\n    width: rem(136px);\n    margin-right: rem(8px);\n    margin-bottom: rem(12px);\n    text-align: left;\n\n    @include mobile {\n      padding-left: rem(49px);\n      width: rem(59px);\n      border-top-right-radius: 0;\n      border-bottom-right-radius: 0;\n      height: rem(48px);\n      margin-right: 0;\n    }\n\n    &:hover {\n      cursor: pointer;\n    }\n  }\n\n\n  &__date-picked {\n    text-align: center;\n    margin-right: rem(16px);\n    padding-left: 0;\n    background-color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: rem(192px);\n\n    @include tablet {\n      width: rem(293px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      margin-right: rem(6px);\n      width: rem(96px);\n      border-top-left-radius: 0;\n      border-bottom-left-radius: 0;\n      padding-left: rem(12px);\n      justify-content: flex-start;\n    }\n  }\n\n  &__date-days-count {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background-color: #fff;\n    color: $y-dop-4-element;\n    position: relative;\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    width: rem(177px);\n\n    span {\n      color: $y-body-1;\n      margin-left: rem(8px);\n\n      @include mobile {\n        margin-left: 0;\n      }\n    }\n\n    .text-hide {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: rem(48px);\n      padding-left: rem(20px);\n      width: rem(86px);\n    }\n  }\n\n  &__date-days-btn {\n    position: absolute;\n    width: rem(24px);\n    height: rem(30px);\n    background-color: $y-dop-2-bg;\n    right: 0;\n    top: 0;\n    background-repeat: no-repeat;\n\n    @include mobile {\n      height: rem(24px);\n    }\n\n    &.decrease {\n      top: rem(30px);\n      border-bottom-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-i.svg');\n      background-position: center;\n\n      @include mobile {\n        top: rem(24px);\n      }\n    }\n\n\n    &.increase {\n      border-top-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-d.svg');\n      background-position: center;\n    }\n  }\n\n  &__confirm {\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    padding-bottom: rem(24px);\n    position: relative;\n  }\n\n  &__confirm-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__confirm-txt {\n    margin-bottom: rem(24px);\n    max-width: rem(570px);\n\n    a {\n      color: $y-body-3;\n      border-bottom: 1px solid $y-body-3 ;\n      display: inline-block;\n    width: max-content;\n    }\n  }\n\n  &__confirm-book-btns {\n    display: none;\n  }\n\n  &__confirm-input-wrap {\n    display: flex;\n \n  }\n\n  &__confirm-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(16px);\n      width: rem(200px);\n      margin-right: rem(6px);\n    }\n  }\n\n  &__confirm-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(38px);\n      position: relative;\n      justify-content: flex-start;\n      width: rem(106px);\n\n      &::before {\n        content: '';\n        position: absolute;\n        left: rem(16px);\n        top: 50%;\n        transform: translateY(-50%);\n        background-image: url('../../img/sms.svg');\n        background-repeat: no-repeat;\n        background-size: contain;\n        width: rem(15px);\n        height: rem(15px);\n      }\n    }\n\n    span {\n      @include mobile {\n        display: none;\n      }\n    }\n  }\n\n  &__payment-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__payment-txt {\n    margin-bottom: rem(24px);\n  }\n\n  &__payment-promo {\n    display: flex;\n    margin-bottom: rem(30px);\n  }\n\n  &__payment-promo-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      padding-left: rem(16px);\n      width: rem(200px);\n    }\n  }\n\n  &__payment-promo-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      width: rem(106px);\n    }\n\n  }\n\n  &__payment-choose {\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      justify-content: space-between;\n    }\n  }\n\n  &__payment-choose-info {\n    padding-left: rem(32px);\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    max-width: rem(252px);\n\n    &::before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      background-image: url('../../img/warning-gray-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__payment-choose-method {\n    display: flex;\n    align-items: center;\n\n    a {\n      width: rem(72px); \n      height: rem(60px);\n      padding: rem(0px) rem(10px);\n      border-radius: rem(30px);\n      background-color: #fff;\n      margin-right: rem(8px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-size: rem(60px), rem(20px);\n      background-repeat: no-repeat;\n      background-position: center;\n\n      @include mobile {\n        width: rem(72px); \n        height: rem(48px);\n        background-size: rem(50px), rem(20px);\n      }\n      \n\n      &:last-child {\n        margin-right: 0;\n      }\n\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n      &.masterCard {\n        background-image: url('../../img/mcard.svg');\n        background-size: rem(50px), rem(20px);\n\n        @include mobile {\n          background-size: rem(40px), rem(15px);\n        }\n      }\n      &.qiwi {\n        background-image: url('../../img/qiwi.svg');\n        background-size: rem(70px), rem(30px);\n\n        @include mobile {\n          background-size: rem(50px), rem(20px);\n        }\n      }\n    }\n  }\n\n\n  //стили календаря\n.air-datepicker {\n position: absolute;\n top: 0;\n left: 0;\n width: 100%;\n height: 100%;\n border-radius: rem(24px);\n background: $y-bg-gradient-1;\n border: none;\n display: none;\n z-index: -1;\n\n @include tablet {\n  border-radius: 0;\n}\n\n &.active {\n  display: block;\n  z-index: 20;\n }\n}\n\n.air-datepicker-nav {\n  height: rem(64px);\n  align-items: center;\n}\n\n.air-datepicker-nav--title {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  padding: rem(12px) rem(26px);\n  border-radius: rem(24px);\n  max-height: rem(24px);\n}\n\n.air-datepicker-nav--action {\n  width: rem(48px);\n  height: rem(48px);\n  border-radius: 100%;\n  background-color: #fff;\n  margin: 0 rem(8px);\n}\n\n.air-datepicker--content {\n  padding: rem(24px);\n\n  @include tablet {\n    padding: 0;\n  }\n}\n\n.air-datepicker-body--day-name {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n  text-transform: none;\n  margin-bottom: rem(8px);\n}\n\n.air-datepicker-body--cells {\n  gap: rem(8px);\n\n  // grid-auto-rows: rem(48px) !important;\n}\n\n.air-datepicker-body--cells.-days- {\n  grid-auto-rows:rem(48px);\n\n  @include mobile {\n    grid-auto-rows:rem(36px);\n  }\n}\n\n.air-datepicker-cell  {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  border-radius: rem(24px);\n  // width: rem(85px);\n  height: rem(48px);\n\n  @include tablet {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n  }\n\n}\n\n.air-datepicker-cell.-day-.-current- {\n  background: $y-body-4;\n  color: $y-text;\n}\n.air-datepicker-cell.-day-.-selected- {\n  color:#fff;\n  background-color: $y-body-3;\n}\n\n.air-datepicker-cell.-day-.-selected-.-focus-{\n  background-color: $y-body-3;\n}\n\n.air-datepicker-buttons {\n  padding: 0 rem(24px);\n\n  @include mobile {\n    padding: 0;\n    margin-top: rem(16px);\n  }\n}\n\n.air-datepicker--buttons {\n  padding: 0;\n  position: absolute;\n  width: 100%;\n  bottom: rem(24px);\n  border: none;\n\n  @include mobile {\n    position: static;\n  }\n}\n\n.air-datepicker-button {\n  width: 98%;\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-body-3;\n  height: rem(48px);\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n    width: 95%;\n  }\n}\n\n.clear-btn {\n  background-color: #fff;\n  border-radius: rem(24px);\n  // margin-left: rem(24px);\n}\n\n.select-btn {\n  background-color: $y-body-4;\n  border-radius: rem(24px);\n \n}\n}",null,"// @include css-lock(65, 100, 768, 1200);\n@mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width}))) !important;\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h(65, 100, 630, 950);\n@mixin css-lock-h($min-size: 1, $max-size: 1.4, $min-height: 20, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$max-height} - #{$min-height}))) !important;\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-full(65, 100, 500, 768, 1920, 9600);\n@mixin css-lock-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-width: 20, $mid-width: 30, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-width: $mid-width + 'px') and (min-width: $min-width + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$mid-width} - #{$min-width}))) !important;\n  }\n\n  @media only screen and (max-width: $max-width + 'px') and (min-width: $mid-width + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vw - #{$mid-width}#{$unit}) / (#{$max-width} - #{$mid-width}))) !important;\n  }\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h-full(65, 100, 200, 630, 950, 1900);\n@mixin css-lock-h-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-height: 20, $mid-height: 30, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-height: $mid-height + 'px') and (min-height: $min-height + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$mid-height} - #{$min-height}))) !important;\n  }\n\n  @media only screen and (max-height: $max-height + 'px') and (min-height: $mid-height + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vh - #{$mid-height}#{$unit}) / (#{$max-height} - #{$mid-height}))) !important;\n  }\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n//ПРИМЕРЫ:\n//\n//Равномерный скейл по ширине (скейл вниз):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//\n//@include css-lock(#{$min-screen-width * 100 / $mid-screen-width}, 100, $min-screen-width, $mid-screen-width);\n//\n//\n//Равномерный скейл по ширине до максимального экрана (скейл вверх):\n//$mid-screen-width: 1920;\n//$max-screen-width: 2560;\n//\n//@include css-lock(100, #{100 * ($max-screen-width / $mid-screen-width)}, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный полный скейл по ширине (скейл в обе стороны):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//$max-screen-width: 9000;\n//\n//@include css-lock-full(#{$min-screen-width * 100 / $mid-screen-width}, 100, #{$max-screen-width * 100 / $mid-screen-width}, $min-screen-width, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный скейл по высоте (скейл вниз):\n//$min-screen-height: 768;\n//$mid-screen-height: 1920;\n//\n//@include tablet-min {\n//  @include css-lock-h(#{$min-screen-height * 100 / $mid-screen-height}, 100, $min-screen-height, $mid-screen-height);\n//}\n//\n//\n//Равномерный скейл по высоте до максимального экрана (скейл вверх):\n//$mid-screen-height: 1920;\n//$max-screen-height: 2560;\n//\n//@include css-lock-h(100, #{100 * ($max-screen-height / $mid-screen-height)}, $mid-screen-height, $max-screen-height);\n//\n//\n//Равномерный полный скейл по высоте (скейл в обе стороны):\n//$min-screen-height: 630;\n//$mid-screen-height: 950;\n//$max-screen-height: 2000;\n//\n//@include tablet-min {\n//  @include css-lock-h-full(#{$min-screen-height * 100 / $mid-screen-height}, 100, #{$max-screen-height * 100 / $mid-screen-height}, $min-screen-height, $mid-screen-height, $max-screen-height);\n//}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/style/_settings/_fonts.scss","webpack://./src/index.scss","webpack://./src/style/_style.scss","webpack://./src/style/_var.scss","webpack://./src/style/_parts/404.scss","webpack://./src/style/_parts/authorized.scss","webpack://./src/style/_parts/balance.scss","webpack://./src/style/_parts/book-authorized.scss","webpack://./src/style/_parts/book.scss","webpack://./src/style/_parts/booked-header.scss","webpack://./src/style/_parts/booked-home.scss","webpack://./src/style/_parts/choose.scss","webpack://./src/style/_parts/event.scss","webpack://./src/style/_parts/footer.scss","webpack://./src/style/_parts/header.scss","webpack://./src/style/_parts/login.scss","webpack://./src/style/_parts/pick.scss","webpack://./src/style/_parts/ref-link.scss","webpack://./<no source>","webpack://./src/style/scale/scale.scss"],"names":[],"mappings":"AAAA;EACE,6BAAA;EACA,2DACE;EACF,mBAAA;EACA,kBAAA;EACA,kBAAA;ACMF;ADHA;EACE,4BAAA;EACA,2DAAA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;ACKF;ACbA,iCAAA;AAMA;EACE,uBAAA;EACA,gBAAA;ADUF;;ACoBA;EACE,kBAAA;EACA,kBAAA;EACA,iBAAA;ADwCF;;ACrCA;EACE,sBAAA;ADwCF;;ACrCA;EACE,qBAAA;EACF;mBAAA;ADyCA;;ACrCA;EACE,qBAAA;EACA,qBAAA;EACA,cAAA;ADwCF;;ACrCA;EACE,6BCjEgB;EDkEhB,6DC/DgB;EDgEhB,iBAAA;EACA,iBAAA;EAEA,YAAA;EACA,kBAAA;EACA,cAAA;ADuCF;AChCI;EACE,kBAAA;ADkCN;AC/BM;EACE,WAAA;EACA,kBAAA;EACA,+BAAA;EACA,sCAAA;UAAA,8BAAA;EACA,WAAA;EACA,YAAA;EACA,MAAA;EACA,OAAA;EACA,UAAA;ADiCR;;AC1BA;EACE,YAAA;EACA,kBAAA;AD6BF;;ACjBA;EACE,mBAAA;EACA,cAAA;AD8BF;;ACzBA;EACE,4BCxHe;EDyHf,gBAAA;EACA,kBAAA;EACA,iBAAA;EACA,uBAAA;EACA,sBAAA;EACA,iBAAA;EACA,WAAA;AD4BF;;ACjBA;EACE,6BC5IgB;ED6IhB,kBAAA;EACA,oBAAA;AD6BF;;ACpBA;EACE,6BCxJgB;EDyJhB,iBAAA;EACA,oBAAA;AD8BF;;ACpBA;EACE,6BCrKgB;EDsKhB,kBAAA;EACA,iBAAA;EACA,uBAAA;AD+BF;;ACxBA;EACE,6BChLgB;EDiLhB,kBAAA;EACA,iBAAA;EACA,uBAAA;ADgCF;;ACzBA;EACE,6BC3LgB;ED4LhB,kBAAA;EACA,iBAAA;EACA,uBAAA;EACA,cAAA;EACA,eAAA;ADiCF;;ACzBA;EACE,kBAAA;EACA,iBAAA;ADkCF;;AC9BA;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,mBC9MW;ED+MX,sBAAA;EACA,cC5MS;ED6MT,eAAA;EACA,kBAAA;EACA,oBAAA;EACA,4BCvNe;EDwNf,cAAA;EACA,4BAAA;ADiCF;AC9BI;EACE,4BAAA;EACA,aAAA;ADgCN;ACpBE;EACE,eAAA;EACA,mBCnOO;EDoOP,WAAA;EACA,4BAAA;AD8BJ;AC3BM;EACE,4BAAA;EACA,UAAA;AD6BR;;ACtBA;EACE,YAAA;EACA,0BAAA;EACA,cAAA;EACA,6BC/PgB;EDgQhB,iBAAA;EACA,oBAAA;EACA,qBAAA;EACA,qBAAA;EACA,sBAAA;ADyBF;ACvBE;EACE,6BCvQc;EDwQd,cAAA;EACA,kBAAA;EACA,oBAAA;ADyBJ;AC7BE;EACE,6BCvQc;EDwQd,cAAA;EACA,kBAAA;EACA,oBAAA;ADyBJ;;ACdA;EACE,cAAA;ADuBF;;ACpBA;EACE,6BC1RgB;ED2RhB,kBAAA;EACA,oBAAA;EACA,cCtRgB;AF6SlB;;ACpBA;EACE,cAAA;ADuBF;;ACpBA;EACE,kBAAA;ADuBF;ACpBI;EACE,cAAA;ADsBN;ACnBI;EACE,0BAAA;ADqBN;AChBI;EACE,cAAA;ADkBN;;ACbA;EACE,kBAAA;EACA,aAAA;EACA,YAAA;EACA,cChTY;EDiTZ,kBAAA;EACA,oBAAA;EACA,sBAAA;EACA,gBAAA;EACA,aAAA;ADgBF;;ACRA;EACE,kBAAA;EACA,cAAA;EACA,eAAA;EACA,cAAA;EACA,QAAA;EACA,mCAAA;UAAA,2BAAA;EACA,yDAAA;EACA,2BAAA;EACA,4BAAA;EACA,wBAAA;EACA,aAAA;ADiBF;;ACPA;EACE,cAAA;EACA,sBAAA;EACD;wBAAA;EAEC,gBAAA;EACA,sBAAA;EACA,kBAAA;EACA,aAAA;EACA,aAAA;EACA,UAAA;EAEA,aAAA;ADgBF;ACFE;EACE,WAAA;EACA,kBAAA;EACA,eAAA;EACA,yDAAA;EACA,aAAA;EACA,aAAA;EACA,eAAA;EACA,4BAAA;EACA,wBAAA;ADiBJ;ACHE;EACE,iBAAA;EACA,oBAAA;EACA,sBAAA;ADiBJ;ACRE;EACE,WAAA;EACA,yBCnZO;AFoaX;ACdE;EACE,cAAA;ADgBJ;;ACZA;EACE,eAAA;EACA,wBAAA;ADeF;;ACbA;EACE,WAAA;EACA,4BC1ae;ED2af,gBAAA;EACA,sBAAA;ADgBF;;AG5bE;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,eAAA;AH+bJ;AGpbE;EACE,kBAAA;EACA,oBAAA;AHgcJ;AGnbE;EACE,kBAAA;EACA,oBAAA;EACA,cD3Bc;EC4Bd,eAAA;EACA,sBAAA;AHicJ;AGvbE;EACE,yBDrCO;ECsCP,WAAA;EACA,qBAAA;AHicJ;AG1bE;EACE,eAAA;EACA,eAAA;AHicJ;;AI3fA;EACE,aAAA;AJ0gBF;AIrgBE;EACE,aAAA;EACA,gBAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;AJ4gBJ;AIxfE;EACE,kBAAA;EACJ,uCAAA;AJ4gBA;AI/fE;EACE,UAAA;AJ6gBJ;;AIzgBA;EACE,kBAAA;AJ4gBF;AI1gBE;EACE,sBAAA;AJ4gBJ;AIrgBE;EACE,gBAAA;EACA,yBF7DS;EE8DT,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;AJ4gBJ;AI7fE;EAEE,aAAA;EACA,sBAAA;AJ4gBJ;AIvfI;EACE,gBAAA;AJugBN;AItgBM;EACE,gBAAA;AJwgBR;AIlgBE;EACE,kBAAA;EACA,oBAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;AJogBJ;AIvfI;EACE,cAAA;EACA,eAAA;EACA,qBAAA;AJqgBN;AIxfI;EACE,eAAA;AJsgBN;AIngBQ;EACE,aFlJC;AFupBX;AIhgBI;EACE,aAAA;AJkgBN;AI1fI;EACE,cFjKK;AFkqBX;AI9fQ;EACE,aFrKC;AFqqBX;AI1fE;EACE,kBAAA;EACA,oBAAA;EACA,aAAA;EACA,mBAAA;EACA,yBFtLS;EEuLT,kBAAA;EACA,sBAAA;EACA,2BAAA;EACA,uBAAA;EACA,kBAAA;EACA,eAAA;AJ4fJ;AIzfI;EACE,cAAA;EACA,eAAA;EACA,qBAAA;AJ2fN;AIxfI;EACE,eAAA;AJ0fN;AIvfQ;EACE,aFpMC;AF6rBX;AI/eE;EACE,kBAAA;EACA,SAAA;EACA,mCAAA;UAAA,2BAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;AJsfJ;AI/eE;EACE,cAAA;EACA,eAAA;EACA,yDAAA;EACA,4BAAA;EACA,wBAAA;EACA,sBAAA;AJsfJ;AIteE;EACE,kBAAA;EACA,oBAAA;AJufJ;AI/eI;EACE,aAAA;AJsfN;;AIveE;EACE,aAAA;AJqfJ;AIlfE;EACE,wBAAA;EACA,2BAAA;AJofJ;AI5eE;EACE,kBAAA;EACA,cAAA;EACA,eAAA;EACA,yBFpSS;EEqST,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;AJofJ;AI7eI;EACE,cAAA;EACA,eAAA;AJqfN;AIlfI;EACE,qBAAA;AJofN;AIhfI;EACE,kBAAA;EACA,iBAAA;EACA,oBAAA;EACA,WAAA;EACA,yBFtTQ;EEuTR,yBAAA;EACA,mBAAA;EACA,aAAA;EACA,cAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,QAAA;EACA,eAAA;AJkfN;AIteQ;EACE,aF/UC;AF+zBX;;AKx0BE;EACE,eAAA;EACA,kBAAA;ALi1BJ;AK30BE;EACE,2BAAA;ALk1BJ;AK90BI;EACE,qBAAA;ALg1BN;AK/zBI;EACE,cHvBK;AFm2BX;AKz0BE;EACE,sBAAA;AL20BJ;AKx0BE;EACE,iBAAA;EACA,YAAA;EACA,gBAAA;AL00BJ;AKv0BE;EACE,kBAAA;EACA,gBAAA;EACA,sBAAA;EACA,yBH9CS;EG+CT,WAAA;ALy0BJ;AKx0BI;EACE,WAAA;EACA,yDAAA;EACA,cAAA;EACA,eAAA;EACA,4BAAA;EACA,wBAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AL00BN;AKj0BE;EACE,kBAAA;EACA,oBAAA;EACA,cHlEc;EGmEd,cAAA;ALy0BJ;AKj0BE;EACE,cAAA;EACA,6BAAA;EACA,aAAA;ALy0BJ;AKx0BM;EACE,oBAAA;EACA,iBAAA;EACA,oBAAA;EACA,cHlFG;AF45BX;AK90BM;EACE,oBAAA;EACA,iBAAA;EACA,oBAAA;EACA,cHlFG;AF45BX;AKh0BE;EACE,kBAAA;EACA,cAAA;EACA,sBAAA;EACA,QAAA;EACA,mCAAA;UAAA,2BAAA;ALy0BJ;AKv0BI;EACE,qBAAA;ALy0BN;AK9zBE;EACE,kBAAA;EACA,SAAA;EACA,WAAA;AL00BJ;AKt0BI;EACE,aAAA;EACA,sBAAA;ALw0BN;AKr0BI;EACE,sBAAA;ALu0BN;AK9zBI;EACE,aAAA;EACA,8BAAA;EACA,gBAAA;EACA,sBAAA;EACA,yBH9IO;EG+IP,WAAA;EACA,sBAAA;ALs0BN;AK7zBI;EACE,cAAA;EACA,eAAA;EACA,wBAAA;EACA,4BAAA;EACA,qBAAA;EACA,mBAAA;EACA,qBAAA;EAEA,2BAAA;ALq0BN;AK/zBM;EACE,yDAAA;ALu0BR;AKp0BM;EACE,yDAAA;ALs0BR;AKj0BE;EACE,sBAAA;ALm0BJ;AK5zBE;EACE,aAAA;EACA,8BAAA;EACA,WAAA;ALm0BJ;AKh0BE;EACE,cAAA;ALk0BJ;AK1zBE;EACE,cAAA;EACA,yBHrMO;EGsMP,WAAA;ALk0BJ;;AM/gCE;EACE,8BAAA;AN6hCJ;AM1hCE;EACE,aAAA;AN4hCJ;AMrhCE;EACE,aAAA;AN4hCJ;AMzhCE;EACE,aAAA;AN2hCJ;AMxhCE;EACE,cAAA;EACA,yBJrBS;EIsBT,cJnBc;AF6iClB;AMxhCI;EACE,mBJnBK;EIoBL,WAAA;AN0hCN;AMxgCE;EACE,aAAA;ANshCJ;AM1gCI;EACE,8BAAA;ANwhCN;AMrgCE;EACE,gBAAA;ANqhCJ;AMnhCE;EACE,sBAAA;EACA,kBAAA;ANqhCJ;AMpgCI;EACE,WAAA;EACA,YAAA;EACA,iBAAA;ANshCN;AM7gCM;EACE,aAAA;ANohCR;AM7/BE;EACE,cAAA;EACA,eAAA;EACA,WAAA;AN6gCJ;AM//BI;EACE,aAAA;AN4gCN;AMrgCI;EACE,WAAA;EACA,aAAA;AN4gCN;AMpgCI;EACE,YAAA;EACA,aAAA;AN4gCN;AMpgCI;EACE,WAAA;EACA,aAAA;AN4gCN;AMpgCI;EACE,WAAA;EACA,aAAA;AN4gCN;AM7/BI;EACE,WAAA;EACA,YAAA;AN0gCN;AMngCM;EACE,aAAA;AN2gCR;AMzgCQ;EACE,aAAA;AN2gCV;AMrgCE;EACE,kBAAA;EACA,eAAA;EACA,aAAA;ANugCJ;AMhgCE;EACE,aAAA;ANugCJ;;AOvvCE;EACE,aAAA;EACA,8BAAA;APwyCJ;AOryCE;EACE,aAAA;APuyCJ;AOryCE;EACE,kBAAA;EACA,WAAA;EACA,kBAAA;EACA,cLHO;AF0yCX;AOryCI;EACE,sBAAA;EACA,qBAAA;APuyCN;AOpyCI;EACE,yBLVK;AFgzCX;;AQzzCA;EACE,aAAA;ARs0CF;AQp0CA;EACE,yBNIS;EMHT,WAAA;EACA,qBAAA;ARs0CF;AQh0CA;EACE,aAAA;ARu0CF;AQp0CA;EACE,aAAA;ARs0CF;AQ/zCA;EACE,aAAA;ARs0CF;AQvzCA;EACE,oBAAA;ARq0CF;AQ5zCE;EACE,kBAAA;EACA,oBAAA;EACA,cNhDc;AFo3ClB;AQh0CA;EACE,aAAA;ARk0CF;AQ/yCE;EACE,aAAA;EACA,uBAAA;ARk0CJ;AQ1zCE;EACE,cAAA;EACA,eAAA;EACA,yBNxFS;EMyFT,sBAAA;EACA,yDAAA;EACA,2BAAA;EACA,4BAAA;EACA,gCAAA;EACA,qBAAA;ARi0CJ;AQvzCE;EACE,aAAA;EACA,sBAAA;ARi0CJ;AQ/zCI;EACE,kBAAA;EACA,oBAAA;EACA,cN5GY;AF66ClB;AQ9zCI;EACE,iBAAA;EACA,oBAAA;ARg0CN;;ASv7CE;EACE,sBAAA;EACA,gBAAA;EACA,sBAAA;ATg8CJ;ASr7CE;EACE,mBAAA;EACA,UAAA;ATi8CJ;AS97CE;EACE,0BAAA;ATg8CJ;AS56CE;EACE,cAAA;ATw7CJ;ASt7CI;EACE,WAAA;EACA,eAAA;EACA,mBAAA;ATw7CN;ASr7CE;EACE,UAAA;EACA,gBAAA;EACA,kBAAA;ATu7CJ;ASr7CI;EACE,aAAA;ATu7CN;AS/5CE;EACE,aAAA;EACA,kBAAA;EACA,oBAAA;EACA,cP7Ec;EO8Ed,sBAAA;ATq7CJ;AS96CE;EACE,cAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,yBP9FS;EO+FT,sBAAA;EACA,qBAAA;ATq7CJ;ASn7CI;EACE,eAAA;ATq7CN;AS76CE;EACE,sBAAA;ATo7CJ;AS95CE;EACE,kBAAA;EACA,SAAA;EACA,aAAA;EACA,eAAA;EACA,QAAA;ATk7CJ;AS36CE;;EAEE,SAAA;EAAA,YAAA;EACA,SAAA;EACA,cAAA;EACA,eAAA;EACA,yBP9IO;EO+IP,mBAAA;ATk7CJ;ASh7CI;;EACE,WAAA;ATm7CN;AS36CI;;EACE,cAAA;EACA,eAAA;ATq7CN;AS56CE;EACE,QAAA;ATq7CJ;ASl7CE;EACE,WAAA;EAAA,cAAA;EACA,OAAA;ATo7CJ;ASn7CI;EACE,iCAAA;UAAA,yBAAA;ATq7CN;ASj7CE;EACE,yBPvLS;AF0mDb;ASh7CM;EACE,aPzLU;AF2mDlB;AS76CE;EACE,UAAA;EACA,kBAAA;EACA,SAAA;EACA,mCAAA;UAAA,2BAAA;AT+6CJ;AS56CE;EACE,aAAA;EACA,eAAA;EACA,sBAAA;EACA,yBPzMc;AFunDlB;ASr6CE;EACE,yBPnNc;AFgoDlB;;AUvoDA;EACE,sBAAA;AV0oDF;AUpoDE;EACE,aAAA;EACA,uBAAA;EACA,8BAAA;EACA,sBAAA;AV2oDJ;AUnoDE;EACE,kBAAA;EACA,sBAAA;AV0oDJ;AUvoDE;EACE,kBAAA;EACA,oBAAA;AVyoDJ;AUhoDE;EACE,sBAAA;EACA,wCAAA;EACA,iBAAA;EACA,oBAAA;EACA,kBAAA;EACA,sBAAA;EACA,kBAAA;AVyoDJ;AU5nDI;EACE,WAAA;EACA,kBAAA;EACA,yDAAA;EACA,yBAAA;EACA,wBAAA;EACA,cAAA;EACA,eAAA;EACA,QAAA;EACA,mCAAA;UAAA,2BAAA;EACA,aAAA;AV2oDN;AUjoDI;EACE,WAAA;EACA,kBAAA;EACA,YAAA;EACA,aAAA;EACA,yDAAA;EACA,aAAA;EACA,eAAA;EACA,4BAAA;EACA,wBAAA;EACA,iCAAA;UAAA,yBAAA;AV0oDN;AUjoDE;EACE,WAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;EACA,sBAAA;AVwoDJ;AUxnDI;EACE,aAAA;AVyoDN;AU9nDI;EACE,aAAA;AV0oDN;AUloDE;EACE,kBAAA;EACA,MAAA;EACA,SAAA;EACA,qCAAA;UAAA,6BAAA;EACA,YAAA;EACA,YAAA;AVyoDJ;AU5nDE;EACE,cAAA;EACA,eAAA;EACA,kBAAA;AV0oDJ;AUxoDI;EACE,WAAA;EACA,YAAA;AV0oDN;AU7nDI;EACE,eAAA;AVyoDN;AUtoDQ;EACE,aR1KC;AFkzDX;AUtoDQ;EACE,UAAA;AVwoDV;AUnoDI;EACE,YAAA;EACA,aAAA;AVqoDN;AUznDM;EACE,aAAA;AVuoDR;AU1nDI;EACE,YAAA;EACA,aAAA;AVuoDN;AU1nDI;EACE,WAAA;EACA,aAAA;AVwoDN;AU3nDI;EACE,WAAA;EACA,aAAA;AVyoDN;AU5nDI;EACE,YAAA;EACA,aAAA;AV0oDN;AUhnDE;EACF,yBAAA;EACI,iBAAA;AVwoDJ;;AW16DE;EACE,sBAAA;EACA,sBAAA;EACA,aAAA;EACA,gBAAA;EACA,cTEO;AF26DX;AWl6DE;EACE,0DAAA;EACA,yBTfS;ESgBT,UAAA;EACA,eAAA;EACA,cAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,qBAAA;EACA,sBAAA;EACA,gBAAA;AX86DJ;AWh6DI;EACE,cAAA;EACA,eAAA;EACA,mBAAA;AXg7DN;AWj6DE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,8BAAA;EACA,UAAA;AX+6DJ;AWx6DE;EACE,sBAAA;EACA,oBAAA;AX+6DJ;AWv6DE;EACE,6BTnFc;ESoFd,iBAAA;EACA,oBAAA;EACA,kBAAA;AX+6DJ;AWj6DE;EACE,6BTrGc;ESsGd,iBAAA;EACA,oBAAA;EACA,cTjGc;AFihElB;;AYvhEE;EACE,kBAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;AZgiEJ;AYzhEE;EACE,aAAA;EACA,mBAAA;EACA,2BAAA;AZgiEJ;AYzhEE;EACE,kBAAA;EACA,oBAAA;EACA,cVlBc;EUmBd,qBAAA;EACA,gCAAA;AZgiEJ;AYzhEI;EACE,eAAA;AZiiEN;AY7hEE;EACE,aAAA;EACA,mBAAA;EACA,2BAAA;AZ+hEJ;AY5hEE;EACE,aAAA;EACA,cAAA;EACA,qBAAA;AZ8hEJ;AYthEI;EACE,WAAA;EACA,YAAA;AZ+hEN;AY5hEI;EACE,eAAA;AZ8hEN;AY1hEI;EACE,eAAA;AZ4hEN;AYzhEQ;EACE,aV7DC;AFwlEX;AYzhEQ;EACE,UAAA;AZ2hEV;;AarmEA;EACE,sBAAA;EACA,kCAAA;EACA,mCAAA;EACA,sBAAA;AbwmEF;AajmEE;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;EACA,sBAAA;AbwmEJ;AarmEE;EACE,aAAA;EACA,mBAAA;AbumEJ;AapmEE;EACE,cAAA;EACA,eAAA;AbsmEJ;Aa/lEI;EACE,WAAA;EACA,YAAA;AbumEN;AanmEE;EACE,cAAA;EACA,eAAA;EACA,qBAAA;AbqmEJ;AanmEI;EACE,WAAA;EACA,YAAA;AbqmEN;;AcjpEI;EACE,aAAA;EACA,eAAA;Ad2pEN;AcvpEE;EACE,eAAA;AdypEJ;AcppEE;EACE,gBAAA;EACA,iBAAA;EACA,mBAAA;AdspEJ;AcnpEE;EACE,WAAA;EACA,yBZZO;AFiqEX;AcnpEI;EACE,0DAAA;AdqpEN;AcjpEE;EACE,UAAA;AdmpEJ;AcloEI;EACE,YAAA;Ad8oEN;Ac3oEI;EACI,sBAAA;Ad6oER;AczoEI;EACE,sBAAA;Ad2oEN;Ac1oEM;EACE,gCAAA;EACA,uBAAA;Ad4oER;AcxoEI;EACE,kBAAA;Ad0oEN;AcvoEI;EACE,kBAAA;EACA,cAAA;EACA,eAAA;EACA,QAAA;EACA,mCAAA;UAAA,2BAAA;EACA,cAAA;EACA,0DAAA;EACA,4BAAA;EACA,2BAAA;EACA,wBAAA;EACA,aAAA;AdyoEN;AcvoEM;EACE,eAAA;AdyoER;AcroEI;EACE,2BAAA;AduoEN;AcpoEI;EACE,WAAA;EACA,yBZlFK;EYmFL,WAAA;EACA,cAAA;EACA,kBAAA;EACA,SAAA;AdsoEN;;AeruEE;EACE,kBAAA;Af6uEJ;AetuEE;EACE,aAAA;EACA,uBAAA;EACA,2BAAA;EACA,gBAAA;EACA,sBAAA;EACA,sBAAA;Af6uEJ;AetuEE;EACE,UAAA;EACA,eAAA;EACA,qBAAA;EACA,cAAA;EACA,sBAAA;EACA,gBAAA;EACA,0DAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;Af6uEJ;AetuEI;EACE,cAAA;EACA,cAAA;EACA,mBAAA;EACA,oBAAA;Af6uEN;AezuEE;EACE,WAAA;EACA,6Db9Cc;Ea+Cd,gBAAA;EACA,sBAAA;EACA,kBAAA;Af2uEJ;AenuEE;EACE,sBAAA;Af2uEJ;AexuEE;EACE,aAAA;EACA,uBAAA;EACA,gCAAA;EACA,sBAAA;EACA,iBAAA;Af0uEJ;AexuEI;EACE,WAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;EACA,0DAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,wBAAA;Af0uEN;Ae1tEE;EACE,yBAAA;EACA,cbxFO;EayFP,kBAAA;EACA,oBAAA;EACA,qBAAA;EACA,cAAA;EACA,qBAAA;EACA,sBAAA;EACA,gBAAA;Af0uEJ;Ae/tEI;EACE,eAAA;Af2uEN;AetuEE;EACE,kBAAA;EACA,qBAAA;EACA,eAAA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cAAA;AfwuEJ;AevtEE;EACE,aAAA;EACA,mBAAA;EACA,2BAAA;EACA,sBAAA;EACA,cbjJc;EakJd,kBAAA;EACA,6Bb1Jc;Ea2Jd,iBAAA;EACA,oBAAA;EACA,cAAA;AfyuEJ;AevuEI;EACE,cbxJK;EayJL,oBAAA;AfyuEN;AertEE;EACE,kBAAA;EACA,cAAA;EACA,cAAA;EACA,yBbpLS;EaqLT,QAAA;EACA,MAAA;EACA,4BAAA;AfwuEJ;AeluEI;EACE,WAAA;EACA,kCAAA;EACA,0DAAA;EACA,2BAAA;AfyuEN;AejuEI;EACE,+BAAA;EACA,0DAAA;EACA,2BAAA;AfwuEN;AepuEE;EACE,gCAAA;EACA,sBAAA;EACA,uBAAA;EACA,kBAAA;AfsuEJ;AenuEE;EACE,sBAAA;AfquEJ;AeluEE;EACE,sBAAA;EACA,iBAAA;AfouEJ;AeluEI;EACE,cb3NK;Ea4NL,gCAAA;EACA,qBAAA;EACF,0BAAA;EAAA,kBAAA;AfouEJ;AehuEE;EACE,aAAA;AfkuEJ;Ae/tEE;EACE,aAAA;AfiuEJ;Ae7tEE;EACE,aAAA;EACA,qBAAA;EACA,qBAAA;Af+tEJ;Ae/sEE;EACE,yBAAA;EACA,cbhQO;EaiQP,6Bb3Qc;Ea4Qd,kBAAA;EACA,oBAAA;EACA,cAAA;AfguEJ;AehsEE;EACE,sBAAA;Af8tEJ;Ae3tEE;EACE,sBAAA;Af6tEJ;Ae1tEE;EACE,aAAA;EACA,qBAAA;Af4tEJ;AeztEE;EACE,aAAA;EACA,qBAAA;EACA,qBAAA;Af2tEJ;Ae5sEE;EACE,yBAAA;EACA,cbrUO;EasUP,6BbhVc;EaiVd,kBAAA;EACA,oBAAA;EACA,cAAA;Af6tEJ;AeltEE;EACE,aAAA;EACA,mBAAA;Af4tEJ;AertEE;EACE,qBAAA;EACA,kBAAA;EACA,oBAAA;EACA,kBAAA;EACA,kBAAA;Af4tEJ;Ae1tEI;EACE,WAAA;EACA,kBAAA;EACA,OAAA;EACA,QAAA;EACA,mCAAA;UAAA,2BAAA;EACA,0DAAA;EACA,cAAA;EACA,eAAA;EACA,4BAAA;EACA,2BAAA;EACA,wBAAA;Af4tEN;AeptEE;EACE,aAAA;EACA,mBAAA;Af2tEJ;AeztEI;EACE,cAAA;EACA,cAAA;EACA,oBAAA;EACA,qBAAA;EACA,sBAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,+BAAA;EACA,4BAAA;EACA,2BAAA;Af2tEN;AeltEM;EACE,eAAA;Af2tER;AextEM;EACE,yDAAA;Af0tER;AextEM;EACE,yDAAA;EACA,+BAAA;Af0tER;AeptEM;EACE,0DAAA;EACA,+BAAA;Af2tER;AehtEA;EACC,kBAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,sBAAA;EACA,6Db1biB;Ea2bjB,YAAA;EACA,aAAA;EACA,WAAA;AfutED;AejtEC;EACC,cAAA;EACA,WAAA;AfwtEF;AeptEA;EACE,eAAA;EACA,mBAAA;AfstEF;AentEA;EACE,6BbldgB;EamdhB,kBAAA;EACA,oBAAA;EACA,sBAAA;EACA,wBAAA;EACA,sBAAA;EACA,mBAAA;AfqtEF;AeltEA;EACE,cAAA;EACA,eAAA;EACA,mBAAA;EACA,sBAAA;EACA,iBAAA;AfotEF;AejtEA;EACE,gBAAA;AfmtEF;Ae5sEA;EACE,6Bb5egB;Ea6ehB,kBAAA;EACA,oBAAA;EACA,cbxegB;EayehB,oBAAA;EACA,sBAAA;AfmtEF;AehtEA;EACE,YAAA;AfktEF;Ae7sEA;EACE,uBAAA;Af+sEF;AexsEA;EACE,6BbngBgB;EaogBhB,kBAAA;EACA,oBAAA;EACA,sBAAA;EACA,sBAAA;EAEA,eAAA;Af8sEF;AepsEA;EACE,mBbzgBS;Ea0gBT,cbvhBO;AFouFT;Ae3sEA;EACE,WAAA;EACA,yBb/gBS;AF4tFX;Ae1sEA;EACE,yBbnhBS;AF+tFX;AezsEA;EACE,kBAAA;Af2sEF;AensEA;EACE,UAAA;EACA,kBAAA;EACA,WAAA;EACA,eAAA;EACA,YAAA;Af2sEF;AepsEA;EACE,UAAA;EACA,6BbvjBgB;EawjBhB,kBAAA;EACA,oBAAA;EACA,cbhjBS;EaijBT,eAAA;Af2sEF;AejsEA;EACE,sBAAA;EACA,sBAAA;Af2sEF;AevsEA;EACE,yBbjkBS;EakkBT,sBAAA;AfysEF;;AgBnxFE;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,gBAAA;EACA,yBdHS;EcIT,eAAA;EAEA,+BAAA;EACA,gCAAA;AhBqxFJ;AgBlxFE;EACE,aAAA;AhBoxFJ;AgBjxFE;EACE,kBAAA;EACA,oBAAA;EACA,cAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,cdpBc;EcqBd,sBAAA;EACA,yBdzBS;AF4yFb;AgBjxFI;EACE,qBAAA;AhBmxFN;AgB5wFI;EACE,cdhCK;EciCL,sBAAA;AhBmxFN;AgBxwFE;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,qBAAA;EACA,sBAAA;EACA,cAAA;EACA,sBAAA;EACA,cdlDO;EcmDP,sBAAA;EACA,kBAAA;EACA,oBAAA;EACA,kBAAA;EACA,eAAA;AhBkxFJ;AgBhxFI;EACE,kBAAA;EACA,aAAA;EACA,cAAA;EACA,aAAA;AhBkxFN;AgBxwFI;EACE,uBAAA;EACA,gCAAA;EACA,qBAAA;AhB+wFN;AgB3wFE;EACE,sBAAA;AhB6wFJ;AgB3wFI;EACE,qBAAA;EACA,cdnFK;AFg2FX;AgBlwFE;EACE,aAAA;AhB2wFJ;AgBxwFE;EACE,aAAA;EACA,kBAAA;EACA,mBAAA;EACA,cdtGO;EcuGP,yBdtGO;EcuGP,kBAAA;EACA,oBAAA;EACA,kBAAA;EACA,cAAA;EACA,qBAAA;EACA,qBAAA;EACA,cAAA;AhB0wFJ;AgBxwFI;EACE,kBAAA;EACA,cAAA;EACA,cAAA;EACA,eAAA;AhB0wFN;AgBxwFM;EACE,WAAA;EACA,YAAA;AhB0wFR;AgB5uFE;EACE,cAAA;EACA,cdxJO;AFk6FX;AgBhwFE;EACE,yBAAA;EACA,0BAAA;AhBywFJ;AgBtwFE;EACE,aAAA;EACA,sBAAA;EACA,SAAA;EACA,cAAA;EACA,UAAA;EACA,gBAAA;AhBwwFJ;AgB1vFE;EACE,eAAA;EACA,oBAAA;EACA,UAAA;EACA,kBAAA;AhBuwFJ;AgBpwFE;EACE,kBAAA;EACA,WAAA;EACA,SAAA;EACA,mCAAA;UAAA,2BAAA;EACA,eAAA;AhBswFJ;;AgB/vFI;EACE,aAAA;AhBkwFN;AgB/vFI;EACE,aAAA;AhBiwFN;AgB5vFI;EACE,aAAA;AhB8vFN;AgB3vFI;EACE,aAAA;AhB6vFN;AgBxvFI;EACE,aAAA;AhB0vFN;AgBvvFI;EACE,aAAA;AhByvFN;AgBtvFI;EACE,WAAA;EACA,yBd5OK;Ec6OL,qBAAA;AhBwvFN;AgB/uFE;EACE,sBAAA;AhBsvFJ;AgBnvFE;EACE,eAAA;AhBqvFJ;AgB9uFE;EACE,kBAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,cd1Qc;Ec2Qd,yBd9QS;Ec+QT,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,sBAAA;EACA,sBAAA;EACA,kBAAA;AhBqvFJ;AgB9uFE;EACE,kBAAA;EACA,oBAAA;AhBqvFJ;AgB5uFE;EACE,gBAAA;AhBqvFJ;AgBlvFE;EACE,sBAAA;AhBovFJ;AgBlvFI;EACE,eAAA;AhBovFN;AgBruFE;EACE,aAAA;EACA,mBAAA;EACA,8BAAA;AhBgvFJ;AgB7uFE;EACE,aAAA;EACA,mBAAA;AhB+uFJ;AgB5uFE;EACE,aAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,yBd/US;EcgVT,qBAAA;AhB8uFJ;AgBvuFI;EACE,kBAAA;EACA,mBAAA;AhB+uFN;AgBpuFE;EACE,cAAA;EACA,yBd/VO;EcgWP,cdjWO;AF6kGX;AgBtuFA;EACE,aAAA;AhB6uFF;AgB1uFA;EACE,aAAA;EACA,mBAAA;AhB4uFF;AgBzuFA;EACE,aAAA;EACA,cAAA;EACA,yBdzXW;Ec0XX,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,qBAAA;AhB2uFF;AgBjuFE;EACE,kBAAA;EACA,mBAAA;EACA,WAAA;AhB0uFJ;AgBjuFA;EACE,kBAAA;EACA,oBAAA;EACA,kBAAA;AhByuFF;AgB7tFE;EACE,WAAA;EACA,kBAAA;EACA,cAAA;EACA,eAAA;EACA,0DAAA;EACA,wBAAA;EACA,4BAAA;EACA,cAAA;AhB2uFJ;AgBvuFA;EACE,cAAA;AhByuFF;AgBvuFE;EACE,UAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AhByuFJ;AgB7uFE;EACE,UAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AhByuFJ;AiBrqGA;EhBYA;IiBVE,2BAAA;IACA,sGAAA;ElB0BA;AA6sDF;AiB1uDA;EhBYA;IiBNI,qCAAA;ElB4BF;AA6sDF;AiB/uDA;EhBYA;IiBVE,kCAAA;IACA,yFAAA;ElB0CA;ECwDF;IAKI,kBAAA;ED8BF;ECwNF;IAgBI,SAAA;IAAA,YAAA;IACA,gBAAA;EDgBF;ECPA;IAaE,YAAA;IACA,iCAAA;YAAA,yBAAA;IACA,aAAA;EDiBF;EGvZA;IAOI,uBAAA;EHgcJ;EGxbA;IAKI,kBAAA;IACA,oBAAA;EHicJ;EG/ZA;IAKI,cAAA;IACA,eAAA;EHkcJ;EIhgBF;IAGI,sBAAA;EJ4gBF;EIzgBA;IAUI,0DAAA;IACA,sBAAA;IACA,2BAAA;IACA,4BAAA;IACA,QAAA;IACA,2BAAA;IACA,yBAAA;IACA,kBAAA;EJ4gBJ;EI7hBA;IAqBI,wBAAA;IACC,2BAAA;EJ6gBL;EIzgBA;IAKI,kBAAA;IACA,2BAAA;EJ6gBJ;EI5fA;IAII,aAAA;EJ6gBJ;EIzgBA;IASI,mBAAA;IACA,UAAA;IACA,8BAAA;IACA,6BAAA;EJ6gBJ;EIpgBA;IAMI,mBAAA;IACA,8BAAA;EJ6gBJ;EI1gBM;IACE,oBAAA;EJ4gBR;EItfA;IAQI,sBAAA;IACA,gBAAA;EJqgBJ;EI5fE;IAMI,sBAAA;IACA,eAAA;EJsgBN;EInfE;IAII,aAAA;EJmgBN;EInfA;IA+BI,aAAA;EJufJ;EInfA;IAUI,aAAA;EJufJ;EInfA;IASI,aAAA;IACA,cAAA;IACA,qBAAA;IACN,6CAAA;EJufE;EIzYF;IAEI,aAAA;EJ4eF;EMv0BA;IAII,cAAA;EN6hCJ;EMjhCA;IAWI,aAAA;EN0hCJ;EMphCA;IAEI,aAAA;IACA,sBAAA;IACA,6BAAA;ENuhCJ;EMnhCA;IAII,aAAA;IACA,mBAAA;IACA,sBAAA;ENuhCJ;EM3gCA;IAEI,kBAAA;IACA,oBAAA;IACA,sBAAA;IACA,cJhEY;IIiEZ,wBAAA;IACA,sBAAA;IACA,aAAA;IACA,mBAAA;IACA,uBAAA;IACA,qBAAA;ENshCJ;EM/gCA;IAKI,cAAA;IACA,WAAA;IACA,eAAA;ENshCJ;EMphCI;IACE,aAAA;ENshCN;EMn/BA;IAEI,aAAA;EN+gCJ;EM7gCI;IACE,cAAA;EN+gCN;EM1gCA;IAMI,WAAA;EN8gCJ;EMngCE;IAII,SAAA;IAAA,YAAA;EN6gCN;EMv8BA;IAMI,aAAA;ENwgCJ;EMpgCA;IAII,aAAA;IACA,kBAAA;IACA,eAAA;IACA,yBJ7OK;II8OL,WAAA;IACA,2BAAA;IACA,SAAA;IACA,mCAAA;YAAA,2BAAA;IACA,cAAA;ENwgCJ;EM9/BA;IAGI,cAAA;IACA,YAAA;IACA,0DAAA;IACA,wBAAA;IACA,2BAAA;IACA,4BAAA;ENugCJ;EM5/BE;IAEI,YAAA;ENqgCN;EQ3xCF;IAMI,aAAA;ERu0CF;EQh0CF;IAII,cAAA;ERu0CF;EQn0CF;IAII,aAAA;ERu0CF;EQxzCA;IAEI,kBAAA;IACA,mBAAA;ERq0CJ;EQ1zCF;IAII,aAAA;IACA,mBAAA;IACA,8BAAA;IACA,mBAAA;IACA,kBAAA;IACA,cAAA;IACA,sBAAA;IACA,sBAAA;ERm0CF;EQh0CA;IAEI,aAAA;ERm0CJ;ES74CA;IAMI,gBAAA;ETi8CJ;ESp7CA;IAII,yBAAA;ETi8CJ;ESl6CE;IAII,aAAA;IACA,WAAA;IACA,eAAA;IACA,sBAAA;ETw7CN;ESt7CM;IACE,cAAA;ETw7CR;ES75CA;IAeI,sBAAA;ETq7CJ;ES96CE;IAEI,sBAAA;ETo7CN;EUjiDA;IAQE,sBAAA;EV2oDF;EUloDA;IAKI,kBAAA;IACA,oBAAA;IACA,sBAAA;EV0oDJ;EUtoDA;IAUI,kBAAA;IACA,oBAAA;EV0oDJ;EU1lDA;IAQI,eAAA;EVyoDJ;EUloDE;IAEI,aAAA;EV0oDN;EUtoDE;IAII,cAAA;EV0oDN;EUznDA;IASI,aAAA;IACA,YAAA;EV0oDJ;EUhmDE;IAKI,WAAA;IACA,aAAA;EVsoDN;EU9nDI;IAII,SAAA;IAAA,YAAA;IACA,gBAAA;EVwoDR;EU/nDE;IAKI,WAAA;IACA,aAAA;EVwoDN;EU/nDE;IAKI,WAAA;IACA,YAAA;EVyoDN;EUhoDE;IAKI,WAAA;IACA,YAAA;EV0oDN;EUjoDE;IAKI,WAAA;IACA,aAAA;EV2oDN;EUnoDI;IAEI,cAAA;EV4oDR;EWh6DA;IAQG,sBAAA;EX86DH;EWt6DA;IAcI,WAAA;IACA,eAAA;IACA,sBAAA;IACA,eAAA;EX+6DJ;EWv6DE;IAOE,aAAA;IACA,cAAA;EXg7DJ;EWt6DA;IAQI,WAAA;EXg7DJ;EW56DA;IAKI,cAAA;IACA,gBAAA;EXg7DJ;EW56DA;IAOI,iBAAA;IACA,sBAAA;EXg7DJ;EezgEA;IAII,UAAA;Ef8uEJ;Ee1uEA;IASI,UAAA;Ef8uEJ;Ee1uEA;IAaI,aAAA;Ef8uEJ;EeluEA;IAQI,WAAA;IACA,UAAA;Ef4uEJ;Ee7tEE;IAYI,YAAA;IACA,YAAA;Ef2uEN;EersEA;IAWI,cAAA;EfyuEJ;EeznEA;IAMI,cAAA;EfguEJ;EehqEA;IAMI,cAAA;Ef4tEJ;Ee/rEA;IAKI,8BAAA;Ef6tEJ;Ee1oEF;IAaE,gBAAA;EfwtEA;EexrEF;IAII,UAAA;EfotEF;EezrEF;IAUI,kBAAA;IACA,mBAAA;IACA,eAAA;Ef+sEF;EgBjnFA;IAiCI,aAAA;EhB0wFJ;EgBtuFA;IASI,gBAAA;EhBywFJ;EgBhhFF;IAWI,aAAA;IACA,eAAA;EhByuFF;AAzmCF;AiBjkEA;EhBYA;IiBNI,2BAAA;ElB4CF;AAohEF;AiBtkEA;EhBYA;IiBkBE,2BAAA;ElB8BA;ECyCF;IASI,kBAAA;ED+BF;ECnBF;IAWI,6BCnIc;IDoId,kBAAA;IACA,gBAAA;IACA,qBAAA;IACA,cAAA;ED6BF;ECzBF;IAMI,6BCjJc;IDkJd,kBAAA;IACA,oBAAA;ED8BF;EC1BF;IAMI,6BC7Jc;ID8Jd,iBAAA;IACA,oBAAA;IACA,sBAAA;ED+BF;EC3BF;IAOI,kBAAA;EDgCF;EC5BF;IAOI,kBAAA;EDiCF;EC7BF;IASI,kBAAA;IACA,iBAAA;EDkCF;ECxBF;IAsBI,cAAA;IACA,eAAA;IACA,kBAAA;IACA,mBAAA;ED+BF;ECXF;IAmBI,kBAAA;IACA,oBAAA;EDyBF;ECgBF;IAYI,kBAAA;IACA,oBAAA;EDiBF;ECbF;IAcI,cAAA;IACA,eAAA;IACA,cAAA;EDkBF;ECbF;IAqBI,gBAAA;IACA,eAAA;IACA,aAAA;EDiBF;ECdA;IAmBE,aAAA;EDkBF;ECdA;IAMI,kBAAA;IACA,oBAAA;IACA,sBAAA;EDkBJ;EGxaA;IAWI,uBAAA;EHicJ;EG7bA;IAUI,kBAAA;IACA,oBAAA;EHkcJ;EG9bA;IAQI,kBAAA;IACA,oBAAA;IACA,kBAAA;IACA,sBAAA;EHkcJ;EG9bA;IAMI,sBAAA;EHkcJ;EG9bA;IAUI,cAAA;IACA,eAAA;EHmcJ;EIteA;IAUK,kBAAA;IACA,2BAAA;EJ8gBL;EI1fA;IAgBI,UAAA;IACA,WAAA;EJ8gBJ;EIzeA;IAaM,iBAAA;IACJ,oBAAA;EJsgBF;EIlgBE;IAWI,cAAA;IACA,eAAA;EJugBN;EIpbA;IAgBM,cAAA;IACA,eAAA;IACA,sBAAA;EJwfN;EIhfE;IAEI,aAAA;EJufN;EInfE;IAII,cAAA;EJufN;EIrgBA;IAmBI,iBAAA;IACA,oBAAA;EJufJ;EI7eA;IAKI,wBAAA;IACA,2BAAA;EJqfJ;EIjfA;IAWI,cAAA;IACA,eAAA;EJqfJ;EIxeE;IAkBK,kBAAA;IACD,oBAAA;IACC,cAAA;IACH,eAAA;EJmfJ;EKp0BA;IAKI,cAAA;ELk1BJ;EK30BA;IAMI,aAAA;IACA,iBAAA;IACA,kBAAA;IACA,oBAAA;ELg1BJ;EK70BI;IACE,aAAA;EL+0BN;EKrzBE;IAYI,cAAA;IACA,eAAA;EL20BN;EKt0BA;IAOI,kBAAA;IACA,oBAAA;EL00BJ;EKl0BI;IAOI,qBAAA;IACA,kBAAA;IACA,oBAAA;EL20BR;EKp1BI;IAOI,qBAAA;IACA,kBAAA;IACA,oBAAA;EL20BR;EK/zBE;IAGI,aAAA;EL20BN;EKr1BA;IAeI,cAAA;EL20BJ;EK3zBE;IAII,2BAAA;IACA,gBAAA;ELw0BN;EKn0BE;IAUI,2BAAA;IACA,gBAAA;IACA,sBAAA;ELu0BN;EKn0BE;IAYI,cAAA;IACA,eAAA;ELs0BN;EK1zBA;IAII,aAAA;ELo0BJ;EK1zBA;IAII,cAAA;IACA,eAAA;ELm0BJ;EK/zBA;IAMI,cAAA;IACA,eAAA;ELm0BJ;EK7zBA;IAEI,YAAA;ELg0BJ;EM5+BA;IAUI,sBAAA;ENwhCJ;EM9/BA;IAeI,YAAA;IACA,iBAAA;ENshCJ;EM7gCI;IAEI,aAAA;ENqhCR;EMjhCI;IAII,cAAA;IACA,mBAAA;ENqhCR;EMlgCA;IAUI,WAAA;IACA,aAAA;EN+gCJ;EMjgCE;IAKI,WAAA;IACA,aAAA;EN6gCN;EMzgCE;IAKI,WAAA;IACA,UAAA;EN6gCN;EMzgCE;IAKI,YAAA;IACA,aAAA;EN6gCN;EMzgCE;IAKI,WAAA;IACA,aAAA;EN6gCN;EM1gCI;IAGI,eAAA;EN4gCR;EMvgCE;IAKI,WAAA;IACA,UAAA;EN2gCN;EMp/BA;IAgBI,eAAA;IACA,2BAAA;IACA,eAAA;ENygCJ;EMrgCA;IAaI,cAAA;IACA,eAAA;ENugCJ;EMlgCE;IAMI,YAAA;ENsgCN;EO5xCA;IAeI,mBAAA;EPuyCJ;EOnyCA;IAEI,aAAA;EPsyCJ;EQlyCE;IACE,cAAA;IACA,eAAA;IACA,mBAAA;ERu0CJ;EQ7xCA;IAKI,mBAAA;ERm0CJ;EQ9zCA;IAYI,cAAA;IACA,eAAA;IACA,6BAAA;IACA,qBAAA;ERk0CJ;EQpzCE;IAKI,kBAAA;IACA,mBAAA;ERi0CN;ES57CA;IAUI,gBAAA;ETk8CJ;ESz7CA;IAQI,yBAAA;ETk8CJ;ESv6CE;IAeI,eAAA;IACA,sBAAA;ETw7CN;ESt7CM;IACE,eAAA;ETw7CR;ESl7CA;IAQI,aAAA;ETs7CJ;ES55CE;IAMI,kBAAA;IACA,mBAAA;IACA,qBAAA;ETq7CN;ESj7CE;IAEI,iBAAA;IACA,oBAAA;ETo7CN;ES/6CA;IAQI,WAAA;ETm7CJ;ES/6CA;;IAcI,cAAA;IACA,eAAA;ETo7CJ;ESj7CE;;IAKI,cAAA;IACA,eAAA;ETu7CN;ESr5CA;IAOI,cAAA;IACA,eAAA;ET+6CJ;EUnoDF;IAII,sBAAA;EV2oDF;EU5mDA;IAeI,kBAAA;IACA,mBAAA;IACA,wCAAA;EV2oDJ;EUxoDE;IAaI,cAAA;IACA,eAAA;IACA,aAAA;EV4oDN;EUvoDE;IAcI,aAAA;EV0oDN;EUroDA;IAYI,eAAA;EV0oDJ;EUjoDE;IAQI,aAAA;EV2oDN;EUvoDE;IAII,cAAA;EV2oDN;EUtoDA;IAcI,aAAA;IACA,eAAA;EV2oDJ;EUvoDA;IAWI,cAAA;IACA,eAAA;EV0oDJ;EUxoDI;IACE,WAAA;IACA,YAAA;EV0oDN;EUznDE;IAUI,WAAA;IACA,aAAA;EVuoDN;EUpoDI;IASI,gBAAA;EVyoDR;EUpoDE;IAUI,WAAA;IACA,aAAA;EVyoDN;EUroDE;IAUI,WAAA;IACA,aAAA;EV0oDN;EUtoDE;IAUI,WAAA;IACA,aAAA;EV2oDN;EUvoDE;IAUI,WAAA;IACA,aAAA;EV4oDN;EUnoDQ;IACE,YAAA;EV4oDV;EWr6DA;IAYI,gBAAA;EX+6DJ;EW36DA;IAqBI,eAAA;IACA,sBAAA;EXg7DJ;EW76DE;IAYE,cAAA;IACA,eAAA;EXi7DJ;EWt5DA;IAYI,kBAAA;IACA,mBAAA;IACA,sBAAA;EXi7DJ;EW76DA;IAOI,kBAAA;IACA,oBAAA;EXi7DJ;EY5hEA;IAOI,sBAAA;EZiiEJ;EY7hEA;IAMI,sBAAA;EZiiEJ;EY7hEA;IAQI,kBAAA;IACF,oBAAA;EZiiEF;EYnhEA;IAMI,cAAA;IACA,eAAA;IACA,qBAAA;EZ+hEJ;EaplEF;IAOI,sBAAA;EbymEF;EaxlEA;IAKI,cAAA;IACA,eAAA;EbumEJ;Ea9lEA;IAWI,cAAA;IACA,eAAA;IACA,qBAAA;EbqmEJ;EcxnEA;IAEI,cAAA;EdkpEJ;Ec5oEE;IAEI,YAAA;Ed+oEN;EchmEE;IASI,kBAAA;EduoEN;EenqEE;IAiBI,cAAA;IACA,eAAA;IACA,YAAA;IACA,aAAA;Ef4uEN;EevuEA;IAYI,qBAAA;IACA,cAAA;IACA,0BAAA;IACA,6BAAA;IACA,eAAA;IACA,eAAA;Ef2uEJ;EeluEA;IAeI,eAAA;IACA,qBAAA;IACA,cAAA;IACA,yBAAA;IACA,4BAAA;IACA,qBAAA;IACA,2BAAA;Ef0uEJ;Ee1tEE;IAKI,cAAA;Ef0uEN;EetuEE;IAEI,aAAA;EfyuEN;EehwEA;IA4BI,eAAA;IACA,oBAAA;IACA,cAAA;EfyuEJ;EeruEA;IAUI,eAAA;EfyuEJ;EetuEE;IAOI,YAAA;Ef0uEN;Ee9rEA;IAUI,eAAA;IACA,kBAAA;IACA,mBAAA;IACA,qBAAA;IACA,WAAA;IACA,qBAAA;EfiuEJ;Ee7tEA;IASI,eAAA;IACA,kBAAA;IACA,mBAAA;IACA,qBAAA;IACA,kBAAA;IACA,2BAAA;IACA,cAAA;EfiuEJ;Ee/tEI;IACE,WAAA;IACA,kBAAA;IACA,aAAA;IACA,QAAA;IACA,mCAAA;YAAA,2BAAA;IACA,0DAAA;IACA,4BAAA;IACA,wBAAA;IACA,cAAA;IACA,eAAA;EfiuEN;Ee7tEE;IAEI,aAAA;EfguEN;Ee9sEA;IASI,eAAA;IACA,kBAAA;IACA,mBAAA;IACA,qBAAA;IACA,qBAAA;IACA,WAAA;Ef8tEJ;Ee1tEA;IASI,eAAA;IACA,kBAAA;IACA,mBAAA;IACA,cAAA;Ef8tEJ;EehtEA;IAsBI,aAAA;Ef4tEJ;EeptEE;IAeI,cAAA;IACA,eAAA;IACA,+BAAA;Ef4tEN;EejtEI;IAKI,gCAAA;Ef2tER;EextEI;IAKI,+BAAA;Ef4tER;EehpEF;IAII,uBAAA;EfgtEF;Ee9qEF;IAII,UAAA;IACA,mBAAA;Ef4sEF;EexsEF;IAQI,gBAAA;Ef4sEF;EexsEF;IASI,kBAAA;IACA,mBAAA;IACA,eAAA;IACA,UAAA;Ef4sEF;EgB9uFE;IAII,qBAAA;EhBoxFN;EgBpyFA;IAyBI,kBAAA;IACA,mBAAA;IACA,eAAA;IACA,cAAA;EhBoxFJ;EgB/wFA;IAuBI,aAAA;EhBkxFJ;EgBrwFA;IASI,kBAAA;IACA,oBAAA;IACA,sBAAA;EhB6wFJ;EgBtvFE;IAYI,cAAA;IACA,cAAA;IACA,eAAA;EhB0wFN;EgBtyFA;IAqCI,kBAAA;IACA,mBAAA;IACA,qBAAA;IACA,eAAA;IACA,kBAAA;IACA,cAAA;EhB2wFJ;EgB1wFI;IACE,cAAA;IACA,mBAAA;IACA,gBAAA;IACA,uBAAA;EhB4wFN;EgBvwFA;IAKI,eAAA;IACA,kBAAA;IACA,mBAAA;EhB2wFJ;EgBjwFA;IAaI,gBAAA;IACA,cAAA;EhB0wFJ;EgBrtFE;IAMI,cAAA;EhByvFN;EgB/uFA;IAII,YAAA;EhBsvFJ;EgBlvFA;IAeI,eAAA;EhBsvFJ;EgBlvFA;IAKI,kBAAA;IACA,oBAAA;IACA,gBAAA;EhBsvFJ;EgB9uFA;IAUI,cAAA;IACA,sBAAA;EhBkvFJ;EgBjvFI;IACE,WAAA;EhBmvFN;EgBluFA;IAWI,cAAA;IACA,eAAA;EhB+uFJ;EgB5uFE;IAME,cAAA;IACA,eAAA;EhB+uFJ;EgBzuFA;IAMI,eAAA;EhB6uFJ;EgBjuFF;IAWI,cAAA;IACA,eAAA;IACA,qBAAA;EhB4uFF;EgBvuFA;IAOE,cAAA;IACA,eAAA;EhB0uFF;EgBtuFF;IAMI,kBAAA;IACA,oBAAA;IACA,gBAAA;EhB0uFF;AA1cF;AiBlsFA;EhBYA;IiB6BI,qCAAA;ElBkCF;AA4nFF;AiBvsFA;EbgGQ;IAIM,oBAAA;EJ8gBZ;AA0lEF;AiB5sFA;ED0ZA;IAWM,oBAAA;EhB4uFJ;AAhcF;AiBjtFA;EhBYA;IiBFI,2BAAA;ElB6BF;AA+qFF;AiBttFA;EhBYA;IiBFI,kCAAA;ElB6CF;AAoqFF;AiB3tFA;EhBYA;IiBqBI,qGAAA;ElBgCF;AA+pFF;AiBhuFA;EhBYA;IiByBI,4FAAA;ElBiCF;AA+pFF;AiBruFA;EhBYA;IiBiCI,sCAAA;ElBmCF;AA0pFF","sourcesContent":["@font-face {\n  font-family: 'Gilroy-Regular';\n  src: \n    url('../../fonts/Gilroy-Regular.woff') format('woff');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Gilroy-Medium';\n  src: url('../../fonts/Gilroy-Medium.woff') format('woff');\n  font-weight: 500;\n  font-style: normal;\n  font-display: swap;\n}\n\n\n","@import '~normalize.css';\n@import 'style/libs/*';\n@import 'air-datepicker/air-datepicker.css';\n@import '../node_modules/swiper/swiper-bundle.css';\n@import '../node_modules/swiper/modules/pagination/pagination.min.css';\n@import '../node_modules/swiper/modules/autoplay/autoplay.min.css';\n@import 'style/_settings/*.scss';\n@import 'style/_var';\n@import 'style/_style';\n@import 'style/_parts/*.scss'; \n@import 'style/_blocks/*.scss'; \n\n\n\n","@use 'sass:math';\n@import 'scale/scale.scss'; \n@import 'scale/settings.scss'; \n@import 'scale/breakpoints.scss'; \n\n$root-font-size: 100;\n/* $wide-desktop-width: 1920px; */\n$low-desktop-width: 900px;\n$desktop-width: 1920px;\n$tablet-width: 768px;\n$mobile-width: 360px;\n\nhtml {\n  --root-font-size: #{$root-font-size}px;\n  font-size: #{$root-font-size}px;\n\n  @include low-desktop {\n    $min-screen-width: 500;\n    $mid-screen-width: 1915;\n\n    @include css-lock(#{$min-screen-width * calc($root-font-size / $mid-screen-width)}, $root-font-size, $min-screen-width, $mid-screen-width);\n  }\n\n\n  @include tablet {\n    $mid-screen-width: 768;\n    $max-screen-width: 1023;\n\n    @include css-lock(\n      $root-font-size, #{$root-font-size * calc($max-screen-width / $mid-screen-width)},\n      $mid-screen-width,\n      $max-screen-width\n    );\n  }\n\n  @include mobile {\n    $min-screen-width: 300;\n    $mid-screen-width: 360;\n    $max-screen-width: 760;\n\n    @include css-lock-full(#{calc($min-screen-width * $root-font-size / $mid-screen-width)}, $root-font-size, #{calc($max-screen-width * $root-font-size / $mid-screen-width)}, $min-screen-width, $mid-screen-width, $max-screen-width);\n  }\n}\n\nmain {\n  max-width: rem(1920px);\n  margin-right: auto;\n  margin-left: auto;\n}\n\nmain, header, footer {\n  /* overflow: hidden; */\n}\n\nsvg {\n  display: inline-block;\n/*   width: 100%;\n  height: 100%; */\n}\n\na {\n  display: inline-block;\n  text-decoration: none;\n  color: inherit;\n}\n\nbody {\n  font-family: $y-font-regular;\n  background: $y-bg-gradient-1;\n  font-size: rem(20px);\n  line-height: 130%;\n  // color:  #1B1F28;\n  height: 100%;\n  max-width: rem(1920px);\n  margin: 0 auto;\n\n \n\n  &.active {\n   \n\n    main {\n      position: relative;\n   \n\n      &::after {\n        content: '';\n        position: absolute;\n        background: rgba(1, 5, 13, 0.7);\n        backdrop-filter: blur(rem(7px));\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 1;\n      }\n    }\n\n  }\n}\n\n.main-wrap {\n  height: 100%;\n  padding: 0 rem(48px);\n\n  @include tablet {\n    padding: 0 rem(24px);\n  }\n\n  @include mobile {\n    padding: 0 rem(16px);\n  }\n}\n\n// отличные от проекта настройки\n.container {\n  max-width: rem(1826px);\n  margin: 0 auto;\n  // padding: 0 rem(48px);\n\n}\n\n.h1 {\n  font-family: $y-font-medium;\n  font-weight: 700;\n  font-size: rem(72px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  margin-bottom: rem(34px);\n  max-width: rem(960px);\n  color: #fff;\n\n  @include mobile {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    font-weight: 400;\n    margin-bottom: rem(10px);\n    color: #1B1F28;\n  }\n}\n\n.h2 {\n  font-family: $y-font-regular;\n  font-size: rem(66px);\n  line-height: rem(72px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    line-height: rem(34px);\n  }\n}\n\n.h3 {\n  font-family: $y-font-regular;\n  font-size: rem(40px);\n  line-height: rem(46px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(4px);\n  }\n}\n\n.h4 {\n  font-family: $y-font-regular;\n  font-size: rem(48px);\n  line-height: 120%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(22px);\n  }\n}\n\n.h5 {\n  font-family: $y-font-regular;\n  font-size: rem(46px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(24px);\n  }\n}\n\n.h6 {\n  font-family: $y-font-regular;\n  font-size: rem(42px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  color: #1B1F28;\n  max-width: rem(600px);\n\n  @include mobile {\n    font-size: rem(22px);\n    max-width: rem(340px);\n  }\n}\n\n.middle {\n  margin-right: auto;\n  margin-left: auto;\n}\n\n\n.btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: $y-dop-1-bg;\n  border-radius: rem(24px);\n  color: $y-body-1;\n  height: rem(48px);\n  font-size: rem(16px);\n  line-height: rem(22px);\n  font-family: $y-font-medium;\n  width: rem(192px);\n  transition: all 0.3s ease-in;\n\n  svg {\n    path {\n      transition: all 0.3s ease-in;\n      fill: #B5BBDB;\n    }\n  }\n\n  @include mobile {\n    width: rem(158px);\n    height: rem(36px);\n    font-size: rem(14px);\n    line-height: rem(20px);\n  }\n\n\n  &:hover {\n    cursor: pointer;\n    background: $y-body-3;\n    color:  #fff;\n    transition: all 0.3s ease-in;\n\n    svg {\n      path {\n        transition: all 0.3s ease-in;\n        fill: #fff;\n      }\n    }\n  }\n}\n\n\n.input {\n  border: none;\n  outline: 1px solid $y-dop-2-bg;\n  height: rem(60px);\n  font-family: $y-font-regular;\n  font-size: rem(20px);\n  line-height: rem(29px);\n  border-radius: rem(30px);\n  padding-left: rem(15px);\n  vertical-align: middle;\n\n  &::placeholder {\n    font-family: $y-font-regular;\n    color: #81899B;\n    font-size: rem(16px);\n    line-height: rem(22px)\n  }\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(18px);\n  }\n\n\n}\n\n.input-small {\n  width: rem(164px);\n}\n\n.txt-light {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n}\n\n.js-tel {\n  color: #81899B;\n}\n\n.input-wrap {\n  position: relative;\n\n  &.error {\n    .input-text {\n      display: block;\n    }\n\n    .input {\n      outline: 1px solid $y-special-1;\n    }\n  }\n\n  &.confirm {\n    .input-confirm  {\n      display: block;\n    }\n  }\n}\n\n.input-text {\n  position: absolute;\n  left: rem(24px);\n  top: rem(-10px);\n  color: $y-special-1;\n  font-size: rem(12px);\n  line-height: rem(14px);\n  background-color: #fff;\n  padding: rem(2px);\n  display: none;\n\n  @include mobile {\n    font-size: rem(8px);\n    line-height: rem(12px);\n  }\n}\n\n.input-confirm {\n  position: absolute;\n  width: rem(22px);\n  height: rem(22px);\n  right: rem(39px);\n  top: 50%;\n  transform: translateY(-50%);\n  background-image: url('../img/confirm-icon.svg');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: none;\n\n  @include mobile {\n    width: rem(17px);\n    height: rem(17px);\n    right: rem(19px);\n  }\n}\n\n\n.tooltip {\n  display: block;\n  background-color: #fff;\n /*  width: rem(216px);\n  height: rem(114px); */\n  padding: rem(24px);\n  border-radius: rem(24px);\n  position: absolute;\n  top: rem(-192px);\n  left: rem(-50px);\n  z-index: 5;\n\n  display: none;\n\n\n  @include tablet {\n    top: initial;\n    bottom: rem(-162px);\n  }\n\n  @include mobile {\n    padding: rem(16px);\n    bottom: rem(-110px);\n    left: rem(-20px);\n  }\n\n  &::after {\n    content: '';\n    position: absolute;\n    bottom: rem(-20px);\n    background-image: url('../img/before.svg');\n    left: rem(48px);\n    width: rem(30px);\n    height: rem(24px);\n    background-repeat: no-repeat;\n    background-size: contain;\n\n\n  @include tablet {\n    top: rem(-20px);\n    transform: rotate(180deg);\n    left: rem(58px);\n  }\n\n  @include mobile {\n    left: rem(18px);\n  }\n  }\n\n  &__title {\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      font-size: rem(16px);\n      line-height: rem(22px);\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__btn {\n    color: #fff;\n    background-color: $y-body-3;\n  }\n\n  &._active {\n    display: block;\n  }\n}\n\n.page-list {\n  padding: rem(50px);\n  list-style-type: decimal ;\n}\n.page-title {\n  color: teal;\n  font-family: $y-font-medium;\n  font-weight: 700;\n  margin-bottom: rem(15px);\n}\n\n\n","$y-text: #1B2E3F;\n\n$y-font-regular:  'Gilroy-Regular';\n$y-font-medium:  'Gilroy-Medium';\n\n$y-bg-gradient-1: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);\n$y-dop-1-bg: #F6F8FC;\n$y-dop-2-bg: #F1F3FB;\n$y-dop-3: #DDE0F0;\n$y-dop-4-element: #B5BBDB;\n$y-body-1: #1B2E3F;\n$y-body-2: #fff;\n$y-body-3: #7EA373;\n$y-body-4: #eaf0e9;\n$y-special-1: #DF536C;\n\n\n\n$y-border-radius: 24px;\n\n\n\n\n\n\n","$b: '.error';\n\n#{$b} {\n  &__container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: rem(120px);\n\n    @include tablet {\n      padding: rem(120px) rem(45px);\n    }\n\n    @include mobile {\n      padding: rem(80px) rem(16px);\n    }\n  }\n\n  &__title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n    }\n\n    @include mobile {\n      font-size: rem(28px);\n      line-height: rem(34px);\n    }\n  }\n\n  &__subtitle {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    max-width: rem(600px);\n    margin-bottom: rem(24px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      max-width: rem(328px);\n      margin-bottom: rem(16px);\n    }\n  }\n\n  &__btn {\n    background-color: $y-body-3;\n    color: #fff;\n    margin-bottom: rem(60px);\n\n    @include mobile {\n      margin-bottom: rem(48px);\n    }\n  }\n\n  &__img {\n    width: rem(1013px);\n    height: rem(326px);\n\n    @include tablet {\n      width: rem(678px);\n      height: rem(218px);\n    }\n\n    @include mobile {\n      width: rem(328px);\n      height: rem(106px);\n    }\n  }\n}","$b: '.authorized';\n\n#{$b} {\n  display: flex;\n  @include tablet {\n    flex-direction: column;\n  }\n\n  &__aside {\n    width: rem(240px);\n    padding: rem(24px);\n    background-color: #fff;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n\n    @include tablet {\n      background-image: url('../../img/bg-aside.png');\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat;\n      order: 2;\n      width: calc(100% - rem(48px));\n      background-color:#f7f8fc;\n      margin-top: rem(120px);\n    }\n\n    @include tablet {\n      padding: rem(8px) rem(18px);\n       width: calc(100% - rem(36px));\n    }\n  }\n\n  &__main {\n    padding: 0 rem(48px);\n/*     width: calc(100% - rem(96px)); */\n\n    @include tablet {\n      padding: 0 rem(24px);\n      width: calc(100% - rem(48px));\n    }\n\n    @include mobile {\n       padding: 0 rem(16px);\n       width: calc(100% - rem(32px));\n    }\n  }\n\n  .pick__content-img {\n    width: 50%;\n  }\n}\n\n.aside {\n  position: relative;\n\n  &__logo {\n    margin-bottom: rem(28px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__list {\n    padding: rem(24px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(24px);\n    display: flex;\n    flex-direction: column;\n    width: calc(100% - rem(48px));\n\n    @include tablet {\n      flex-direction: row;\n      padding: 0;\n      justify-content: space-between;\n      background-color:transparent;\n    }\n\n    @include mobile {\n      padding: 0;\n      width: 100%;\n    }\n  }\n\n  &__item-wrap-left,\n  &__item-wrap-right {\n    display: flex;\n    flex-direction: column;\n\n    @include tablet {\n      flex-direction: row;\n      justify-content: space-between;\n\n      .aside__item  {\n        &:first-child {\n          margin-right: rem(70px);\n\n             @include mobile {\n              margin-right: rem(20px);\n            }\n        }\n      }\n    }\n\n \n  }\n\n  &__item-wrap-right {\n    .aside__item {\n      margin-bottom: 0;\n      &:last-child {\n        margin-bottom: 0;\n      }\n    }\n\n  }\n\n  &__item {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    margin-bottom: rem(24px);\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      flex-direction: column;\n      margin-bottom: 0;\n    }\n\n    @include mobile {\n        font-size: rem(10px);\n    line-height: rem(14px);\n    }\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n\n      @include tablet {\n        margin-bottom: rem(5px);\n        margin-right:0;\n      }\n\n      @include mobile {\n        width: rem(22px);\n        height: rem(22px);\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    &.profile {\n      display: none;\n\n      @include tablet {\n        display: flex;\n      }\n    }\n\n\n    &.active {\n      color: $y-body-3;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n\n  &__logout {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    display: flex;\n    align-items: center;\n    background-color: $y-dop-1-bg;\n    padding: rem(12px) 0;\n    border-radius: rem(24px);\n    width: calc(100% - rem(48px));\n    justify-content: center;\n    position: absolute;\n    bottom: rem(24px);\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__btn-tablet-wrap {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    top: rem(-15px); \n    flex-direction: column;\n    align-items: center;\n    display: none;\n\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  &__btn-tablet {\n    width: rem(48px);\n    height: rem(48px);\n    background-image: url('../../img/book-close-btn.svg');\n    background-repeat: no-repeat;\n    background-size: contain;\n    margin-bottom: rem(15px);\n\n    @include tablet {\n      width: rem(40px);\n      height: rem(40px);\n      margin-bottom: rem(10px);\n/*       background-position-y: rem(-5px) ; */\n    }\n\n     @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n        margin-bottom: rem(13px);\n     }\n  }\n\n  &__btn-tablet-text {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    .pc {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    .mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n\n    @include mobile {\n      font-size: rem(10px);\n      line-height: rem(14px);\n    }\n  }\n}\n\n.main {\n  .header__notifications {\n    display: flex;\n  }\n\n  .header__container {\n    padding: rem(16px) rem(24px);\n    width: calc(100% - rem(48px));\n\n    @include mobile {\n      padding: rem(6px) rem(12px);\n      width: calc(100% - rem(24px));\n    }\n  }\n\n  .header__notification {\n    position: relative;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n    }\n\n    &.messages {\n      margin-right: rem(8px);\n \n    }\n\n    .messages-txt {\n      position: absolute;\n      font-size: rem(10px);\n      line-height: rem(15px);\n      color: #fff;\n      background-color: $y-special-1;\n      border: 2px solid $y-dop-1-bg;\n      border-radius: 100%;\n      width: rem(20px);\n      height: rem(20px);\n      text-align: center;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      right: 0;\n      bottom: rem(5px);\n\n      @include mobile {\n         font-size: rem(8px);\n        line-height: rem(8px);\n         width: rem(15px);\n      height: rem(15px);\n      }\n    }\n\n    &:hover {\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n}\n\n.footer {\n  @include tablet {\n    display: none;\n  }\n}","$b: '.balance';\n\n#{$b} {\n  .ref-link__info  {\n    height: rem(769px);\n    position: relative;\n\n    @include mobile {\n      height: rem(460px);\n    }\n  }\n  .ref-link__top {\n    justify-content: flex-start;\n  }\n\n  .ref-link__history {\n    &:first-child {\n      margin-right: rem(8px);\n    }\n\n    @include mobile {\n      display: flex;\n      padding: 0 rem(10px);\n      font-size: rem(12px);\n      line-height: rem(16px);\n\n\n      svg {\n        display: none;\n      }\n    }\n  }\n\n  .choose__top-info {\n    a {\n      color: $y-body-3;\n    }\n  }\n  .balance-top-info {\n    margin-bottom: rem(8px);\n  }\n\n  .ref-link__info.ref {\n    padding-bottom: 0;\n    border: none;\n    margin-bottom: 0;\n  }\n\n  .balance-input-wrap {\n    position: relative;\n    padding: rem(16px);\n    border-radius: rem(24px);\n    background-color: $y-dop-1-bg;\n    width: 100%;\n    &::before {\n      content: '';\n      background-image: url('../../img/card-icon.svg');\n      width: rem(25px);\n      height: rem(18px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      position: absolute;\n      left: rem(16px);\n      top: 50%;\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(12px);\n      }\n    }\n  }\n\n  .balance-input-lable {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    display: block;\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n  .balance-input {\n    height: rem(30px);\n    background-color: transparent;\n    outline: none;\n      &::placeholder {\n        padding-left: rem(20px);\n        font-size: rem(20px);\n        line-height: rem(26px);\n        color: $y-body-1;\n\n        @include mobile {\n          padding-left: rem(12px);\n          font-size: rem(12px);\n          line-height: rem(16px);\n        }\n      }\n  }\n\n  .ref-link__info-btn {\n    position: absolute;\n    right: rem(16px);\n    background-color: #fff;\n    top: 50%;\n    transform: translateY(-50%);\n\n    span {\n      display: inline-block;\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      width: rem(106px);\n    } \n  }\n\n  .ref-link__info-field-wrap {\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n  }\n\n  &.balance-2 {\n    .ref-link__info-field-wrap {\n      display: flex;\n      flex-direction: column;\n    }\n\n    .balance-input-wrap {\n      margin-bottom: rem(4px);\n\n      @include mobile {\n        width: calc(100% - rem(24px));\n        padding: rem(12px);\n      }\n\n    }\n\n    .balance-out {\n      display: flex;\n      justify-content: space-between;\n      padding: rem(16px);\n      border-radius: rem(24px);\n      background-color: $y-dop-1-bg;\n      width: 100%;\n      margin-bottom: rem(24px);\n\n      @include mobile {\n        width: calc(100% - rem(24px));\n        padding: rem(12px);\n        margin-bottom: rem(12px);\n      }\n    }\n\n    .balance-out-card {\n      width: rem(49px);\n      height: rem(22px);\n      background-size: contain;\n      background-repeat: no-repeat;\n      display: inline-block;\n      margin-top: rem(8px);\n      margin-right: rem(8px);\n\n      background-position: center;\n\n      @include mobile {\n        width: rem(28px);\n        height: rem(12px);\n      }\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n\n      &.mc {\n        background-image: url('../../img/mcard.svg');\n      }\n    }\n  }\n\n  .balance-out-min {\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  .ref-link-task__next {\n    display: flex;\n    justify-content: space-between;\n    width: 100%;\n  }\n\n  .ref-link-task-input {\n    width: rem(226px);\n\n    @include mobile {\n      width: rem(166px);\n      height: rem(48px);\n    }\n  }\n\n  .ref-link-task-next-btn {\n    height: rem(60px);\n    background-color: $y-body-3;\n    color: #fff;\n    \n    @include mobile {\n      width: rem(106px);\n      height: rem(48px);\n    }\n  }\n\n\n\n  .ref-link__info {\n    @include mobile {\n      height: rem(600px);\n      \n    }\n  }\n}","\n$b: '.book-authorized';\n\n#{$b} {\n\n  .header__container {\n    justify-content: space-between;\n  }\n\n  .header__logo {\n    display: none;\n\n    @include tablet {\n      display: block;\n    }\n  }\n\n  .header__booked-home {\n    display: none;\n  }\n\n  .header__waiter {\n    display: none;\n  }\n\n  .header__book {\n    width: rem(192px);\n    background-color: $y-dop-1-bg;\n    color: $y-dop-4-element;\n\n    &.active {\n      background: $y-body-3;\n      color: #fff;\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  //\n\n  .pick__content {\n    @include tablet {\n      display: flex;\n      flex-direction: column;\n      background-color: transparent;\n    }\n  }\n\n  .book-authorized__steps {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      align-items: center;\n      margin-bottom: rem(27px);\n    }\n\n    @include mobile {\n      margin-bottom: rem(13px);\n    }\n\n    &.step-2 {\n      justify-content: space-between;\n    }\n  }\n\n  .book-authorized__step {\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(18px);\n      background-color: #fff;\n      color: $y-dop-4-element;\n      padding: rem(8px) rem(12px);\n      border-radius: rem(24px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      margin-right: rem(16px);\n    }\n  }\n\n  .book-authorized__title {\n    margin-bottom: 0;\n  }\n  .pick__content-img {\n    background-image: none;\n    position: relative;\n\n    @include tablet {\n      display: block;\n      width: 100%;\n      margin-right: 0;\n\n      &.hidden {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: 100%;\n      overflow: visible;\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    \n\n      &.pc {\n        @include mobile {\n          display: none;\n        }\n      }\n\n      &.mob {\n        display: none;\n\n        @include mobile {\n          display: block;\n          object-fit: contain;\n        }\n      }\n    }\n\n\n\n  }\n\n  .pick__content-book {\n    @include tablet {\n      display: none;\n\n      &.next {\n        display: block;\n      }\n    }\n  }\n\n  .choose__map-btn-wrap {\n    width: rem(713px);\n    height: rem(315px);\n    top: rem(190px);\n\n    @include tablet {\n      top: rem(270px);\n    }\n\n    @include mobile {\n      top: rem(50px);\n      width: rem(350px);\n    }\n  }\n\n  .choose__map-btn {\n\n    .tooltip {\n      top: rem(-162px);\n\n      @include tablet {\n        top: initial;\n      }\n    }\n\n    &._1 {\n      top: rem(60px);\n      left: rem(28px);\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n    }\n\n    &._2 {\n      top: rem(112px);\n      left: rem(183px);\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(100px);\n      }\n    }\n\n    &._3 {\n      top: rem(220px);\n      left: rem(353px);\n\n      @include mobile {\n        top: rem(123px);\n        left: rem(183px);\n      }\n    }\n\n    &._4 {\n      top: rem(250px);\n      left: rem(495px);\n\n      @include mobile {\n        top: rem(150px);\n        left: rem(235px);\n      }\n\n      .tooltip {\n  \n        @include mobile {\n          bottom: rem(-70px);\n        }\n      }\n    }\n\n    &._5 {\n      top: rem(120px);\n      left: rem(620px);\n\n      @include mobile {\n        top: rem(90px);\n        left: rem(300px);\n      }\n\n      .tooltip {\n        left: rem(-140px);\n\n        &::after {\n          left: rem(148px);\n        }\n      }\n    }\n  }\n\n  .choose__top-info {\n    position: absolute;\n    bottom: rem(88px);\n    width: rem(560px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  .book-authorized__btn-next {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      position: absolute;\n      bottom: rem(48px);\n      background-color: $y-body-3;\n      color: #fff;\n      width: calc(100% - rem(48px));\n      left: 50%;\n      transform: translateX(-50%);\n      height: rem(60px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      width: calc(100% - rem(32px));\n      bottom: rem(-60px);\n    }\n  }\n\n  .book-authorized__back {\n\n    @include tablet {\n      width: rem(48px);\n      height: 48px;\n      background-image: url('../../img/back-icon.svg');\n      background-size: contain;\n      background-position: center;\n      background-repeat: no-repeat;\n    }\n\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n  }\n\n  .pick__date-wrap {\n    &::before {\n      @include tablet {\n        top: rem(155px);\n      }\n\n      @include mobile {\n        top: rem(98px);\n      }\n    }\n  }\n}","$b: '.book';\n\n#{$b} {\n  .pick__confirm-book-btns {\n    display: flex;\n    justify-content: space-between;\n  }\n\n  .pick__confirm-btn {\n    display: none;\n  }\n  .book-btn {\n    padding: 0 rem(18px);\n    width: 100%;\n    min-height: rem(60px);\n    color: $y-body-3;\n\n    &.reset {\n      background-color: #fff;\n      margin-right: rem(8px);\n    }\n\n    &.send {\n      background-color: $y-body-4;\n    }\n    @include mobile {\n      min-height: rem(48px);\n    }\n  }\n\n  .pick__confirm-input {\n    @include mobile {\n      width: rem(140px);\n    }\n  }\n}","\n$b: '.booked-header';\n\n#{$b} {\n.header__right {\n  display: flex;\n}\n.header__waiter {\n  background-color: $y-body-3;\n  color: #fff;\n  margin-right: rem(16px);\n\n  @include tablet {\n    display: none;\n  }\n}\n.header__book{\n  display: none;\n}\n\n.header__logo {\n  display: none;\n\n  @include tablet {\n    display: block;\n  }\n}\n\n.header__booked-home {\n  display: flex;\n\n  @include tablet {\n    display: none;\n  }\n\n  @include mobile {\n    img {\n      width: rem(44px);\n      height: rem(24px);\n      object-fit: contain;\n    }\n  }\n}\n\n.header__booked-home-inner {\n  margin-left: rem(12px);\n\n  .number {\n    @include tablet {\n      font-size: rem(14px);\n      line-height: rem(20px);\n    }\n  }\n\n  .date {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    color: $y-dop-4-element;\n  }\n}\n\n.header.add-tablet {\n  display: none;\n\n  @include tablet {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 rem(24px);\n    height: rem(90px);\n    border-radius: rem(24px);\n    margin-bottom: rem(16px);\n  }\n\n  .header__booked-home {\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  .rest-time {\n    display: flex;\n    align-items: flex-start;\n\n    @include mobile {\n      align-items: center;\n    }\n  \n  }\n\n  .rest-time-img {\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    background-image: url('../../img/clock.svg');\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: rem(22px) rem(22px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(22px);\n      height: rem(22px);\n      background-color: transparent;\n      margin-right: rem(6px);\n    }\n  }\n\n  .rest-time-info {\n    display: flex;\n    flex-direction: column;\n\n    .txt {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      color: $y-dop-4-element;\n    }\n\n    .time {\n      font-size: rem(20px);\n      line-height: rem(26px);\n\n      @include mobile {\n        font-size: rem(14px);\n        line-height: rem(20px);\n      }\n    }\n  }\n}\n}","$b: '.booked-home';\n\n#{$b} {\n  .pick {\n    border-radius: rem(24px);\n    padding: rem(48px);\n    background-color: #fff;\n\n    @include tablet {\n      padding: rem(24px);\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  .pick__content {\n    border-radius: none;\n    padding: 0;\n  }\n\n  .swiper {\n    width: rem(1452px) !important;\n\n    @include tablet {\n      width: rem(672px) !important;\n    }\n\n    @include mobile {\n      width: rem(296px) !important;\n    }\n  }\n\n\n\n  .swiper-slide {\n    // width: rem(1452px) !important;\n  }\n\n  .swiper-wrapper {\n    //overflow: hidden;\n  }\n  .pick__content-img {\n    width: rem(744px);\n\n    img {\n      width: 100%;\n      height: rem(477px);\n      object-fit: contain;\n    }\n  }\n  .pick__content-book {\n    padding: 0;\n    background: none;\n    position: relative;\n\n    .pick__content-img {\n      display: none;\n\n      @include tablet {\n        display: flex;\n        width: 100%;\n        height: rem(288px);\n        margin-bottom: rem(24px);\n\n        img {\n          height: rem(240px);\n        }\n      }\n\n      @include mobile {\n        height: rem(127px);\n        margin-bottom: rem(16px);\n\n        img {\n          height: rem(103px);\n        }\n      }\n    }\n  }\n\n  .tag-list {\n    display: flex;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-bottom: rem(48px);\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  .tag-item {\n    width: rem(227px);\n    height: rem(48px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color:$y-dop-1-bg;\n    border-radius: rem(24px);\n    margin-right: rem(8px);\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n    @include tablet {\n      margin-bottom: rem(16px);\n    }\n  }\n\n  .book-authorized__step {\n    margin-bottom: rem(12px);\n\n    &.info {\n      @include tablet {\n        margin-bottom: rem(126px);\n      }\n\n      @include mobile {\n        font-size: rem(14px);\n        line-height: rem(20px);\n        margin-bottom: rem(60px);\n      }\n    }\n\n    &.h3 {\n      @include mobile {\n        font-size: rem(20px);\n        line-height: rem(26px);\n      }\n    }\n  }\n\n  .swiper-nav {\n    position: absolute;\n    bottom: 0;\n    width: rem(660px);\n    height: rem(48px);\n    right: 0;\n\n    @include mobile {\n      width: 100%;\n    }\n  }\n\n  .swiper-button-next,\n  .swiper-button-prev {\n    top: initial;\n    bottom:0;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-body-3;\n    border-radius: 100%;\n\n    &::after {\n      content: '';\n    }\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(12px);\n      height: rem(12px);\n\n      @include mobile {\n        width: rem(8px);\n        height: rem(8px);\n      }\n    }\n  }\n\n  .swiper-button-next {\n    right: 0;\n  }\n\n  .swiper-button-prev {\n    right: initial;\n    left: 0;\n    svg {\n      transform: rotate(180deg);\n    }\n  }\n\n  .swiper-button-disabled {\n    background-color: $y-dop-2-bg;\n\n    svg {\n      path {\n        fill: $y-dop-4-element;\n      }\n    }\n  }\n\n  .swiper-pagination {\n    width: 50%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n  }\n\n  .swiper-pagination-bullet {\n    width: rem(60px);\n    height: rem(8px);\n    border-radius: rem(4px);\n    background-color: $y-dop-4-element;\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(6px);\n    }\n    \n  }\n\n  .swiper-pagination-bullet-active {\n    background-color: $y-dop-4-element;\n  }\n}","$b: '.choose';\n\n#{$b} {\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n  \n  &__top {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    margin-bottom: rem(24px);\n\n\n  @include tablet {\n    flex-direction: column;\n  }\n  }\n\n  &__map {\n    position: relative;\n    border-radius: rem(24px);\n  }\n\n  &__top-title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n      margin-bottom: rem(26px);\n    }\n  }\n\n  &__top-info {\n    background-color: #fff;\n    padding: rem(24px) rem(24px) rem(24px) rem(59px);\n    font-size: rem(20px);\n    line-height: rem(26px);\n    position: relative;\n    border-radius: rem(24px);\n    max-width: rem(662px);\n\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(22px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding: rem(12px) rem(12px) rem(12px) rem(38px);\n    }\n\n    &::after {\n      content: '';\n      position: absolute;\n      background-image: url('../../img/warning-icon.svg');\n      background-repeat: repeat;\n      background-size: contain;\n      width: rem(24px);\n      height: rem(24px);\n      top: 50%;\n      transform: translateY(-50%);\n      left: rem(24px);\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        left: rem(12px);\n      }\n     \n    }\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(-20px);\n      left: rem(48px);\n      background-image: url('../../img/before.svg');\n      width: rem(30px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      transform: rotate(180deg);\n\n\n      @include mobile {\n        left: rem(24px);\n      }\n    }\n  }\n\n  &__map-bg {\n    width: 100%;\n    height: rem(625px);\n    object-fit: cover;\n    position: relative;\n    border-radius: rem(24px);\n\n    @include tablet {\n      height: rem(424px);\n    }\n\n    @include mobile {\n      height: rem(212px);\n    }\n\n    &._desk {\n      @include tablet {\n        display: none;\n      }\n    }\n\n    &._tablet {\n      display: none;\n\n      @include tablet {\n        display: block;\n      }\n\n      @include mobile {\n        display: none;\n      }\n    }\n\n    &._mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n  }\n\n  &__map-btn-wrap {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n    width: rem(1000px);\n    height: rem(500px);\n\n    @include tablet {\n      width: rem(710px);\n      height: rem(300px);\n    }\n\n    @include mobile {\n      width: rem(330px);\n      height: rem(145px);\n    }\n  }\n\n  &__map-btn {\n    width: rem(48px);\n    height: rem(48px);\n    position: absolute;\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n\n    &._1 {\n      top: rem(152px);\n      left: rem(48px);\n\n      @include tablet {\n        top: rem(80px);\n        left: rem(38px);\n      }\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n\n      .tooltip {\n        top: rem(-152px);\n\n        @include tablet {\n          top: initial;\n          bottom: rem(-162px);\n        }\n\n        @include mobile {\n          bottom: rem(-122px);\n        }\n      }\n    }\n\n    &._2 {\n      top: rem(242px);\n      left: rem(283px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(198px);\n      }\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(88px);\n      }\n    }\n\n    &._3 {\n      top: rem(340px);\n      left: rem(513px);\n\n      @include tablet {\n        top: rem(230px);\n        left: rem(360px);\n      }\n\n      @include mobile {\n        top: rem(110px);\n        left: rem(158px);\n      }\n    }\n\n    &._4 {\n      top: rem(420px);\n      left: rem(695px);\n\n      @include tablet {\n        top: rem(280px);\n        left: rem(480px);\n      }\n\n      @include mobile {\n        top: rem(140px);\n        left: rem(228px);\n      }\n    }\n\n    &._5 {\n      top: rem(285px);\n      left: rem(875px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(595px);\n      }\n\n      @include mobile {\n        top: rem(70px);\n        left: rem(278px);\n      }\n\n      .tooltip {\n        @include tablet {\n          left: rem(-122px);\n        }\n\n        @include mobile {\n          &::after {\n            left: rem(120px);\n          }\n        }\n      }\n    }\n  }\n\n  &__container  {\n/*     padding: 0 48px; */\n    max-width: 1826px;\n  }\n\n\n\n}","$b: '.event';\n\n#{$b} {\n  &__container {\n    border-radius: rem(24px);\n    background-color: #fff;\n    display: flex;\n    padding: rem(24px);\n    color: $y-body-1;\n\n    @include tablet {\n     flex-direction: column;\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  &__img {\n    background-image: url('../../img/bg-gradient.png');\n    background-color: $y-dop-1-bg;\n    width: 58%;\n    height: rem(432px);\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-right: rem(48px);\n    border-radius: rem(24px);\n    overflow: hidden;\n\n    @include tablet {\n      width: 100%;\n      margin-right: 0;\n      margin-bottom: rem(24px);\n      height: rem(288px);\n     }\n\n    @include mobile {\n      height: rem(127px);\n      margin-bottom: rem(16px);\n    }\n\n    img {\n      width: rem(702px);\n      height: rem(331px);\n      object-fit: contain;\n\n\n    @include tablet {\n      width: rem(540px);\n      height: rem(240px);\n     }\n\n     @include mobile {\n      width: rem(225px);\n      height: rem(105px);\n     }\n    }\n  }\n\n  &__info {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 41%;\n\n    @include tablet {\n      width: 100%;\n     }\n  }\n\n  &__info-title {\n    margin-bottom: rem(15px);\n    padding-top: rem(24px);\n\n    @include tablet {\n      padding-top: 0;\n      margin-bottom: 0;\n     }\n  }\n\n  &__info-txt {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    max-width: rem(696px);\n\n    @include tablet {\n      max-width: rem(620px);\n      margin-bottom: rem(52px);\n     }\n\n     @include mobile  {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-bottom: rem(4px);\n    }\n  }\n\n  &__info-date {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    color: $y-dop-4-element;\n\n    @include mobile  {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n}","$b: '.footer';\n\n#{$b} {\n  &__container {\n    padding: rem(25px) 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    @include mobile  {\n      flex-direction: column;\n    }\n  }\n\n  &__left {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n\n    @include mobile {\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__link {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-right: rem(16px);\n    border-bottom: 1px solid $y-dop-4-element;\n\n    @include mobile {\n      font-size: rem(12px);\n    line-height: rem(16px);\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n  }\n\n  &__social-list {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n  }\n\n  &__social-item {\n    width: rem(30px);\n    height: rem(30px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n  }\n}","$b: '.header';\n\n#{$b} {\n  background-color: #fff;\n  border-bottom-left-radius: rem(24px);\n  border-bottom-right-radius: rem(24px);\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n\n\n  &__container {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(16px) rem(24px);\n    padding-bottom: rem(10px);\n  }\n\n  &__login {\n    display: flex;\n    align-items: center;\n  }\n\n  &__logo {\n    width: rem(98px);\n    height: rem(56px);\n\n    @include mobile {\n      width: rem(56px);\n      height: rem(36px);\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n    }\n  }\n\n  &__login-icon {\n    width: rem(18px);\n    height: rem(21px);\n    margin-right: rem(11px);\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(16px);\n      height: rem(16px);\n      margin-right: rem(8px);\n\n   \n    }\n  }\n}\n\n","$b: '.login';\n\n#{$b} {\n  .pick__content-img {\n    img {\n      width: rem(570px);\n      height: rem(504px);\n    }\n  }\n\n  .pick__content-book {\n    height: rem(673px);\n\n\n  }\n\n  .pick__confirm {\n    margin-bottom: 0;\n    padding-bottom: 0;\n    border-bottom: none;\n  }\n\n  .pick__confirm-btn {\n    color: #fff;\n    background-color: $y-body-3;\n\n    &::before {\n      background-image: url('../../img/sms-white.svg');\n    }\n  }\n\n  .pick__content-img {\n    width: 57%;\n  }\n\n  &-tel {\n    @include mobile {\n      height: rem(350px);\n    }\n  }\n\n  &-mail {\n\n    .pick__content-book {\n      @include mobile {\n        height: 100%;\n      }\n    }\n\n    .pick__confirm {\n      height: 100%;\n    }\n\n    .login-lable {\n        margin-bottom: rem(16px);\n      }\n    }\n\n    .login-wrap {\n      margin-bottom: rem(16px);\n      &:first-child {\n        border-bottom: 1px solid $y-dop-3;\n        padding-bottom: rem(24px);\n      }\n    }\n\n    .login-input-wrap {\n      position: relative;\n    }\n\n    .login-show-password {\n      position: absolute;\n      width: rem(22px);\n      height: rem(16px);\n      top: 50%;\n      transform: translateY(-50%);\n      right: rem(24px);\n      background-image: url('../../img/show-password-icon.svg');\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n      display: none;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n\n    .login-input {\n      width: calc(100% - rem(15px));\n    }\n\n    .login-confirm {\n      width: 100%;\n      background-color: $y-body-3;\n      color: #fff;\n      height: rem(60px);\n      position: absolute;\n      bottom: 0;\n\n      @include mobile {\n        position: relative;\n      }\n    }\n}","$b: '.pick';\n\n#{$b} {\n  .choose__top-info {\n    max-width: rem(744px);\n\n    @include tablet {\n      width: 87%;\n    }\n  }\n\n  &__content {\n    display: flex;\n    align-items: flex-start;\n    justify-content: flex-start;\n    padding: rem(48px);\n    background-color: #fff;\n    border-radius: rem(24px);\n\n    @include tablet {\n      padding: 0;\n    }\n  }\n\n  &__content-img {\n    width: 57%;\n    height: rem(769px);\n    margin-right: rem(48px);\n    flex-shrink: 0;\n    border-radius: rem(24px);\n    overflow: hidden;\n    background-image: url('../../img/pick-bg.png');\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include tablet {\n      display: none;\n    }\n    \n\n    img {\n      width: rem(648px);\n      height: rem(520px);\n      object-fit: contain;\n      object-position: top;\n    }\n  }\n\n  &__content-book {\n    width: rem(600px);\n    background: $y-bg-gradient-1;\n    padding: rem(48px);\n    border-radius: rem($y-border-radius);\n    position: relative;\n\n    @include tablet {\n      width: 100%;\n      padding: 0;\n    }\n  }\n\n  &__date-title {\n    margin-bottom: rem(16px);\n  }\n\n  &__date-wrap {\n    display: flex;\n    padding-bottom: rem(24px);\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    flex-wrap: nowrap;\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(127px);\n      left: rem(70px);\n      background-image: url('../../img/calendat-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      z-index: 15;\n      background-size: contain;\n\n      @include tablet {\n        top: rem(78px);\n        left: rem(20px);\n      }\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        top: rem(46px);\n        left: rem(27px);\n      }\n    }\n  }\n\n  &__date-calendar {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding-left: rem(56px);\n    width: rem(136px);\n    margin-right: rem(8px);\n    margin-bottom: rem(12px);\n    text-align: left;\n\n    @include mobile {\n      padding-left: rem(49px);\n      width: rem(59px);\n      border-top-right-radius: 0;\n      border-bottom-right-radius: 0;\n      height: rem(48px);\n      margin-right: 0;\n    }\n\n    &:hover {\n      cursor: pointer;\n    }\n  }\n\n\n  &__date-picked {\n    text-align: center;\n    margin-right: rem(16px);\n    padding-left: 0;\n    background-color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: rem(192px);\n\n    @include tablet {\n      width: rem(293px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      margin-right: rem(6px);\n      width: rem(96px);\n      border-top-left-radius: 0;\n      border-bottom-left-radius: 0;\n      padding-left: rem(12px);\n      justify-content: flex-start;\n    }\n  }\n\n  &__date-days-count {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background-color: #fff;\n    color: $y-dop-4-element;\n    position: relative;\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    width: rem(177px);\n\n    span {\n      color: $y-body-1;\n      margin-left: rem(8px);\n\n      @include mobile {\n        margin-left: 0;\n      }\n    }\n\n    .text-hide {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: rem(48px);\n      padding-left: rem(20px);\n      width: rem(86px);\n    }\n  }\n\n  &__date-days-btn {\n    position: absolute;\n    width: rem(24px);\n    height: rem(30px);\n    background-color: $y-dop-2-bg;\n    right: 0;\n    top: 0;\n    background-repeat: no-repeat;\n\n    @include mobile {\n      height: rem(24px);\n    }\n\n    &.decrease {\n      top: rem(30px);\n      border-bottom-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-i.svg');\n      background-position: center;\n\n      @include mobile {\n        top: rem(24px);\n      }\n    }\n\n\n    &.increase {\n      border-top-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-d.svg');\n      background-position: center;\n    }\n  }\n\n  &__confirm {\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    padding-bottom: rem(24px);\n    position: relative;\n  }\n\n  &__confirm-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__confirm-txt {\n    margin-bottom: rem(24px);\n    max-width: rem(570px);\n\n    a {\n      color: $y-body-3;\n      border-bottom: 1px solid $y-body-3 ;\n      display: inline-block;\n    width: max-content;\n    }\n  }\n\n  &__confirm-book-btns {\n    display: none;\n  }\n\n  &__confirm-input-wrap {\n    display: flex;\n \n  }\n\n  &__confirm-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(16px);\n      width: rem(200px);\n      margin-right: rem(6px);\n    }\n  }\n\n  &__confirm-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(38px);\n      position: relative;\n      justify-content: flex-start;\n      width: rem(106px);\n\n      &::before {\n        content: '';\n        position: absolute;\n        left: rem(16px);\n        top: 50%;\n        transform: translateY(-50%);\n        background-image: url('../../img/sms.svg');\n        background-repeat: no-repeat;\n        background-size: contain;\n        width: rem(15px);\n        height: rem(15px);\n      }\n    }\n\n    span {\n      @include mobile {\n        display: none;\n      }\n    }\n  }\n\n  &__payment-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__payment-txt {\n    margin-bottom: rem(24px);\n  }\n\n  &__payment-promo {\n    display: flex;\n    margin-bottom: rem(30px);\n  }\n\n  &__payment-promo-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      padding-left: rem(16px);\n      width: rem(200px);\n    }\n  }\n\n  &__payment-promo-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      width: rem(106px);\n    }\n\n  }\n\n  &__payment-choose {\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      justify-content: space-between;\n    }\n  }\n\n  &__payment-choose-info {\n    padding-left: rem(32px);\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    max-width: rem(252px);\n\n    &::before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      background-image: url('../../img/warning-gray-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__payment-choose-method {\n    display: flex;\n    align-items: center;\n\n    a {\n      width: rem(72px); \n      height: rem(60px);\n      padding: rem(0px) rem(10px);\n      border-radius: rem(30px);\n      background-color: #fff;\n      margin-right: rem(8px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-size: rem(60px), rem(20px);\n      background-repeat: no-repeat;\n      background-position: center;\n\n      @include mobile {\n        width: rem(72px); \n        height: rem(48px);\n        background-size: rem(50px), rem(20px);\n      }\n      \n\n      &:last-child {\n        margin-right: 0;\n      }\n\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n      &.masterCard {\n        background-image: url('../../img/mcard.svg');\n        background-size: rem(50px), rem(20px);\n\n        @include mobile {\n          background-size: rem(40px), rem(15px);\n        }\n      }\n      &.qiwi {\n        background-image: url('../../img/qiwi.svg');\n        background-size: rem(70px), rem(30px);\n\n        @include mobile {\n          background-size: rem(50px), rem(20px);\n        }\n      }\n    }\n  }\n\n\n  //стили календаря\n.air-datepicker {\n position: absolute;\n top: 0;\n left: 0;\n width: 100%;\n height: 100%;\n border-radius: rem(24px);\n background: $y-bg-gradient-1;\n border: none;\n display: none;\n z-index: -1;\n\n @include tablet {\n  border-radius: 0;\n}\n\n &.active {\n  display: block;\n  z-index: 20;\n }\n}\n\n.air-datepicker-nav {\n  height: rem(64px);\n  align-items: center;\n}\n\n.air-datepicker-nav--title {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  padding: rem(12px) rem(26px);\n  border-radius: rem(24px);\n  max-height: rem(24px);\n}\n\n.air-datepicker-nav--action {\n  width: rem(48px);\n  height: rem(48px);\n  border-radius: 100%;\n  background-color: #fff;\n  margin: 0 rem(8px);\n}\n\n.air-datepicker--content {\n  padding: rem(24px);\n\n  @include tablet {\n    padding: 0;\n  }\n}\n\n.air-datepicker-body--day-name {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n  text-transform: none;\n  margin-bottom: rem(8px);\n}\n\n.air-datepicker-body--cells {\n  gap: rem(8px);\n\n  // grid-auto-rows: rem(48px) !important;\n}\n\n.air-datepicker-body--cells.-days- {\n  grid-auto-rows:rem(48px);\n\n  @include mobile {\n    grid-auto-rows:rem(36px);\n  }\n}\n\n.air-datepicker-cell  {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  border-radius: rem(24px);\n  // width: rem(85px);\n  height: rem(48px);\n\n  @include tablet {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n  }\n\n}\n\n.air-datepicker-cell.-day-.-current- {\n  background: $y-body-4;\n  color: $y-text;\n}\n.air-datepicker-cell.-day-.-selected- {\n  color:#fff;\n  background-color: $y-body-3;\n}\n\n.air-datepicker-cell.-day-.-selected-.-focus-{\n  background-color: $y-body-3;\n}\n\n.air-datepicker-buttons {\n  padding: 0 rem(24px);\n\n  @include mobile {\n    padding: 0;\n    margin-top: rem(16px);\n  }\n}\n\n.air-datepicker--buttons {\n  padding: 0;\n  position: absolute;\n  width: 100%;\n  bottom: rem(24px);\n  border: none;\n\n  @include mobile {\n    position: static;\n  }\n}\n\n.air-datepicker-button {\n  width: 98%;\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-body-3;\n  height: rem(48px);\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n    width: 95%;\n  }\n}\n\n.clear-btn {\n  background-color: #fff;\n  border-radius: rem(24px);\n  // margin-left: rem(24px);\n}\n\n.select-btn {\n  background-color: $y-body-4;\n  border-radius: rem(24px);\n \n}\n}","$b: '.ref-link';\n$t: '.ref-link-tasks';\n\n\n#{$b} {\n  &__top {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(8px);\n    background-color: $y-dop-2-bg;\n    height: rem(48px);\n\n    border-top-left-radius:rem(24px);\n    border-top-right-radius:rem(24px);\n  }\n\n  &__tabs {\n    display: flex;\n  }\n\n  &__tab {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    width: rem(158px);\n    height: rem(48px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: $y-dop-4-element;\n    border-radius: rem(24px);\n    background-color: $y-dop-1-bg;\n\n    &:first-child {\n      margin-right: rem(8px);\n\n      @include mobile  {\n        margin-right: rem(6px);\n      }\n    }\n\n    &.active {\n      color: $y-body-1;\n      background-color: #fff;\n    }\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      height: rem(36px);\n      width: rem(155px);\n    }\n\n  }\n\n  &__history {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding-left: rem(49px);\n    padding-right: rem(16px);\n    width: calc(rem(220px) - rem(65px));\n    border-radius: rem(24px);\n    color: $y-body-3;\n    background-color: #fff;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    height: rem(48px);\n\n    svg {\n      position: absolute;\n      width: rem(20px);\n      height: rem(20px);\n      left: rem(16px);\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__info {\n\n    &.ref {\n      padding-bottom: rem(24px);\n      border-bottom: 1px solid $y-dop-3;\n      margin-bottom: rem(20px);\n    }\n  }\n\n  &__info-txt {\n    margin-bottom: rem(24px);\n\n    a {\n      display: inline-block; \n      color: $y-body-3;\n    }\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      margin-bottom: rem(12px);\n\n    }\n  }\n\n  &__info-field-wrap {\n    display: flex;\n  }\n\n  &__info-field {\n    display: flex;\n    position: relative;\n    align-items: center;\n    color: $y-body-3;\n    background-color: $y-body-4;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding: 0 rem(24px);\n    height: rem(60px);\n    margin-right: rem(16px);\n    border-radius: rem(30px);\n    width: calc(rem(392px) - rem(48px));\n\n    .copy-btn {\n      position: absolute;\n      right: rem(24px);\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n\n      @include mobile  {\n        right: rem(16px);\n        width: rem(16px);\n        height: rem(16px);\n      }\n    }\n\n    @include tablet{\n      width: rem(420px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      height: rem(48px);\n      padding: 0 rem(16px);\n      width: calc(rem(184px) - rem(32px));\n      .text {\n        max-width: 80%;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n      }\n    }\n  }\n\n  &__info-btn {\n    height: rem(60px);\n    color: $y-body-3;\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n    }\n  }\n\n\n  .pick__content {\n    border-top-left-radius: 0;\n    border-top-right-radius: 0;\n  }\n\n  .pick__content-book  {\n    display: flex;\n    flex-direction: column;\n    order: -1;\n    width: rem(748px);\n    padding: 0;\n    background: #fff;\n\n    @include tablet {\n      padding:rem(24px);\n    }\n\n    @include mobile {\n      padding:rem(16px);\n      width: rem(296px);\n    }\n    \n  }\n\n\n  .pick__content-img {\n    margin-right: 0;\n    margin-left: rem(48px);\n    width: 56%;\n    position: relative;\n  }\n\n  .choose__top-info {\n    position: absolute;\n    width: rem(600px);\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: rem(48px);\n  }\n}\n\n#{$t} {\n\n  .pick__content-book._1 {\n    .step-2 {\n      display: none;\n    }\n  \n    .step-3 {\n      display: none;\n    }\n  }\n\n  .pick__content-book._2 {\n    .step-1 {\n      display: none;\n    }\n  \n    .step-3 {\n      display: none;\n    }\n  }\n\n  .pick__content-book._3 {\n    .step-1 {\n      display: none;\n    }\n  \n    .step-2 {\n      display: none;\n    }\n\n    .ref-link-task-next-btn {\n      color: #fff;\n      background-color: $y-body-3;\n      border-radius: rem(30px);\n\n      @include mobile {\n        width: rem(106px);\n      }\n    }\n  }\n\n\n  .ref-link__info-title {\n    margin-bottom: rem(8px);\n  }\n\n  .pick__content-book  {\n    height: rem(769px);\n\n    @include mobile {\n      height: rem(400px);\n    }\n  }\n\n  .book-authorized__step {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(48px);\n    width: rem(92px);\n    color: $y-dop-4-element;\n    background-color: $y-dop-1-bg;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: rem(24px);\n    margin-bottom: rem(8px);\n    padding: 0 rem(8px);\n\n    @include mobile  {\n      height: rem(48px);\n    }\n  }\n\n  .book-authorized__step-info {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      margin-bottom: 0;\n    }\n  }\n\n  &__bottom {\n    margin-top: auto;\n  }\n\n  &__progress {\n    margin-bottom: rem(12px);\n\n    svg {\n      max-width: 100%;\n\n    }\n\n\n    @include mobile {\n      width: rem(296px);\n      margin-bottom: rem(12px);\n      svg {\n        width: 100%;\n      }\n    }\n  }\n\n\n  .ref-link-task__next {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n\n  .ref-link-task-list {\n    display: flex;\n    align-items: center;\n  }\n\n  .ref-link-task-item {\n    width: rem(60px);\n    height: rem(60px);\n    border-radius: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: $y-dop-1-bg;\n    margin-right: rem(8px);\n\n    @include mobile {\n      width: rem(48px);\n      height: rem(48px);\n    }\n\n    svg {\n      max-width: rem(25px);\n      max-height: rem(25px);\n\n\n    @include mobile {\n      width: rem(18px);\n      height: rem(18px);\n    }\n    }\n\n  }\n\n  .ref-link-task-next-btn {\n    height: rem(60px);\n    background-color: $y-body-4;\n    color: $y-body-3;\n\n    @include mobile  {\n      height: rem(48px);\n    }\n  }\n.defaulf {\n  display: none;\n}\n\n.ref-link-task-download {\n  display: flex;\n  align-items: center;\n}\n\n.download-icon {\n  width: rem(60px);\n  height: rem(60px);\n  background-color: $y-dop-1-bg;\n  border-radius: rem(16px);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: rem(32px);\n\n  @include mobile {\n    width: rem(48px);\n    height: rem(48px);\n    margin-right: rem(28px);\n  }\n\n\n\n  svg {\n    max-width: rem(25px);\n    max-height: rem(25px);\n    width: 100%;\n\n\n  @include mobile {\n    width: rem(18px);\n    height: rem(18px);\n  }\n  }\n}\n.download-filename {\n  font-size: rem(12px);\n  line-height: rem(16px);\n  position: relative;\n\n  @include mobile {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    margin-bottom: 0;\n\n    @include mobile {\n      margin-right: rem(10px);\n    }\n  }\n\n  &::before {\n    content: '';\n    position: absolute;\n    width: rem(14px);\n    height: rem(14px);\n    background-image: url('../../img/file-icon.svg');\n    background-size: contain;\n    background-repeat: no-repeat;\n    left: rem(-22px);\n  }\n}\n\n.ref-link-task-input {\n  width: rem(357px);\n\n  &::placeholder {\n    width: 80%;\n    white-space: nowrap; \n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  @include tablet {\n    width: rem(160px);\n    height: rem(48px);\n  }\n}\n}",null,"// @include css-lock(65, 100, 768, 1200);\n@mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width}))) !important;\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h(65, 100, 630, 950);\n@mixin css-lock-h($min-size: 1, $max-size: 1.4, $min-height: 20, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$max-height} - #{$min-height}))) !important;\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-full(65, 100, 500, 768, 1920, 9600);\n@mixin css-lock-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-width: 20, $mid-width: 30, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-width: $mid-width + 'px') and (min-width: $min-width + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$mid-width} - #{$min-width}))) !important;\n  }\n\n  @media only screen and (max-width: $max-width + 'px') and (min-width: $mid-width + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vw - #{$mid-width}#{$unit}) / (#{$max-width} - #{$mid-width}))) !important;\n  }\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h-full(65, 100, 200, 630, 950, 1900);\n@mixin css-lock-h-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-height: 20, $mid-height: 30, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-height: $mid-height + 'px') and (min-height: $min-height + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$mid-height} - #{$min-height}))) !important;\n  }\n\n  @media only screen and (max-height: $max-height + 'px') and (min-height: $mid-height + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vh - #{$mid-height}#{$unit}) / (#{$max-height} - #{$mid-height}))) !important;\n  }\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n//ПРИМЕРЫ:\n//\n//Равномерный скейл по ширине (скейл вниз):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//\n//@include css-lock(#{$min-screen-width * 100 / $mid-screen-width}, 100, $min-screen-width, $mid-screen-width);\n//\n//\n//Равномерный скейл по ширине до максимального экрана (скейл вверх):\n//$mid-screen-width: 1920;\n//$max-screen-width: 2560;\n//\n//@include css-lock(100, #{100 * ($max-screen-width / $mid-screen-width)}, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный полный скейл по ширине (скейл в обе стороны):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//$max-screen-width: 9000;\n//\n//@include css-lock-full(#{$min-screen-width * 100 / $mid-screen-width}, 100, #{$max-screen-width * 100 / $mid-screen-width}, $min-screen-width, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный скейл по высоте (скейл вниз):\n//$min-screen-height: 768;\n//$mid-screen-height: 1920;\n//\n//@include tablet-min {\n//  @include css-lock-h(#{$min-screen-height * 100 / $mid-screen-height}, 100, $min-screen-height, $mid-screen-height);\n//}\n//\n//\n//Равномерный скейл по высоте до максимального экрана (скейл вверх):\n//$mid-screen-height: 1920;\n//$max-screen-height: 2560;\n//\n//@include css-lock-h(100, #{100 * ($max-screen-height / $mid-screen-height)}, $mid-screen-height, $max-screen-height);\n//\n//\n//Равномерный полный скейл по высоте (скейл в обе стороны):\n//$min-screen-height: 630;\n//$mid-screen-height: 950;\n//$max-screen-height: 2000;\n//\n//@include tablet-min {\n//  @include css-lock-h-full(#{$min-screen-height * 100 / $mid-screen-height}, 100, #{$max-screen-height * 100 / $mid-screen-height}, $min-screen-height, $mid-screen-height, $max-screen-height);\n//}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8741,6 +9638,17 @@ module.exports = __webpack_require__.p + "assets/calendat-icon.svg";
 
 /***/ }),
 
+/***/ "./src/img/card-icon.svg":
+/*!*******************************!*\
+  !*** ./src/img/card-icon.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/card-icon.svg";
+
+/***/ }),
+
 /***/ "./src/img/change-days-icon-d.svg":
 /*!****************************************!*\
   !*** ./src/img/change-days-icon-d.svg ***!
@@ -8763,6 +9671,17 @@ module.exports = __webpack_require__.p + "assets/change-days-icon-i.svg";
 
 /***/ }),
 
+/***/ "./src/img/clock.svg":
+/*!***************************!*\
+  !*** ./src/img/clock.svg ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/clock.svg";
+
+/***/ }),
+
 /***/ "./src/img/confirm-icon.svg":
 /*!**********************************!*\
   !*** ./src/img/confirm-icon.svg ***!
@@ -8771,6 +9690,17 @@ module.exports = __webpack_require__.p + "assets/change-days-icon-i.svg";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/confirm-icon.svg";
+
+/***/ }),
+
+/***/ "./src/img/file-icon.svg":
+/*!*******************************!*\
+  !*** ./src/img/file-icon.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/file-icon.svg";
 
 /***/ }),
 
@@ -8870,6 +9800,10649 @@ module.exports = __webpack_require__.p + "assets/warning-gray-icon.svg";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/warning-icon.svg";
+
+/***/ }),
+
+/***/ "./node_modules/ssr-window/ssr-window.esm.js":
+/*!***************************************************!*\
+  !*** ./node_modules/ssr-window/ssr-window.esm.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   extend: () => (/* binding */ extend),
+/* harmony export */   getDocument: () => (/* binding */ getDocument),
+/* harmony export */   getWindow: () => (/* binding */ getWindow),
+/* harmony export */   ssrDocument: () => (/* binding */ ssrDocument),
+/* harmony export */   ssrWindow: () => (/* binding */ ssrWindow)
+/* harmony export */ });
+/**
+ * SSR Window 4.0.2
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2021, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: December 13, 2021
+ */
+/* eslint-disable no-param-reassign */
+function isObject(obj) {
+    return (obj !== null &&
+        typeof obj === 'object' &&
+        'constructor' in obj &&
+        obj.constructor === Object);
+}
+function extend(target = {}, src = {}) {
+    Object.keys(src).forEach((key) => {
+        if (typeof target[key] === 'undefined')
+            target[key] = src[key];
+        else if (isObject(src[key]) &&
+            isObject(target[key]) &&
+            Object.keys(src[key]).length > 0) {
+            extend(target[key], src[key]);
+        }
+    });
+}
+
+const ssrDocument = {
+    body: {},
+    addEventListener() { },
+    removeEventListener() { },
+    activeElement: {
+        blur() { },
+        nodeName: '',
+    },
+    querySelector() {
+        return null;
+    },
+    querySelectorAll() {
+        return [];
+    },
+    getElementById() {
+        return null;
+    },
+    createEvent() {
+        return {
+            initEvent() { },
+        };
+    },
+    createElement() {
+        return {
+            children: [],
+            childNodes: [],
+            style: {},
+            setAttribute() { },
+            getElementsByTagName() {
+                return [];
+            },
+        };
+    },
+    createElementNS() {
+        return {};
+    },
+    importNode() {
+        return null;
+    },
+    location: {
+        hash: '',
+        host: '',
+        hostname: '',
+        href: '',
+        origin: '',
+        pathname: '',
+        protocol: '',
+        search: '',
+    },
+};
+function getDocument() {
+    const doc = typeof document !== 'undefined' ? document : {};
+    extend(doc, ssrDocument);
+    return doc;
+}
+
+const ssrWindow = {
+    document: ssrDocument,
+    navigator: {
+        userAgent: '',
+    },
+    location: {
+        hash: '',
+        host: '',
+        hostname: '',
+        href: '',
+        origin: '',
+        pathname: '',
+        protocol: '',
+        search: '',
+    },
+    history: {
+        replaceState() { },
+        pushState() { },
+        go() { },
+        back() { },
+    },
+    CustomEvent: function CustomEvent() {
+        return this;
+    },
+    addEventListener() { },
+    removeEventListener() { },
+    getComputedStyle() {
+        return {
+            getPropertyValue() {
+                return '';
+            },
+        };
+    },
+    Image() { },
+    Date() { },
+    screen: {},
+    setTimeout() { },
+    clearTimeout() { },
+    matchMedia() {
+        return {};
+    },
+    requestAnimationFrame(callback) {
+        if (typeof setTimeout === 'undefined') {
+            callback();
+            return null;
+        }
+        return setTimeout(callback, 0);
+    },
+    cancelAnimationFrame(id) {
+        if (typeof setTimeout === 'undefined') {
+            return;
+        }
+        clearTimeout(id);
+    },
+};
+function getWindow() {
+    const win = typeof window !== 'undefined' ? window : {};
+    extend(win, ssrWindow);
+    return win;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/breakpoints/getBreakpoint.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/breakpoints/getBreakpoint.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getBreakpoint)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+
+function getBreakpoint(breakpoints, base = 'window', containerEl) {
+  if (!breakpoints || base === 'container' && !containerEl) return undefined;
+  let breakpoint = false;
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const currentHeight = base === 'window' ? window.innerHeight : containerEl.clientHeight;
+  const points = Object.keys(breakpoints).map(point => {
+    if (typeof point === 'string' && point.indexOf('@') === 0) {
+      const minRatio = parseFloat(point.substr(1));
+      const value = currentHeight * minRatio;
+      return {
+        value,
+        point
+      };
+    }
+    return {
+      value: point,
+      point
+    };
+  });
+  points.sort((a, b) => parseInt(a.value, 10) - parseInt(b.value, 10));
+  for (let i = 0; i < points.length; i += 1) {
+    const {
+      point,
+      value
+    } = points[i];
+    if (base === 'window') {
+      if (window.matchMedia(`(min-width: ${value}px)`).matches) {
+        breakpoint = point;
+      }
+    } else if (value <= containerEl.clientWidth) {
+      breakpoint = point;
+    }
+  }
+  return breakpoint || 'max';
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/breakpoints/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/swiper/core/breakpoints/index.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _setBreakpoint_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setBreakpoint.js */ "./node_modules/swiper/core/breakpoints/setBreakpoint.js");
+/* harmony import */ var _getBreakpoint_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getBreakpoint.js */ "./node_modules/swiper/core/breakpoints/getBreakpoint.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  setBreakpoint: _setBreakpoint_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  getBreakpoint: _getBreakpoint_js__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/breakpoints/setBreakpoint.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/breakpoints/setBreakpoint.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ setBreakpoint)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+const isGridEnabled = (swiper, params) => {
+  return swiper.grid && params.grid && params.grid.rows > 1;
+};
+function setBreakpoint() {
+  const swiper = this;
+  const {
+    realIndex,
+    initialized,
+    params,
+    el
+  } = swiper;
+  const breakpoints = params.breakpoints;
+  if (!breakpoints || breakpoints && Object.keys(breakpoints).length === 0) return;
+
+  // Get breakpoint for window width and update parameters
+  const breakpoint = swiper.getBreakpoint(breakpoints, swiper.params.breakpointsBase, swiper.el);
+  if (!breakpoint || swiper.currentBreakpoint === breakpoint) return;
+  const breakpointOnlyParams = breakpoint in breakpoints ? breakpoints[breakpoint] : undefined;
+  const breakpointParams = breakpointOnlyParams || swiper.originalParams;
+  const wasMultiRow = isGridEnabled(swiper, params);
+  const isMultiRow = isGridEnabled(swiper, breakpointParams);
+  const wasEnabled = params.enabled;
+  if (wasMultiRow && !isMultiRow) {
+    el.classList.remove(`${params.containerModifierClass}grid`, `${params.containerModifierClass}grid-column`);
+    swiper.emitContainerClasses();
+  } else if (!wasMultiRow && isMultiRow) {
+    el.classList.add(`${params.containerModifierClass}grid`);
+    if (breakpointParams.grid.fill && breakpointParams.grid.fill === 'column' || !breakpointParams.grid.fill && params.grid.fill === 'column') {
+      el.classList.add(`${params.containerModifierClass}grid-column`);
+    }
+    swiper.emitContainerClasses();
+  }
+
+  // Toggle navigation, pagination, scrollbar
+  ['navigation', 'pagination', 'scrollbar'].forEach(prop => {
+    if (typeof breakpointParams[prop] === 'undefined') return;
+    const wasModuleEnabled = params[prop] && params[prop].enabled;
+    const isModuleEnabled = breakpointParams[prop] && breakpointParams[prop].enabled;
+    if (wasModuleEnabled && !isModuleEnabled) {
+      swiper[prop].disable();
+    }
+    if (!wasModuleEnabled && isModuleEnabled) {
+      swiper[prop].enable();
+    }
+  });
+  const directionChanged = breakpointParams.direction && breakpointParams.direction !== params.direction;
+  const needsReLoop = params.loop && (breakpointParams.slidesPerView !== params.slidesPerView || directionChanged);
+  if (directionChanged && initialized) {
+    swiper.changeDirection();
+  }
+  (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.extend)(swiper.params, breakpointParams);
+  const isEnabled = swiper.params.enabled;
+  Object.assign(swiper, {
+    allowTouchMove: swiper.params.allowTouchMove,
+    allowSlideNext: swiper.params.allowSlideNext,
+    allowSlidePrev: swiper.params.allowSlidePrev
+  });
+  if (wasEnabled && !isEnabled) {
+    swiper.disable();
+  } else if (!wasEnabled && isEnabled) {
+    swiper.enable();
+  }
+  swiper.currentBreakpoint = breakpoint;
+  swiper.emit('_beforeBreakpoint', breakpointParams);
+  if (needsReLoop && initialized) {
+    swiper.loopDestroy();
+    swiper.loopCreate(realIndex);
+    swiper.updateSlides();
+  }
+  swiper.emit('breakpoint', breakpointParams);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/check-overflow/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/swiper/core/check-overflow/index.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function checkOverflow() {
+  const swiper = this;
+  const {
+    isLocked: wasLocked,
+    params
+  } = swiper;
+  const {
+    slidesOffsetBefore
+  } = params;
+  if (slidesOffsetBefore) {
+    const lastSlideIndex = swiper.slides.length - 1;
+    const lastSlideRightEdge = swiper.slidesGrid[lastSlideIndex] + swiper.slidesSizesGrid[lastSlideIndex] + slidesOffsetBefore * 2;
+    swiper.isLocked = swiper.size > lastSlideRightEdge;
+  } else {
+    swiper.isLocked = swiper.snapGrid.length === 1;
+  }
+  if (params.allowSlideNext === true) {
+    swiper.allowSlideNext = !swiper.isLocked;
+  }
+  if (params.allowSlidePrev === true) {
+    swiper.allowSlidePrev = !swiper.isLocked;
+  }
+  if (wasLocked && wasLocked !== swiper.isLocked) {
+    swiper.isEnd = false;
+  }
+  if (wasLocked !== swiper.isLocked) {
+    swiper.emit(swiper.isLocked ? 'lock' : 'unlock');
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  checkOverflow
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/classes/addClasses.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swiper/core/classes/addClasses.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ addClasses)
+/* harmony export */ });
+function prepareClasses(entries, prefix) {
+  const resultClasses = [];
+  entries.forEach(item => {
+    if (typeof item === 'object') {
+      Object.keys(item).forEach(classNames => {
+        if (item[classNames]) {
+          resultClasses.push(prefix + classNames);
+        }
+      });
+    } else if (typeof item === 'string') {
+      resultClasses.push(prefix + item);
+    }
+  });
+  return resultClasses;
+}
+function addClasses() {
+  const swiper = this;
+  const {
+    classNames,
+    params,
+    rtl,
+    el,
+    device
+  } = swiper;
+  // prettier-ignore
+  const suffixes = prepareClasses(['initialized', params.direction, {
+    'free-mode': swiper.params.freeMode && params.freeMode.enabled
+  }, {
+    'autoheight': params.autoHeight
+  }, {
+    'rtl': rtl
+  }, {
+    'grid': params.grid && params.grid.rows > 1
+  }, {
+    'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column'
+  }, {
+    'android': device.android
+  }, {
+    'ios': device.ios
+  }, {
+    'css-mode': params.cssMode
+  }, {
+    'centered': params.cssMode && params.centeredSlides
+  }, {
+    'watch-progress': params.watchSlidesProgress
+  }], params.containerModifierClass);
+  classNames.push(...suffixes);
+  el.classList.add(...classNames);
+  swiper.emitContainerClasses();
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/classes/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/core/classes/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _addClasses_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addClasses.js */ "./node_modules/swiper/core/classes/addClasses.js");
+/* harmony import */ var _removeClasses_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./removeClasses.js */ "./node_modules/swiper/core/classes/removeClasses.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  addClasses: _addClasses_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  removeClasses: _removeClasses_js__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/classes/removeClasses.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swiper/core/classes/removeClasses.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ removeClasses)
+/* harmony export */ });
+function removeClasses() {
+  const swiper = this;
+  const {
+    el,
+    classNames
+  } = swiper;
+  el.classList.remove(...classNames);
+  swiper.emitContainerClasses();
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/core.js":
+/*!******************************************!*\
+  !*** ./node_modules/swiper/core/core.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+/* harmony import */ var _shared_get_support_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/get-support.js */ "./node_modules/swiper/shared/get-support.js");
+/* harmony import */ var _shared_get_device_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/get-device.js */ "./node_modules/swiper/shared/get-device.js");
+/* harmony import */ var _shared_get_browser_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/get-browser.js */ "./node_modules/swiper/shared/get-browser.js");
+/* harmony import */ var _modules_resize_resize_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/resize/resize.js */ "./node_modules/swiper/core/modules/resize/resize.js");
+/* harmony import */ var _modules_observer_observer_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/observer/observer.js */ "./node_modules/swiper/core/modules/observer/observer.js");
+/* harmony import */ var _events_emitter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./events-emitter.js */ "./node_modules/swiper/core/events-emitter.js");
+/* harmony import */ var _update_index_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./update/index.js */ "./node_modules/swiper/core/update/index.js");
+/* harmony import */ var _translate_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./translate/index.js */ "./node_modules/swiper/core/translate/index.js");
+/* harmony import */ var _transition_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./transition/index.js */ "./node_modules/swiper/core/transition/index.js");
+/* harmony import */ var _slide_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./slide/index.js */ "./node_modules/swiper/core/slide/index.js");
+/* harmony import */ var _loop_index_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./loop/index.js */ "./node_modules/swiper/core/loop/index.js");
+/* harmony import */ var _grab_cursor_index_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./grab-cursor/index.js */ "./node_modules/swiper/core/grab-cursor/index.js");
+/* harmony import */ var _events_index_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./events/index.js */ "./node_modules/swiper/core/events/index.js");
+/* harmony import */ var _breakpoints_index_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./breakpoints/index.js */ "./node_modules/swiper/core/breakpoints/index.js");
+/* harmony import */ var _classes_index_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./classes/index.js */ "./node_modules/swiper/core/classes/index.js");
+/* harmony import */ var _check_overflow_index_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./check-overflow/index.js */ "./node_modules/swiper/core/check-overflow/index.js");
+/* harmony import */ var _defaults_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./defaults.js */ "./node_modules/swiper/core/defaults.js");
+/* harmony import */ var _moduleExtendParams_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./moduleExtendParams.js */ "./node_modules/swiper/core/moduleExtendParams.js");
+/* harmony import */ var _shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../shared/process-lazy-preloader.js */ "./node_modules/swiper/shared/process-lazy-preloader.js");
+/* eslint no-param-reassign: "off" */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const prototypes = {
+  eventsEmitter: _events_emitter_js__WEBPACK_IMPORTED_MODULE_7__["default"],
+  update: _update_index_js__WEBPACK_IMPORTED_MODULE_8__["default"],
+  translate: _translate_index_js__WEBPACK_IMPORTED_MODULE_9__["default"],
+  transition: _transition_index_js__WEBPACK_IMPORTED_MODULE_10__["default"],
+  slide: _slide_index_js__WEBPACK_IMPORTED_MODULE_11__["default"],
+  loop: _loop_index_js__WEBPACK_IMPORTED_MODULE_12__["default"],
+  grabCursor: _grab_cursor_index_js__WEBPACK_IMPORTED_MODULE_13__["default"],
+  events: _events_index_js__WEBPACK_IMPORTED_MODULE_14__["default"],
+  breakpoints: _breakpoints_index_js__WEBPACK_IMPORTED_MODULE_15__["default"],
+  checkOverflow: _check_overflow_index_js__WEBPACK_IMPORTED_MODULE_17__["default"],
+  classes: _classes_index_js__WEBPACK_IMPORTED_MODULE_16__["default"]
+};
+const extendedDefaults = {};
+class Swiper {
+  constructor(...args) {
+    let el;
+    let params;
+    if (args.length === 1 && args[0].constructor && Object.prototype.toString.call(args[0]).slice(8, -1) === 'Object') {
+      params = args[0];
+    } else {
+      [el, params] = args;
+    }
+    if (!params) params = {};
+    params = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)({}, params);
+    if (el && !params.el) params.el = el;
+    const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+    if (params.el && typeof params.el === 'string' && document.querySelectorAll(params.el).length > 1) {
+      const swipers = [];
+      document.querySelectorAll(params.el).forEach(containerEl => {
+        const newParams = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)({}, params, {
+          el: containerEl
+        });
+        swipers.push(new Swiper(newParams));
+      });
+      // eslint-disable-next-line no-constructor-return
+      return swipers;
+    }
+
+    // Swiper Instance
+    const swiper = this;
+    swiper.__swiper__ = true;
+    swiper.support = (0,_shared_get_support_js__WEBPACK_IMPORTED_MODULE_2__.getSupport)();
+    swiper.device = (0,_shared_get_device_js__WEBPACK_IMPORTED_MODULE_3__.getDevice)({
+      userAgent: params.userAgent
+    });
+    swiper.browser = (0,_shared_get_browser_js__WEBPACK_IMPORTED_MODULE_4__.getBrowser)();
+    swiper.eventsListeners = {};
+    swiper.eventsAnyListeners = [];
+    swiper.modules = [...swiper.__modules__];
+    if (params.modules && Array.isArray(params.modules)) {
+      swiper.modules.push(...params.modules);
+    }
+    const allModulesParams = {};
+    swiper.modules.forEach(mod => {
+      mod({
+        params,
+        swiper,
+        extendParams: (0,_moduleExtendParams_js__WEBPACK_IMPORTED_MODULE_19__["default"])(params, allModulesParams),
+        on: swiper.on.bind(swiper),
+        once: swiper.once.bind(swiper),
+        off: swiper.off.bind(swiper),
+        emit: swiper.emit.bind(swiper)
+      });
+    });
+
+    // Extend defaults with modules params
+    const swiperParams = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)({}, _defaults_js__WEBPACK_IMPORTED_MODULE_18__["default"], allModulesParams);
+
+    // Extend defaults with passed params
+    swiper.params = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)({}, swiperParams, extendedDefaults, params);
+    swiper.originalParams = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)({}, swiper.params);
+    swiper.passedParams = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)({}, params);
+
+    // add event listeners
+    if (swiper.params && swiper.params.on) {
+      Object.keys(swiper.params.on).forEach(eventName => {
+        swiper.on(eventName, swiper.params.on[eventName]);
+      });
+    }
+    if (swiper.params && swiper.params.onAny) {
+      swiper.onAny(swiper.params.onAny);
+    }
+
+    // Extend Swiper
+    Object.assign(swiper, {
+      enabled: swiper.params.enabled,
+      el,
+      // Classes
+      classNames: [],
+      // Slides
+      slides: [],
+      slidesGrid: [],
+      snapGrid: [],
+      slidesSizesGrid: [],
+      // isDirection
+      isHorizontal() {
+        return swiper.params.direction === 'horizontal';
+      },
+      isVertical() {
+        return swiper.params.direction === 'vertical';
+      },
+      // Indexes
+      activeIndex: 0,
+      realIndex: 0,
+      //
+      isBeginning: true,
+      isEnd: false,
+      // Props
+      translate: 0,
+      previousTranslate: 0,
+      progress: 0,
+      velocity: 0,
+      animating: false,
+      cssOverflowAdjustment() {
+        // Returns 0 unless `translate` is > 2**23
+        // Should be subtracted from css values to prevent overflow
+        return Math.trunc(this.translate / 2 ** 23) * 2 ** 23;
+      },
+      // Locks
+      allowSlideNext: swiper.params.allowSlideNext,
+      allowSlidePrev: swiper.params.allowSlidePrev,
+      // Touch Events
+      touchEventsData: {
+        isTouched: undefined,
+        isMoved: undefined,
+        allowTouchCallbacks: undefined,
+        touchStartTime: undefined,
+        isScrolling: undefined,
+        currentTranslate: undefined,
+        startTranslate: undefined,
+        allowThresholdMove: undefined,
+        // Form elements to match
+        focusableElements: swiper.params.focusableElements,
+        // Last click time
+        lastClickTime: 0,
+        clickTimeout: undefined,
+        // Velocities
+        velocities: [],
+        allowMomentumBounce: undefined,
+        startMoving: undefined,
+        evCache: []
+      },
+      // Clicks
+      allowClick: true,
+      // Touches
+      allowTouchMove: swiper.params.allowTouchMove,
+      touches: {
+        startX: 0,
+        startY: 0,
+        currentX: 0,
+        currentY: 0,
+        diff: 0
+      },
+      // Images
+      imagesToLoad: [],
+      imagesLoaded: 0
+    });
+    swiper.emit('_swiper');
+
+    // Init
+    if (swiper.params.init) {
+      swiper.init();
+    }
+
+    // Return app instance
+    // eslint-disable-next-line no-constructor-return
+    return swiper;
+  }
+  getSlideIndex(slideEl) {
+    const {
+      slidesEl,
+      params
+    } = this;
+    const slides = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(slidesEl, `.${params.slideClass}, swiper-slide`);
+    const firstSlideIndex = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementIndex)(slides[0]);
+    return (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementIndex)(slideEl) - firstSlideIndex;
+  }
+  getSlideIndexByData(index) {
+    return this.getSlideIndex(this.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === index)[0]);
+  }
+  recalcSlides() {
+    const swiper = this;
+    const {
+      slidesEl,
+      params
+    } = swiper;
+    swiper.slides = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(slidesEl, `.${params.slideClass}, swiper-slide`);
+  }
+  enable() {
+    const swiper = this;
+    if (swiper.enabled) return;
+    swiper.enabled = true;
+    if (swiper.params.grabCursor) {
+      swiper.setGrabCursor();
+    }
+    swiper.emit('enable');
+  }
+  disable() {
+    const swiper = this;
+    if (!swiper.enabled) return;
+    swiper.enabled = false;
+    if (swiper.params.grabCursor) {
+      swiper.unsetGrabCursor();
+    }
+    swiper.emit('disable');
+  }
+  setProgress(progress, speed) {
+    const swiper = this;
+    progress = Math.min(Math.max(progress, 0), 1);
+    const min = swiper.minTranslate();
+    const max = swiper.maxTranslate();
+    const current = (max - min) * progress + min;
+    swiper.translateTo(current, typeof speed === 'undefined' ? 0 : speed);
+    swiper.updateActiveIndex();
+    swiper.updateSlidesClasses();
+  }
+  emitContainerClasses() {
+    const swiper = this;
+    if (!swiper.params._emitClasses || !swiper.el) return;
+    const cls = swiper.el.className.split(' ').filter(className => {
+      return className.indexOf('swiper') === 0 || className.indexOf(swiper.params.containerModifierClass) === 0;
+    });
+    swiper.emit('_containerClasses', cls.join(' '));
+  }
+  getSlideClasses(slideEl) {
+    const swiper = this;
+    if (swiper.destroyed) return '';
+    return slideEl.className.split(' ').filter(className => {
+      return className.indexOf('swiper-slide') === 0 || className.indexOf(swiper.params.slideClass) === 0;
+    }).join(' ');
+  }
+  emitSlidesClasses() {
+    const swiper = this;
+    if (!swiper.params._emitClasses || !swiper.el) return;
+    const updates = [];
+    swiper.slides.forEach(slideEl => {
+      const classNames = swiper.getSlideClasses(slideEl);
+      updates.push({
+        slideEl,
+        classNames
+      });
+      swiper.emit('_slideClass', slideEl, classNames);
+    });
+    swiper.emit('_slideClasses', updates);
+  }
+  slidesPerViewDynamic(view = 'current', exact = false) {
+    const swiper = this;
+    const {
+      params,
+      slides,
+      slidesGrid,
+      slidesSizesGrid,
+      size: swiperSize,
+      activeIndex
+    } = swiper;
+    let spv = 1;
+    if (params.centeredSlides) {
+      let slideSize = slides[activeIndex] ? slides[activeIndex].swiperSlideSize : 0;
+      let breakLoop;
+      for (let i = activeIndex + 1; i < slides.length; i += 1) {
+        if (slides[i] && !breakLoop) {
+          slideSize += slides[i].swiperSlideSize;
+          spv += 1;
+          if (slideSize > swiperSize) breakLoop = true;
+        }
+      }
+      for (let i = activeIndex - 1; i >= 0; i -= 1) {
+        if (slides[i] && !breakLoop) {
+          slideSize += slides[i].swiperSlideSize;
+          spv += 1;
+          if (slideSize > swiperSize) breakLoop = true;
+        }
+      }
+    } else {
+      // eslint-disable-next-line
+      if (view === 'current') {
+        for (let i = activeIndex + 1; i < slides.length; i += 1) {
+          const slideInView = exact ? slidesGrid[i] + slidesSizesGrid[i] - slidesGrid[activeIndex] < swiperSize : slidesGrid[i] - slidesGrid[activeIndex] < swiperSize;
+          if (slideInView) {
+            spv += 1;
+          }
+        }
+      } else {
+        // previous
+        for (let i = activeIndex - 1; i >= 0; i -= 1) {
+          const slideInView = slidesGrid[activeIndex] - slidesGrid[i] < swiperSize;
+          if (slideInView) {
+            spv += 1;
+          }
+        }
+      }
+    }
+    return spv;
+  }
+  update() {
+    const swiper = this;
+    if (!swiper || swiper.destroyed) return;
+    const {
+      snapGrid,
+      params
+    } = swiper;
+    // Breakpoints
+    if (params.breakpoints) {
+      swiper.setBreakpoint();
+    }
+    [...swiper.el.querySelectorAll('[loading="lazy"]')].forEach(imageEl => {
+      if (imageEl.complete) {
+        (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_20__.processLazyPreloader)(swiper, imageEl);
+      }
+    });
+    swiper.updateSize();
+    swiper.updateSlides();
+    swiper.updateProgress();
+    swiper.updateSlidesClasses();
+    function setTranslate() {
+      const translateValue = swiper.rtlTranslate ? swiper.translate * -1 : swiper.translate;
+      const newTranslate = Math.min(Math.max(translateValue, swiper.maxTranslate()), swiper.minTranslate());
+      swiper.setTranslate(newTranslate);
+      swiper.updateActiveIndex();
+      swiper.updateSlidesClasses();
+    }
+    let translated;
+    if (params.freeMode && params.freeMode.enabled && !params.cssMode) {
+      setTranslate();
+      if (params.autoHeight) {
+        swiper.updateAutoHeight();
+      }
+    } else {
+      if ((params.slidesPerView === 'auto' || params.slidesPerView > 1) && swiper.isEnd && !params.centeredSlides) {
+        const slides = swiper.virtual && params.virtual.enabled ? swiper.virtual.slides : swiper.slides;
+        translated = swiper.slideTo(slides.length - 1, 0, false, true);
+      } else {
+        translated = swiper.slideTo(swiper.activeIndex, 0, false, true);
+      }
+      if (!translated) {
+        setTranslate();
+      }
+    }
+    if (params.watchOverflow && snapGrid !== swiper.snapGrid) {
+      swiper.checkOverflow();
+    }
+    swiper.emit('update');
+  }
+  changeDirection(newDirection, needUpdate = true) {
+    const swiper = this;
+    const currentDirection = swiper.params.direction;
+    if (!newDirection) {
+      // eslint-disable-next-line
+      newDirection = currentDirection === 'horizontal' ? 'vertical' : 'horizontal';
+    }
+    if (newDirection === currentDirection || newDirection !== 'horizontal' && newDirection !== 'vertical') {
+      return swiper;
+    }
+    swiper.el.classList.remove(`${swiper.params.containerModifierClass}${currentDirection}`);
+    swiper.el.classList.add(`${swiper.params.containerModifierClass}${newDirection}`);
+    swiper.emitContainerClasses();
+    swiper.params.direction = newDirection;
+    swiper.slides.forEach(slideEl => {
+      if (newDirection === 'vertical') {
+        slideEl.style.width = '';
+      } else {
+        slideEl.style.height = '';
+      }
+    });
+    swiper.emit('changeDirection');
+    if (needUpdate) swiper.update();
+    return swiper;
+  }
+  changeLanguageDirection(direction) {
+    const swiper = this;
+    if (swiper.rtl && direction === 'rtl' || !swiper.rtl && direction === 'ltr') return;
+    swiper.rtl = direction === 'rtl';
+    swiper.rtlTranslate = swiper.params.direction === 'horizontal' && swiper.rtl;
+    if (swiper.rtl) {
+      swiper.el.classList.add(`${swiper.params.containerModifierClass}rtl`);
+      swiper.el.dir = 'rtl';
+    } else {
+      swiper.el.classList.remove(`${swiper.params.containerModifierClass}rtl`);
+      swiper.el.dir = 'ltr';
+    }
+    swiper.update();
+  }
+  mount(element) {
+    const swiper = this;
+    if (swiper.mounted) return true;
+
+    // Find el
+    let el = element || swiper.params.el;
+    if (typeof el === 'string') {
+      el = document.querySelector(el);
+    }
+    if (!el) {
+      return false;
+    }
+    el.swiper = swiper;
+    if (el.shadowEl) {
+      swiper.isElement = true;
+    }
+    const getWrapperSelector = () => {
+      return `.${(swiper.params.wrapperClass || '').trim().split(' ').join('.')}`;
+    };
+    const getWrapper = () => {
+      if (el && el.shadowRoot && el.shadowRoot.querySelector) {
+        const res = el.shadowRoot.querySelector(getWrapperSelector());
+        // Children needs to return slot items
+        return res;
+      }
+      return (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(el, getWrapperSelector())[0];
+    };
+    // Find Wrapper
+    let wrapperEl = getWrapper();
+    if (!wrapperEl && swiper.params.createElements) {
+      wrapperEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', swiper.params.wrapperClass);
+      el.append(wrapperEl);
+      (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(el, `.${swiper.params.slideClass}`).forEach(slideEl => {
+        wrapperEl.append(slideEl);
+      });
+    }
+    Object.assign(swiper, {
+      el,
+      wrapperEl,
+      slidesEl: swiper.isElement ? el : wrapperEl,
+      mounted: true,
+      // RTL
+      rtl: el.dir.toLowerCase() === 'rtl' || (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementStyle)(el, 'direction') === 'rtl',
+      rtlTranslate: swiper.params.direction === 'horizontal' && (el.dir.toLowerCase() === 'rtl' || (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementStyle)(el, 'direction') === 'rtl'),
+      wrongRTL: (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementStyle)(wrapperEl, 'display') === '-webkit-box'
+    });
+    return true;
+  }
+  init(el) {
+    const swiper = this;
+    if (swiper.initialized) return swiper;
+    const mounted = swiper.mount(el);
+    if (mounted === false) return swiper;
+    swiper.emit('beforeInit');
+
+    // Set breakpoint
+    if (swiper.params.breakpoints) {
+      swiper.setBreakpoint();
+    }
+
+    // Add Classes
+    swiper.addClasses();
+
+    // Update size
+    swiper.updateSize();
+
+    // Update slides
+    swiper.updateSlides();
+    if (swiper.params.watchOverflow) {
+      swiper.checkOverflow();
+    }
+
+    // Set Grab Cursor
+    if (swiper.params.grabCursor && swiper.enabled) {
+      swiper.setGrabCursor();
+    }
+
+    // Slide To Initial Slide
+    if (swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) {
+      swiper.slideTo(swiper.params.initialSlide + swiper.virtual.slidesBefore, 0, swiper.params.runCallbacksOnInit, false, true);
+    } else {
+      swiper.slideTo(swiper.params.initialSlide, 0, swiper.params.runCallbacksOnInit, false, true);
+    }
+
+    // Create loop
+    if (swiper.params.loop) {
+      swiper.loopCreate();
+    }
+
+    // Attach events
+    swiper.attachEvents();
+    [...swiper.el.querySelectorAll('[loading="lazy"]')].forEach(imageEl => {
+      if (imageEl.complete) {
+        (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_20__.processLazyPreloader)(swiper, imageEl);
+      } else {
+        imageEl.addEventListener('load', e => {
+          (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_20__.processLazyPreloader)(swiper, e.target);
+        });
+      }
+    });
+    (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_20__.preload)(swiper);
+
+    // Init Flag
+    swiper.initialized = true;
+    (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_20__.preload)(swiper);
+
+    // Emit
+    swiper.emit('init');
+    swiper.emit('afterInit');
+    return swiper;
+  }
+  destroy(deleteInstance = true, cleanStyles = true) {
+    const swiper = this;
+    const {
+      params,
+      el,
+      wrapperEl,
+      slides
+    } = swiper;
+    if (typeof swiper.params === 'undefined' || swiper.destroyed) {
+      return null;
+    }
+    swiper.emit('beforeDestroy');
+
+    // Init Flag
+    swiper.initialized = false;
+
+    // Detach events
+    swiper.detachEvents();
+
+    // Destroy loop
+    if (params.loop) {
+      swiper.loopDestroy();
+    }
+
+    // Cleanup styles
+    if (cleanStyles) {
+      swiper.removeClasses();
+      el.removeAttribute('style');
+      wrapperEl.removeAttribute('style');
+      if (slides && slides.length) {
+        slides.forEach(slideEl => {
+          slideEl.classList.remove(params.slideVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
+          slideEl.removeAttribute('style');
+          slideEl.removeAttribute('data-swiper-slide-index');
+        });
+      }
+    }
+    swiper.emit('destroy');
+
+    // Detach emitter events
+    Object.keys(swiper.eventsListeners).forEach(eventName => {
+      swiper.off(eventName);
+    });
+    if (deleteInstance !== false) {
+      swiper.el.swiper = null;
+      (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.deleteProps)(swiper);
+    }
+    swiper.destroyed = true;
+    return null;
+  }
+  static extendDefaults(newDefaults) {
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.extend)(extendedDefaults, newDefaults);
+  }
+  static get extendedDefaults() {
+    return extendedDefaults;
+  }
+  static get defaults() {
+    return _defaults_js__WEBPACK_IMPORTED_MODULE_18__["default"];
+  }
+  static installModule(mod) {
+    if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
+    const modules = Swiper.prototype.__modules__;
+    if (typeof mod === 'function' && modules.indexOf(mod) < 0) {
+      modules.push(mod);
+    }
+  }
+  static use(module) {
+    if (Array.isArray(module)) {
+      module.forEach(m => Swiper.installModule(m));
+      return Swiper;
+    }
+    Swiper.installModule(module);
+    return Swiper;
+  }
+}
+Object.keys(prototypes).forEach(prototypeGroup => {
+  Object.keys(prototypes[prototypeGroup]).forEach(protoMethod => {
+    Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+  });
+});
+Swiper.use([_modules_resize_resize_js__WEBPACK_IMPORTED_MODULE_5__["default"], _modules_observer_observer_js__WEBPACK_IMPORTED_MODULE_6__["default"]]);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Swiper);
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/defaults.js":
+/*!**********************************************!*\
+  !*** ./node_modules/swiper/core/defaults.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  init: true,
+  direction: 'horizontal',
+  oneWayMovement: false,
+  touchEventsTarget: 'wrapper',
+  initialSlide: 0,
+  speed: 300,
+  cssMode: false,
+  updateOnWindowResize: true,
+  resizeObserver: true,
+  nested: false,
+  createElements: false,
+  enabled: true,
+  focusableElements: 'input, select, option, textarea, button, video, label',
+  // Overrides
+  width: null,
+  height: null,
+  //
+  preventInteractionOnTransition: false,
+  // ssr
+  userAgent: null,
+  url: null,
+  // To support iOS's swipe-to-go-back gesture (when being used in-app).
+  edgeSwipeDetection: false,
+  edgeSwipeThreshold: 20,
+  // Autoheight
+  autoHeight: false,
+  // Set wrapper width
+  setWrapperSize: false,
+  // Virtual Translate
+  virtualTranslate: false,
+  // Effects
+  effect: 'slide',
+  // 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
+
+  // Breakpoints
+  breakpoints: undefined,
+  breakpointsBase: 'window',
+  // Slides grid
+  spaceBetween: 0,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  slidesPerGroupSkip: 0,
+  slidesPerGroupAuto: false,
+  centeredSlides: false,
+  centeredSlidesBounds: false,
+  slidesOffsetBefore: 0,
+  // in px
+  slidesOffsetAfter: 0,
+  // in px
+  normalizeSlideIndex: true,
+  centerInsufficientSlides: false,
+  // Disable swiper and hide navigation when container not overflow
+  watchOverflow: true,
+  // Round length
+  roundLengths: false,
+  // Touches
+  touchRatio: 1,
+  touchAngle: 45,
+  simulateTouch: true,
+  shortSwipes: true,
+  longSwipes: true,
+  longSwipesRatio: 0.5,
+  longSwipesMs: 300,
+  followFinger: true,
+  allowTouchMove: true,
+  threshold: 5,
+  touchMoveStopPropagation: false,
+  touchStartPreventDefault: true,
+  touchStartForcePreventDefault: false,
+  touchReleaseOnEdges: false,
+  // Unique Navigation Elements
+  uniqueNavElements: true,
+  // Resistance
+  resistance: true,
+  resistanceRatio: 0.85,
+  // Progress
+  watchSlidesProgress: false,
+  // Cursor
+  grabCursor: false,
+  // Clicks
+  preventClicks: true,
+  preventClicksPropagation: true,
+  slideToClickedSlide: false,
+  // loop
+  loop: false,
+  loopedSlides: null,
+  loopPreventsSliding: true,
+  // rewind
+  rewind: false,
+  // Swiping/no swiping
+  allowSlidePrev: true,
+  allowSlideNext: true,
+  swipeHandler: null,
+  // '.swipe-handler',
+  noSwiping: true,
+  noSwipingClass: 'swiper-no-swiping',
+  noSwipingSelector: null,
+  // Passive Listeners
+  passiveListeners: true,
+  maxBackfaceHiddenSlides: 10,
+  // NS
+  containerModifierClass: 'swiper-',
+  // NEW
+  slideClass: 'swiper-slide',
+  slideActiveClass: 'swiper-slide-active',
+  slideVisibleClass: 'swiper-slide-visible',
+  slideNextClass: 'swiper-slide-next',
+  slidePrevClass: 'swiper-slide-prev',
+  wrapperClass: 'swiper-wrapper',
+  lazyPreloaderClass: 'swiper-lazy-preloader',
+  lazyPreloadPrevNext: 0,
+  // Callbacks
+  runCallbacksOnInit: true,
+  // Internals
+  _emitClasses: false
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events-emitter.js":
+/*!****************************************************!*\
+  !*** ./node_modules/swiper/core/events-emitter.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* eslint-disable no-underscore-dangle */
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  on(events, handler, priority) {
+    const self = this;
+    if (!self.eventsListeners || self.destroyed) return self;
+    if (typeof handler !== 'function') return self;
+    const method = priority ? 'unshift' : 'push';
+    events.split(' ').forEach(event => {
+      if (!self.eventsListeners[event]) self.eventsListeners[event] = [];
+      self.eventsListeners[event][method](handler);
+    });
+    return self;
+  },
+  once(events, handler, priority) {
+    const self = this;
+    if (!self.eventsListeners || self.destroyed) return self;
+    if (typeof handler !== 'function') return self;
+    function onceHandler(...args) {
+      self.off(events, onceHandler);
+      if (onceHandler.__emitterProxy) {
+        delete onceHandler.__emitterProxy;
+      }
+      handler.apply(self, args);
+    }
+    onceHandler.__emitterProxy = handler;
+    return self.on(events, onceHandler, priority);
+  },
+  onAny(handler, priority) {
+    const self = this;
+    if (!self.eventsListeners || self.destroyed) return self;
+    if (typeof handler !== 'function') return self;
+    const method = priority ? 'unshift' : 'push';
+    if (self.eventsAnyListeners.indexOf(handler) < 0) {
+      self.eventsAnyListeners[method](handler);
+    }
+    return self;
+  },
+  offAny(handler) {
+    const self = this;
+    if (!self.eventsListeners || self.destroyed) return self;
+    if (!self.eventsAnyListeners) return self;
+    const index = self.eventsAnyListeners.indexOf(handler);
+    if (index >= 0) {
+      self.eventsAnyListeners.splice(index, 1);
+    }
+    return self;
+  },
+  off(events, handler) {
+    const self = this;
+    if (!self.eventsListeners || self.destroyed) return self;
+    if (!self.eventsListeners) return self;
+    events.split(' ').forEach(event => {
+      if (typeof handler === 'undefined') {
+        self.eventsListeners[event] = [];
+      } else if (self.eventsListeners[event]) {
+        self.eventsListeners[event].forEach((eventHandler, index) => {
+          if (eventHandler === handler || eventHandler.__emitterProxy && eventHandler.__emitterProxy === handler) {
+            self.eventsListeners[event].splice(index, 1);
+          }
+        });
+      }
+    });
+    return self;
+  },
+  emit(...args) {
+    const self = this;
+    if (!self.eventsListeners || self.destroyed) return self;
+    if (!self.eventsListeners) return self;
+    let events;
+    let data;
+    let context;
+    if (typeof args[0] === 'string' || Array.isArray(args[0])) {
+      events = args[0];
+      data = args.slice(1, args.length);
+      context = self;
+    } else {
+      events = args[0].events;
+      data = args[0].data;
+      context = args[0].context || self;
+    }
+    data.unshift(context);
+    const eventsArray = Array.isArray(events) ? events : events.split(' ');
+    eventsArray.forEach(event => {
+      if (self.eventsAnyListeners && self.eventsAnyListeners.length) {
+        self.eventsAnyListeners.forEach(eventHandler => {
+          eventHandler.apply(context, [event, ...data]);
+        });
+      }
+      if (self.eventsListeners && self.eventsListeners[event]) {
+        self.eventsListeners[event].forEach(eventHandler => {
+          eventHandler.apply(context, data);
+        });
+      }
+    });
+    return self;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/core/events/index.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _onTouchStart_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./onTouchStart.js */ "./node_modules/swiper/core/events/onTouchStart.js");
+/* harmony import */ var _onTouchMove_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onTouchMove.js */ "./node_modules/swiper/core/events/onTouchMove.js");
+/* harmony import */ var _onTouchEnd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./onTouchEnd.js */ "./node_modules/swiper/core/events/onTouchEnd.js");
+/* harmony import */ var _onResize_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./onResize.js */ "./node_modules/swiper/core/events/onResize.js");
+/* harmony import */ var _onClick_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./onClick.js */ "./node_modules/swiper/core/events/onClick.js");
+/* harmony import */ var _onScroll_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./onScroll.js */ "./node_modules/swiper/core/events/onScroll.js");
+/* harmony import */ var _onLoad_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./onLoad.js */ "./node_modules/swiper/core/events/onLoad.js");
+
+
+
+
+
+
+
+
+let dummyEventAttached = false;
+function dummyEventListener() {}
+const events = (swiper, method) => {
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const {
+    params,
+    el,
+    wrapperEl,
+    device
+  } = swiper;
+  const capture = !!params.nested;
+  const domMethod = method === 'on' ? 'addEventListener' : 'removeEventListener';
+  const swiperMethod = method;
+
+  // Touch Events
+  el[domMethod]('pointerdown', swiper.onTouchStart, {
+    passive: false
+  });
+  document[domMethod]('pointermove', swiper.onTouchMove, {
+    passive: false,
+    capture
+  });
+  document[domMethod]('pointerup', swiper.onTouchEnd, {
+    passive: true
+  });
+  document[domMethod]('pointercancel', swiper.onTouchEnd, {
+    passive: true
+  });
+  document[domMethod]('pointerout', swiper.onTouchEnd, {
+    passive: true
+  });
+  document[domMethod]('pointerleave', swiper.onTouchEnd, {
+    passive: true
+  });
+
+  // Prevent Links Clicks
+  if (params.preventClicks || params.preventClicksPropagation) {
+    el[domMethod]('click', swiper.onClick, true);
+  }
+  if (params.cssMode) {
+    wrapperEl[domMethod]('scroll', swiper.onScroll);
+  }
+
+  // Resize handler
+  if (params.updateOnWindowResize) {
+    swiper[swiperMethod](device.ios || device.android ? 'resize orientationchange observerUpdate' : 'resize observerUpdate', _onResize_js__WEBPACK_IMPORTED_MODULE_4__["default"], true);
+  } else {
+    swiper[swiperMethod]('observerUpdate', _onResize_js__WEBPACK_IMPORTED_MODULE_4__["default"], true);
+  }
+
+  // Images loader
+  el[domMethod]('load', swiper.onLoad, {
+    capture: true
+  });
+};
+function attachEvents() {
+  const swiper = this;
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const {
+    params
+  } = swiper;
+  swiper.onTouchStart = _onTouchStart_js__WEBPACK_IMPORTED_MODULE_1__["default"].bind(swiper);
+  swiper.onTouchMove = _onTouchMove_js__WEBPACK_IMPORTED_MODULE_2__["default"].bind(swiper);
+  swiper.onTouchEnd = _onTouchEnd_js__WEBPACK_IMPORTED_MODULE_3__["default"].bind(swiper);
+  if (params.cssMode) {
+    swiper.onScroll = _onScroll_js__WEBPACK_IMPORTED_MODULE_6__["default"].bind(swiper);
+  }
+  swiper.onClick = _onClick_js__WEBPACK_IMPORTED_MODULE_5__["default"].bind(swiper);
+  swiper.onLoad = _onLoad_js__WEBPACK_IMPORTED_MODULE_7__["default"].bind(swiper);
+  if (!dummyEventAttached) {
+    document.addEventListener('touchstart', dummyEventListener);
+    dummyEventAttached = true;
+  }
+  events(swiper, 'on');
+}
+function detachEvents() {
+  const swiper = this;
+  events(swiper, 'off');
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  attachEvents,
+  detachEvents
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onClick.js":
+/*!****************************************************!*\
+  !*** ./node_modules/swiper/core/events/onClick.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onClick)
+/* harmony export */ });
+function onClick(e) {
+  const swiper = this;
+  if (!swiper.enabled) return;
+  if (!swiper.allowClick) {
+    if (swiper.params.preventClicks) e.preventDefault();
+    if (swiper.params.preventClicksPropagation && swiper.animating) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onLoad.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/core/events/onLoad.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onLoad)
+/* harmony export */ });
+/* harmony import */ var _shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/process-lazy-preloader.js */ "./node_modules/swiper/shared/process-lazy-preloader.js");
+
+function onLoad(e) {
+  const swiper = this;
+  (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_0__.processLazyPreloader)(swiper, e.target);
+  if (swiper.params.cssMode || swiper.params.slidesPerView !== 'auto' && !swiper.params.autoHeight) {
+    return;
+  }
+  swiper.update();
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onResize.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/core/events/onResize.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onResize)
+/* harmony export */ });
+function onResize() {
+  const swiper = this;
+  const {
+    params,
+    el
+  } = swiper;
+  if (el && el.offsetWidth === 0) return;
+
+  // Breakpoints
+  if (params.breakpoints) {
+    swiper.setBreakpoint();
+  }
+
+  // Save locks
+  const {
+    allowSlideNext,
+    allowSlidePrev,
+    snapGrid
+  } = swiper;
+  const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+
+  // Disable locks on resize
+  swiper.allowSlideNext = true;
+  swiper.allowSlidePrev = true;
+  swiper.updateSize();
+  swiper.updateSlides();
+  swiper.updateSlidesClasses();
+  const isVirtualLoop = isVirtual && params.loop;
+  if ((params.slidesPerView === 'auto' || params.slidesPerView > 1) && swiper.isEnd && !swiper.isBeginning && !swiper.params.centeredSlides && !isVirtualLoop) {
+    swiper.slideTo(swiper.slides.length - 1, 0, false, true);
+  } else {
+    if (swiper.params.loop && !isVirtual) {
+      swiper.slideToLoop(swiper.realIndex, 0, false, true);
+    } else {
+      swiper.slideTo(swiper.activeIndex, 0, false, true);
+    }
+  }
+  if (swiper.autoplay && swiper.autoplay.running && swiper.autoplay.paused) {
+    clearTimeout(swiper.autoplay.resizeTimeout);
+    swiper.autoplay.resizeTimeout = setTimeout(() => {
+      if (swiper.autoplay && swiper.autoplay.running && swiper.autoplay.paused) {
+        swiper.autoplay.resume();
+      }
+    }, 500);
+  }
+  // Return locks after resize
+  swiper.allowSlidePrev = allowSlidePrev;
+  swiper.allowSlideNext = allowSlideNext;
+  if (swiper.params.watchOverflow && snapGrid !== swiper.snapGrid) {
+    swiper.checkOverflow();
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onScroll.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/core/events/onScroll.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onScroll)
+/* harmony export */ });
+function onScroll() {
+  const swiper = this;
+  const {
+    wrapperEl,
+    rtlTranslate,
+    enabled
+  } = swiper;
+  if (!enabled) return;
+  swiper.previousTranslate = swiper.translate;
+  if (swiper.isHorizontal()) {
+    swiper.translate = -wrapperEl.scrollLeft;
+  } else {
+    swiper.translate = -wrapperEl.scrollTop;
+  }
+  // eslint-disable-next-line
+  if (swiper.translate === 0) swiper.translate = 0;
+  swiper.updateActiveIndex();
+  swiper.updateSlidesClasses();
+  let newProgress;
+  const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
+  if (translatesDiff === 0) {
+    newProgress = 0;
+  } else {
+    newProgress = (swiper.translate - swiper.minTranslate()) / translatesDiff;
+  }
+  if (newProgress !== swiper.progress) {
+    swiper.updateProgress(rtlTranslate ? -swiper.translate : swiper.translate);
+  }
+  swiper.emit('setTranslate', swiper.translate, false);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onTouchEnd.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/swiper/core/events/onTouchEnd.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onTouchEnd)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function onTouchEnd(event) {
+  const swiper = this;
+  const data = swiper.touchEventsData;
+  const pointerIndex = data.evCache.findIndex(cachedEv => cachedEv.pointerId === event.pointerId);
+  if (pointerIndex >= 0) {
+    data.evCache.splice(pointerIndex, 1);
+  }
+  if (['pointercancel', 'pointerout', 'pointerleave'].includes(event.type)) {
+    const proceed = event.type === 'pointercancel' && (swiper.browser.isSafari || swiper.browser.isWebView);
+    if (!proceed) {
+      return;
+    }
+  }
+  const {
+    params,
+    touches,
+    rtlTranslate: rtl,
+    slidesGrid,
+    enabled
+  } = swiper;
+  if (!enabled) return;
+  if (!params.simulateTouch && event.pointerType === 'mouse') return;
+  let e = event;
+  if (e.originalEvent) e = e.originalEvent;
+  if (data.allowTouchCallbacks) {
+    swiper.emit('touchEnd', e);
+  }
+  data.allowTouchCallbacks = false;
+  if (!data.isTouched) {
+    if (data.isMoved && params.grabCursor) {
+      swiper.setGrabCursor(false);
+    }
+    data.isMoved = false;
+    data.startMoving = false;
+    return;
+  }
+  // Return Grab Cursor
+  if (params.grabCursor && data.isMoved && data.isTouched && (swiper.allowSlideNext === true || swiper.allowSlidePrev === true)) {
+    swiper.setGrabCursor(false);
+  }
+
+  // Time diff
+  const touchEndTime = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.now)();
+  const timeDiff = touchEndTime - data.touchStartTime;
+
+  // Tap, doubleTap, Click
+  if (swiper.allowClick) {
+    const pathTree = e.path || e.composedPath && e.composedPath();
+    swiper.updateClickedSlide(pathTree && pathTree[0] || e.target);
+    swiper.emit('tap click', e);
+    if (timeDiff < 300 && touchEndTime - data.lastClickTime < 300) {
+      swiper.emit('doubleTap doubleClick', e);
+    }
+  }
+  data.lastClickTime = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.now)();
+  (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.nextTick)(() => {
+    if (!swiper.destroyed) swiper.allowClick = true;
+  });
+  if (!data.isTouched || !data.isMoved || !swiper.swipeDirection || touches.diff === 0 || data.currentTranslate === data.startTranslate) {
+    data.isTouched = false;
+    data.isMoved = false;
+    data.startMoving = false;
+    return;
+  }
+  data.isTouched = false;
+  data.isMoved = false;
+  data.startMoving = false;
+  let currentPos;
+  if (params.followFinger) {
+    currentPos = rtl ? swiper.translate : -swiper.translate;
+  } else {
+    currentPos = -data.currentTranslate;
+  }
+  if (params.cssMode) {
+    return;
+  }
+  if (params.freeMode && params.freeMode.enabled) {
+    swiper.freeMode.onTouchEnd({
+      currentPos
+    });
+    return;
+  }
+
+  // Find current slide
+  let stopIndex = 0;
+  let groupSize = swiper.slidesSizesGrid[0];
+  for (let i = 0; i < slidesGrid.length; i += i < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup) {
+    const increment = i < params.slidesPerGroupSkip - 1 ? 1 : params.slidesPerGroup;
+    if (typeof slidesGrid[i + increment] !== 'undefined') {
+      if (currentPos >= slidesGrid[i] && currentPos < slidesGrid[i + increment]) {
+        stopIndex = i;
+        groupSize = slidesGrid[i + increment] - slidesGrid[i];
+      }
+    } else if (currentPos >= slidesGrid[i]) {
+      stopIndex = i;
+      groupSize = slidesGrid[slidesGrid.length - 1] - slidesGrid[slidesGrid.length - 2];
+    }
+  }
+  let rewindFirstIndex = null;
+  let rewindLastIndex = null;
+  if (params.rewind) {
+    if (swiper.isBeginning) {
+      rewindLastIndex = params.virtual && params.virtual.enabled && swiper.virtual ? swiper.virtual.slides.length - 1 : swiper.slides.length - 1;
+    } else if (swiper.isEnd) {
+      rewindFirstIndex = 0;
+    }
+  }
+  // Find current slide size
+  const ratio = (currentPos - slidesGrid[stopIndex]) / groupSize;
+  const increment = stopIndex < params.slidesPerGroupSkip - 1 ? 1 : params.slidesPerGroup;
+  if (timeDiff > params.longSwipesMs) {
+    // Long touches
+    if (!params.longSwipes) {
+      swiper.slideTo(swiper.activeIndex);
+      return;
+    }
+    if (swiper.swipeDirection === 'next') {
+      if (ratio >= params.longSwipesRatio) swiper.slideTo(params.rewind && swiper.isEnd ? rewindFirstIndex : stopIndex + increment);else swiper.slideTo(stopIndex);
+    }
+    if (swiper.swipeDirection === 'prev') {
+      if (ratio > 1 - params.longSwipesRatio) {
+        swiper.slideTo(stopIndex + increment);
+      } else if (rewindLastIndex !== null && ratio < 0 && Math.abs(ratio) > params.longSwipesRatio) {
+        swiper.slideTo(rewindLastIndex);
+      } else {
+        swiper.slideTo(stopIndex);
+      }
+    }
+  } else {
+    // Short swipes
+    if (!params.shortSwipes) {
+      swiper.slideTo(swiper.activeIndex);
+      return;
+    }
+    const isNavButtonTarget = swiper.navigation && (e.target === swiper.navigation.nextEl || e.target === swiper.navigation.prevEl);
+    if (!isNavButtonTarget) {
+      if (swiper.swipeDirection === 'next') {
+        swiper.slideTo(rewindFirstIndex !== null ? rewindFirstIndex : stopIndex + increment);
+      }
+      if (swiper.swipeDirection === 'prev') {
+        swiper.slideTo(rewindLastIndex !== null ? rewindLastIndex : stopIndex);
+      }
+    } else if (e.target === swiper.navigation.nextEl) {
+      swiper.slideTo(stopIndex + increment);
+    } else {
+      swiper.slideTo(stopIndex);
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onTouchMove.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swiper/core/events/onTouchMove.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onTouchMove)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function onTouchMove(event) {
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const swiper = this;
+  const data = swiper.touchEventsData;
+  const {
+    params,
+    touches,
+    rtlTranslate: rtl,
+    enabled
+  } = swiper;
+  if (!enabled) return;
+  if (!params.simulateTouch && event.pointerType === 'mouse') return;
+  let e = event;
+  if (e.originalEvent) e = e.originalEvent;
+  if (!data.isTouched) {
+    if (data.startMoving && data.isScrolling) {
+      swiper.emit('touchMoveOpposite', e);
+    }
+    return;
+  }
+  const pointerIndex = data.evCache.findIndex(cachedEv => cachedEv.pointerId === e.pointerId);
+  if (pointerIndex >= 0) data.evCache[pointerIndex] = e;
+  const targetTouch = data.evCache.length > 1 ? data.evCache[0] : e;
+  const pageX = targetTouch.pageX;
+  const pageY = targetTouch.pageY;
+  if (e.preventedByNestedSwiper) {
+    touches.startX = pageX;
+    touches.startY = pageY;
+    return;
+  }
+  if (!swiper.allowTouchMove) {
+    if (!e.target.matches(data.focusableElements)) {
+      swiper.allowClick = false;
+    }
+    if (data.isTouched) {
+      Object.assign(touches, {
+        startX: pageX,
+        startY: pageY,
+        prevX: swiper.touches.currentX,
+        prevY: swiper.touches.currentY,
+        currentX: pageX,
+        currentY: pageY
+      });
+      data.touchStartTime = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)();
+    }
+    return;
+  }
+  if (params.touchReleaseOnEdges && !params.loop) {
+    if (swiper.isVertical()) {
+      // Vertical
+      if (pageY < touches.startY && swiper.translate <= swiper.maxTranslate() || pageY > touches.startY && swiper.translate >= swiper.minTranslate()) {
+        data.isTouched = false;
+        data.isMoved = false;
+        return;
+      }
+    } else if (pageX < touches.startX && swiper.translate <= swiper.maxTranslate() || pageX > touches.startX && swiper.translate >= swiper.minTranslate()) {
+      return;
+    }
+  }
+  if (document.activeElement) {
+    if (e.target === document.activeElement && e.target.matches(data.focusableElements)) {
+      data.isMoved = true;
+      swiper.allowClick = false;
+      return;
+    }
+  }
+  if (data.allowTouchCallbacks) {
+    swiper.emit('touchMove', e);
+  }
+  if (e.targetTouches && e.targetTouches.length > 1) return;
+  touches.currentX = pageX;
+  touches.currentY = pageY;
+  const diffX = touches.currentX - touches.startX;
+  const diffY = touches.currentY - touches.startY;
+  if (swiper.params.threshold && Math.sqrt(diffX ** 2 + diffY ** 2) < swiper.params.threshold) return;
+  if (typeof data.isScrolling === 'undefined') {
+    let touchAngle;
+    if (swiper.isHorizontal() && touches.currentY === touches.startY || swiper.isVertical() && touches.currentX === touches.startX) {
+      data.isScrolling = false;
+    } else {
+      // eslint-disable-next-line
+      if (diffX * diffX + diffY * diffY >= 25) {
+        touchAngle = Math.atan2(Math.abs(diffY), Math.abs(diffX)) * 180 / Math.PI;
+        data.isScrolling = swiper.isHorizontal() ? touchAngle > params.touchAngle : 90 - touchAngle > params.touchAngle;
+      }
+    }
+  }
+  if (data.isScrolling) {
+    swiper.emit('touchMoveOpposite', e);
+  }
+  if (typeof data.startMoving === 'undefined') {
+    if (touches.currentX !== touches.startX || touches.currentY !== touches.startY) {
+      data.startMoving = true;
+    }
+  }
+  if (data.isScrolling || swiper.zoom && swiper.params.zoom && swiper.params.zoom.enabled && data.evCache.length > 1) {
+    data.isTouched = false;
+    return;
+  }
+  if (!data.startMoving) {
+    return;
+  }
+  swiper.allowClick = false;
+  if (!params.cssMode && e.cancelable) {
+    e.preventDefault();
+  }
+  if (params.touchMoveStopPropagation && !params.nested) {
+    e.stopPropagation();
+  }
+  let diff = swiper.isHorizontal() ? diffX : diffY;
+  let touchesDiff = swiper.isHorizontal() ? touches.currentX - touches.previousX : touches.currentY - touches.previousY;
+  if (params.oneWayMovement) {
+    diff = Math.abs(diff) * (rtl ? 1 : -1);
+    touchesDiff = Math.abs(touchesDiff) * (rtl ? 1 : -1);
+  }
+  touches.diff = diff;
+  diff *= params.touchRatio;
+  if (rtl) {
+    diff = -diff;
+    touchesDiff = -touchesDiff;
+  }
+  const prevTouchesDirection = swiper.touchesDirection;
+  swiper.swipeDirection = diff > 0 ? 'prev' : 'next';
+  swiper.touchesDirection = touchesDiff > 0 ? 'prev' : 'next';
+  const isLoop = swiper.params.loop && !params.cssMode;
+  if (!data.isMoved) {
+    if (isLoop) {
+      swiper.loopFix({
+        direction: swiper.swipeDirection
+      });
+    }
+    data.startTranslate = swiper.getTranslate();
+    swiper.setTransition(0);
+    if (swiper.animating) {
+      const evt = new window.CustomEvent('transitionend', {
+        bubbles: true,
+        cancelable: true
+      });
+      swiper.wrapperEl.dispatchEvent(evt);
+    }
+    data.allowMomentumBounce = false;
+    // Grab Cursor
+    if (params.grabCursor && (swiper.allowSlideNext === true || swiper.allowSlidePrev === true)) {
+      swiper.setGrabCursor(true);
+    }
+    swiper.emit('sliderFirstMove', e);
+  }
+  let loopFixed;
+  if (data.isMoved && prevTouchesDirection !== swiper.touchesDirection && isLoop && Math.abs(diff) >= 1) {
+    // need another loop fix
+    swiper.loopFix({
+      direction: swiper.swipeDirection,
+      setTranslate: true
+    });
+    loopFixed = true;
+  }
+  swiper.emit('sliderMove', e);
+  data.isMoved = true;
+  data.currentTranslate = diff + data.startTranslate;
+  let disableParentSwiper = true;
+  let resistanceRatio = params.resistanceRatio;
+  if (params.touchReleaseOnEdges) {
+    resistanceRatio = 0;
+  }
+  if (diff > 0) {
+    if (isLoop && !loopFixed && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.size / 2 : swiper.minTranslate())) {
+      swiper.loopFix({
+        direction: 'prev',
+        setTranslate: true,
+        activeSlideIndex: 0
+      });
+    }
+    if (data.currentTranslate > swiper.minTranslate()) {
+      disableParentSwiper = false;
+      if (params.resistance) {
+        data.currentTranslate = swiper.minTranslate() - 1 + (-swiper.minTranslate() + data.startTranslate + diff) ** resistanceRatio;
+      }
+    }
+  } else if (diff < 0) {
+    if (isLoop && !loopFixed && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.size / 2 : swiper.maxTranslate())) {
+      swiper.loopFix({
+        direction: 'next',
+        setTranslate: true,
+        activeSlideIndex: swiper.slides.length - (params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(params.slidesPerView, 10)))
+      });
+    }
+    if (data.currentTranslate < swiper.maxTranslate()) {
+      disableParentSwiper = false;
+      if (params.resistance) {
+        data.currentTranslate = swiper.maxTranslate() + 1 - (swiper.maxTranslate() - data.startTranslate - diff) ** resistanceRatio;
+      }
+    }
+  }
+  if (disableParentSwiper) {
+    e.preventedByNestedSwiper = true;
+  }
+
+  // Directions locks
+  if (!swiper.allowSlideNext && swiper.swipeDirection === 'next' && data.currentTranslate < data.startTranslate) {
+    data.currentTranslate = data.startTranslate;
+  }
+  if (!swiper.allowSlidePrev && swiper.swipeDirection === 'prev' && data.currentTranslate > data.startTranslate) {
+    data.currentTranslate = data.startTranslate;
+  }
+  if (!swiper.allowSlidePrev && !swiper.allowSlideNext) {
+    data.currentTranslate = data.startTranslate;
+  }
+
+  // Threshold
+  if (params.threshold > 0) {
+    if (Math.abs(diff) > params.threshold || data.allowThresholdMove) {
+      if (!data.allowThresholdMove) {
+        data.allowThresholdMove = true;
+        touches.startX = touches.currentX;
+        touches.startY = touches.currentY;
+        data.currentTranslate = data.startTranslate;
+        touches.diff = swiper.isHorizontal() ? touches.currentX - touches.startX : touches.currentY - touches.startY;
+        return;
+      }
+    } else {
+      data.currentTranslate = data.startTranslate;
+      return;
+    }
+  }
+  if (!params.followFinger || params.cssMode) return;
+
+  // Update active index in free mode
+  if (params.freeMode && params.freeMode.enabled && swiper.freeMode || params.watchSlidesProgress) {
+    swiper.updateActiveIndex();
+    swiper.updateSlidesClasses();
+  }
+  if (params.freeMode && params.freeMode.enabled && swiper.freeMode) {
+    swiper.freeMode.onTouchMove();
+  }
+  // Update progress
+  swiper.updateProgress(data.currentTranslate);
+  // Update translate
+  swiper.setTranslate(data.currentTranslate);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/events/onTouchStart.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/swiper/core/events/onTouchStart.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ onTouchStart)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+// Modified from https://stackoverflow.com/questions/54520554/custom-element-getrootnode-closest-function-crossing-multiple-parent-shadowd
+function closestElement(selector, base = this) {
+  function __closestFrom(el) {
+    if (!el || el === (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)() || el === (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)()) return null;
+    if (el.assignedSlot) el = el.assignedSlot;
+    const found = el.closest(selector);
+    if (!found && !el.getRootNode) {
+      return null;
+    }
+    return found || __closestFrom(el.getRootNode().host);
+  }
+  return __closestFrom(base);
+}
+function onTouchStart(event) {
+  const swiper = this;
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const data = swiper.touchEventsData;
+  data.evCache.push(event);
+  const {
+    params,
+    touches,
+    enabled
+  } = swiper;
+  if (!enabled) return;
+  if (!params.simulateTouch && event.pointerType === 'mouse') return;
+  if (swiper.animating && params.preventInteractionOnTransition) {
+    return;
+  }
+  if (!swiper.animating && params.cssMode && params.loop) {
+    swiper.loopFix();
+  }
+  let e = event;
+  if (e.originalEvent) e = e.originalEvent;
+  let targetEl = e.target;
+  if (params.touchEventsTarget === 'wrapper') {
+    if (!swiper.wrapperEl.contains(targetEl)) return;
+  }
+  if ('which' in e && e.which === 3) return;
+  if ('button' in e && e.button > 0) return;
+  if (data.isTouched && data.isMoved) return;
+
+  // change target el for shadow root component
+  const swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== '';
+  // eslint-disable-next-line
+  const eventPath = event.composedPath ? event.composedPath() : event.path;
+  if (swipingClassHasValue && e.target && e.target.shadowRoot && eventPath) {
+    targetEl = eventPath[0];
+  }
+  const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
+  const isTargetShadow = !!(e.target && e.target.shadowRoot);
+
+  // use closestElement for shadow root element to get the actual closest for nested shadow root element
+  if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, targetEl) : targetEl.closest(noSwipingSelector))) {
+    swiper.allowClick = true;
+    return;
+  }
+  if (params.swipeHandler) {
+    if (!targetEl.closest(params.swipeHandler)) return;
+  }
+  touches.currentX = e.pageX;
+  touches.currentY = e.pageY;
+  const startX = touches.currentX;
+  const startY = touches.currentY;
+
+  // Do NOT start if iOS edge swipe is detected. Otherwise iOS app cannot swipe-to-go-back anymore
+
+  const edgeSwipeDetection = params.edgeSwipeDetection || params.iOSEdgeSwipeDetection;
+  const edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
+  if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) {
+    if (edgeSwipeDetection === 'prevent') {
+      event.preventDefault();
+    } else {
+      return;
+    }
+  }
+  Object.assign(data, {
+    isTouched: true,
+    isMoved: false,
+    allowTouchCallbacks: true,
+    isScrolling: undefined,
+    startMoving: undefined
+  });
+  touches.startX = startX;
+  touches.startY = startY;
+  data.touchStartTime = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)();
+  swiper.allowClick = true;
+  swiper.updateSize();
+  swiper.swipeDirection = undefined;
+  if (params.threshold > 0) data.allowThresholdMove = false;
+  let preventDefault = true;
+  if (targetEl.matches(data.focusableElements)) {
+    preventDefault = false;
+    if (targetEl.nodeName === 'SELECT') {
+      data.isTouched = false;
+    }
+  }
+  if (document.activeElement && document.activeElement.matches(data.focusableElements) && document.activeElement !== targetEl) {
+    document.activeElement.blur();
+  }
+  const shouldPreventDefault = preventDefault && swiper.allowTouchMove && params.touchStartPreventDefault;
+  if ((params.touchStartForcePreventDefault || shouldPreventDefault) && !targetEl.isContentEditable) {
+    e.preventDefault();
+  }
+  if (params.freeMode && params.freeMode.enabled && swiper.freeMode && swiper.animating && !params.cssMode) {
+    swiper.freeMode.onTouchStart();
+  }
+  swiper.emit('touchStart', e);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/grab-cursor/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/swiper/core/grab-cursor/index.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _setGrabCursor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setGrabCursor.js */ "./node_modules/swiper/core/grab-cursor/setGrabCursor.js");
+/* harmony import */ var _unsetGrabCursor_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./unsetGrabCursor.js */ "./node_modules/swiper/core/grab-cursor/unsetGrabCursor.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  setGrabCursor: _setGrabCursor_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  unsetGrabCursor: _unsetGrabCursor_js__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/grab-cursor/setGrabCursor.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/grab-cursor/setGrabCursor.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ setGrabCursor)
+/* harmony export */ });
+function setGrabCursor(moving) {
+  const swiper = this;
+  if (!swiper.params.simulateTouch || swiper.params.watchOverflow && swiper.isLocked || swiper.params.cssMode) return;
+  const el = swiper.params.touchEventsTarget === 'container' ? swiper.el : swiper.wrapperEl;
+  if (swiper.isElement) {
+    swiper.__preventObserver__ = true;
+  }
+  el.style.cursor = 'move';
+  el.style.cursor = moving ? 'grabbing' : 'grab';
+  if (swiper.isElement) {
+    requestAnimationFrame(() => {
+      swiper.__preventObserver__ = false;
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/grab-cursor/unsetGrabCursor.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/swiper/core/grab-cursor/unsetGrabCursor.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ unsetGrabCursor)
+/* harmony export */ });
+function unsetGrabCursor() {
+  const swiper = this;
+  if (swiper.params.watchOverflow && swiper.isLocked || swiper.params.cssMode) {
+    return;
+  }
+  if (swiper.isElement) {
+    swiper.__preventObserver__ = true;
+  }
+  swiper[swiper.params.touchEventsTarget === 'container' ? 'el' : 'wrapperEl'].style.cursor = '';
+  if (swiper.isElement) {
+    requestAnimationFrame(() => {
+      swiper.__preventObserver__ = false;
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/loop/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/swiper/core/loop/index.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _loopCreate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loopCreate.js */ "./node_modules/swiper/core/loop/loopCreate.js");
+/* harmony import */ var _loopFix_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loopFix.js */ "./node_modules/swiper/core/loop/loopFix.js");
+/* harmony import */ var _loopDestroy_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loopDestroy.js */ "./node_modules/swiper/core/loop/loopDestroy.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  loopCreate: _loopCreate_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  loopFix: _loopFix_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  loopDestroy: _loopDestroy_js__WEBPACK_IMPORTED_MODULE_2__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/loop/loopCreate.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/core/loop/loopCreate.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ loopCreate)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function loopCreate(slideRealIndex) {
+  const swiper = this;
+  const {
+    params,
+    slidesEl
+  } = swiper;
+  if (!params.loop || swiper.virtual && swiper.params.virtual.enabled) return;
+  const slides = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(slidesEl, `.${params.slideClass}, swiper-slide`);
+  slides.forEach((el, index) => {
+    el.setAttribute('data-swiper-slide-index', index);
+  });
+  swiper.loopFix({
+    slideRealIndex,
+    direction: params.centeredSlides ? undefined : 'next'
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/loop/loopDestroy.js":
+/*!******************************************************!*\
+  !*** ./node_modules/swiper/core/loop/loopDestroy.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ loopDestroy)
+/* harmony export */ });
+function loopDestroy() {
+  const swiper = this;
+  const {
+    params,
+    slidesEl
+  } = swiper;
+  if (!params.loop || swiper.virtual && swiper.params.virtual.enabled) return;
+  swiper.recalcSlides();
+  const newSlidesOrder = [];
+  swiper.slides.forEach(slideEl => {
+    const index = typeof slideEl.swiperSlideIndex === 'undefined' ? slideEl.getAttribute('data-swiper-slide-index') * 1 : slideEl.swiperSlideIndex;
+    newSlidesOrder[index] = slideEl;
+  });
+  swiper.slides.forEach(slideEl => {
+    slideEl.removeAttribute('data-swiper-slide-index');
+  });
+  newSlidesOrder.forEach(slideEl => {
+    slidesEl.append(slideEl);
+  });
+  swiper.recalcSlides();
+  swiper.slideTo(swiper.realIndex, 0);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/loop/loopFix.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/core/loop/loopFix.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ loopFix)
+/* harmony export */ });
+function loopFix({
+  slideRealIndex,
+  slideTo = true,
+  direction,
+  setTranslate,
+  activeSlideIndex,
+  byController,
+  byMousewheel
+} = {}) {
+  const swiper = this;
+  if (!swiper.params.loop) return;
+  swiper.emit('beforeLoopFix');
+  const {
+    slides,
+    allowSlidePrev,
+    allowSlideNext,
+    slidesEl,
+    params
+  } = swiper;
+  swiper.allowSlidePrev = true;
+  swiper.allowSlideNext = true;
+  if (swiper.virtual && params.virtual.enabled) {
+    if (slideTo) {
+      if (!params.centeredSlides && swiper.snapIndex === 0) {
+        swiper.slideTo(swiper.virtual.slides.length, 0, false, true);
+      } else if (params.centeredSlides && swiper.snapIndex < params.slidesPerView) {
+        swiper.slideTo(swiper.virtual.slides.length + swiper.snapIndex, 0, false, true);
+      } else if (swiper.snapIndex === swiper.snapGrid.length - 1) {
+        swiper.slideTo(swiper.virtual.slidesBefore, 0, false, true);
+      }
+    }
+    swiper.allowSlidePrev = allowSlidePrev;
+    swiper.allowSlideNext = allowSlideNext;
+    swiper.emit('loopFix');
+    return;
+  }
+  const slidesPerView = params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(params.slidesPerView, 10));
+  let loopedSlides = params.loopedSlides || slidesPerView;
+  if (loopedSlides % params.slidesPerGroup !== 0) {
+    loopedSlides += params.slidesPerGroup - loopedSlides % params.slidesPerGroup;
+  }
+  swiper.loopedSlides = loopedSlides;
+  const prependSlidesIndexes = [];
+  const appendSlidesIndexes = [];
+  let activeIndex = swiper.activeIndex;
+  if (typeof activeSlideIndex === 'undefined') {
+    activeSlideIndex = swiper.getSlideIndex(swiper.slides.filter(el => el.classList.contains(params.slideActiveClass))[0]);
+  } else {
+    activeIndex = activeSlideIndex;
+  }
+  const isNext = direction === 'next' || !direction;
+  const isPrev = direction === 'prev' || !direction;
+  let slidesPrepended = 0;
+  let slidesAppended = 0;
+  // prepend last slides before start
+  if (activeSlideIndex < loopedSlides) {
+    slidesPrepended = Math.max(loopedSlides - activeSlideIndex, params.slidesPerGroup);
+    for (let i = 0; i < loopedSlides - activeSlideIndex; i += 1) {
+      const index = i - Math.floor(i / slides.length) * slides.length;
+      prependSlidesIndexes.push(slides.length - index - 1);
+    }
+  } else if (activeSlideIndex /* + slidesPerView */ > swiper.slides.length - loopedSlides * 2) {
+    slidesAppended = Math.max(activeSlideIndex - (swiper.slides.length - loopedSlides * 2), params.slidesPerGroup);
+    for (let i = 0; i < slidesAppended; i += 1) {
+      const index = i - Math.floor(i / slides.length) * slides.length;
+      appendSlidesIndexes.push(index);
+    }
+  }
+  if (isPrev) {
+    prependSlidesIndexes.forEach(index => {
+      swiper.slides[index].swiperLoopMoveDOM = true;
+      slidesEl.prepend(swiper.slides[index]);
+      swiper.slides[index].swiperLoopMoveDOM = false;
+    });
+  }
+  if (isNext) {
+    appendSlidesIndexes.forEach(index => {
+      swiper.slides[index].swiperLoopMoveDOM = true;
+      slidesEl.append(swiper.slides[index]);
+      swiper.slides[index].swiperLoopMoveDOM = false;
+    });
+  }
+  swiper.recalcSlides();
+  if (params.slidesPerView === 'auto') {
+    swiper.updateSlides();
+  }
+  if (params.watchSlidesProgress) {
+    swiper.updateSlidesOffset();
+  }
+  if (slideTo) {
+    if (prependSlidesIndexes.length > 0 && isPrev) {
+      if (typeof slideRealIndex === 'undefined') {
+        const currentSlideTranslate = swiper.slidesGrid[activeIndex];
+        const newSlideTranslate = swiper.slidesGrid[activeIndex + slidesPrepended];
+        const diff = newSlideTranslate - currentSlideTranslate;
+        if (byMousewheel) {
+          swiper.setTranslate(swiper.translate - diff);
+        } else {
+          swiper.slideTo(activeIndex + slidesPrepended, 0, false, true);
+          if (setTranslate) {
+            swiper.touches[swiper.isHorizontal() ? 'startX' : 'startY'] += diff;
+          }
+        }
+      } else {
+        if (setTranslate) {
+          swiper.slideToLoop(slideRealIndex, 0, false, true);
+        }
+      }
+    } else if (appendSlidesIndexes.length > 0 && isNext) {
+      if (typeof slideRealIndex === 'undefined') {
+        const currentSlideTranslate = swiper.slidesGrid[activeIndex];
+        const newSlideTranslate = swiper.slidesGrid[activeIndex - slidesAppended];
+        const diff = newSlideTranslate - currentSlideTranslate;
+        if (byMousewheel) {
+          swiper.setTranslate(swiper.translate - diff);
+        } else {
+          swiper.slideTo(activeIndex - slidesAppended, 0, false, true);
+          if (setTranslate) {
+            swiper.touches[swiper.isHorizontal() ? 'startX' : 'startY'] += diff;
+          }
+        }
+      } else {
+        swiper.slideToLoop(slideRealIndex, 0, false, true);
+      }
+    }
+  }
+  swiper.allowSlidePrev = allowSlidePrev;
+  swiper.allowSlideNext = allowSlideNext;
+  if (swiper.controller && swiper.controller.control && !byController) {
+    const loopParams = {
+      slideRealIndex,
+      slideTo: false,
+      direction,
+      setTranslate,
+      activeSlideIndex,
+      byController: true
+    };
+    if (Array.isArray(swiper.controller.control)) {
+      swiper.controller.control.forEach(c => {
+        if (!c.destroyed && c.params.loop) c.loopFix(loopParams);
+      });
+    } else if (swiper.controller.control instanceof swiper.constructor && swiper.controller.control.params.loop) {
+      swiper.controller.control.loopFix(loopParams);
+    }
+  }
+  swiper.emit('loopFix');
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/moduleExtendParams.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swiper/core/moduleExtendParams.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ moduleExtendParams)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function moduleExtendParams(params, allModulesParams) {
+  return function extendParams(obj = {}) {
+    const moduleParamName = Object.keys(obj)[0];
+    const moduleParams = obj[moduleParamName];
+    if (typeof moduleParams !== 'object' || moduleParams === null) {
+      (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.extend)(allModulesParams, obj);
+      return;
+    }
+    if (['navigation', 'pagination', 'scrollbar'].indexOf(moduleParamName) >= 0 && params[moduleParamName] === true) {
+      params[moduleParamName] = {
+        auto: true
+      };
+    }
+    if (!(moduleParamName in params && 'enabled' in moduleParams)) {
+      (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.extend)(allModulesParams, obj);
+      return;
+    }
+    if (params[moduleParamName] === true) {
+      params[moduleParamName] = {
+        enabled: true
+      };
+    }
+    if (typeof params[moduleParamName] === 'object' && !('enabled' in params[moduleParamName])) {
+      params[moduleParamName].enabled = true;
+    }
+    if (!params[moduleParamName]) params[moduleParamName] = {
+      enabled: false
+    };
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.extend)(allModulesParams, obj);
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/modules/observer/observer.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/modules/observer/observer.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Observer)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function Observer({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  const observers = [];
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const attach = (target, options = {}) => {
+    const ObserverFunc = window.MutationObserver || window.WebkitMutationObserver;
+    const observer = new ObserverFunc(mutations => {
+      // The observerUpdate event should only be triggered
+      // once despite the number of mutations.  Additional
+      // triggers are redundant and are very costly
+      if (swiper.__preventObserver__) return;
+      if (mutations.length === 1) {
+        emit('observerUpdate', mutations[0]);
+        return;
+      }
+      const observerUpdate = function observerUpdate() {
+        emit('observerUpdate', mutations[0]);
+      };
+      if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(observerUpdate);
+      } else {
+        window.setTimeout(observerUpdate, 0);
+      }
+    });
+    observer.observe(target, {
+      attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
+      childList: typeof options.childList === 'undefined' ? true : options.childList,
+      characterData: typeof options.characterData === 'undefined' ? true : options.characterData
+    });
+    observers.push(observer);
+  };
+  const init = () => {
+    if (!swiper.params.observer) return;
+    if (swiper.params.observeParents) {
+      const containerParents = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementParents)(swiper.el);
+      for (let i = 0; i < containerParents.length; i += 1) {
+        attach(containerParents[i]);
+      }
+    }
+    // Observe container
+    attach(swiper.el, {
+      childList: swiper.params.observeSlideChildren
+    });
+
+    // Observe wrapper
+    attach(swiper.wrapperEl, {
+      attributes: false
+    });
+  };
+  const destroy = () => {
+    observers.forEach(observer => {
+      observer.disconnect();
+    });
+    observers.splice(0, observers.length);
+  };
+  extendParams({
+    observer: false,
+    observeParents: false,
+    observeSlideChildren: false
+  });
+  on('init', init);
+  on('destroy', destroy);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/modules/resize/resize.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swiper/core/modules/resize/resize.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Resize)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+
+function Resize({
+  swiper,
+  on,
+  emit
+}) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  let observer = null;
+  let animationFrame = null;
+  const resizeHandler = () => {
+    if (!swiper || swiper.destroyed || !swiper.initialized) return;
+    emit('beforeResize');
+    emit('resize');
+  };
+  const createObserver = () => {
+    if (!swiper || swiper.destroyed || !swiper.initialized) return;
+    observer = new ResizeObserver(entries => {
+      animationFrame = window.requestAnimationFrame(() => {
+        const {
+          width,
+          height
+        } = swiper;
+        let newWidth = width;
+        let newHeight = height;
+        entries.forEach(({
+          contentBoxSize,
+          contentRect,
+          target
+        }) => {
+          if (target && target !== swiper.el) return;
+          newWidth = contentRect ? contentRect.width : (contentBoxSize[0] || contentBoxSize).inlineSize;
+          newHeight = contentRect ? contentRect.height : (contentBoxSize[0] || contentBoxSize).blockSize;
+        });
+        if (newWidth !== width || newHeight !== height) {
+          resizeHandler();
+        }
+      });
+    });
+    observer.observe(swiper.el);
+  };
+  const removeObserver = () => {
+    if (animationFrame) {
+      window.cancelAnimationFrame(animationFrame);
+    }
+    if (observer && observer.unobserve && swiper.el) {
+      observer.unobserve(swiper.el);
+      observer = null;
+    }
+  };
+  const orientationChangeHandler = () => {
+    if (!swiper || swiper.destroyed || !swiper.initialized) return;
+    emit('orientationchange');
+  };
+  on('init', () => {
+    if (swiper.params.resizeObserver && typeof window.ResizeObserver !== 'undefined') {
+      createObserver();
+      return;
+    }
+    window.addEventListener('resize', resizeHandler);
+    window.addEventListener('orientationchange', orientationChangeHandler);
+  });
+  on('destroy', () => {
+    removeObserver();
+    window.removeEventListener('resize', resizeHandler);
+    window.removeEventListener('orientationchange', orientationChangeHandler);
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/index.js":
+/*!*************************************************!*\
+  !*** ./node_modules/swiper/core/slide/index.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _slideTo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slideTo.js */ "./node_modules/swiper/core/slide/slideTo.js");
+/* harmony import */ var _slideToLoop_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slideToLoop.js */ "./node_modules/swiper/core/slide/slideToLoop.js");
+/* harmony import */ var _slideNext_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./slideNext.js */ "./node_modules/swiper/core/slide/slideNext.js");
+/* harmony import */ var _slidePrev_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slidePrev.js */ "./node_modules/swiper/core/slide/slidePrev.js");
+/* harmony import */ var _slideReset_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./slideReset.js */ "./node_modules/swiper/core/slide/slideReset.js");
+/* harmony import */ var _slideToClosest_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./slideToClosest.js */ "./node_modules/swiper/core/slide/slideToClosest.js");
+/* harmony import */ var _slideToClickedSlide_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./slideToClickedSlide.js */ "./node_modules/swiper/core/slide/slideToClickedSlide.js");
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  slideTo: _slideTo_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  slideToLoop: _slideToLoop_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  slideNext: _slideNext_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  slidePrev: _slidePrev_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  slideReset: _slideReset_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+  slideToClosest: _slideToClosest_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+  slideToClickedSlide: _slideToClickedSlide_js__WEBPACK_IMPORTED_MODULE_6__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slideNext.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slideNext.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slideNext)
+/* harmony export */ });
+/* eslint no-unused-vars: "off" */
+function slideNext(speed = this.params.speed, runCallbacks = true, internal) {
+  const swiper = this;
+  const {
+    enabled,
+    params,
+    animating
+  } = swiper;
+  if (!enabled) return swiper;
+  let perGroup = params.slidesPerGroup;
+  if (params.slidesPerView === 'auto' && params.slidesPerGroup === 1 && params.slidesPerGroupAuto) {
+    perGroup = Math.max(swiper.slidesPerViewDynamic('current', true), 1);
+  }
+  const increment = swiper.activeIndex < params.slidesPerGroupSkip ? 1 : perGroup;
+  const isVirtual = swiper.virtual && params.virtual.enabled;
+  if (params.loop) {
+    if (animating && !isVirtual && params.loopPreventsSliding) return false;
+    swiper.loopFix({
+      direction: 'next'
+    });
+    // eslint-disable-next-line
+    swiper._clientLeft = swiper.wrapperEl.clientLeft;
+  }
+  if (params.rewind && swiper.isEnd) {
+    return swiper.slideTo(0, speed, runCallbacks, internal);
+  }
+  return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slidePrev.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slidePrev.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slidePrev)
+/* harmony export */ });
+/* eslint no-unused-vars: "off" */
+function slidePrev(speed = this.params.speed, runCallbacks = true, internal) {
+  const swiper = this;
+  const {
+    params,
+    snapGrid,
+    slidesGrid,
+    rtlTranslate,
+    enabled,
+    animating
+  } = swiper;
+  if (!enabled) return swiper;
+  const isVirtual = swiper.virtual && params.virtual.enabled;
+  if (params.loop) {
+    if (animating && !isVirtual && params.loopPreventsSliding) return false;
+    swiper.loopFix({
+      direction: 'prev'
+    });
+    // eslint-disable-next-line
+    swiper._clientLeft = swiper.wrapperEl.clientLeft;
+  }
+  const translate = rtlTranslate ? swiper.translate : -swiper.translate;
+  function normalize(val) {
+    if (val < 0) return -Math.floor(Math.abs(val));
+    return Math.floor(val);
+  }
+  const normalizedTranslate = normalize(translate);
+  const normalizedSnapGrid = snapGrid.map(val => normalize(val));
+  let prevSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate) - 1];
+  if (typeof prevSnap === 'undefined' && params.cssMode) {
+    let prevSnapIndex;
+    snapGrid.forEach((snap, snapIndex) => {
+      if (normalizedTranslate >= snap) {
+        // prevSnap = snap;
+        prevSnapIndex = snapIndex;
+      }
+    });
+    if (typeof prevSnapIndex !== 'undefined') {
+      prevSnap = snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
+    }
+  }
+  let prevIndex = 0;
+  if (typeof prevSnap !== 'undefined') {
+    prevIndex = slidesGrid.indexOf(prevSnap);
+    if (prevIndex < 0) prevIndex = swiper.activeIndex - 1;
+    if (params.slidesPerView === 'auto' && params.slidesPerGroup === 1 && params.slidesPerGroupAuto) {
+      prevIndex = prevIndex - swiper.slidesPerViewDynamic('previous', true) + 1;
+      prevIndex = Math.max(prevIndex, 0);
+    }
+  }
+  if (params.rewind && swiper.isBeginning) {
+    const lastIndex = swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual ? swiper.virtual.slides.length - 1 : swiper.slides.length - 1;
+    return swiper.slideTo(lastIndex, speed, runCallbacks, internal);
+  }
+  return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slideReset.js":
+/*!******************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slideReset.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slideReset)
+/* harmony export */ });
+/* eslint no-unused-vars: "off" */
+function slideReset(speed = this.params.speed, runCallbacks = true, internal) {
+  const swiper = this;
+  return swiper.slideTo(swiper.activeIndex, speed, runCallbacks, internal);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slideTo.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slideTo.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slideTo)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function slideTo(index = 0, speed = this.params.speed, runCallbacks = true, internal, initial) {
+  if (typeof index === 'string') {
+    index = parseInt(index, 10);
+  }
+  const swiper = this;
+  let slideIndex = index;
+  if (slideIndex < 0) slideIndex = 0;
+  const {
+    params,
+    snapGrid,
+    slidesGrid,
+    previousIndex,
+    activeIndex,
+    rtlTranslate: rtl,
+    wrapperEl,
+    enabled
+  } = swiper;
+  if (swiper.animating && params.preventInteractionOnTransition || !enabled && !internal && !initial) {
+    return false;
+  }
+  const skip = Math.min(swiper.params.slidesPerGroupSkip, slideIndex);
+  let snapIndex = skip + Math.floor((slideIndex - skip) / swiper.params.slidesPerGroup);
+  if (snapIndex >= snapGrid.length) snapIndex = snapGrid.length - 1;
+  const translate = -snapGrid[snapIndex];
+  // Normalize slideIndex
+  if (params.normalizeSlideIndex) {
+    for (let i = 0; i < slidesGrid.length; i += 1) {
+      const normalizedTranslate = -Math.floor(translate * 100);
+      const normalizedGrid = Math.floor(slidesGrid[i] * 100);
+      const normalizedGridNext = Math.floor(slidesGrid[i + 1] * 100);
+      if (typeof slidesGrid[i + 1] !== 'undefined') {
+        if (normalizedTranslate >= normalizedGrid && normalizedTranslate < normalizedGridNext - (normalizedGridNext - normalizedGrid) / 2) {
+          slideIndex = i;
+        } else if (normalizedTranslate >= normalizedGrid && normalizedTranslate < normalizedGridNext) {
+          slideIndex = i + 1;
+        }
+      } else if (normalizedTranslate >= normalizedGrid) {
+        slideIndex = i;
+      }
+    }
+  }
+  // Directions locks
+  if (swiper.initialized && slideIndex !== activeIndex) {
+    if (!swiper.allowSlideNext && (rtl ? translate > swiper.translate && translate > swiper.minTranslate() : translate < swiper.translate && translate < swiper.minTranslate())) {
+      return false;
+    }
+    if (!swiper.allowSlidePrev && translate > swiper.translate && translate > swiper.maxTranslate()) {
+      if ((activeIndex || 0) !== slideIndex) {
+        return false;
+      }
+    }
+  }
+  if (slideIndex !== (previousIndex || 0) && runCallbacks) {
+    swiper.emit('beforeSlideChangeStart');
+  }
+
+  // Update progress
+  swiper.updateProgress(translate);
+  let direction;
+  if (slideIndex > activeIndex) direction = 'next';else if (slideIndex < activeIndex) direction = 'prev';else direction = 'reset';
+
+  // Update Index
+  if (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate) {
+    swiper.updateActiveIndex(slideIndex);
+    // Update Height
+    if (params.autoHeight) {
+      swiper.updateAutoHeight();
+    }
+    swiper.updateSlidesClasses();
+    if (params.effect !== 'slide') {
+      swiper.setTranslate(translate);
+    }
+    if (direction !== 'reset') {
+      swiper.transitionStart(runCallbacks, direction);
+      swiper.transitionEnd(runCallbacks, direction);
+    }
+    return false;
+  }
+  if (params.cssMode) {
+    const isH = swiper.isHorizontal();
+    const t = rtl ? translate : -translate;
+    if (speed === 0) {
+      const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+      if (isVirtual) {
+        swiper.wrapperEl.style.scrollSnapType = 'none';
+        swiper._immediateVirtual = true;
+      }
+      if (isVirtual && !swiper._cssModeVirtualInitialSet && swiper.params.initialSlide > 0) {
+        swiper._cssModeVirtualInitialSet = true;
+        requestAnimationFrame(() => {
+          wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = t;
+        });
+      } else {
+        wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = t;
+      }
+      if (isVirtual) {
+        requestAnimationFrame(() => {
+          swiper.wrapperEl.style.scrollSnapType = '';
+          swiper._immediateVirtual = false;
+        });
+      }
+    } else {
+      if (!swiper.support.smoothScroll) {
+        (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.animateCSSModeScroll)({
+          swiper,
+          targetPosition: t,
+          side: isH ? 'left' : 'top'
+        });
+        return true;
+      }
+      wrapperEl.scrollTo({
+        [isH ? 'left' : 'top']: t,
+        behavior: 'smooth'
+      });
+    }
+    return true;
+  }
+  swiper.setTransition(speed);
+  swiper.setTranslate(translate);
+  swiper.updateActiveIndex(slideIndex);
+  swiper.updateSlidesClasses();
+  swiper.emit('beforeTransitionStart', speed, internal);
+  swiper.transitionStart(runCallbacks, direction);
+  if (speed === 0) {
+    swiper.transitionEnd(runCallbacks, direction);
+  } else if (!swiper.animating) {
+    swiper.animating = true;
+    if (!swiper.onSlideToWrapperTransitionEnd) {
+      swiper.onSlideToWrapperTransitionEnd = function transitionEnd(e) {
+        if (!swiper || swiper.destroyed) return;
+        if (e.target !== this) return;
+        swiper.wrapperEl.removeEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
+        swiper.onSlideToWrapperTransitionEnd = null;
+        delete swiper.onSlideToWrapperTransitionEnd;
+        swiper.transitionEnd(runCallbacks, direction);
+      };
+    }
+    swiper.wrapperEl.addEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
+  }
+  return true;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slideToClickedSlide.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slideToClickedSlide.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slideToClickedSlide)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function slideToClickedSlide() {
+  const swiper = this;
+  const {
+    params,
+    slidesEl
+  } = swiper;
+  const slidesPerView = params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : params.slidesPerView;
+  let slideToIndex = swiper.clickedIndex;
+  let realIndex;
+  const slideSelector = swiper.isElement ? `swiper-slide` : `.${params.slideClass}`;
+  if (params.loop) {
+    if (swiper.animating) return;
+    realIndex = parseInt(swiper.clickedSlide.getAttribute('data-swiper-slide-index'), 10);
+    if (params.centeredSlides) {
+      if (slideToIndex < swiper.loopedSlides - slidesPerView / 2 || slideToIndex > swiper.slides.length - swiper.loopedSlides + slidesPerView / 2) {
+        swiper.loopFix();
+        slideToIndex = swiper.getSlideIndex((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(slidesEl, `${slideSelector}[data-swiper-slide-index="${realIndex}"]`)[0]);
+        (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.nextTick)(() => {
+          swiper.slideTo(slideToIndex);
+        });
+      } else {
+        swiper.slideTo(slideToIndex);
+      }
+    } else if (slideToIndex > swiper.slides.length - slidesPerView) {
+      swiper.loopFix();
+      slideToIndex = swiper.getSlideIndex((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(slidesEl, `${slideSelector}[data-swiper-slide-index="${realIndex}"]`)[0]);
+      (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.nextTick)(() => {
+        swiper.slideTo(slideToIndex);
+      });
+    } else {
+      swiper.slideTo(slideToIndex);
+    }
+  } else {
+    swiper.slideTo(slideToIndex);
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slideToClosest.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slideToClosest.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slideToClosest)
+/* harmony export */ });
+/* eslint no-unused-vars: "off" */
+function slideToClosest(speed = this.params.speed, runCallbacks = true, internal, threshold = 0.5) {
+  const swiper = this;
+  let index = swiper.activeIndex;
+  const skip = Math.min(swiper.params.slidesPerGroupSkip, index);
+  const snapIndex = skip + Math.floor((index - skip) / swiper.params.slidesPerGroup);
+  const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
+  if (translate >= swiper.snapGrid[snapIndex]) {
+    // The current translate is on or after the current snap index, so the choice
+    // is between the current index and the one after it.
+    const currentSnap = swiper.snapGrid[snapIndex];
+    const nextSnap = swiper.snapGrid[snapIndex + 1];
+    if (translate - currentSnap > (nextSnap - currentSnap) * threshold) {
+      index += swiper.params.slidesPerGroup;
+    }
+  } else {
+    // The current translate is before the current snap index, so the choice
+    // is between the current index and the one before it.
+    const prevSnap = swiper.snapGrid[snapIndex - 1];
+    const currentSnap = swiper.snapGrid[snapIndex];
+    if (translate - prevSnap <= (currentSnap - prevSnap) * threshold) {
+      index -= swiper.params.slidesPerGroup;
+    }
+  }
+  index = Math.max(index, 0);
+  index = Math.min(index, swiper.slidesGrid.length - 1);
+  return swiper.slideTo(index, speed, runCallbacks, internal);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/slide/slideToLoop.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/swiper/core/slide/slideToLoop.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ slideToLoop)
+/* harmony export */ });
+function slideToLoop(index = 0, speed = this.params.speed, runCallbacks = true, internal) {
+  if (typeof index === 'string') {
+    const indexAsNumber = parseInt(index, 10);
+    index = indexAsNumber;
+  }
+  const swiper = this;
+  let newIndex = index;
+  if (swiper.params.loop) {
+    if (swiper.virtual && swiper.params.virtual.enabled) {
+      // eslint-disable-next-line
+      newIndex = newIndex + swiper.virtual.slidesBefore;
+    } else {
+      newIndex = swiper.getSlideIndexByData(newIndex);
+    }
+  }
+  return swiper.slideTo(newIndex, speed, runCallbacks, internal);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/transition/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/swiper/core/transition/index.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _setTransition_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setTransition.js */ "./node_modules/swiper/core/transition/setTransition.js");
+/* harmony import */ var _transitionStart_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./transitionStart.js */ "./node_modules/swiper/core/transition/transitionStart.js");
+/* harmony import */ var _transitionEnd_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./transitionEnd.js */ "./node_modules/swiper/core/transition/transitionEnd.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  setTransition: _setTransition_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  transitionStart: _transitionStart_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  transitionEnd: _transitionEnd_js__WEBPACK_IMPORTED_MODULE_2__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/transition/setTransition.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/core/transition/setTransition.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ setTransition)
+/* harmony export */ });
+function setTransition(duration, byController) {
+  const swiper = this;
+  if (!swiper.params.cssMode) {
+    swiper.wrapperEl.style.transitionDuration = `${duration}ms`;
+  }
+  swiper.emit('setTransition', duration, byController);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/transition/transitionEmit.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/transition/transitionEmit.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ transitionEmit)
+/* harmony export */ });
+function transitionEmit({
+  swiper,
+  runCallbacks,
+  direction,
+  step
+}) {
+  const {
+    activeIndex,
+    previousIndex
+  } = swiper;
+  let dir = direction;
+  if (!dir) {
+    if (activeIndex > previousIndex) dir = 'next';else if (activeIndex < previousIndex) dir = 'prev';else dir = 'reset';
+  }
+  swiper.emit(`transition${step}`);
+  if (runCallbacks && activeIndex !== previousIndex) {
+    if (dir === 'reset') {
+      swiper.emit(`slideResetTransition${step}`);
+      return;
+    }
+    swiper.emit(`slideChangeTransition${step}`);
+    if (dir === 'next') {
+      swiper.emit(`slideNextTransition${step}`);
+    } else {
+      swiper.emit(`slidePrevTransition${step}`);
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/transition/transitionEnd.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/core/transition/transitionEnd.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ transitionEnd)
+/* harmony export */ });
+/* harmony import */ var _transitionEmit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./transitionEmit.js */ "./node_modules/swiper/core/transition/transitionEmit.js");
+
+function transitionEnd(runCallbacks = true, direction) {
+  const swiper = this;
+  const {
+    params
+  } = swiper;
+  swiper.animating = false;
+  if (params.cssMode) return;
+  swiper.setTransition(0);
+  (0,_transitionEmit_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    swiper,
+    runCallbacks,
+    direction,
+    step: 'End'
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/transition/transitionStart.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/swiper/core/transition/transitionStart.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ transitionStart)
+/* harmony export */ });
+/* harmony import */ var _transitionEmit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./transitionEmit.js */ "./node_modules/swiper/core/transition/transitionEmit.js");
+
+function transitionStart(runCallbacks = true, direction) {
+  const swiper = this;
+  const {
+    params
+  } = swiper;
+  if (params.cssMode) return;
+  if (params.autoHeight) {
+    swiper.updateAutoHeight();
+  }
+  (0,_transitionEmit_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    swiper,
+    runCallbacks,
+    direction,
+    step: 'Start'
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/translate/getTranslate.js":
+/*!************************************************************!*\
+  !*** ./node_modules/swiper/core/translate/getTranslate.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getSwiperTranslate)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function getSwiperTranslate(axis = this.isHorizontal() ? 'x' : 'y') {
+  const swiper = this;
+  const {
+    params,
+    rtlTranslate: rtl,
+    translate,
+    wrapperEl
+  } = swiper;
+  if (params.virtualTranslate) {
+    return rtl ? -translate : translate;
+  }
+  if (params.cssMode) {
+    return translate;
+  }
+  let currentTranslate = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.getTranslate)(wrapperEl, axis);
+  currentTranslate += swiper.cssOverflowAdjustment();
+  if (rtl) currentTranslate = -currentTranslate;
+  return currentTranslate || 0;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/translate/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/core/translate/index.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getTranslate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getTranslate.js */ "./node_modules/swiper/core/translate/getTranslate.js");
+/* harmony import */ var _setTranslate_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./setTranslate.js */ "./node_modules/swiper/core/translate/setTranslate.js");
+/* harmony import */ var _minTranslate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./minTranslate.js */ "./node_modules/swiper/core/translate/minTranslate.js");
+/* harmony import */ var _maxTranslate_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./maxTranslate.js */ "./node_modules/swiper/core/translate/maxTranslate.js");
+/* harmony import */ var _translateTo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./translateTo.js */ "./node_modules/swiper/core/translate/translateTo.js");
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  getTranslate: _getTranslate_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  setTranslate: _setTranslate_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  minTranslate: _minTranslate_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  maxTranslate: _maxTranslate_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  translateTo: _translateTo_js__WEBPACK_IMPORTED_MODULE_4__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/translate/maxTranslate.js":
+/*!************************************************************!*\
+  !*** ./node_modules/swiper/core/translate/maxTranslate.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ maxTranslate)
+/* harmony export */ });
+function maxTranslate() {
+  return -this.snapGrid[this.snapGrid.length - 1];
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/translate/minTranslate.js":
+/*!************************************************************!*\
+  !*** ./node_modules/swiper/core/translate/minTranslate.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ minTranslate)
+/* harmony export */ });
+function minTranslate() {
+  return -this.snapGrid[0];
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/translate/setTranslate.js":
+/*!************************************************************!*\
+  !*** ./node_modules/swiper/core/translate/setTranslate.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ setTranslate)
+/* harmony export */ });
+function setTranslate(translate, byController) {
+  const swiper = this;
+  const {
+    rtlTranslate: rtl,
+    params,
+    wrapperEl,
+    progress
+  } = swiper;
+  let x = 0;
+  let y = 0;
+  const z = 0;
+  if (swiper.isHorizontal()) {
+    x = rtl ? -translate : translate;
+  } else {
+    y = translate;
+  }
+  if (params.roundLengths) {
+    x = Math.floor(x);
+    y = Math.floor(y);
+  }
+  swiper.previousTranslate = swiper.translate;
+  swiper.translate = swiper.isHorizontal() ? x : y;
+  if (params.cssMode) {
+    wrapperEl[swiper.isHorizontal() ? 'scrollLeft' : 'scrollTop'] = swiper.isHorizontal() ? -x : -y;
+  } else if (!params.virtualTranslate) {
+    if (swiper.isHorizontal()) {
+      x -= swiper.cssOverflowAdjustment();
+    } else {
+      y -= swiper.cssOverflowAdjustment();
+    }
+    wrapperEl.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+  }
+
+  // Check if we need to update progress
+  let newProgress;
+  const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
+  if (translatesDiff === 0) {
+    newProgress = 0;
+  } else {
+    newProgress = (translate - swiper.minTranslate()) / translatesDiff;
+  }
+  if (newProgress !== progress) {
+    swiper.updateProgress(translate);
+  }
+  swiper.emit('setTranslate', swiper.translate, byController);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/translate/translateTo.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swiper/core/translate/translateTo.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ translateTo)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function translateTo(translate = 0, speed = this.params.speed, runCallbacks = true, translateBounds = true, internal) {
+  const swiper = this;
+  const {
+    params,
+    wrapperEl
+  } = swiper;
+  if (swiper.animating && params.preventInteractionOnTransition) {
+    return false;
+  }
+  const minTranslate = swiper.minTranslate();
+  const maxTranslate = swiper.maxTranslate();
+  let newTranslate;
+  if (translateBounds && translate > minTranslate) newTranslate = minTranslate;else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate;else newTranslate = translate;
+
+  // Update progress
+  swiper.updateProgress(newTranslate);
+  if (params.cssMode) {
+    const isH = swiper.isHorizontal();
+    if (speed === 0) {
+      wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = -newTranslate;
+    } else {
+      if (!swiper.support.smoothScroll) {
+        (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.animateCSSModeScroll)({
+          swiper,
+          targetPosition: -newTranslate,
+          side: isH ? 'left' : 'top'
+        });
+        return true;
+      }
+      wrapperEl.scrollTo({
+        [isH ? 'left' : 'top']: -newTranslate,
+        behavior: 'smooth'
+      });
+    }
+    return true;
+  }
+  if (speed === 0) {
+    swiper.setTransition(0);
+    swiper.setTranslate(newTranslate);
+    if (runCallbacks) {
+      swiper.emit('beforeTransitionStart', speed, internal);
+      swiper.emit('transitionEnd');
+    }
+  } else {
+    swiper.setTransition(speed);
+    swiper.setTranslate(newTranslate);
+    if (runCallbacks) {
+      swiper.emit('beforeTransitionStart', speed, internal);
+      swiper.emit('transitionStart');
+    }
+    if (!swiper.animating) {
+      swiper.animating = true;
+      if (!swiper.onTranslateToWrapperTransitionEnd) {
+        swiper.onTranslateToWrapperTransitionEnd = function transitionEnd(e) {
+          if (!swiper || swiper.destroyed) return;
+          if (e.target !== this) return;
+          swiper.wrapperEl.removeEventListener('transitionend', swiper.onTranslateToWrapperTransitionEnd);
+          swiper.onTranslateToWrapperTransitionEnd = null;
+          delete swiper.onTranslateToWrapperTransitionEnd;
+          if (runCallbacks) {
+            swiper.emit('transitionEnd');
+          }
+        };
+      }
+      swiper.wrapperEl.addEventListener('transitionend', swiper.onTranslateToWrapperTransitionEnd);
+    }
+  }
+  return true;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/core/update/index.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _updateSize_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./updateSize.js */ "./node_modules/swiper/core/update/updateSize.js");
+/* harmony import */ var _updateSlides_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./updateSlides.js */ "./node_modules/swiper/core/update/updateSlides.js");
+/* harmony import */ var _updateAutoHeight_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./updateAutoHeight.js */ "./node_modules/swiper/core/update/updateAutoHeight.js");
+/* harmony import */ var _updateSlidesOffset_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./updateSlidesOffset.js */ "./node_modules/swiper/core/update/updateSlidesOffset.js");
+/* harmony import */ var _updateSlidesProgress_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./updateSlidesProgress.js */ "./node_modules/swiper/core/update/updateSlidesProgress.js");
+/* harmony import */ var _updateProgress_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./updateProgress.js */ "./node_modules/swiper/core/update/updateProgress.js");
+/* harmony import */ var _updateSlidesClasses_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./updateSlidesClasses.js */ "./node_modules/swiper/core/update/updateSlidesClasses.js");
+/* harmony import */ var _updateActiveIndex_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./updateActiveIndex.js */ "./node_modules/swiper/core/update/updateActiveIndex.js");
+/* harmony import */ var _updateClickedSlide_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./updateClickedSlide.js */ "./node_modules/swiper/core/update/updateClickedSlide.js");
+
+
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  updateSize: _updateSize_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  updateSlides: _updateSlides_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  updateAutoHeight: _updateAutoHeight_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  updateSlidesOffset: _updateSlidesOffset_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  updateSlidesProgress: _updateSlidesProgress_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+  updateProgress: _updateProgress_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+  updateSlidesClasses: _updateSlidesClasses_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+  updateActiveIndex: _updateActiveIndex_js__WEBPACK_IMPORTED_MODULE_7__["default"],
+  updateClickedSlide: _updateClickedSlide_js__WEBPACK_IMPORTED_MODULE_8__["default"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateActiveIndex.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateActiveIndex.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateActiveIndex),
+/* harmony export */   getActiveIndexByTranslate: () => (/* binding */ getActiveIndexByTranslate)
+/* harmony export */ });
+/* harmony import */ var _shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/process-lazy-preloader.js */ "./node_modules/swiper/shared/process-lazy-preloader.js");
+
+function getActiveIndexByTranslate(swiper) {
+  const {
+    slidesGrid,
+    params
+  } = swiper;
+  const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
+  let activeIndex;
+  for (let i = 0; i < slidesGrid.length; i += 1) {
+    if (typeof slidesGrid[i + 1] !== 'undefined') {
+      if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1] - (slidesGrid[i + 1] - slidesGrid[i]) / 2) {
+        activeIndex = i;
+      } else if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1]) {
+        activeIndex = i + 1;
+      }
+    } else if (translate >= slidesGrid[i]) {
+      activeIndex = i;
+    }
+  }
+  // Normalize slideIndex
+  if (params.normalizeSlideIndex) {
+    if (activeIndex < 0 || typeof activeIndex === 'undefined') activeIndex = 0;
+  }
+  return activeIndex;
+}
+function updateActiveIndex(newActiveIndex) {
+  const swiper = this;
+  const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
+  const {
+    snapGrid,
+    params,
+    activeIndex: previousIndex,
+    realIndex: previousRealIndex,
+    snapIndex: previousSnapIndex
+  } = swiper;
+  let activeIndex = newActiveIndex;
+  let snapIndex;
+  const getVirtualRealIndex = aIndex => {
+    let realIndex = aIndex - swiper.virtual.slidesBefore;
+    if (realIndex < 0) {
+      realIndex = swiper.virtual.slides.length + realIndex;
+    }
+    if (realIndex >= swiper.virtual.slides.length) {
+      realIndex -= swiper.virtual.slides.length;
+    }
+    return realIndex;
+  };
+  if (typeof activeIndex === 'undefined') {
+    activeIndex = getActiveIndexByTranslate(swiper);
+  }
+  if (snapGrid.indexOf(translate) >= 0) {
+    snapIndex = snapGrid.indexOf(translate);
+  } else {
+    const skip = Math.min(params.slidesPerGroupSkip, activeIndex);
+    snapIndex = skip + Math.floor((activeIndex - skip) / params.slidesPerGroup);
+  }
+  if (snapIndex >= snapGrid.length) snapIndex = snapGrid.length - 1;
+  if (activeIndex === previousIndex) {
+    if (snapIndex !== previousSnapIndex) {
+      swiper.snapIndex = snapIndex;
+      swiper.emit('snapIndexChange');
+    }
+    if (swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) {
+      swiper.realIndex = getVirtualRealIndex(activeIndex);
+    }
+    return;
+  }
+  // Get real index
+  let realIndex;
+  if (swiper.virtual && params.virtual.enabled && params.loop) {
+    realIndex = getVirtualRealIndex(activeIndex);
+  } else if (swiper.slides[activeIndex]) {
+    realIndex = parseInt(swiper.slides[activeIndex].getAttribute('data-swiper-slide-index') || activeIndex, 10);
+  } else {
+    realIndex = activeIndex;
+  }
+  Object.assign(swiper, {
+    previousSnapIndex,
+    snapIndex,
+    previousRealIndex,
+    realIndex,
+    previousIndex,
+    activeIndex
+  });
+  if (swiper.initialized) {
+    (0,_shared_process_lazy_preloader_js__WEBPACK_IMPORTED_MODULE_0__.preload)(swiper);
+  }
+  swiper.emit('activeIndexChange');
+  swiper.emit('snapIndexChange');
+  if (previousRealIndex !== realIndex) {
+    swiper.emit('realIndexChange');
+  }
+  if (swiper.initialized || swiper.params.runCallbacksOnInit) {
+    swiper.emit('slideChange');
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateAutoHeight.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateAutoHeight.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateAutoHeight)
+/* harmony export */ });
+function updateAutoHeight(speed) {
+  const swiper = this;
+  const activeSlides = [];
+  const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+  let newHeight = 0;
+  let i;
+  if (typeof speed === 'number') {
+    swiper.setTransition(speed);
+  } else if (speed === true) {
+    swiper.setTransition(swiper.params.speed);
+  }
+  const getSlideByIndex = index => {
+    if (isVirtual) {
+      return swiper.slides[swiper.getSlideIndexByData(index)];
+    }
+    return swiper.slides[index];
+  };
+  // Find slides currently in view
+  if (swiper.params.slidesPerView !== 'auto' && swiper.params.slidesPerView > 1) {
+    if (swiper.params.centeredSlides) {
+      (swiper.visibleSlides || []).forEach(slide => {
+        activeSlides.push(slide);
+      });
+    } else {
+      for (i = 0; i < Math.ceil(swiper.params.slidesPerView); i += 1) {
+        const index = swiper.activeIndex + i;
+        if (index > swiper.slides.length && !isVirtual) break;
+        activeSlides.push(getSlideByIndex(index));
+      }
+    }
+  } else {
+    activeSlides.push(getSlideByIndex(swiper.activeIndex));
+  }
+
+  // Find new height from highest slide in view
+  for (i = 0; i < activeSlides.length; i += 1) {
+    if (typeof activeSlides[i] !== 'undefined') {
+      const height = activeSlides[i].offsetHeight;
+      newHeight = height > newHeight ? height : newHeight;
+    }
+  }
+
+  // Update Height
+  if (newHeight || newHeight === 0) swiper.wrapperEl.style.height = `${newHeight}px`;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateClickedSlide.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateClickedSlide.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateClickedSlide)
+/* harmony export */ });
+function updateClickedSlide(e) {
+  const swiper = this;
+  const params = swiper.params;
+  const slide = e.closest(`.${params.slideClass}, swiper-slide`);
+  let slideFound = false;
+  let slideIndex;
+  if (slide) {
+    for (let i = 0; i < swiper.slides.length; i += 1) {
+      if (swiper.slides[i] === slide) {
+        slideFound = true;
+        slideIndex = i;
+        break;
+      }
+    }
+  }
+  if (slide && slideFound) {
+    swiper.clickedSlide = slide;
+    if (swiper.virtual && swiper.params.virtual.enabled) {
+      swiper.clickedIndex = parseInt(slide.getAttribute('data-swiper-slide-index'), 10);
+    } else {
+      swiper.clickedIndex = slideIndex;
+    }
+  } else {
+    swiper.clickedSlide = undefined;
+    swiper.clickedIndex = undefined;
+    return;
+  }
+  if (params.slideToClickedSlide && swiper.clickedIndex !== undefined && swiper.clickedIndex !== swiper.activeIndex) {
+    swiper.slideToClickedSlide();
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateProgress.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateProgress.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateProgress)
+/* harmony export */ });
+function updateProgress(translate) {
+  const swiper = this;
+  if (typeof translate === 'undefined') {
+    const multiplier = swiper.rtlTranslate ? -1 : 1;
+    // eslint-disable-next-line
+    translate = swiper && swiper.translate && swiper.translate * multiplier || 0;
+  }
+  const params = swiper.params;
+  const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
+  let {
+    progress,
+    isBeginning,
+    isEnd,
+    progressLoop
+  } = swiper;
+  const wasBeginning = isBeginning;
+  const wasEnd = isEnd;
+  if (translatesDiff === 0) {
+    progress = 0;
+    isBeginning = true;
+    isEnd = true;
+  } else {
+    progress = (translate - swiper.minTranslate()) / translatesDiff;
+    const isBeginningRounded = Math.abs(translate - swiper.minTranslate()) < 1;
+    const isEndRounded = Math.abs(translate - swiper.maxTranslate()) < 1;
+    isBeginning = isBeginningRounded || progress <= 0;
+    isEnd = isEndRounded || progress >= 1;
+    if (isBeginningRounded) progress = 0;
+    if (isEndRounded) progress = 1;
+  }
+  if (params.loop) {
+    const firstSlideIndex = swiper.getSlideIndexByData(0);
+    const lastSlideIndex = swiper.getSlideIndexByData(swiper.slides.length - 1);
+    const firstSlideTranslate = swiper.slidesGrid[firstSlideIndex];
+    const lastSlideTranslate = swiper.slidesGrid[lastSlideIndex];
+    const translateMax = swiper.slidesGrid[swiper.slidesGrid.length - 1];
+    const translateAbs = Math.abs(translate);
+    if (translateAbs >= firstSlideTranslate) {
+      progressLoop = (translateAbs - firstSlideTranslate) / translateMax;
+    } else {
+      progressLoop = (translateAbs + translateMax - lastSlideTranslate) / translateMax;
+    }
+    if (progressLoop > 1) progressLoop -= 1;
+  }
+  Object.assign(swiper, {
+    progress,
+    progressLoop,
+    isBeginning,
+    isEnd
+  });
+  if (params.watchSlidesProgress || params.centeredSlides && params.autoHeight) swiper.updateSlidesProgress(translate);
+  if (isBeginning && !wasBeginning) {
+    swiper.emit('reachBeginning toEdge');
+  }
+  if (isEnd && !wasEnd) {
+    swiper.emit('reachEnd toEdge');
+  }
+  if (wasBeginning && !isBeginning || wasEnd && !isEnd) {
+    swiper.emit('fromEdge');
+  }
+  swiper.emit('progress', progress);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateSize.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateSize.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateSize)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function updateSize() {
+  const swiper = this;
+  let width;
+  let height;
+  const el = swiper.el;
+  if (typeof swiper.params.width !== 'undefined' && swiper.params.width !== null) {
+    width = swiper.params.width;
+  } else {
+    width = el.clientWidth;
+  }
+  if (typeof swiper.params.height !== 'undefined' && swiper.params.height !== null) {
+    height = swiper.params.height;
+  } else {
+    height = el.clientHeight;
+  }
+  if (width === 0 && swiper.isHorizontal() || height === 0 && swiper.isVertical()) {
+    return;
+  }
+
+  // Subtract paddings
+  width = width - parseInt((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementStyle)(el, 'padding-left') || 0, 10) - parseInt((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementStyle)(el, 'padding-right') || 0, 10);
+  height = height - parseInt((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementStyle)(el, 'padding-top') || 0, 10) - parseInt((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementStyle)(el, 'padding-bottom') || 0, 10);
+  if (Number.isNaN(width)) width = 0;
+  if (Number.isNaN(height)) height = 0;
+  Object.assign(swiper, {
+    width,
+    height,
+    size: swiper.isHorizontal() ? width : height
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateSlides.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateSlides.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateSlides)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function updateSlides() {
+  const swiper = this;
+  function getDirectionLabel(property) {
+    if (swiper.isHorizontal()) {
+      return property;
+    }
+    // prettier-ignore
+    return {
+      'width': 'height',
+      'margin-top': 'margin-left',
+      'margin-bottom ': 'margin-right',
+      'margin-left': 'margin-top',
+      'margin-right': 'margin-bottom',
+      'padding-left': 'padding-top',
+      'padding-right': 'padding-bottom',
+      'marginRight': 'marginBottom'
+    }[property];
+  }
+  function getDirectionPropertyValue(node, label) {
+    return parseFloat(node.getPropertyValue(getDirectionLabel(label)) || 0);
+  }
+  const params = swiper.params;
+  const {
+    wrapperEl,
+    slidesEl,
+    size: swiperSize,
+    rtlTranslate: rtl,
+    wrongRTL
+  } = swiper;
+  const isVirtual = swiper.virtual && params.virtual.enabled;
+  const previousSlidesLength = isVirtual ? swiper.virtual.slides.length : swiper.slides.length;
+  const slides = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(slidesEl, `.${swiper.params.slideClass}, swiper-slide`);
+  const slidesLength = isVirtual ? swiper.virtual.slides.length : slides.length;
+  let snapGrid = [];
+  const slidesGrid = [];
+  const slidesSizesGrid = [];
+  let offsetBefore = params.slidesOffsetBefore;
+  if (typeof offsetBefore === 'function') {
+    offsetBefore = params.slidesOffsetBefore.call(swiper);
+  }
+  let offsetAfter = params.slidesOffsetAfter;
+  if (typeof offsetAfter === 'function') {
+    offsetAfter = params.slidesOffsetAfter.call(swiper);
+  }
+  const previousSnapGridLength = swiper.snapGrid.length;
+  const previousSlidesGridLength = swiper.slidesGrid.length;
+  let spaceBetween = params.spaceBetween;
+  let slidePosition = -offsetBefore;
+  let prevSlideSize = 0;
+  let index = 0;
+  if (typeof swiperSize === 'undefined') {
+    return;
+  }
+  if (typeof spaceBetween === 'string' && spaceBetween.indexOf('%') >= 0) {
+    spaceBetween = parseFloat(spaceBetween.replace('%', '')) / 100 * swiperSize;
+  } else if (typeof spaceBetween === 'string') {
+    spaceBetween = parseFloat(spaceBetween);
+  }
+  swiper.virtualSize = -spaceBetween;
+
+  // reset margins
+  slides.forEach(slideEl => {
+    if (rtl) {
+      slideEl.style.marginLeft = '';
+    } else {
+      slideEl.style.marginRight = '';
+    }
+    slideEl.style.marginBottom = '';
+    slideEl.style.marginTop = '';
+  });
+
+  // reset cssMode offsets
+  if (params.centeredSlides && params.cssMode) {
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.setCSSProperty)(wrapperEl, '--swiper-centered-offset-before', '');
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.setCSSProperty)(wrapperEl, '--swiper-centered-offset-after', '');
+  }
+  const gridEnabled = params.grid && params.grid.rows > 1 && swiper.grid;
+  if (gridEnabled) {
+    swiper.grid.initSlides(slidesLength);
+  }
+
+  // Calc slides
+  let slideSize;
+  const shouldResetSlideSize = params.slidesPerView === 'auto' && params.breakpoints && Object.keys(params.breakpoints).filter(key => {
+    return typeof params.breakpoints[key].slidesPerView !== 'undefined';
+  }).length > 0;
+  for (let i = 0; i < slidesLength; i += 1) {
+    slideSize = 0;
+    let slide;
+    if (slides[i]) slide = slides[i];
+    if (gridEnabled) {
+      swiper.grid.updateSlide(i, slide, slidesLength, getDirectionLabel);
+    }
+    if (slides[i] && (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementStyle)(slide, 'display') === 'none') continue; // eslint-disable-line
+
+    if (params.slidesPerView === 'auto') {
+      if (shouldResetSlideSize) {
+        slides[i].style[getDirectionLabel('width')] = ``;
+      }
+      const slideStyles = getComputedStyle(slide);
+      const currentTransform = slide.style.transform;
+      const currentWebKitTransform = slide.style.webkitTransform;
+      if (currentTransform) {
+        slide.style.transform = 'none';
+      }
+      if (currentWebKitTransform) {
+        slide.style.webkitTransform = 'none';
+      }
+      if (params.roundLengths) {
+        slideSize = swiper.isHorizontal() ? (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementOuterSize)(slide, 'width', true) : (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementOuterSize)(slide, 'height', true);
+      } else {
+        // eslint-disable-next-line
+        const width = getDirectionPropertyValue(slideStyles, 'width');
+        const paddingLeft = getDirectionPropertyValue(slideStyles, 'padding-left');
+        const paddingRight = getDirectionPropertyValue(slideStyles, 'padding-right');
+        const marginLeft = getDirectionPropertyValue(slideStyles, 'margin-left');
+        const marginRight = getDirectionPropertyValue(slideStyles, 'margin-right');
+        const boxSizing = slideStyles.getPropertyValue('box-sizing');
+        if (boxSizing && boxSizing === 'border-box') {
+          slideSize = width + marginLeft + marginRight;
+        } else {
+          const {
+            clientWidth,
+            offsetWidth
+          } = slide;
+          slideSize = width + paddingLeft + paddingRight + marginLeft + marginRight + (offsetWidth - clientWidth);
+        }
+      }
+      if (currentTransform) {
+        slide.style.transform = currentTransform;
+      }
+      if (currentWebKitTransform) {
+        slide.style.webkitTransform = currentWebKitTransform;
+      }
+      if (params.roundLengths) slideSize = Math.floor(slideSize);
+    } else {
+      slideSize = (swiperSize - (params.slidesPerView - 1) * spaceBetween) / params.slidesPerView;
+      if (params.roundLengths) slideSize = Math.floor(slideSize);
+      if (slides[i]) {
+        slides[i].style[getDirectionLabel('width')] = `${slideSize}px`;
+      }
+    }
+    if (slides[i]) {
+      slides[i].swiperSlideSize = slideSize;
+    }
+    slidesSizesGrid.push(slideSize);
+    if (params.centeredSlides) {
+      slidePosition = slidePosition + slideSize / 2 + prevSlideSize / 2 + spaceBetween;
+      if (prevSlideSize === 0 && i !== 0) slidePosition = slidePosition - swiperSize / 2 - spaceBetween;
+      if (i === 0) slidePosition = slidePosition - swiperSize / 2 - spaceBetween;
+      if (Math.abs(slidePosition) < 1 / 1000) slidePosition = 0;
+      if (params.roundLengths) slidePosition = Math.floor(slidePosition);
+      if (index % params.slidesPerGroup === 0) snapGrid.push(slidePosition);
+      slidesGrid.push(slidePosition);
+    } else {
+      if (params.roundLengths) slidePosition = Math.floor(slidePosition);
+      if ((index - Math.min(swiper.params.slidesPerGroupSkip, index)) % swiper.params.slidesPerGroup === 0) snapGrid.push(slidePosition);
+      slidesGrid.push(slidePosition);
+      slidePosition = slidePosition + slideSize + spaceBetween;
+    }
+    swiper.virtualSize += slideSize + spaceBetween;
+    prevSlideSize = slideSize;
+    index += 1;
+  }
+  swiper.virtualSize = Math.max(swiper.virtualSize, swiperSize) + offsetAfter;
+  if (rtl && wrongRTL && (params.effect === 'slide' || params.effect === 'coverflow')) {
+    wrapperEl.style.width = `${swiper.virtualSize + spaceBetween}px`;
+  }
+  if (params.setWrapperSize) {
+    wrapperEl.style[getDirectionLabel('width')] = `${swiper.virtualSize + spaceBetween}px`;
+  }
+  if (gridEnabled) {
+    swiper.grid.updateWrapperSize(slideSize, snapGrid, getDirectionLabel);
+  }
+
+  // Remove last grid elements depending on width
+  if (!params.centeredSlides) {
+    const newSlidesGrid = [];
+    for (let i = 0; i < snapGrid.length; i += 1) {
+      let slidesGridItem = snapGrid[i];
+      if (params.roundLengths) slidesGridItem = Math.floor(slidesGridItem);
+      if (snapGrid[i] <= swiper.virtualSize - swiperSize) {
+        newSlidesGrid.push(slidesGridItem);
+      }
+    }
+    snapGrid = newSlidesGrid;
+    if (Math.floor(swiper.virtualSize - swiperSize) - Math.floor(snapGrid[snapGrid.length - 1]) > 1) {
+      snapGrid.push(swiper.virtualSize - swiperSize);
+    }
+  }
+  if (isVirtual && params.loop) {
+    const size = slidesSizesGrid[0] + spaceBetween;
+    if (params.slidesPerGroup > 1) {
+      const groups = Math.ceil((swiper.virtual.slidesBefore + swiper.virtual.slidesAfter) / params.slidesPerGroup);
+      const groupSize = size * params.slidesPerGroup;
+      for (let i = 0; i < groups; i += 1) {
+        snapGrid.push(snapGrid[snapGrid.length - 1] + groupSize);
+      }
+    }
+    for (let i = 0; i < swiper.virtual.slidesBefore + swiper.virtual.slidesAfter; i += 1) {
+      if (params.slidesPerGroup === 1) {
+        snapGrid.push(snapGrid[snapGrid.length - 1] + size);
+      }
+      slidesGrid.push(slidesGrid[slidesGrid.length - 1] + size);
+      swiper.virtualSize += size;
+    }
+  }
+  if (snapGrid.length === 0) snapGrid = [0];
+  if (spaceBetween !== 0) {
+    const key = swiper.isHorizontal() && rtl ? 'marginLeft' : getDirectionLabel('marginRight');
+    slides.filter((_, slideIndex) => {
+      if (!params.cssMode || params.loop) return true;
+      if (slideIndex === slides.length - 1) {
+        return false;
+      }
+      return true;
+    }).forEach(slideEl => {
+      slideEl.style[key] = `${spaceBetween}px`;
+    });
+  }
+  if (params.centeredSlides && params.centeredSlidesBounds) {
+    let allSlidesSize = 0;
+    slidesSizesGrid.forEach(slideSizeValue => {
+      allSlidesSize += slideSizeValue + (spaceBetween || 0);
+    });
+    allSlidesSize -= spaceBetween;
+    const maxSnap = allSlidesSize - swiperSize;
+    snapGrid = snapGrid.map(snap => {
+      if (snap <= 0) return -offsetBefore;
+      if (snap > maxSnap) return maxSnap + offsetAfter;
+      return snap;
+    });
+  }
+  if (params.centerInsufficientSlides) {
+    let allSlidesSize = 0;
+    slidesSizesGrid.forEach(slideSizeValue => {
+      allSlidesSize += slideSizeValue + (spaceBetween || 0);
+    });
+    allSlidesSize -= spaceBetween;
+    if (allSlidesSize < swiperSize) {
+      const allSlidesOffset = (swiperSize - allSlidesSize) / 2;
+      snapGrid.forEach((snap, snapIndex) => {
+        snapGrid[snapIndex] = snap - allSlidesOffset;
+      });
+      slidesGrid.forEach((snap, snapIndex) => {
+        slidesGrid[snapIndex] = snap + allSlidesOffset;
+      });
+    }
+  }
+  Object.assign(swiper, {
+    slides,
+    snapGrid,
+    slidesGrid,
+    slidesSizesGrid
+  });
+  if (params.centeredSlides && params.cssMode && !params.centeredSlidesBounds) {
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.setCSSProperty)(wrapperEl, '--swiper-centered-offset-before', `${-snapGrid[0]}px`);
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.setCSSProperty)(wrapperEl, '--swiper-centered-offset-after', `${swiper.size / 2 - slidesSizesGrid[slidesSizesGrid.length - 1] / 2}px`);
+    const addToSnapGrid = -swiper.snapGrid[0];
+    const addToSlidesGrid = -swiper.slidesGrid[0];
+    swiper.snapGrid = swiper.snapGrid.map(v => v + addToSnapGrid);
+    swiper.slidesGrid = swiper.slidesGrid.map(v => v + addToSlidesGrid);
+  }
+  if (slidesLength !== previousSlidesLength) {
+    swiper.emit('slidesLengthChange');
+  }
+  if (snapGrid.length !== previousSnapGridLength) {
+    if (swiper.params.watchOverflow) swiper.checkOverflow();
+    swiper.emit('snapGridLengthChange');
+  }
+  if (slidesGrid.length !== previousSlidesGridLength) {
+    swiper.emit('slidesGridLengthChange');
+  }
+  if (params.watchSlidesProgress) {
+    swiper.updateSlidesOffset();
+  }
+  if (!isVirtual && !params.cssMode && (params.effect === 'slide' || params.effect === 'fade')) {
+    const backFaceHiddenClass = `${params.containerModifierClass}backface-hidden`;
+    const hasClassBackfaceClassAdded = swiper.el.classList.contains(backFaceHiddenClass);
+    if (slidesLength <= params.maxBackfaceHiddenSlides) {
+      if (!hasClassBackfaceClassAdded) swiper.el.classList.add(backFaceHiddenClass);
+    } else if (hasClassBackfaceClassAdded) {
+      swiper.el.classList.remove(backFaceHiddenClass);
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateSlidesClasses.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateSlidesClasses.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateSlidesClasses)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function updateSlidesClasses() {
+  const swiper = this;
+  const {
+    slides,
+    params,
+    slidesEl,
+    activeIndex
+  } = swiper;
+  const isVirtual = swiper.virtual && params.virtual.enabled;
+  const getFilteredSlide = selector => {
+    return (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(slidesEl, `.${params.slideClass}${selector}, swiper-slide${selector}`)[0];
+  };
+  slides.forEach(slideEl => {
+    slideEl.classList.remove(params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
+  });
+  let activeSlide;
+  if (isVirtual) {
+    if (params.loop) {
+      let slideIndex = activeIndex - swiper.virtual.slidesBefore;
+      if (slideIndex < 0) slideIndex = swiper.virtual.slides.length + slideIndex;
+      if (slideIndex >= swiper.virtual.slides.length) slideIndex -= swiper.virtual.slides.length;
+      activeSlide = getFilteredSlide(`[data-swiper-slide-index="${slideIndex}"]`);
+    } else {
+      activeSlide = getFilteredSlide(`[data-swiper-slide-index="${activeIndex}"]`);
+    }
+  } else {
+    activeSlide = slides[activeIndex];
+  }
+  if (activeSlide) {
+    // Active classes
+    activeSlide.classList.add(params.slideActiveClass);
+
+    // Next Slide
+    let nextSlide = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementNextAll)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+    if (params.loop && !nextSlide) {
+      nextSlide = slides[0];
+    }
+    if (nextSlide) {
+      nextSlide.classList.add(params.slideNextClass);
+    }
+    // Prev Slide
+    let prevSlide = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementPrevAll)(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+    if (params.loop && !prevSlide === 0) {
+      prevSlide = slides[slides.length - 1];
+    }
+    if (prevSlide) {
+      prevSlide.classList.add(params.slidePrevClass);
+    }
+  }
+  swiper.emitSlidesClasses();
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateSlidesOffset.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateSlidesOffset.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateSlidesOffset)
+/* harmony export */ });
+function updateSlidesOffset() {
+  const swiper = this;
+  const slides = swiper.slides;
+  // eslint-disable-next-line
+  const minusOffset = swiper.isElement ? swiper.isHorizontal() ? swiper.wrapperEl.offsetLeft : swiper.wrapperEl.offsetTop : 0;
+  for (let i = 0; i < slides.length; i += 1) {
+    slides[i].swiperSlideOffset = (swiper.isHorizontal() ? slides[i].offsetLeft : slides[i].offsetTop) - minusOffset - swiper.cssOverflowAdjustment();
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/core/update/updateSlidesProgress.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/swiper/core/update/updateSlidesProgress.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ updateSlidesProgress)
+/* harmony export */ });
+function updateSlidesProgress(translate = this && this.translate || 0) {
+  const swiper = this;
+  const params = swiper.params;
+  const {
+    slides,
+    rtlTranslate: rtl,
+    snapGrid
+  } = swiper;
+  if (slides.length === 0) return;
+  if (typeof slides[0].swiperSlideOffset === 'undefined') swiper.updateSlidesOffset();
+  let offsetCenter = -translate;
+  if (rtl) offsetCenter = translate;
+
+  // Visible Slides
+  slides.forEach(slideEl => {
+    slideEl.classList.remove(params.slideVisibleClass);
+  });
+  swiper.visibleSlidesIndexes = [];
+  swiper.visibleSlides = [];
+  let spaceBetween = params.spaceBetween;
+  if (typeof spaceBetween === 'string' && spaceBetween.indexOf('%') >= 0) {
+    spaceBetween = parseFloat(spaceBetween.replace('%', '')) / 100 * swiper.size;
+  } else if (typeof spaceBetween === 'string') {
+    spaceBetween = parseFloat(spaceBetween);
+  }
+  for (let i = 0; i < slides.length; i += 1) {
+    const slide = slides[i];
+    let slideOffset = slide.swiperSlideOffset;
+    if (params.cssMode && params.centeredSlides) {
+      slideOffset -= slides[0].swiperSlideOffset;
+    }
+    const slideProgress = (offsetCenter + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + spaceBetween);
+    const originalSlideProgress = (offsetCenter - snapGrid[0] + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + spaceBetween);
+    const slideBefore = -(offsetCenter - slideOffset);
+    const slideAfter = slideBefore + swiper.slidesSizesGrid[i];
+    const isVisible = slideBefore >= 0 && slideBefore < swiper.size - 1 || slideAfter > 1 && slideAfter <= swiper.size || slideBefore <= 0 && slideAfter >= swiper.size;
+    if (isVisible) {
+      swiper.visibleSlides.push(slide);
+      swiper.visibleSlidesIndexes.push(i);
+      slides[i].classList.add(params.slideVisibleClass);
+    }
+    slide.progress = rtl ? -slideProgress : slideProgress;
+    slide.originalProgress = rtl ? -originalSlideProgress : originalSlideProgress;
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/a11y/a11y.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/modules/a11y/a11y.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ A11y)
+/* harmony export */ });
+/* harmony import */ var _shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/classes-to-selector.js */ "./node_modules/swiper/shared/classes-to-selector.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function A11y({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    a11y: {
+      enabled: true,
+      notificationClass: 'swiper-notification',
+      prevSlideMessage: 'Previous slide',
+      nextSlideMessage: 'Next slide',
+      firstSlideMessage: 'This is the first slide',
+      lastSlideMessage: 'This is the last slide',
+      paginationBulletMessage: 'Go to slide {{index}}',
+      slideLabelMessage: '{{index}} / {{slidesLength}}',
+      containerMessage: null,
+      containerRoleDescriptionMessage: null,
+      itemRoleDescriptionMessage: null,
+      slideRole: 'group',
+      id: null
+    }
+  });
+  swiper.a11y = {
+    clicked: false
+  };
+  let liveRegion = null;
+  function notify(message) {
+    const notification = liveRegion;
+    if (notification.length === 0) return;
+    notification.innerHTML = '';
+    notification.innerHTML = message;
+  }
+  const makeElementsArray = el => {
+    if (!Array.isArray(el)) el = [el].filter(e => !!e);
+    return el;
+  };
+  function getRandomNumber(size = 16) {
+    const randomChar = () => Math.round(16 * Math.random()).toString(16);
+    return 'x'.repeat(size).replace(/x/g, randomChar);
+  }
+  function makeElFocusable(el) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('tabIndex', '0');
+    });
+  }
+  function makeElNotFocusable(el) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('tabIndex', '-1');
+    });
+  }
+  function addElRole(el, role) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('role', role);
+    });
+  }
+  function addElRoleDescription(el, description) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('aria-roledescription', description);
+    });
+  }
+  function addElControls(el, controls) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('aria-controls', controls);
+    });
+  }
+  function addElLabel(el, label) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('aria-label', label);
+    });
+  }
+  function addElId(el, id) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('id', id);
+    });
+  }
+  function addElLive(el, live) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('aria-live', live);
+    });
+  }
+  function disableEl(el) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('aria-disabled', true);
+    });
+  }
+  function enableEl(el) {
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.setAttribute('aria-disabled', false);
+    });
+  }
+  function onEnterOrSpaceKey(e) {
+    if (e.keyCode !== 13 && e.keyCode !== 32) return;
+    const params = swiper.params.a11y;
+    const targetEl = e.target;
+    if (swiper.pagination && swiper.pagination.el && (targetEl === swiper.pagination.el || swiper.pagination.el.contains(e.target))) {
+      if (!e.target.matches((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(swiper.params.pagination.bulletClass))) return;
+    }
+    if (swiper.navigation && swiper.navigation.nextEl && targetEl === swiper.navigation.nextEl) {
+      if (!(swiper.isEnd && !swiper.params.loop)) {
+        swiper.slideNext();
+      }
+      if (swiper.isEnd) {
+        notify(params.lastSlideMessage);
+      } else {
+        notify(params.nextSlideMessage);
+      }
+    }
+    if (swiper.navigation && swiper.navigation.prevEl && targetEl === swiper.navigation.prevEl) {
+      if (!(swiper.isBeginning && !swiper.params.loop)) {
+        swiper.slidePrev();
+      }
+      if (swiper.isBeginning) {
+        notify(params.firstSlideMessage);
+      } else {
+        notify(params.prevSlideMessage);
+      }
+    }
+    if (swiper.pagination && targetEl.matches((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(swiper.params.pagination.bulletClass))) {
+      targetEl.click();
+    }
+  }
+  function updateNavigation() {
+    if (swiper.params.loop || swiper.params.rewind || !swiper.navigation) return;
+    const {
+      nextEl,
+      prevEl
+    } = swiper.navigation;
+    if (prevEl) {
+      if (swiper.isBeginning) {
+        disableEl(prevEl);
+        makeElNotFocusable(prevEl);
+      } else {
+        enableEl(prevEl);
+        makeElFocusable(prevEl);
+      }
+    }
+    if (nextEl) {
+      if (swiper.isEnd) {
+        disableEl(nextEl);
+        makeElNotFocusable(nextEl);
+      } else {
+        enableEl(nextEl);
+        makeElFocusable(nextEl);
+      }
+    }
+  }
+  function hasPagination() {
+    return swiper.pagination && swiper.pagination.bullets && swiper.pagination.bullets.length;
+  }
+  function hasClickablePagination() {
+    return hasPagination() && swiper.params.pagination.clickable;
+  }
+  function updatePagination() {
+    const params = swiper.params.a11y;
+    if (!hasPagination()) return;
+    swiper.pagination.bullets.forEach(bulletEl => {
+      if (swiper.params.pagination.clickable) {
+        makeElFocusable(bulletEl);
+        if (!swiper.params.pagination.renderBullet) {
+          addElRole(bulletEl, 'button');
+          addElLabel(bulletEl, params.paginationBulletMessage.replace(/\{\{index\}\}/, (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementIndex)(bulletEl) + 1));
+        }
+      }
+      if (bulletEl.matches((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(swiper.params.pagination.bulletActiveClass))) {
+        bulletEl.setAttribute('aria-current', 'true');
+      } else {
+        bulletEl.removeAttribute('aria-current');
+      }
+    });
+  }
+  const initNavEl = (el, wrapperId, message) => {
+    makeElFocusable(el);
+    if (el.tagName !== 'BUTTON') {
+      addElRole(el, 'button');
+      el.addEventListener('keydown', onEnterOrSpaceKey);
+    }
+    addElLabel(el, message);
+    addElControls(el, wrapperId);
+  };
+  const handlePointerDown = () => {
+    swiper.a11y.clicked = true;
+  };
+  const handlePointerUp = () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!swiper.destroyed) {
+          swiper.a11y.clicked = false;
+        }
+      });
+    });
+  };
+  const handleFocus = e => {
+    if (swiper.a11y.clicked) return;
+    const slideEl = e.target.closest(`.${swiper.params.slideClass}, swiper-slide`);
+    if (!slideEl || !swiper.slides.includes(slideEl)) return;
+    const isActive = swiper.slides.indexOf(slideEl) === swiper.activeIndex;
+    const isVisible = swiper.params.watchSlidesProgress && swiper.visibleSlides && swiper.visibleSlides.includes(slideEl);
+    if (isActive || isVisible) return;
+    if (e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents) return;
+    if (swiper.isHorizontal()) {
+      swiper.el.scrollLeft = 0;
+    } else {
+      swiper.el.scrollTop = 0;
+    }
+    swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
+  };
+  const initSlides = () => {
+    const params = swiper.params.a11y;
+    if (params.itemRoleDescriptionMessage) {
+      addElRoleDescription(swiper.slides, params.itemRoleDescriptionMessage);
+    }
+    if (params.slideRole) {
+      addElRole(swiper.slides, params.slideRole);
+    }
+    const slidesLength = swiper.slides.length;
+    if (params.slideLabelMessage) {
+      swiper.slides.forEach((slideEl, index) => {
+        const slideIndex = swiper.params.loop ? parseInt(slideEl.getAttribute('data-swiper-slide-index'), 10) : index;
+        const ariaLabelMessage = params.slideLabelMessage.replace(/\{\{index\}\}/, slideIndex + 1).replace(/\{\{slidesLength\}\}/, slidesLength);
+        addElLabel(slideEl, ariaLabelMessage);
+      });
+    }
+  };
+  const init = () => {
+    const params = swiper.params.a11y;
+    if (swiper.isElement) {
+      swiper.el.shadowEl.append(liveRegion);
+    } else {
+      swiper.el.append(liveRegion);
+    }
+
+    // Container
+    const containerEl = swiper.el;
+    if (params.containerRoleDescriptionMessage) {
+      addElRoleDescription(containerEl, params.containerRoleDescriptionMessage);
+    }
+    if (params.containerMessage) {
+      addElLabel(containerEl, params.containerMessage);
+    }
+
+    // Wrapper
+    const wrapperEl = swiper.wrapperEl;
+    const wrapperId = params.id || wrapperEl.getAttribute('id') || `swiper-wrapper-${getRandomNumber(16)}`;
+    const live = swiper.params.autoplay && swiper.params.autoplay.enabled ? 'off' : 'polite';
+    addElId(wrapperEl, wrapperId);
+    addElLive(wrapperEl, live);
+
+    // Slide
+    initSlides();
+
+    // Navigation
+    let {
+      nextEl,
+      prevEl
+    } = swiper.navigation ? swiper.navigation : {};
+    nextEl = makeElementsArray(nextEl);
+    prevEl = makeElementsArray(prevEl);
+    if (nextEl) {
+      nextEl.forEach(el => initNavEl(el, wrapperId, params.nextSlideMessage));
+    }
+    if (prevEl) {
+      prevEl.forEach(el => initNavEl(el, wrapperId, params.prevSlideMessage));
+    }
+
+    // Pagination
+    if (hasClickablePagination()) {
+      const paginationEl = Array.isArray(swiper.pagination.el) ? swiper.pagination.el : [swiper.pagination.el];
+      paginationEl.forEach(el => {
+        el.addEventListener('keydown', onEnterOrSpaceKey);
+      });
+    }
+
+    // Tab focus
+    swiper.el.addEventListener('focus', handleFocus, true);
+    swiper.el.addEventListener('pointerdown', handlePointerDown, true);
+    swiper.el.addEventListener('pointerup', handlePointerUp, true);
+  };
+  function destroy() {
+    if (liveRegion) liveRegion.remove();
+    let {
+      nextEl,
+      prevEl
+    } = swiper.navigation ? swiper.navigation : {};
+    nextEl = makeElementsArray(nextEl);
+    prevEl = makeElementsArray(prevEl);
+    if (nextEl) {
+      nextEl.forEach(el => el.removeEventListener('keydown', onEnterOrSpaceKey));
+    }
+    if (prevEl) {
+      prevEl.forEach(el => el.removeEventListener('keydown', onEnterOrSpaceKey));
+    }
+
+    // Pagination
+    if (hasClickablePagination()) {
+      const paginationEl = Array.isArray(swiper.pagination.el) ? swiper.pagination.el : [swiper.pagination.el];
+      paginationEl.forEach(el => {
+        el.removeEventListener('keydown', onEnterOrSpaceKey);
+      });
+    }
+
+    // Tab focus
+    swiper.el.removeEventListener('focus', handleFocus, true);
+    swiper.el.removeEventListener('pointerdown', handlePointerDown, true);
+    swiper.el.removeEventListener('pointerup', handlePointerUp, true);
+  }
+  on('beforeInit', () => {
+    liveRegion = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('span', swiper.params.a11y.notificationClass);
+    liveRegion.setAttribute('aria-live', 'assertive');
+    liveRegion.setAttribute('aria-atomic', 'true');
+  });
+  on('afterInit', () => {
+    if (!swiper.params.a11y.enabled) return;
+    init();
+  });
+  on('slidesLengthChange snapGridLengthChange slidesGridLengthChange', () => {
+    if (!swiper.params.a11y.enabled) return;
+    initSlides();
+  });
+  on('fromEdge toEdge afterInit lock unlock', () => {
+    if (!swiper.params.a11y.enabled) return;
+    updateNavigation();
+  });
+  on('paginationUpdate', () => {
+    if (!swiper.params.a11y.enabled) return;
+    updatePagination();
+  });
+  on('destroy', () => {
+    if (!swiper.params.a11y.enabled) return;
+    destroy();
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/autoplay/autoplay.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/swiper/modules/autoplay/autoplay.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Autoplay)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* eslint no-underscore-dangle: "off" */
+/* eslint no-use-before-define: "off" */
+
+function Autoplay({
+  swiper,
+  extendParams,
+  on,
+  emit,
+  params
+}) {
+  swiper.autoplay = {
+    running: false,
+    paused: false,
+    timeLeft: 0
+  };
+  extendParams({
+    autoplay: {
+      enabled: false,
+      delay: 3000,
+      waitForTransition: true,
+      disableOnInteraction: true,
+      stopOnLastSlide: false,
+      reverseDirection: false,
+      pauseOnMouseEnter: false
+    }
+  });
+  let timeout;
+  let raf;
+  let autoplayDelayTotal = params && params.autoplay ? params.autoplay.delay : 3000;
+  let autoplayDelayCurrent = params && params.autoplay ? params.autoplay.delay : 3000;
+  let autoplayTimeLeft;
+  let autoplayStartTime = new Date().getTime;
+  let wasPaused;
+  let isTouched;
+  let pausedByTouch;
+  let touchStartTimeout;
+  let slideChanged;
+  let pausedByInteraction;
+  function onTransitionEnd(e) {
+    if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
+    if (e.target !== swiper.wrapperEl) return;
+    swiper.wrapperEl.removeEventListener('transitionend', onTransitionEnd);
+    resume();
+  }
+  const calcTimeLeft = () => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    if (swiper.autoplay.paused) {
+      wasPaused = true;
+    } else if (wasPaused) {
+      autoplayDelayCurrent = autoplayTimeLeft;
+      wasPaused = false;
+    }
+    const timeLeft = swiper.autoplay.paused ? autoplayTimeLeft : autoplayStartTime + autoplayDelayCurrent - new Date().getTime();
+    swiper.autoplay.timeLeft = timeLeft;
+    emit('autoplayTimeLeft', timeLeft, timeLeft / autoplayDelayTotal);
+    raf = requestAnimationFrame(() => {
+      calcTimeLeft();
+    });
+  };
+  const getSlideDelay = () => {
+    let activeSlideEl;
+    if (swiper.virtual && swiper.params.virtual.enabled) {
+      activeSlideEl = swiper.slides.filter(slideEl => slideEl.classList.contains('swiper-slide-active'))[0];
+    } else {
+      activeSlideEl = swiper.slides[swiper.activeIndex];
+    }
+    if (!activeSlideEl) return undefined;
+    const currentSlideDelay = parseInt(activeSlideEl.getAttribute('data-swiper-autoplay'), 10);
+    return currentSlideDelay;
+  };
+  const run = delayForce => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    cancelAnimationFrame(raf);
+    calcTimeLeft();
+    let delay = typeof delayForce === 'undefined' ? swiper.params.autoplay.delay : delayForce;
+    autoplayDelayTotal = swiper.params.autoplay.delay;
+    autoplayDelayCurrent = swiper.params.autoplay.delay;
+    const currentSlideDelay = getSlideDelay();
+    if (!Number.isNaN(currentSlideDelay) && currentSlideDelay > 0 && typeof delayForce === 'undefined') {
+      delay = currentSlideDelay;
+      autoplayDelayTotal = currentSlideDelay;
+      autoplayDelayCurrent = currentSlideDelay;
+    }
+    autoplayTimeLeft = delay;
+    const speed = swiper.params.speed;
+    const proceed = () => {
+      if (!swiper || swiper.destroyed) return;
+      if (swiper.params.autoplay.reverseDirection) {
+        if (!swiper.isBeginning || swiper.params.loop || swiper.params.rewind) {
+          swiper.slidePrev(speed, true, true);
+          emit('autoplay');
+        } else if (!swiper.params.autoplay.stopOnLastSlide) {
+          swiper.slideTo(swiper.slides.length - 1, speed, true, true);
+          emit('autoplay');
+        }
+      } else {
+        if (!swiper.isEnd || swiper.params.loop || swiper.params.rewind) {
+          swiper.slideNext(speed, true, true);
+          emit('autoplay');
+        } else if (!swiper.params.autoplay.stopOnLastSlide) {
+          swiper.slideTo(0, speed, true, true);
+          emit('autoplay');
+        }
+      }
+      if (swiper.params.cssMode) {
+        autoplayStartTime = new Date().getTime();
+        requestAnimationFrame(() => {
+          run();
+        });
+      }
+    };
+    if (delay > 0) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        proceed();
+      }, delay);
+    } else {
+      requestAnimationFrame(() => {
+        proceed();
+      });
+    }
+
+    // eslint-disable-next-line
+    return delay;
+  };
+  const start = () => {
+    swiper.autoplay.running = true;
+    run();
+    emit('autoplayStart');
+  };
+  const stop = () => {
+    swiper.autoplay.running = false;
+    clearTimeout(timeout);
+    cancelAnimationFrame(raf);
+    emit('autoplayStop');
+  };
+  const pause = (internal, reset) => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    clearTimeout(timeout);
+    if (!internal) {
+      pausedByInteraction = true;
+    }
+    const proceed = () => {
+      emit('autoplayPause');
+      if (swiper.params.autoplay.waitForTransition) {
+        swiper.wrapperEl.addEventListener('transitionend', onTransitionEnd);
+      } else {
+        resume();
+      }
+    };
+    swiper.autoplay.paused = true;
+    if (reset) {
+      if (slideChanged) {
+        autoplayTimeLeft = swiper.params.autoplay.delay;
+      }
+      slideChanged = false;
+      proceed();
+      return;
+    }
+    const delay = autoplayTimeLeft || swiper.params.autoplay.delay;
+    autoplayTimeLeft = delay - (new Date().getTime() - autoplayStartTime);
+    if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop) return;
+    if (autoplayTimeLeft < 0) autoplayTimeLeft = 0;
+    proceed();
+  };
+  const resume = () => {
+    if (swiper.isEnd && autoplayTimeLeft < 0 && !swiper.params.loop || swiper.destroyed || !swiper.autoplay.running) return;
+    autoplayStartTime = new Date().getTime();
+    if (pausedByInteraction) {
+      pausedByInteraction = false;
+      run(autoplayTimeLeft);
+    } else {
+      run();
+    }
+    swiper.autoplay.paused = false;
+    emit('autoplayResume');
+  };
+  const onVisibilityChange = () => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+    if (document.visibilityState === 'hidden') {
+      pausedByInteraction = true;
+      pause(true);
+    }
+    if (document.visibilityState === 'visible') {
+      resume();
+    }
+  };
+  const onPointerEnter = e => {
+    if (e.pointerType !== 'mouse') return;
+    pausedByInteraction = true;
+    pause(true);
+  };
+  const onPointerLeave = e => {
+    if (e.pointerType !== 'mouse') return;
+    if (swiper.autoplay.paused) {
+      resume();
+    }
+  };
+  const attachMouseEvents = () => {
+    if (swiper.params.autoplay.pauseOnMouseEnter) {
+      swiper.el.addEventListener('pointerenter', onPointerEnter);
+      swiper.el.addEventListener('pointerleave', onPointerLeave);
+    }
+  };
+  const detachMouseEvents = () => {
+    swiper.el.removeEventListener('pointerenter', onPointerEnter);
+    swiper.el.removeEventListener('pointerleave', onPointerLeave);
+  };
+  const attachDocumentEvents = () => {
+    const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+    document.addEventListener('visibilitychange', onVisibilityChange);
+  };
+  const detachDocumentEvents = () => {
+    const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+    document.removeEventListener('visibilitychange', onVisibilityChange);
+  };
+  on('init', () => {
+    if (swiper.params.autoplay.enabled) {
+      attachMouseEvents();
+      attachDocumentEvents();
+      autoplayStartTime = new Date().getTime();
+      start();
+    }
+  });
+  on('destroy', () => {
+    detachMouseEvents();
+    detachDocumentEvents();
+    if (swiper.autoplay.running) {
+      stop();
+    }
+  });
+  on('beforeTransitionStart', (_s, speed, internal) => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    if (internal || !swiper.params.autoplay.disableOnInteraction) {
+      pause(true, true);
+    } else {
+      stop();
+    }
+  });
+  on('sliderFirstMove', () => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    if (swiper.params.autoplay.disableOnInteraction) {
+      stop();
+      return;
+    }
+    isTouched = true;
+    pausedByTouch = false;
+    pausedByInteraction = false;
+    touchStartTimeout = setTimeout(() => {
+      pausedByInteraction = true;
+      pausedByTouch = true;
+      pause(true);
+    }, 200);
+  });
+  on('touchEnd', () => {
+    if (swiper.destroyed || !swiper.autoplay.running || !isTouched) return;
+    clearTimeout(touchStartTimeout);
+    clearTimeout(timeout);
+    if (swiper.params.autoplay.disableOnInteraction) {
+      pausedByTouch = false;
+      isTouched = false;
+      return;
+    }
+    if (pausedByTouch && swiper.params.cssMode) resume();
+    pausedByTouch = false;
+    isTouched = false;
+  });
+  on('slideChange', () => {
+    if (swiper.destroyed || !swiper.autoplay.running) return;
+    slideChanged = true;
+  });
+  Object.assign(swiper.autoplay, {
+    start,
+    stop,
+    pause,
+    resume
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/controller/controller.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/modules/controller/controller.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Controller)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+/* eslint no-bitwise: ["error", { "allow": [">>"] }] */
+
+function Controller({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    controller: {
+      control: undefined,
+      inverse: false,
+      by: 'slide' // or 'container'
+    }
+  });
+
+  swiper.controller = {
+    control: undefined
+  };
+  function LinearSpline(x, y) {
+    const binarySearch = function search() {
+      let maxIndex;
+      let minIndex;
+      let guess;
+      return (array, val) => {
+        minIndex = -1;
+        maxIndex = array.length;
+        while (maxIndex - minIndex > 1) {
+          guess = maxIndex + minIndex >> 1;
+          if (array[guess] <= val) {
+            minIndex = guess;
+          } else {
+            maxIndex = guess;
+          }
+        }
+        return maxIndex;
+      };
+    }();
+    this.x = x;
+    this.y = y;
+    this.lastIndex = x.length - 1;
+    // Given an x value (x2), return the expected y2 value:
+    // (x1,y1) is the known point before given value,
+    // (x3,y3) is the known point after given value.
+    let i1;
+    let i3;
+    this.interpolate = function interpolate(x2) {
+      if (!x2) return 0;
+
+      // Get the indexes of x1 and x3 (the array indexes before and after given x2):
+      i3 = binarySearch(this.x, x2);
+      i1 = i3 - 1;
+
+      // We have our indexes i1 & i3, so we can calculate already:
+      // y2 := ((x2−x1) × (y3−y1)) ÷ (x3−x1) + y1
+      return (x2 - this.x[i1]) * (this.y[i3] - this.y[i1]) / (this.x[i3] - this.x[i1]) + this.y[i1];
+    };
+    return this;
+  }
+  function getInterpolateFunction(c) {
+    swiper.controller.spline = swiper.params.loop ? new LinearSpline(swiper.slidesGrid, c.slidesGrid) : new LinearSpline(swiper.snapGrid, c.snapGrid);
+  }
+  function setTranslate(_t, byController) {
+    const controlled = swiper.controller.control;
+    let multiplier;
+    let controlledTranslate;
+    const Swiper = swiper.constructor;
+    function setControlledTranslate(c) {
+      if (c.destroyed) return;
+
+      // this will create an Interpolate function based on the snapGrids
+      // x is the Grid of the scrolled scroller and y will be the controlled scroller
+      // it makes sense to create this only once and recall it for the interpolation
+      // the function does a lot of value caching for performance
+      const translate = swiper.rtlTranslate ? -swiper.translate : swiper.translate;
+      if (swiper.params.controller.by === 'slide') {
+        getInterpolateFunction(c);
+        // i am not sure why the values have to be multiplicated this way, tried to invert the snapGrid
+        // but it did not work out
+        controlledTranslate = -swiper.controller.spline.interpolate(-translate);
+      }
+      if (!controlledTranslate || swiper.params.controller.by === 'container') {
+        multiplier = (c.maxTranslate() - c.minTranslate()) / (swiper.maxTranslate() - swiper.minTranslate());
+        if (Number.isNaN(multiplier) || !Number.isFinite(multiplier)) {
+          multiplier = 1;
+        }
+        controlledTranslate = (translate - swiper.minTranslate()) * multiplier + c.minTranslate();
+      }
+      if (swiper.params.controller.inverse) {
+        controlledTranslate = c.maxTranslate() - controlledTranslate;
+      }
+      c.updateProgress(controlledTranslate);
+      c.setTranslate(controlledTranslate, swiper);
+      c.updateActiveIndex();
+      c.updateSlidesClasses();
+    }
+    if (Array.isArray(controlled)) {
+      for (let i = 0; i < controlled.length; i += 1) {
+        if (controlled[i] !== byController && controlled[i] instanceof Swiper) {
+          setControlledTranslate(controlled[i]);
+        }
+      }
+    } else if (controlled instanceof Swiper && byController !== controlled) {
+      setControlledTranslate(controlled);
+    }
+  }
+  function setTransition(duration, byController) {
+    const Swiper = swiper.constructor;
+    const controlled = swiper.controller.control;
+    let i;
+    function setControlledTransition(c) {
+      if (c.destroyed) return;
+      c.setTransition(duration, swiper);
+      if (duration !== 0) {
+        c.transitionStart();
+        if (c.params.autoHeight) {
+          (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.nextTick)(() => {
+            c.updateAutoHeight();
+          });
+        }
+        (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementTransitionEnd)(c.wrapperEl, () => {
+          if (!controlled) return;
+          c.transitionEnd();
+        });
+      }
+    }
+    if (Array.isArray(controlled)) {
+      for (i = 0; i < controlled.length; i += 1) {
+        if (controlled[i] !== byController && controlled[i] instanceof Swiper) {
+          setControlledTransition(controlled[i]);
+        }
+      }
+    } else if (controlled instanceof Swiper && byController !== controlled) {
+      setControlledTransition(controlled);
+    }
+  }
+  function removeSpline() {
+    if (!swiper.controller.control) return;
+    if (swiper.controller.spline) {
+      swiper.controller.spline = undefined;
+      delete swiper.controller.spline;
+    }
+  }
+  on('beforeInit', () => {
+    if (typeof window !== 'undefined' && (
+    // eslint-disable-line
+    typeof swiper.params.controller.control === 'string' || swiper.params.controller.control instanceof HTMLElement)) {
+      const controlElement = document.querySelector(swiper.params.controller.control);
+      if (controlElement && controlElement.swiper) {
+        swiper.controller.control = controlElement.swiper;
+      } else if (controlElement) {
+        const onControllerSwiper = e => {
+          swiper.controller.control = e.detail[0];
+          swiper.update();
+          controlElement.removeEventListener('init', onControllerSwiper);
+        };
+        controlElement.addEventListener('init', onControllerSwiper);
+      }
+      return;
+    }
+    swiper.controller.control = swiper.params.controller.control;
+  });
+  on('update', () => {
+    removeSpline();
+  });
+  on('resize', () => {
+    removeSpline();
+  });
+  on('observerUpdate', () => {
+    removeSpline();
+  });
+  on('setTranslate', (_s, translate, byController) => {
+    if (!swiper.controller.control || swiper.controller.control.destroyed) return;
+    swiper.controller.setTranslate(translate, byController);
+  });
+  on('setTransition', (_s, duration, byController) => {
+    if (!swiper.controller.control || swiper.controller.control.destroyed) return;
+    swiper.controller.setTransition(duration, byController);
+  });
+  Object.assign(swiper.controller, {
+    setTranslate,
+    setTransition
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/effect-cards/effect-cards.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/swiper/modules/effect-cards/effect-cards.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EffectCards)
+/* harmony export */ });
+/* harmony import */ var _shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/create-shadow.js */ "./node_modules/swiper/shared/create-shadow.js");
+/* harmony import */ var _shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/effect-init.js */ "./node_modules/swiper/shared/effect-init.js");
+/* harmony import */ var _shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/effect-target.js */ "./node_modules/swiper/shared/effect-target.js");
+/* harmony import */ var _shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/effect-virtual-transition-end.js */ "./node_modules/swiper/shared/effect-virtual-transition-end.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+
+
+function EffectCards({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    cardsEffect: {
+      slideShadows: true,
+      rotate: true,
+      perSlideRotate: 2,
+      perSlideOffset: 8
+    }
+  });
+  const setTranslate = () => {
+    const {
+      slides,
+      activeIndex,
+      rtlTranslate: rtl
+    } = swiper;
+    const params = swiper.params.cardsEffect;
+    const {
+      startTranslate,
+      isTouched
+    } = swiper.touchEventsData;
+    const currentTranslate = rtl ? -swiper.translate : swiper.translate;
+    for (let i = 0; i < slides.length; i += 1) {
+      const slideEl = slides[i];
+      const slideProgress = slideEl.progress;
+      const progress = Math.min(Math.max(slideProgress, -4), 4);
+      let offset = slideEl.swiperSlideOffset;
+      if (swiper.params.centeredSlides && !swiper.params.cssMode) {
+        swiper.wrapperEl.style.transform = `translateX(${swiper.minTranslate()}px)`;
+      }
+      if (swiper.params.centeredSlides && swiper.params.cssMode) {
+        offset -= slides[0].swiperSlideOffset;
+      }
+      let tX = swiper.params.cssMode ? -offset - swiper.translate : -offset;
+      let tY = 0;
+      const tZ = -100 * Math.abs(progress);
+      let scale = 1;
+      let rotate = -params.perSlideRotate * progress;
+      let tXAdd = params.perSlideOffset - Math.abs(progress) * 0.75;
+      const slideIndex = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.from + i : i;
+      const isSwipeToNext = (slideIndex === activeIndex || slideIndex === activeIndex - 1) && progress > 0 && progress < 1 && (isTouched || swiper.params.cssMode) && currentTranslate < startTranslate;
+      const isSwipeToPrev = (slideIndex === activeIndex || slideIndex === activeIndex + 1) && progress < 0 && progress > -1 && (isTouched || swiper.params.cssMode) && currentTranslate > startTranslate;
+      if (isSwipeToNext || isSwipeToPrev) {
+        const subProgress = (1 - Math.abs((Math.abs(progress) - 0.5) / 0.5)) ** 0.5;
+        rotate += -28 * progress * subProgress;
+        scale += -0.5 * subProgress;
+        tXAdd += 96 * subProgress;
+        tY = `${-25 * subProgress * Math.abs(progress)}%`;
+      }
+      if (progress < 0) {
+        // next
+        tX = `calc(${tX}px ${rtl ? '-' : '+'} (${tXAdd * Math.abs(progress)}%))`;
+      } else if (progress > 0) {
+        // prev
+        tX = `calc(${tX}px ${rtl ? '-' : '+'} (-${tXAdd * Math.abs(progress)}%))`;
+      } else {
+        tX = `${tX}px`;
+      }
+      if (!swiper.isHorizontal()) {
+        const prevY = tY;
+        tY = tX;
+        tX = prevY;
+      }
+      const scaleString = progress < 0 ? `${1 + (1 - scale) * progress}` : `${1 - (1 - scale) * progress}`;
+
+      /* eslint-disable */
+      const transform = `
+        translate3d(${tX}, ${tY}, ${tZ}px)
+        rotateZ(${params.rotate ? rtl ? -rotate : rotate : 0}deg)
+        scale(${scaleString})
+      `;
+      /* eslint-enable */
+
+      if (params.slideShadows) {
+        // Set shadows
+        let shadowEl = slideEl.querySelector('.swiper-slide-shadow');
+        if (!shadowEl) {
+          shadowEl = (0,_shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params, slideEl);
+        }
+        if (shadowEl) shadowEl.style.opacity = Math.min(Math.max((Math.abs(progress) - 0.5) / 0.5, 0), 1);
+      }
+      slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
+      const targetEl = (0,_shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__["default"])(params, slideEl);
+      targetEl.style.transform = transform;
+    }
+  };
+  const setTransition = duration => {
+    const transformElements = swiper.slides.map(slideEl => (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_4__.getSlideTransformEl)(slideEl));
+    transformElements.forEach(el => {
+      el.style.transitionDuration = `${duration}ms`;
+      el.querySelectorAll('.swiper-slide-shadow').forEach(shadowEl => {
+        shadowEl.style.transitionDuration = `${duration}ms`;
+      });
+    });
+    (0,_shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_3__["default"])({
+      swiper,
+      duration,
+      transformElements
+    });
+  };
+  (0,_shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    effect: 'cards',
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    perspective: () => true,
+    overwriteParams: () => ({
+      watchSlidesProgress: true,
+      virtualTranslate: !swiper.params.cssMode
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/effect-coverflow/effect-coverflow.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/swiper/modules/effect-coverflow/effect-coverflow.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EffectCoverflow)
+/* harmony export */ });
+/* harmony import */ var _shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/create-shadow.js */ "./node_modules/swiper/shared/create-shadow.js");
+/* harmony import */ var _shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/effect-init.js */ "./node_modules/swiper/shared/effect-init.js");
+/* harmony import */ var _shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/effect-target.js */ "./node_modules/swiper/shared/effect-target.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+
+function EffectCoverflow({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      scale: 1,
+      modifier: 1,
+      slideShadows: true
+    }
+  });
+  const setTranslate = () => {
+    const {
+      width: swiperWidth,
+      height: swiperHeight,
+      slides,
+      slidesSizesGrid
+    } = swiper;
+    const params = swiper.params.coverflowEffect;
+    const isHorizontal = swiper.isHorizontal();
+    const transform = swiper.translate;
+    const center = isHorizontal ? -transform + swiperWidth / 2 : -transform + swiperHeight / 2;
+    const rotate = isHorizontal ? params.rotate : -params.rotate;
+    const translate = params.depth;
+    // Each slide offset from center
+    for (let i = 0, length = slides.length; i < length; i += 1) {
+      const slideEl = slides[i];
+      const slideSize = slidesSizesGrid[i];
+      const slideOffset = slideEl.swiperSlideOffset;
+      const centerOffset = (center - slideOffset - slideSize / 2) / slideSize;
+      const offsetMultiplier = typeof params.modifier === 'function' ? params.modifier(centerOffset) : centerOffset * params.modifier;
+      let rotateY = isHorizontal ? rotate * offsetMultiplier : 0;
+      let rotateX = isHorizontal ? 0 : rotate * offsetMultiplier;
+      // var rotateZ = 0
+      let translateZ = -translate * Math.abs(offsetMultiplier);
+      let stretch = params.stretch;
+      // Allow percentage to make a relative stretch for responsive sliders
+      if (typeof stretch === 'string' && stretch.indexOf('%') !== -1) {
+        stretch = parseFloat(params.stretch) / 100 * slideSize;
+      }
+      let translateY = isHorizontal ? 0 : stretch * offsetMultiplier;
+      let translateX = isHorizontal ? stretch * offsetMultiplier : 0;
+      let scale = 1 - (1 - params.scale) * Math.abs(offsetMultiplier);
+
+      // Fix for ultra small values
+      if (Math.abs(translateX) < 0.001) translateX = 0;
+      if (Math.abs(translateY) < 0.001) translateY = 0;
+      if (Math.abs(translateZ) < 0.001) translateZ = 0;
+      if (Math.abs(rotateY) < 0.001) rotateY = 0;
+      if (Math.abs(rotateX) < 0.001) rotateX = 0;
+      if (Math.abs(scale) < 0.001) scale = 0;
+      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+      const targetEl = (0,_shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__["default"])(params, slideEl);
+      targetEl.style.transform = slideTransform;
+      slideEl.style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
+      if (params.slideShadows) {
+        // Set shadows
+        let shadowBeforeEl = isHorizontal ? slideEl.querySelector('.swiper-slide-shadow-left') : slideEl.querySelector('.swiper-slide-shadow-top');
+        let shadowAfterEl = isHorizontal ? slideEl.querySelector('.swiper-slide-shadow-right') : slideEl.querySelector('.swiper-slide-shadow-bottom');
+        if (!shadowBeforeEl) {
+          shadowBeforeEl = (0,_shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params, slideEl, isHorizontal ? 'left' : 'top');
+        }
+        if (!shadowAfterEl) {
+          shadowAfterEl = (0,_shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params, slideEl, isHorizontal ? 'right' : 'bottom');
+        }
+        if (shadowBeforeEl) shadowBeforeEl.style.opacity = offsetMultiplier > 0 ? offsetMultiplier : 0;
+        if (shadowAfterEl) shadowAfterEl.style.opacity = -offsetMultiplier > 0 ? -offsetMultiplier : 0;
+      }
+    }
+  };
+  const setTransition = duration => {
+    const transformElements = swiper.slides.map(slideEl => (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_3__.getSlideTransformEl)(slideEl));
+    transformElements.forEach(el => {
+      el.style.transitionDuration = `${duration}ms`;
+      el.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left').forEach(shadowEl => {
+        shadowEl.style.transitionDuration = `${duration}ms`;
+      });
+    });
+  };
+  (0,_shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    effect: 'coverflow',
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    perspective: () => true,
+    overwriteParams: () => ({
+      watchSlidesProgress: true
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/effect-creative/effect-creative.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/swiper/modules/effect-creative/effect-creative.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EffectCreative)
+/* harmony export */ });
+/* harmony import */ var _shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/create-shadow.js */ "./node_modules/swiper/shared/create-shadow.js");
+/* harmony import */ var _shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/effect-init.js */ "./node_modules/swiper/shared/effect-init.js");
+/* harmony import */ var _shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/effect-target.js */ "./node_modules/swiper/shared/effect-target.js");
+/* harmony import */ var _shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/effect-virtual-transition-end.js */ "./node_modules/swiper/shared/effect-virtual-transition-end.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+
+
+function EffectCreative({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    creativeEffect: {
+      limitProgress: 1,
+      shadowPerProgress: false,
+      progressMultiplier: 1,
+      perspective: true,
+      prev: {
+        translate: [0, 0, 0],
+        rotate: [0, 0, 0],
+        opacity: 1,
+        scale: 1
+      },
+      next: {
+        translate: [0, 0, 0],
+        rotate: [0, 0, 0],
+        opacity: 1,
+        scale: 1
+      }
+    }
+  });
+  const getTranslateValue = value => {
+    if (typeof value === 'string') return value;
+    return `${value}px`;
+  };
+  const setTranslate = () => {
+    const {
+      slides,
+      wrapperEl,
+      slidesSizesGrid
+    } = swiper;
+    const params = swiper.params.creativeEffect;
+    const {
+      progressMultiplier: multiplier
+    } = params;
+    const isCenteredSlides = swiper.params.centeredSlides;
+    if (isCenteredSlides) {
+      const margin = slidesSizesGrid[0] / 2 - swiper.params.slidesOffsetBefore || 0;
+      wrapperEl.style.transform = `translateX(calc(50% - ${margin}px))`;
+    }
+    for (let i = 0; i < slides.length; i += 1) {
+      const slideEl = slides[i];
+      const slideProgress = slideEl.progress;
+      const progress = Math.min(Math.max(slideEl.progress, -params.limitProgress), params.limitProgress);
+      let originalProgress = progress;
+      if (!isCenteredSlides) {
+        originalProgress = Math.min(Math.max(slideEl.originalProgress, -params.limitProgress), params.limitProgress);
+      }
+      const offset = slideEl.swiperSlideOffset;
+      const t = [swiper.params.cssMode ? -offset - swiper.translate : -offset, 0, 0];
+      const r = [0, 0, 0];
+      let custom = false;
+      if (!swiper.isHorizontal()) {
+        t[1] = t[0];
+        t[0] = 0;
+      }
+      let data = {
+        translate: [0, 0, 0],
+        rotate: [0, 0, 0],
+        scale: 1,
+        opacity: 1
+      };
+      if (progress < 0) {
+        data = params.next;
+        custom = true;
+      } else if (progress > 0) {
+        data = params.prev;
+        custom = true;
+      }
+      // set translate
+      t.forEach((value, index) => {
+        t[index] = `calc(${value}px + (${getTranslateValue(data.translate[index])} * ${Math.abs(progress * multiplier)}))`;
+      });
+      // set rotates
+      r.forEach((value, index) => {
+        r[index] = data.rotate[index] * Math.abs(progress * multiplier);
+      });
+      slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
+      const translateString = t.join(', ');
+      const rotateString = `rotateX(${r[0]}deg) rotateY(${r[1]}deg) rotateZ(${r[2]}deg)`;
+      const scaleString = originalProgress < 0 ? `scale(${1 + (1 - data.scale) * originalProgress * multiplier})` : `scale(${1 - (1 - data.scale) * originalProgress * multiplier})`;
+      const opacityString = originalProgress < 0 ? 1 + (1 - data.opacity) * originalProgress * multiplier : 1 - (1 - data.opacity) * originalProgress * multiplier;
+      const transform = `translate3d(${translateString}) ${rotateString} ${scaleString}`;
+
+      // Set shadows
+      if (custom && data.shadow || !custom) {
+        let shadowEl = slideEl.querySelector('.swiper-slide-shadow');
+        if (!shadowEl && data.shadow) {
+          shadowEl = (0,_shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params, slideEl);
+        }
+        if (shadowEl) {
+          const shadowOpacity = params.shadowPerProgress ? progress * (1 / params.limitProgress) : progress;
+          shadowEl.style.opacity = Math.min(Math.max(Math.abs(shadowOpacity), 0), 1);
+        }
+      }
+      const targetEl = (0,_shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__["default"])(params, slideEl);
+      targetEl.style.transform = transform;
+      targetEl.style.opacity = opacityString;
+      if (data.origin) {
+        targetEl.style.transformOrigin = data.origin;
+      }
+    }
+  };
+  const setTransition = duration => {
+    const transformElements = swiper.slides.map(slideEl => (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_4__.getSlideTransformEl)(slideEl));
+    transformElements.forEach(el => {
+      el.style.transitionDuration = `${duration}ms`;
+      el.querySelectorAll('.swiper-slide-shadow').forEach(shadowEl => {
+        shadowEl.style.transitionDuration = `${duration}ms`;
+      });
+    });
+    (0,_shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_3__["default"])({
+      swiper,
+      duration,
+      transformElements,
+      allSlides: true
+    });
+  };
+  (0,_shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    effect: 'creative',
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    perspective: () => swiper.params.creativeEffect.perspective,
+    overwriteParams: () => ({
+      watchSlidesProgress: true,
+      virtualTranslate: !swiper.params.cssMode
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/effect-cube/effect-cube.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/swiper/modules/effect-cube/effect-cube.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EffectCube)
+/* harmony export */ });
+/* harmony import */ var _shared_effect_init_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/effect-init.js */ "./node_modules/swiper/shared/effect-init.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function EffectCube({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    cubeEffect: {
+      slideShadows: true,
+      shadow: true,
+      shadowOffset: 20,
+      shadowScale: 0.94
+    }
+  });
+  const createSlideShadows = (slideEl, progress, isHorizontal) => {
+    let shadowBefore = isHorizontal ? slideEl.querySelector('.swiper-slide-shadow-left') : slideEl.querySelector('.swiper-slide-shadow-top');
+    let shadowAfter = isHorizontal ? slideEl.querySelector('.swiper-slide-shadow-right') : slideEl.querySelector('.swiper-slide-shadow-bottom');
+    if (!shadowBefore) {
+      shadowBefore = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', `swiper-slide-shadow-${isHorizontal ? 'left' : 'top'}`);
+      slideEl.append(shadowBefore);
+    }
+    if (!shadowAfter) {
+      shadowAfter = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', `swiper-slide-shadow-${isHorizontal ? 'right' : 'bottom'}`);
+      slideEl.append(shadowAfter);
+    }
+    if (shadowBefore) shadowBefore.style.opacity = Math.max(-progress, 0);
+    if (shadowAfter) shadowAfter.style.opacity = Math.max(progress, 0);
+  };
+  const recreateShadows = () => {
+    // create new ones
+    const isHorizontal = swiper.isHorizontal();
+    swiper.slides.forEach(slideEl => {
+      const progress = Math.max(Math.min(slideEl.progress, 1), -1);
+      createSlideShadows(slideEl, progress, isHorizontal);
+    });
+  };
+  const setTranslate = () => {
+    const {
+      el,
+      wrapperEl,
+      slides,
+      width: swiperWidth,
+      height: swiperHeight,
+      rtlTranslate: rtl,
+      size: swiperSize,
+      browser
+    } = swiper;
+    const params = swiper.params.cubeEffect;
+    const isHorizontal = swiper.isHorizontal();
+    const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+    let wrapperRotate = 0;
+    let cubeShadowEl;
+    if (params.shadow) {
+      if (isHorizontal) {
+        cubeShadowEl = swiper.slidesEl.querySelector('.swiper-cube-shadow');
+        if (!cubeShadowEl) {
+          cubeShadowEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', 'swiper-cube-shadow');
+          swiper.slidesEl.append(cubeShadowEl);
+        }
+        cubeShadowEl.style.height = `${swiperWidth}px`;
+      } else {
+        cubeShadowEl = el.querySelector('.swiper-cube-shadow');
+        if (!cubeShadowEl) {
+          cubeShadowEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', 'swiper-cube-shadow');
+          el.append(cubeShadowEl);
+        }
+      }
+    }
+    for (let i = 0; i < slides.length; i += 1) {
+      const slideEl = slides[i];
+      let slideIndex = i;
+      if (isVirtual) {
+        slideIndex = parseInt(slideEl.getAttribute('data-swiper-slide-index'), 10);
+      }
+      let slideAngle = slideIndex * 90;
+      let round = Math.floor(slideAngle / 360);
+      if (rtl) {
+        slideAngle = -slideAngle;
+        round = Math.floor(-slideAngle / 360);
+      }
+      const progress = Math.max(Math.min(slideEl.progress, 1), -1);
+      let tx = 0;
+      let ty = 0;
+      let tz = 0;
+      if (slideIndex % 4 === 0) {
+        tx = -round * 4 * swiperSize;
+        tz = 0;
+      } else if ((slideIndex - 1) % 4 === 0) {
+        tx = 0;
+        tz = -round * 4 * swiperSize;
+      } else if ((slideIndex - 2) % 4 === 0) {
+        tx = swiperSize + round * 4 * swiperSize;
+        tz = swiperSize;
+      } else if ((slideIndex - 3) % 4 === 0) {
+        tx = -swiperSize;
+        tz = 3 * swiperSize + swiperSize * 4 * round;
+      }
+      if (rtl) {
+        tx = -tx;
+      }
+      if (!isHorizontal) {
+        ty = tx;
+        tx = 0;
+      }
+      const transform = `rotateX(${isHorizontal ? 0 : -slideAngle}deg) rotateY(${isHorizontal ? slideAngle : 0}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`;
+      if (progress <= 1 && progress > -1) {
+        wrapperRotate = slideIndex * 90 + progress * 90;
+        if (rtl) wrapperRotate = -slideIndex * 90 - progress * 90;
+      }
+      slideEl.style.transform = transform;
+      if (params.slideShadows) {
+        createSlideShadows(slideEl, progress, isHorizontal);
+      }
+    }
+    wrapperEl.style.transformOrigin = `50% 50% -${swiperSize / 2}px`;
+    wrapperEl.style['-webkit-transform-origin'] = `50% 50% -${swiperSize / 2}px`;
+    if (params.shadow) {
+      if (isHorizontal) {
+        cubeShadowEl.style.transform = `translate3d(0px, ${swiperWidth / 2 + params.shadowOffset}px, ${-swiperWidth / 2}px) rotateX(90deg) rotateZ(0deg) scale(${params.shadowScale})`;
+      } else {
+        const shadowAngle = Math.abs(wrapperRotate) - Math.floor(Math.abs(wrapperRotate) / 90) * 90;
+        const multiplier = 1.5 - (Math.sin(shadowAngle * 2 * Math.PI / 360) / 2 + Math.cos(shadowAngle * 2 * Math.PI / 360) / 2);
+        const scale1 = params.shadowScale;
+        const scale2 = params.shadowScale / multiplier;
+        const offset = params.shadowOffset;
+        cubeShadowEl.style.transform = `scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${swiperHeight / 2 + offset}px, ${-swiperHeight / 2 / scale2}px) rotateX(-90deg)`;
+      }
+    }
+    const zFactor = (browser.isSafari || browser.isWebView) && browser.needPerspectiveFix ? -swiperSize / 2 : 0;
+    wrapperEl.style.transform = `translate3d(0px,0,${zFactor}px) rotateX(${swiper.isHorizontal() ? 0 : wrapperRotate}deg) rotateY(${swiper.isHorizontal() ? -wrapperRotate : 0}deg)`;
+    wrapperEl.style.setProperty('--swiper-cube-translate-z', `${zFactor}px`);
+  };
+  const setTransition = duration => {
+    const {
+      el,
+      slides
+    } = swiper;
+    slides.forEach(slideEl => {
+      slideEl.style.transitionDuration = `${duration}ms`;
+      slideEl.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left').forEach(subEl => {
+        subEl.style.transitionDuration = `${duration}ms`;
+      });
+    });
+    if (swiper.params.cubeEffect.shadow && !swiper.isHorizontal()) {
+      const shadowEl = el.querySelector('.swiper-cube-shadow');
+      if (shadowEl) shadowEl.style.transitionDuration = `${duration}ms`;
+    }
+  };
+  (0,_shared_effect_init_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    effect: 'cube',
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    recreateShadows,
+    getEffectParams: () => swiper.params.cubeEffect,
+    perspective: () => true,
+    overwriteParams: () => ({
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      watchSlidesProgress: true,
+      resistanceRatio: 0,
+      spaceBetween: 0,
+      centeredSlides: false,
+      virtualTranslate: true
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/effect-fade/effect-fade.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/swiper/modules/effect-fade/effect-fade.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EffectFade)
+/* harmony export */ });
+/* harmony import */ var _shared_effect_init_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/effect-init.js */ "./node_modules/swiper/shared/effect-init.js");
+/* harmony import */ var _shared_effect_target_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/effect-target.js */ "./node_modules/swiper/shared/effect-target.js");
+/* harmony import */ var _shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/effect-virtual-transition-end.js */ "./node_modules/swiper/shared/effect-virtual-transition-end.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+
+function EffectFade({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    fadeEffect: {
+      crossFade: false
+    }
+  });
+  const setTranslate = () => {
+    const {
+      slides
+    } = swiper;
+    const params = swiper.params.fadeEffect;
+    for (let i = 0; i < slides.length; i += 1) {
+      const slideEl = swiper.slides[i];
+      const offset = slideEl.swiperSlideOffset;
+      let tx = -offset;
+      if (!swiper.params.virtualTranslate) tx -= swiper.translate;
+      let ty = 0;
+      if (!swiper.isHorizontal()) {
+        ty = tx;
+        tx = 0;
+      }
+      const slideOpacity = swiper.params.fadeEffect.crossFade ? Math.max(1 - Math.abs(slideEl.progress), 0) : 1 + Math.min(Math.max(slideEl.progress, -1), 0);
+      const targetEl = (0,_shared_effect_target_js__WEBPACK_IMPORTED_MODULE_1__["default"])(params, slideEl);
+      targetEl.style.opacity = slideOpacity;
+      targetEl.style.transform = `translate3d(${tx}px, ${ty}px, 0px)`;
+    }
+  };
+  const setTransition = duration => {
+    const transformElements = swiper.slides.map(slideEl => (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_3__.getSlideTransformEl)(slideEl));
+    transformElements.forEach(el => {
+      el.style.transitionDuration = `${duration}ms`;
+    });
+    (0,_shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      swiper,
+      duration,
+      transformElements,
+      allSlides: true
+    });
+  };
+  (0,_shared_effect_init_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    effect: 'fade',
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    overwriteParams: () => ({
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      watchSlidesProgress: true,
+      spaceBetween: 0,
+      virtualTranslate: !swiper.params.cssMode
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/effect-flip/effect-flip.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/swiper/modules/effect-flip/effect-flip.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EffectFlip)
+/* harmony export */ });
+/* harmony import */ var _shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/create-shadow.js */ "./node_modules/swiper/shared/create-shadow.js");
+/* harmony import */ var _shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/effect-init.js */ "./node_modules/swiper/shared/effect-init.js");
+/* harmony import */ var _shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/effect-target.js */ "./node_modules/swiper/shared/effect-target.js");
+/* harmony import */ var _shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/effect-virtual-transition-end.js */ "./node_modules/swiper/shared/effect-virtual-transition-end.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+
+
+function EffectFlip({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    flipEffect: {
+      slideShadows: true,
+      limitRotation: true
+    }
+  });
+  const createSlideShadows = (slideEl, progress, params) => {
+    let shadowBefore = swiper.isHorizontal() ? slideEl.querySelector('.swiper-slide-shadow-left') : slideEl.querySelector('.swiper-slide-shadow-top');
+    let shadowAfter = swiper.isHorizontal() ? slideEl.querySelector('.swiper-slide-shadow-right') : slideEl.querySelector('.swiper-slide-shadow-bottom');
+    if (!shadowBefore) {
+      shadowBefore = (0,_shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params, slideEl, swiper.isHorizontal() ? 'left' : 'top');
+    }
+    if (!shadowAfter) {
+      shadowAfter = (0,_shared_create_shadow_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params, slideEl, swiper.isHorizontal() ? 'right' : 'bottom');
+    }
+    if (shadowBefore) shadowBefore.style.opacity = Math.max(-progress, 0);
+    if (shadowAfter) shadowAfter.style.opacity = Math.max(progress, 0);
+  };
+  const recreateShadows = () => {
+    // Set shadows
+    const params = swiper.params.flipEffect;
+    swiper.slides.forEach(slideEl => {
+      let progress = slideEl.progress;
+      if (swiper.params.flipEffect.limitRotation) {
+        progress = Math.max(Math.min(slideEl.progress, 1), -1);
+      }
+      createSlideShadows(slideEl, progress, params);
+    });
+  };
+  const setTranslate = () => {
+    const {
+      slides,
+      rtlTranslate: rtl
+    } = swiper;
+    const params = swiper.params.flipEffect;
+    for (let i = 0; i < slides.length; i += 1) {
+      const slideEl = slides[i];
+      let progress = slideEl.progress;
+      if (swiper.params.flipEffect.limitRotation) {
+        progress = Math.max(Math.min(slideEl.progress, 1), -1);
+      }
+      const offset = slideEl.swiperSlideOffset;
+      const rotate = -180 * progress;
+      let rotateY = rotate;
+      let rotateX = 0;
+      let tx = swiper.params.cssMode ? -offset - swiper.translate : -offset;
+      let ty = 0;
+      if (!swiper.isHorizontal()) {
+        ty = tx;
+        tx = 0;
+        rotateX = -rotateY;
+        rotateY = 0;
+      } else if (rtl) {
+        rotateY = -rotateY;
+      }
+      slideEl.style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
+      if (params.slideShadows) {
+        createSlideShadows(slideEl, progress, params);
+      }
+      const transform = `translate3d(${tx}px, ${ty}px, 0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      const targetEl = (0,_shared_effect_target_js__WEBPACK_IMPORTED_MODULE_2__["default"])(params, slideEl);
+      targetEl.style.transform = transform;
+    }
+  };
+  const setTransition = duration => {
+    const transformElements = swiper.slides.map(slideEl => (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_4__.getSlideTransformEl)(slideEl));
+    transformElements.forEach(el => {
+      el.style.transitionDuration = `${duration}ms`;
+      el.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left').forEach(shadowEl => {
+        shadowEl.style.transitionDuration = `${duration}ms`;
+      });
+    });
+    (0,_shared_effect_virtual_transition_end_js__WEBPACK_IMPORTED_MODULE_3__["default"])({
+      swiper,
+      duration,
+      transformElements
+    });
+  };
+  (0,_shared_effect_init_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    effect: 'flip',
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    recreateShadows,
+    getEffectParams: () => swiper.params.flipEffect,
+    perspective: () => true,
+    overwriteParams: () => ({
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      watchSlidesProgress: true,
+      spaceBetween: 0,
+      virtualTranslate: !swiper.params.cssMode
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/free-mode/free-mode.js":
+/*!************************************************************!*\
+  !*** ./node_modules/swiper/modules/free-mode/free-mode.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ freeMode)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function freeMode({
+  swiper,
+  extendParams,
+  emit,
+  once
+}) {
+  extendParams({
+    freeMode: {
+      enabled: false,
+      momentum: true,
+      momentumRatio: 1,
+      momentumBounce: true,
+      momentumBounceRatio: 1,
+      momentumVelocityRatio: 1,
+      sticky: false,
+      minimumVelocity: 0.02
+    }
+  });
+  function onTouchStart() {
+    if (swiper.params.cssMode) return;
+    const translate = swiper.getTranslate();
+    swiper.setTranslate(translate);
+    swiper.setTransition(0);
+    swiper.touchEventsData.velocities.length = 0;
+    swiper.freeMode.onTouchEnd({
+      currentPos: swiper.rtl ? swiper.translate : -swiper.translate
+    });
+  }
+  function onTouchMove() {
+    if (swiper.params.cssMode) return;
+    const {
+      touchEventsData: data,
+      touches
+    } = swiper;
+    // Velocity
+    if (data.velocities.length === 0) {
+      data.velocities.push({
+        position: touches[swiper.isHorizontal() ? 'startX' : 'startY'],
+        time: data.touchStartTime
+      });
+    }
+    data.velocities.push({
+      position: touches[swiper.isHorizontal() ? 'currentX' : 'currentY'],
+      time: (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.now)()
+    });
+  }
+  function onTouchEnd({
+    currentPos
+  }) {
+    if (swiper.params.cssMode) return;
+    const {
+      params,
+      wrapperEl,
+      rtlTranslate: rtl,
+      snapGrid,
+      touchEventsData: data
+    } = swiper;
+    // Time diff
+    const touchEndTime = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.now)();
+    const timeDiff = touchEndTime - data.touchStartTime;
+    if (currentPos < -swiper.minTranslate()) {
+      swiper.slideTo(swiper.activeIndex);
+      return;
+    }
+    if (currentPos > -swiper.maxTranslate()) {
+      if (swiper.slides.length < snapGrid.length) {
+        swiper.slideTo(snapGrid.length - 1);
+      } else {
+        swiper.slideTo(swiper.slides.length - 1);
+      }
+      return;
+    }
+    if (params.freeMode.momentum) {
+      if (data.velocities.length > 1) {
+        const lastMoveEvent = data.velocities.pop();
+        const velocityEvent = data.velocities.pop();
+        const distance = lastMoveEvent.position - velocityEvent.position;
+        const time = lastMoveEvent.time - velocityEvent.time;
+        swiper.velocity = distance / time;
+        swiper.velocity /= 2;
+        if (Math.abs(swiper.velocity) < params.freeMode.minimumVelocity) {
+          swiper.velocity = 0;
+        }
+        // this implies that the user stopped moving a finger then released.
+        // There would be no events with distance zero, so the last event is stale.
+        if (time > 150 || (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.now)() - lastMoveEvent.time > 300) {
+          swiper.velocity = 0;
+        }
+      } else {
+        swiper.velocity = 0;
+      }
+      swiper.velocity *= params.freeMode.momentumVelocityRatio;
+      data.velocities.length = 0;
+      let momentumDuration = 1000 * params.freeMode.momentumRatio;
+      const momentumDistance = swiper.velocity * momentumDuration;
+      let newPosition = swiper.translate + momentumDistance;
+      if (rtl) newPosition = -newPosition;
+      let doBounce = false;
+      let afterBouncePosition;
+      const bounceAmount = Math.abs(swiper.velocity) * 20 * params.freeMode.momentumBounceRatio;
+      let needsLoopFix;
+      if (newPosition < swiper.maxTranslate()) {
+        if (params.freeMode.momentumBounce) {
+          if (newPosition + swiper.maxTranslate() < -bounceAmount) {
+            newPosition = swiper.maxTranslate() - bounceAmount;
+          }
+          afterBouncePosition = swiper.maxTranslate();
+          doBounce = true;
+          data.allowMomentumBounce = true;
+        } else {
+          newPosition = swiper.maxTranslate();
+        }
+        if (params.loop && params.centeredSlides) needsLoopFix = true;
+      } else if (newPosition > swiper.minTranslate()) {
+        if (params.freeMode.momentumBounce) {
+          if (newPosition - swiper.minTranslate() > bounceAmount) {
+            newPosition = swiper.minTranslate() + bounceAmount;
+          }
+          afterBouncePosition = swiper.minTranslate();
+          doBounce = true;
+          data.allowMomentumBounce = true;
+        } else {
+          newPosition = swiper.minTranslate();
+        }
+        if (params.loop && params.centeredSlides) needsLoopFix = true;
+      } else if (params.freeMode.sticky) {
+        let nextSlide;
+        for (let j = 0; j < snapGrid.length; j += 1) {
+          if (snapGrid[j] > -newPosition) {
+            nextSlide = j;
+            break;
+          }
+        }
+        if (Math.abs(snapGrid[nextSlide] - newPosition) < Math.abs(snapGrid[nextSlide - 1] - newPosition) || swiper.swipeDirection === 'next') {
+          newPosition = snapGrid[nextSlide];
+        } else {
+          newPosition = snapGrid[nextSlide - 1];
+        }
+        newPosition = -newPosition;
+      }
+      if (needsLoopFix) {
+        once('transitionEnd', () => {
+          swiper.loopFix();
+        });
+      }
+      // Fix duration
+      if (swiper.velocity !== 0) {
+        if (rtl) {
+          momentumDuration = Math.abs((-newPosition - swiper.translate) / swiper.velocity);
+        } else {
+          momentumDuration = Math.abs((newPosition - swiper.translate) / swiper.velocity);
+        }
+        if (params.freeMode.sticky) {
+          // If freeMode.sticky is active and the user ends a swipe with a slow-velocity
+          // event, then durations can be 20+ seconds to slide one (or zero!) slides.
+          // It's easy to see this when simulating touch with mouse events. To fix this,
+          // limit single-slide swipes to the default slide duration. This also has the
+          // nice side effect of matching slide speed if the user stopped moving before
+          // lifting finger or mouse vs. moving slowly before lifting the finger/mouse.
+          // For faster swipes, also apply limits (albeit higher ones).
+          const moveDistance = Math.abs((rtl ? -newPosition : newPosition) - swiper.translate);
+          const currentSlideSize = swiper.slidesSizesGrid[swiper.activeIndex];
+          if (moveDistance < currentSlideSize) {
+            momentumDuration = params.speed;
+          } else if (moveDistance < 2 * currentSlideSize) {
+            momentumDuration = params.speed * 1.5;
+          } else {
+            momentumDuration = params.speed * 2.5;
+          }
+        }
+      } else if (params.freeMode.sticky) {
+        swiper.slideToClosest();
+        return;
+      }
+      if (params.freeMode.momentumBounce && doBounce) {
+        swiper.updateProgress(afterBouncePosition);
+        swiper.setTransition(momentumDuration);
+        swiper.setTranslate(newPosition);
+        swiper.transitionStart(true, swiper.swipeDirection);
+        swiper.animating = true;
+        (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementTransitionEnd)(wrapperEl, () => {
+          if (!swiper || swiper.destroyed || !data.allowMomentumBounce) return;
+          emit('momentumBounce');
+          swiper.setTransition(params.speed);
+          setTimeout(() => {
+            swiper.setTranslate(afterBouncePosition);
+            (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementTransitionEnd)(wrapperEl, () => {
+              if (!swiper || swiper.destroyed) return;
+              swiper.transitionEnd();
+            });
+          }, 0);
+        });
+      } else if (swiper.velocity) {
+        emit('_freeModeNoMomentumRelease');
+        swiper.updateProgress(newPosition);
+        swiper.setTransition(momentumDuration);
+        swiper.setTranslate(newPosition);
+        swiper.transitionStart(true, swiper.swipeDirection);
+        if (!swiper.animating) {
+          swiper.animating = true;
+          (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementTransitionEnd)(wrapperEl, () => {
+            if (!swiper || swiper.destroyed) return;
+            swiper.transitionEnd();
+          });
+        }
+      } else {
+        swiper.updateProgress(newPosition);
+      }
+      swiper.updateActiveIndex();
+      swiper.updateSlidesClasses();
+    } else if (params.freeMode.sticky) {
+      swiper.slideToClosest();
+      return;
+    } else if (params.freeMode) {
+      emit('_freeModeNoMomentumRelease');
+    }
+    if (!params.freeMode.momentum || timeDiff >= params.longSwipesMs) {
+      swiper.updateProgress();
+      swiper.updateActiveIndex();
+      swiper.updateSlidesClasses();
+    }
+  }
+  Object.assign(swiper, {
+    freeMode: {
+      onTouchStart,
+      onTouchMove,
+      onTouchEnd
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/grid/grid.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/modules/grid/grid.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Grid)
+/* harmony export */ });
+function Grid({
+  swiper,
+  extendParams
+}) {
+  extendParams({
+    grid: {
+      rows: 1,
+      fill: 'column'
+    }
+  });
+  let slidesNumberEvenToRows;
+  let slidesPerRow;
+  let numFullColumns;
+  const getSpaceBetween = () => {
+    let spaceBetween = swiper.params.spaceBetween;
+    if (typeof spaceBetween === 'string' && spaceBetween.indexOf('%') >= 0) {
+      spaceBetween = parseFloat(spaceBetween.replace('%', '')) / 100 * swiper.size;
+    } else if (typeof spaceBetween === 'string') {
+      spaceBetween = parseFloat(spaceBetween);
+    }
+    return spaceBetween;
+  };
+  const initSlides = slidesLength => {
+    const {
+      slidesPerView
+    } = swiper.params;
+    const {
+      rows,
+      fill
+    } = swiper.params.grid;
+    numFullColumns = Math.floor(slidesLength / rows);
+    if (Math.floor(slidesLength / rows) === slidesLength / rows) {
+      slidesNumberEvenToRows = slidesLength;
+    } else {
+      slidesNumberEvenToRows = Math.ceil(slidesLength / rows) * rows;
+    }
+    if (slidesPerView !== 'auto' && fill === 'row') {
+      slidesNumberEvenToRows = Math.max(slidesNumberEvenToRows, slidesPerView * rows);
+    }
+    slidesPerRow = slidesNumberEvenToRows / rows;
+  };
+  const updateSlide = (i, slide, slidesLength, getDirectionLabel) => {
+    const {
+      slidesPerGroup
+    } = swiper.params;
+    const spaceBetween = getSpaceBetween();
+    const {
+      rows,
+      fill
+    } = swiper.params.grid;
+    // Set slides order
+    let newSlideOrderIndex;
+    let column;
+    let row;
+    if (fill === 'row' && slidesPerGroup > 1) {
+      const groupIndex = Math.floor(i / (slidesPerGroup * rows));
+      const slideIndexInGroup = i - rows * slidesPerGroup * groupIndex;
+      const columnsInGroup = groupIndex === 0 ? slidesPerGroup : Math.min(Math.ceil((slidesLength - groupIndex * rows * slidesPerGroup) / rows), slidesPerGroup);
+      row = Math.floor(slideIndexInGroup / columnsInGroup);
+      column = slideIndexInGroup - row * columnsInGroup + groupIndex * slidesPerGroup;
+      newSlideOrderIndex = column + row * slidesNumberEvenToRows / rows;
+      slide.style.order = newSlideOrderIndex;
+    } else if (fill === 'column') {
+      column = Math.floor(i / rows);
+      row = i - column * rows;
+      if (column > numFullColumns || column === numFullColumns && row === rows - 1) {
+        row += 1;
+        if (row >= rows) {
+          row = 0;
+          column += 1;
+        }
+      }
+    } else {
+      row = Math.floor(i / slidesPerRow);
+      column = i - row * slidesPerRow;
+    }
+    slide.row = row;
+    slide.column = column;
+    slide.style[getDirectionLabel('margin-top')] = row !== 0 ? spaceBetween && `${spaceBetween}px` : '';
+  };
+  const updateWrapperSize = (slideSize, snapGrid, getDirectionLabel) => {
+    const {
+      centeredSlides,
+      roundLengths
+    } = swiper.params;
+    const spaceBetween = getSpaceBetween();
+    const {
+      rows
+    } = swiper.params.grid;
+    swiper.virtualSize = (slideSize + spaceBetween) * slidesNumberEvenToRows;
+    swiper.virtualSize = Math.ceil(swiper.virtualSize / rows) - spaceBetween;
+    swiper.wrapperEl.style[getDirectionLabel('width')] = `${swiper.virtualSize + spaceBetween}px`;
+    if (centeredSlides) {
+      const newSlidesGrid = [];
+      for (let i = 0; i < snapGrid.length; i += 1) {
+        let slidesGridItem = snapGrid[i];
+        if (roundLengths) slidesGridItem = Math.floor(slidesGridItem);
+        if (snapGrid[i] < swiper.virtualSize + snapGrid[0]) newSlidesGrid.push(slidesGridItem);
+      }
+      snapGrid.splice(0, snapGrid.length);
+      snapGrid.push(...newSlidesGrid);
+    }
+  };
+  swiper.grid = {
+    initSlides,
+    updateSlide,
+    updateWrapperSize
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/hash-navigation/hash-navigation.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/swiper/modules/hash-navigation/hash-navigation.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HashNavigation)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function HashNavigation({
+  swiper,
+  extendParams,
+  emit,
+  on
+}) {
+  let initialized = false;
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  extendParams({
+    hashNavigation: {
+      enabled: false,
+      replaceState: false,
+      watchState: false,
+      getSlideIndex(_s, hash) {
+        if (swiper.virtual && swiper.params.virtual.enabled) {
+          const slideWithHash = swiper.slides.filter(slideEl => slideEl.getAttribute('data-hash') === hash)[0];
+          if (!slideWithHash) return 0;
+          const index = parseInt(slideWithHash.getAttribute('data-swiper-slide-index'), 10);
+          return index;
+        }
+        return swiper.getSlideIndex((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(swiper.slidesEl, `.${swiper.params.slideClass}[data-hash="${hash}"], swiper-slide[data-hash="${hash}"]`)[0]);
+      }
+    }
+  });
+  const onHashChange = () => {
+    emit('hashChange');
+    const newHash = document.location.hash.replace('#', '');
+    const activeSlideEl = swiper.virtual && swiper.params.virtual.enabled ? swiper.slidesEl.querySelector(`[data-swiper-slide-index="${swiper.activeIndex}"]`) : swiper.slides[swiper.activeIndex];
+    const activeSlideHash = activeSlideEl ? activeSlideEl.getAttribute('data-hash') : '';
+    if (newHash !== activeSlideHash) {
+      const newIndex = swiper.params.hashNavigation.getSlideIndex(swiper, newHash);
+      if (typeof newIndex === 'undefined' || Number.isNaN(newIndex)) return;
+      swiper.slideTo(newIndex);
+    }
+  };
+  const setHash = () => {
+    if (!initialized || !swiper.params.hashNavigation.enabled) return;
+    const activeSlideEl = swiper.virtual && swiper.params.virtual.enabled ? swiper.slidesEl.querySelector(`[data-swiper-slide-index="${swiper.activeIndex}"]`) : swiper.slides[swiper.activeIndex];
+    const activeSlideHash = activeSlideEl ? activeSlideEl.getAttribute('data-hash') || activeSlideEl.getAttribute('data-history') : '';
+    if (swiper.params.hashNavigation.replaceState && window.history && window.history.replaceState) {
+      window.history.replaceState(null, null, `#${activeSlideHash}` || '');
+      emit('hashSet');
+    } else {
+      document.location.hash = activeSlideHash || '';
+      emit('hashSet');
+    }
+  };
+  const init = () => {
+    if (!swiper.params.hashNavigation.enabled || swiper.params.history && swiper.params.history.enabled) return;
+    initialized = true;
+    const hash = document.location.hash.replace('#', '');
+    if (hash) {
+      const speed = 0;
+      const index = swiper.params.hashNavigation.getSlideIndex(swiper, hash);
+      swiper.slideTo(index || 0, speed, swiper.params.runCallbacksOnInit, true);
+    }
+    if (swiper.params.hashNavigation.watchState) {
+      window.addEventListener('hashchange', onHashChange);
+    }
+  };
+  const destroy = () => {
+    if (swiper.params.hashNavigation.watchState) {
+      window.removeEventListener('hashchange', onHashChange);
+    }
+  };
+  on('init', () => {
+    if (swiper.params.hashNavigation.enabled) {
+      init();
+    }
+  });
+  on('destroy', () => {
+    if (swiper.params.hashNavigation.enabled) {
+      destroy();
+    }
+  });
+  on('transitionEnd _freeModeNoMomentumRelease', () => {
+    if (initialized) {
+      setHash();
+    }
+  });
+  on('slideChange', () => {
+    if (initialized && swiper.params.cssMode) {
+      setHash();
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/history/history.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swiper/modules/history/history.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ History)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+
+function History({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    history: {
+      enabled: false,
+      root: '',
+      replaceState: false,
+      key: 'slides',
+      keepQuery: false
+    }
+  });
+  let initialized = false;
+  let paths = {};
+  const slugify = text => {
+    return text.toString().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
+  };
+  const getPathValues = urlOverride => {
+    const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+    let location;
+    if (urlOverride) {
+      location = new URL(urlOverride);
+    } else {
+      location = window.location;
+    }
+    const pathArray = location.pathname.slice(1).split('/').filter(part => part !== '');
+    const total = pathArray.length;
+    const key = pathArray[total - 2];
+    const value = pathArray[total - 1];
+    return {
+      key,
+      value
+    };
+  };
+  const setHistory = (key, index) => {
+    const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+    if (!initialized || !swiper.params.history.enabled) return;
+    let location;
+    if (swiper.params.url) {
+      location = new URL(swiper.params.url);
+    } else {
+      location = window.location;
+    }
+    const slide = swiper.slides[index];
+    let value = slugify(slide.getAttribute('data-history'));
+    if (swiper.params.history.root.length > 0) {
+      let root = swiper.params.history.root;
+      if (root[root.length - 1] === '/') root = root.slice(0, root.length - 1);
+      value = `${root}/${key ? `${key}/` : ''}${value}`;
+    } else if (!location.pathname.includes(key)) {
+      value = `${key ? `${key}/` : ''}${value}`;
+    }
+    if (swiper.params.history.keepQuery) {
+      value += location.search;
+    }
+    const currentState = window.history.state;
+    if (currentState && currentState.value === value) {
+      return;
+    }
+    if (swiper.params.history.replaceState) {
+      window.history.replaceState({
+        value
+      }, null, value);
+    } else {
+      window.history.pushState({
+        value
+      }, null, value);
+    }
+  };
+  const scrollToSlide = (speed, value, runCallbacks) => {
+    if (value) {
+      for (let i = 0, length = swiper.slides.length; i < length; i += 1) {
+        const slide = swiper.slides[i];
+        const slideHistory = slugify(slide.getAttribute('data-history'));
+        if (slideHistory === value) {
+          const index = swiper.getSlideIndex(slide);
+          swiper.slideTo(index, speed, runCallbacks);
+        }
+      }
+    } else {
+      swiper.slideTo(0, speed, runCallbacks);
+    }
+  };
+  const setHistoryPopState = () => {
+    paths = getPathValues(swiper.params.url);
+    scrollToSlide(swiper.params.speed, paths.value, false);
+  };
+  const init = () => {
+    const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+    if (!swiper.params.history) return;
+    if (!window.history || !window.history.pushState) {
+      swiper.params.history.enabled = false;
+      swiper.params.hashNavigation.enabled = true;
+      return;
+    }
+    initialized = true;
+    paths = getPathValues(swiper.params.url);
+    if (!paths.key && !paths.value) {
+      if (!swiper.params.history.replaceState) {
+        window.addEventListener('popstate', setHistoryPopState);
+      }
+      return;
+    }
+    scrollToSlide(0, paths.value, swiper.params.runCallbacksOnInit);
+    if (!swiper.params.history.replaceState) {
+      window.addEventListener('popstate', setHistoryPopState);
+    }
+  };
+  const destroy = () => {
+    const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+    if (!swiper.params.history.replaceState) {
+      window.removeEventListener('popstate', setHistoryPopState);
+    }
+  };
+  on('init', () => {
+    if (swiper.params.history.enabled) {
+      init();
+    }
+  });
+  on('destroy', () => {
+    if (swiper.params.history.enabled) {
+      destroy();
+    }
+  });
+  on('transitionEnd _freeModeNoMomentumRelease', () => {
+    if (initialized) {
+      setHistory(swiper.params.history.key, swiper.activeIndex);
+    }
+  });
+  on('slideChange', () => {
+    if (initialized && swiper.params.cssMode) {
+      setHistory(swiper.params.history.key, swiper.activeIndex);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/keyboard/keyboard.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/swiper/modules/keyboard/keyboard.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Keyboard)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+/* eslint-disable consistent-return */
+
+
+function Keyboard({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  swiper.keyboard = {
+    enabled: false
+  };
+  extendParams({
+    keyboard: {
+      enabled: false,
+      onlyInViewport: true,
+      pageUpDown: true
+    }
+  });
+  function handle(event) {
+    if (!swiper.enabled) return;
+    const {
+      rtlTranslate: rtl
+    } = swiper;
+    let e = event;
+    if (e.originalEvent) e = e.originalEvent; // jquery fix
+    const kc = e.keyCode || e.charCode;
+    const pageUpDown = swiper.params.keyboard.pageUpDown;
+    const isPageUp = pageUpDown && kc === 33;
+    const isPageDown = pageUpDown && kc === 34;
+    const isArrowLeft = kc === 37;
+    const isArrowRight = kc === 39;
+    const isArrowUp = kc === 38;
+    const isArrowDown = kc === 40;
+    // Directions locks
+    if (!swiper.allowSlideNext && (swiper.isHorizontal() && isArrowRight || swiper.isVertical() && isArrowDown || isPageDown)) {
+      return false;
+    }
+    if (!swiper.allowSlidePrev && (swiper.isHorizontal() && isArrowLeft || swiper.isVertical() && isArrowUp || isPageUp)) {
+      return false;
+    }
+    if (e.shiftKey || e.altKey || e.ctrlKey || e.metaKey) {
+      return undefined;
+    }
+    if (document.activeElement && document.activeElement.nodeName && (document.activeElement.nodeName.toLowerCase() === 'input' || document.activeElement.nodeName.toLowerCase() === 'textarea')) {
+      return undefined;
+    }
+    if (swiper.params.keyboard.onlyInViewport && (isPageUp || isPageDown || isArrowLeft || isArrowRight || isArrowUp || isArrowDown)) {
+      let inView = false;
+      // Check that swiper should be inside of visible area of window
+      if ((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementParents)(swiper.el, `.${swiper.params.slideClass}, swiper-slide`).length > 0 && (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementParents)(swiper.el, `.${swiper.params.slideActiveClass}`).length === 0) {
+        return undefined;
+      }
+      const el = swiper.el;
+      const swiperWidth = el.clientWidth;
+      const swiperHeight = el.clientHeight;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const swiperOffset = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementOffset)(el);
+      if (rtl) swiperOffset.left -= el.scrollLeft;
+      const swiperCoord = [[swiperOffset.left, swiperOffset.top], [swiperOffset.left + swiperWidth, swiperOffset.top], [swiperOffset.left, swiperOffset.top + swiperHeight], [swiperOffset.left + swiperWidth, swiperOffset.top + swiperHeight]];
+      for (let i = 0; i < swiperCoord.length; i += 1) {
+        const point = swiperCoord[i];
+        if (point[0] >= 0 && point[0] <= windowWidth && point[1] >= 0 && point[1] <= windowHeight) {
+          if (point[0] === 0 && point[1] === 0) continue; // eslint-disable-line
+          inView = true;
+        }
+      }
+      if (!inView) return undefined;
+    }
+    if (swiper.isHorizontal()) {
+      if (isPageUp || isPageDown || isArrowLeft || isArrowRight) {
+        if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+      }
+      if ((isPageDown || isArrowRight) && !rtl || (isPageUp || isArrowLeft) && rtl) swiper.slideNext();
+      if ((isPageUp || isArrowLeft) && !rtl || (isPageDown || isArrowRight) && rtl) swiper.slidePrev();
+    } else {
+      if (isPageUp || isPageDown || isArrowUp || isArrowDown) {
+        if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+      }
+      if (isPageDown || isArrowDown) swiper.slideNext();
+      if (isPageUp || isArrowUp) swiper.slidePrev();
+    }
+    emit('keyPress', kc);
+    return undefined;
+  }
+  function enable() {
+    if (swiper.keyboard.enabled) return;
+    document.addEventListener('keydown', handle);
+    swiper.keyboard.enabled = true;
+  }
+  function disable() {
+    if (!swiper.keyboard.enabled) return;
+    document.removeEventListener('keydown', handle);
+    swiper.keyboard.enabled = false;
+  }
+  on('init', () => {
+    if (swiper.params.keyboard.enabled) {
+      enable();
+    }
+  });
+  on('destroy', () => {
+    if (swiper.keyboard.enabled) {
+      disable();
+    }
+  });
+  Object.assign(swiper.keyboard, {
+    enable,
+    disable
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/manipulation/manipulation.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/swiper/modules/manipulation/manipulation.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Manipulation)
+/* harmony export */ });
+/* harmony import */ var _methods_appendSlide_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./methods/appendSlide.js */ "./node_modules/swiper/modules/manipulation/methods/appendSlide.js");
+/* harmony import */ var _methods_prependSlide_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/prependSlide.js */ "./node_modules/swiper/modules/manipulation/methods/prependSlide.js");
+/* harmony import */ var _methods_addSlide_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/addSlide.js */ "./node_modules/swiper/modules/manipulation/methods/addSlide.js");
+/* harmony import */ var _methods_removeSlide_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./methods/removeSlide.js */ "./node_modules/swiper/modules/manipulation/methods/removeSlide.js");
+/* harmony import */ var _methods_removeAllSlides_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./methods/removeAllSlides.js */ "./node_modules/swiper/modules/manipulation/methods/removeAllSlides.js");
+
+
+
+
+
+function Manipulation({
+  swiper
+}) {
+  Object.assign(swiper, {
+    appendSlide: _methods_appendSlide_js__WEBPACK_IMPORTED_MODULE_0__["default"].bind(swiper),
+    prependSlide: _methods_prependSlide_js__WEBPACK_IMPORTED_MODULE_1__["default"].bind(swiper),
+    addSlide: _methods_addSlide_js__WEBPACK_IMPORTED_MODULE_2__["default"].bind(swiper),
+    removeSlide: _methods_removeSlide_js__WEBPACK_IMPORTED_MODULE_3__["default"].bind(swiper),
+    removeAllSlides: _methods_removeAllSlides_js__WEBPACK_IMPORTED_MODULE_4__["default"].bind(swiper)
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/manipulation/methods/addSlide.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/swiper/modules/manipulation/methods/addSlide.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ addSlide)
+/* harmony export */ });
+function addSlide(index, slides) {
+  const swiper = this;
+  const {
+    params,
+    activeIndex,
+    slidesEl
+  } = swiper;
+  let activeIndexBuffer = activeIndex;
+  if (params.loop) {
+    activeIndexBuffer -= swiper.loopedSlides;
+    swiper.loopDestroy();
+    swiper.recalcSlides();
+  }
+  const baseLength = swiper.slides.length;
+  if (index <= 0) {
+    swiper.prependSlide(slides);
+    return;
+  }
+  if (index >= baseLength) {
+    swiper.appendSlide(slides);
+    return;
+  }
+  let newActiveIndex = activeIndexBuffer > index ? activeIndexBuffer + 1 : activeIndexBuffer;
+  const slidesBuffer = [];
+  for (let i = baseLength - 1; i >= index; i -= 1) {
+    const currentSlide = swiper.slides[i];
+    currentSlide.remove();
+    slidesBuffer.unshift(currentSlide);
+  }
+  if (typeof slides === 'object' && 'length' in slides) {
+    for (let i = 0; i < slides.length; i += 1) {
+      if (slides[i]) slidesEl.append(slides[i]);
+    }
+    newActiveIndex = activeIndexBuffer > index ? activeIndexBuffer + slides.length : activeIndexBuffer;
+  } else {
+    slidesEl.append(slides);
+  }
+  for (let i = 0; i < slidesBuffer.length; i += 1) {
+    slidesEl.append(slidesBuffer[i]);
+  }
+  swiper.recalcSlides();
+  if (params.loop) {
+    swiper.loopCreate();
+  }
+  if (!params.observer || swiper.isElement) {
+    swiper.update();
+  }
+  if (params.loop) {
+    swiper.slideTo(newActiveIndex + swiper.loopedSlides, 0, false);
+  } else {
+    swiper.slideTo(newActiveIndex, 0, false);
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/manipulation/methods/appendSlide.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/swiper/modules/manipulation/methods/appendSlide.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ appendSlide)
+/* harmony export */ });
+function appendSlide(slides) {
+  const swiper = this;
+  const {
+    params,
+    slidesEl
+  } = swiper;
+  if (params.loop) {
+    swiper.loopDestroy();
+  }
+  const appendElement = slideEl => {
+    if (typeof slideEl === 'string') {
+      const tempDOM = document.createElement('div');
+      tempDOM.innerHTML = slideEl;
+      slidesEl.append(tempDOM.children[0]);
+      tempDOM.innerHTML = '';
+    } else {
+      slidesEl.append(slideEl);
+    }
+  };
+  if (typeof slides === 'object' && 'length' in slides) {
+    for (let i = 0; i < slides.length; i += 1) {
+      if (slides[i]) appendElement(slides[i]);
+    }
+  } else {
+    appendElement(slides);
+  }
+  swiper.recalcSlides();
+  if (params.loop) {
+    swiper.loopCreate();
+  }
+  if (!params.observer || swiper.isElement) {
+    swiper.update();
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/manipulation/methods/prependSlide.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/swiper/modules/manipulation/methods/prependSlide.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ prependSlide)
+/* harmony export */ });
+function prependSlide(slides) {
+  const swiper = this;
+  const {
+    params,
+    activeIndex,
+    slidesEl
+  } = swiper;
+  if (params.loop) {
+    swiper.loopDestroy();
+  }
+  let newActiveIndex = activeIndex + 1;
+  const prependElement = slideEl => {
+    if (typeof slideEl === 'string') {
+      const tempDOM = document.createElement('div');
+      tempDOM.innerHTML = slideEl;
+      slidesEl.prepend(tempDOM.children[0]);
+      tempDOM.innerHTML = '';
+    } else {
+      slidesEl.prepend(slideEl);
+    }
+  };
+  if (typeof slides === 'object' && 'length' in slides) {
+    for (let i = 0; i < slides.length; i += 1) {
+      if (slides[i]) prependElement(slides[i]);
+    }
+    newActiveIndex = activeIndex + slides.length;
+  } else {
+    prependElement(slides);
+  }
+  swiper.recalcSlides();
+  if (params.loop) {
+    swiper.loopCreate();
+  }
+  if (!params.observer || swiper.isElement) {
+    swiper.update();
+  }
+  swiper.slideTo(newActiveIndex, 0, false);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/manipulation/methods/removeAllSlides.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/swiper/modules/manipulation/methods/removeAllSlides.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ removeAllSlides)
+/* harmony export */ });
+function removeAllSlides() {
+  const swiper = this;
+  const slidesIndexes = [];
+  for (let i = 0; i < swiper.slides.length; i += 1) {
+    slidesIndexes.push(i);
+  }
+  swiper.removeSlide(slidesIndexes);
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/manipulation/methods/removeSlide.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/swiper/modules/manipulation/methods/removeSlide.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ removeSlide)
+/* harmony export */ });
+function removeSlide(slidesIndexes) {
+  const swiper = this;
+  const {
+    params,
+    activeIndex
+  } = swiper;
+  let activeIndexBuffer = activeIndex;
+  if (params.loop) {
+    activeIndexBuffer -= swiper.loopedSlides;
+    swiper.loopDestroy();
+  }
+  let newActiveIndex = activeIndexBuffer;
+  let indexToRemove;
+  if (typeof slidesIndexes === 'object' && 'length' in slidesIndexes) {
+    for (let i = 0; i < slidesIndexes.length; i += 1) {
+      indexToRemove = slidesIndexes[i];
+      if (swiper.slides[indexToRemove]) swiper.slides[indexToRemove].remove();
+      if (indexToRemove < newActiveIndex) newActiveIndex -= 1;
+    }
+    newActiveIndex = Math.max(newActiveIndex, 0);
+  } else {
+    indexToRemove = slidesIndexes;
+    if (swiper.slides[indexToRemove]) swiper.slides[indexToRemove].remove();
+    if (indexToRemove < newActiveIndex) newActiveIndex -= 1;
+    newActiveIndex = Math.max(newActiveIndex, 0);
+  }
+  swiper.recalcSlides();
+  if (params.loop) {
+    swiper.loopCreate();
+  }
+  if (!params.observer || swiper.isElement) {
+    swiper.update();
+  }
+  if (params.loop) {
+    swiper.slideTo(newActiveIndex + swiper.loopedSlides, 0, false);
+  } else {
+    swiper.slideTo(newActiveIndex, 0, false);
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/mousewheel/mousewheel.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/modules/mousewheel/mousewheel.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Mousewheel)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+/* eslint-disable consistent-return */
+
+
+function Mousewheel({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  extendParams({
+    mousewheel: {
+      enabled: false,
+      releaseOnEdges: false,
+      invert: false,
+      forceToAxis: false,
+      sensitivity: 1,
+      eventsTarget: 'container',
+      thresholdDelta: null,
+      thresholdTime: null,
+      noMousewheelClass: 'swiper-no-mousewheel'
+    }
+  });
+  swiper.mousewheel = {
+    enabled: false
+  };
+  let timeout;
+  let lastScrollTime = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)();
+  let lastEventBeforeSnap;
+  const recentWheelEvents = [];
+  function normalize(e) {
+    // Reasonable defaults
+    const PIXEL_STEP = 10;
+    const LINE_HEIGHT = 40;
+    const PAGE_HEIGHT = 800;
+    let sX = 0;
+    let sY = 0; // spinX, spinY
+    let pX = 0;
+    let pY = 0; // pixelX, pixelY
+
+    // Legacy
+    if ('detail' in e) {
+      sY = e.detail;
+    }
+    if ('wheelDelta' in e) {
+      sY = -e.wheelDelta / 120;
+    }
+    if ('wheelDeltaY' in e) {
+      sY = -e.wheelDeltaY / 120;
+    }
+    if ('wheelDeltaX' in e) {
+      sX = -e.wheelDeltaX / 120;
+    }
+
+    // side scrolling on FF with DOMMouseScroll
+    if ('axis' in e && e.axis === e.HORIZONTAL_AXIS) {
+      sX = sY;
+      sY = 0;
+    }
+    pX = sX * PIXEL_STEP;
+    pY = sY * PIXEL_STEP;
+    if ('deltaY' in e) {
+      pY = e.deltaY;
+    }
+    if ('deltaX' in e) {
+      pX = e.deltaX;
+    }
+    if (e.shiftKey && !pX) {
+      // if user scrolls with shift he wants horizontal scroll
+      pX = pY;
+      pY = 0;
+    }
+    if ((pX || pY) && e.deltaMode) {
+      if (e.deltaMode === 1) {
+        // delta in LINE units
+        pX *= LINE_HEIGHT;
+        pY *= LINE_HEIGHT;
+      } else {
+        // delta in PAGE units
+        pX *= PAGE_HEIGHT;
+        pY *= PAGE_HEIGHT;
+      }
+    }
+
+    // Fall-back if spin cannot be determined
+    if (pX && !sX) {
+      sX = pX < 1 ? -1 : 1;
+    }
+    if (pY && !sY) {
+      sY = pY < 1 ? -1 : 1;
+    }
+    return {
+      spinX: sX,
+      spinY: sY,
+      pixelX: pX,
+      pixelY: pY
+    };
+  }
+  function handleMouseEnter() {
+    if (!swiper.enabled) return;
+    swiper.mouseEntered = true;
+  }
+  function handleMouseLeave() {
+    if (!swiper.enabled) return;
+    swiper.mouseEntered = false;
+  }
+  function animateSlider(newEvent) {
+    if (swiper.params.mousewheel.thresholdDelta && newEvent.delta < swiper.params.mousewheel.thresholdDelta) {
+      // Prevent if delta of wheel scroll delta is below configured threshold
+      return false;
+    }
+    if (swiper.params.mousewheel.thresholdTime && (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)() - lastScrollTime < swiper.params.mousewheel.thresholdTime) {
+      // Prevent if time between scrolls is below configured threshold
+      return false;
+    }
+
+    // If the movement is NOT big enough and
+    // if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
+    //   Don't go any further (avoid insignificant scroll movement).
+    if (newEvent.delta >= 6 && (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)() - lastScrollTime < 60) {
+      // Return false as a default
+      return true;
+    }
+    // If user is scrolling towards the end:
+    //   If the slider hasn't hit the latest slide or
+    //   if the slider is a loop and
+    //   if the slider isn't moving right now:
+    //     Go to next slide and
+    //     emit a scroll event.
+    // Else (the user is scrolling towards the beginning) and
+    // if the slider hasn't hit the first slide or
+    // if the slider is a loop and
+    // if the slider isn't moving right now:
+    //   Go to prev slide and
+    //   emit a scroll event.
+    if (newEvent.direction < 0) {
+      if ((!swiper.isEnd || swiper.params.loop) && !swiper.animating) {
+        swiper.slideNext();
+        emit('scroll', newEvent.raw);
+      }
+    } else if ((!swiper.isBeginning || swiper.params.loop) && !swiper.animating) {
+      swiper.slidePrev();
+      emit('scroll', newEvent.raw);
+    }
+    // If you got here is because an animation has been triggered so store the current time
+    lastScrollTime = new window.Date().getTime();
+    // Return false as a default
+    return false;
+  }
+  function releaseScroll(newEvent) {
+    const params = swiper.params.mousewheel;
+    if (newEvent.direction < 0) {
+      if (swiper.isEnd && !swiper.params.loop && params.releaseOnEdges) {
+        // Return true to animate scroll on edges
+        return true;
+      }
+    } else if (swiper.isBeginning && !swiper.params.loop && params.releaseOnEdges) {
+      // Return true to animate scroll on edges
+      return true;
+    }
+    return false;
+  }
+  function handle(event) {
+    let e = event;
+    let disableParentSwiper = true;
+    if (!swiper.enabled) return;
+
+    // Ignore event if the target or its parents have the swiper-no-mousewheel class
+    if (event.target.closest(`.${swiper.params.mousewheel.noMousewheelClass}`)) return;
+    const params = swiper.params.mousewheel;
+    if (swiper.params.cssMode) {
+      e.preventDefault();
+    }
+    let targetEl = swiper.el;
+    if (swiper.params.mousewheel.eventsTarget !== 'container') {
+      targetEl = document.querySelector(swiper.params.mousewheel.eventsTarget);
+    }
+    const targetElContainsTarget = targetEl && targetEl.contains(e.target);
+    if (!swiper.mouseEntered && !targetElContainsTarget && !params.releaseOnEdges) return true;
+    if (e.originalEvent) e = e.originalEvent; // jquery fix
+    let delta = 0;
+    const rtlFactor = swiper.rtlTranslate ? -1 : 1;
+    const data = normalize(e);
+    if (params.forceToAxis) {
+      if (swiper.isHorizontal()) {
+        if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = -data.pixelX * rtlFactor;else return true;
+      } else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = -data.pixelY;else return true;
+    } else {
+      delta = Math.abs(data.pixelX) > Math.abs(data.pixelY) ? -data.pixelX * rtlFactor : -data.pixelY;
+    }
+    if (delta === 0) return true;
+    if (params.invert) delta = -delta;
+
+    // Get the scroll positions
+    let positions = swiper.getTranslate() + delta * params.sensitivity;
+    if (positions >= swiper.minTranslate()) positions = swiper.minTranslate();
+    if (positions <= swiper.maxTranslate()) positions = swiper.maxTranslate();
+
+    // When loop is true:
+    //     the disableParentSwiper will be true.
+    // When loop is false:
+    //     if the scroll positions is not on edge,
+    //     then the disableParentSwiper will be true.
+    //     if the scroll on edge positions,
+    //     then the disableParentSwiper will be false.
+    disableParentSwiper = swiper.params.loop ? true : !(positions === swiper.minTranslate() || positions === swiper.maxTranslate());
+    if (disableParentSwiper && swiper.params.nested) e.stopPropagation();
+    if (!swiper.params.freeMode || !swiper.params.freeMode.enabled) {
+      // Register the new event in a variable which stores the relevant data
+      const newEvent = {
+        time: (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)(),
+        delta: Math.abs(delta),
+        direction: Math.sign(delta),
+        raw: event
+      };
+
+      // Keep the most recent events
+      if (recentWheelEvents.length >= 2) {
+        recentWheelEvents.shift(); // only store the last N events
+      }
+
+      const prevEvent = recentWheelEvents.length ? recentWheelEvents[recentWheelEvents.length - 1] : undefined;
+      recentWheelEvents.push(newEvent);
+
+      // If there is at least one previous recorded event:
+      //   If direction has changed or
+      //   if the scroll is quicker than the previous one:
+      //     Animate the slider.
+      // Else (this is the first time the wheel is moved):
+      //     Animate the slider.
+      if (prevEvent) {
+        if (newEvent.direction !== prevEvent.direction || newEvent.delta > prevEvent.delta || newEvent.time > prevEvent.time + 150) {
+          animateSlider(newEvent);
+        }
+      } else {
+        animateSlider(newEvent);
+      }
+
+      // If it's time to release the scroll:
+      //   Return now so you don't hit the preventDefault.
+      if (releaseScroll(newEvent)) {
+        return true;
+      }
+    } else {
+      // Freemode or scrollContainer:
+
+      // If we recently snapped after a momentum scroll, then ignore wheel events
+      // to give time for the deceleration to finish. Stop ignoring after 500 msecs
+      // or if it's a new scroll (larger delta or inverse sign as last event before
+      // an end-of-momentum snap).
+      const newEvent = {
+        time: (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.now)(),
+        delta: Math.abs(delta),
+        direction: Math.sign(delta)
+      };
+      const ignoreWheelEvents = lastEventBeforeSnap && newEvent.time < lastEventBeforeSnap.time + 500 && newEvent.delta <= lastEventBeforeSnap.delta && newEvent.direction === lastEventBeforeSnap.direction;
+      if (!ignoreWheelEvents) {
+        lastEventBeforeSnap = undefined;
+        let position = swiper.getTranslate() + delta * params.sensitivity;
+        const wasBeginning = swiper.isBeginning;
+        const wasEnd = swiper.isEnd;
+        if (position >= swiper.minTranslate()) position = swiper.minTranslate();
+        if (position <= swiper.maxTranslate()) position = swiper.maxTranslate();
+        swiper.setTransition(0);
+        swiper.setTranslate(position);
+        swiper.updateProgress();
+        swiper.updateActiveIndex();
+        swiper.updateSlidesClasses();
+        if (!wasBeginning && swiper.isBeginning || !wasEnd && swiper.isEnd) {
+          swiper.updateSlidesClasses();
+        }
+        if (swiper.params.loop) {
+          swiper.loopFix({
+            direction: newEvent.direction < 0 ? 'next' : 'prev',
+            byMousewheel: true
+          });
+        }
+        if (swiper.params.freeMode.sticky) {
+          // When wheel scrolling starts with sticky (aka snap) enabled, then detect
+          // the end of a momentum scroll by storing recent (N=15?) wheel events.
+          // 1. do all N events have decreasing or same (absolute value) delta?
+          // 2. did all N events arrive in the last M (M=500?) msecs?
+          // 3. does the earliest event have an (absolute value) delta that's
+          //    at least P (P=1?) larger than the most recent event's delta?
+          // 4. does the latest event have a delta that's smaller than Q (Q=6?) pixels?
+          // If 1-4 are "yes" then we're near the end of a momentum scroll deceleration.
+          // Snap immediately and ignore remaining wheel events in this scroll.
+          // See comment above for "remaining wheel events in this scroll" determination.
+          // If 1-4 aren't satisfied, then wait to snap until 500ms after the last event.
+          clearTimeout(timeout);
+          timeout = undefined;
+          if (recentWheelEvents.length >= 15) {
+            recentWheelEvents.shift(); // only store the last N events
+          }
+
+          const prevEvent = recentWheelEvents.length ? recentWheelEvents[recentWheelEvents.length - 1] : undefined;
+          const firstEvent = recentWheelEvents[0];
+          recentWheelEvents.push(newEvent);
+          if (prevEvent && (newEvent.delta > prevEvent.delta || newEvent.direction !== prevEvent.direction)) {
+            // Increasing or reverse-sign delta means the user started scrolling again. Clear the wheel event log.
+            recentWheelEvents.splice(0);
+          } else if (recentWheelEvents.length >= 15 && newEvent.time - firstEvent.time < 500 && firstEvent.delta - newEvent.delta >= 1 && newEvent.delta <= 6) {
+            // We're at the end of the deceleration of a momentum scroll, so there's no need
+            // to wait for more events. Snap ASAP on the next tick.
+            // Also, because there's some remaining momentum we'll bias the snap in the
+            // direction of the ongoing scroll because it's better UX for the scroll to snap
+            // in the same direction as the scroll instead of reversing to snap.  Therefore,
+            // if it's already scrolled more than 20% in the current direction, keep going.
+            const snapToThreshold = delta > 0 ? 0.8 : 0.2;
+            lastEventBeforeSnap = newEvent;
+            recentWheelEvents.splice(0);
+            timeout = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.nextTick)(() => {
+              swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
+            }, 0); // no delay; move on next tick
+          }
+
+          if (!timeout) {
+            // if we get here, then we haven't detected the end of a momentum scroll, so
+            // we'll consider a scroll "complete" when there haven't been any wheel events
+            // for 500ms.
+            timeout = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.nextTick)(() => {
+              const snapToThreshold = 0.5;
+              lastEventBeforeSnap = newEvent;
+              recentWheelEvents.splice(0);
+              swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
+            }, 500);
+          }
+        }
+
+        // Emit event
+        if (!ignoreWheelEvents) emit('scroll', e);
+
+        // Stop autoplay
+        if (swiper.params.autoplay && swiper.params.autoplayDisableOnInteraction) swiper.autoplay.stop();
+        // Return page scroll on edge positions
+        if (position === swiper.minTranslate() || position === swiper.maxTranslate()) return true;
+      }
+    }
+    if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+    return false;
+  }
+  function events(method) {
+    let targetEl = swiper.el;
+    if (swiper.params.mousewheel.eventsTarget !== 'container') {
+      targetEl = document.querySelector(swiper.params.mousewheel.eventsTarget);
+    }
+    targetEl[method]('mouseenter', handleMouseEnter);
+    targetEl[method]('mouseleave', handleMouseLeave);
+    targetEl[method]('wheel', handle);
+  }
+  function enable() {
+    if (swiper.params.cssMode) {
+      swiper.wrapperEl.removeEventListener('wheel', handle);
+      return true;
+    }
+    if (swiper.mousewheel.enabled) return false;
+    events('addEventListener');
+    swiper.mousewheel.enabled = true;
+    return true;
+  }
+  function disable() {
+    if (swiper.params.cssMode) {
+      swiper.wrapperEl.addEventListener(event, handle);
+      return true;
+    }
+    if (!swiper.mousewheel.enabled) return false;
+    events('removeEventListener');
+    swiper.mousewheel.enabled = false;
+    return true;
+  }
+  on('init', () => {
+    if (!swiper.params.mousewheel.enabled && swiper.params.cssMode) {
+      disable();
+    }
+    if (swiper.params.mousewheel.enabled) enable();
+  });
+  on('destroy', () => {
+    if (swiper.params.cssMode) {
+      enable();
+    }
+    if (swiper.mousewheel.enabled) disable();
+  });
+  Object.assign(swiper.mousewheel, {
+    enable,
+    disable
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/navigation/navigation.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/modules/navigation/navigation.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Navigation)
+/* harmony export */ });
+/* harmony import */ var _shared_create_element_if_not_defined_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/create-element-if-not-defined.js */ "./node_modules/swiper/shared/create-element-if-not-defined.js");
+
+function Navigation({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  extendParams({
+    navigation: {
+      nextEl: null,
+      prevEl: null,
+      hideOnClick: false,
+      disabledClass: 'swiper-button-disabled',
+      hiddenClass: 'swiper-button-hidden',
+      lockClass: 'swiper-button-lock',
+      navigationDisabledClass: 'swiper-navigation-disabled'
+    }
+  });
+  swiper.navigation = {
+    nextEl: null,
+    prevEl: null
+  };
+  const makeElementsArray = el => {
+    if (!Array.isArray(el)) el = [el].filter(e => !!e);
+    return el;
+  };
+  function getEl(el) {
+    let res;
+    if (el && typeof el === 'string' && swiper.isElement) {
+      res = swiper.el.shadowRoot.querySelector(el);
+      if (res) return res;
+    }
+    if (el) {
+      if (typeof el === 'string') res = [...document.querySelectorAll(el)];
+      if (swiper.params.uniqueNavElements && typeof el === 'string' && res.length > 1 && swiper.el.querySelectorAll(el).length === 1) {
+        res = swiper.el.querySelector(el);
+      }
+    }
+    if (el && !res) return el;
+    // if (Array.isArray(res) && res.length === 1) res = res[0];
+    return res;
+  }
+  function toggleEl(el, disabled) {
+    const params = swiper.params.navigation;
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      if (subEl) {
+        subEl.classList[disabled ? 'add' : 'remove'](...params.disabledClass.split(' '));
+        if (subEl.tagName === 'BUTTON') subEl.disabled = disabled;
+        if (swiper.params.watchOverflow && swiper.enabled) {
+          subEl.classList[swiper.isLocked ? 'add' : 'remove'](params.lockClass);
+        }
+      }
+    });
+  }
+  function update() {
+    // Update Navigation Buttons
+    const {
+      nextEl,
+      prevEl
+    } = swiper.navigation;
+    if (swiper.params.loop) {
+      toggleEl(prevEl, false);
+      toggleEl(nextEl, false);
+      return;
+    }
+    toggleEl(prevEl, swiper.isBeginning && !swiper.params.rewind);
+    toggleEl(nextEl, swiper.isEnd && !swiper.params.rewind);
+  }
+  function onPrevClick(e) {
+    e.preventDefault();
+    if (swiper.isBeginning && !swiper.params.loop && !swiper.params.rewind) return;
+    swiper.slidePrev();
+    emit('navigationPrev');
+  }
+  function onNextClick(e) {
+    e.preventDefault();
+    if (swiper.isEnd && !swiper.params.loop && !swiper.params.rewind) return;
+    swiper.slideNext();
+    emit('navigationNext');
+  }
+  function init() {
+    const params = swiper.params.navigation;
+    swiper.params.navigation = (0,_shared_create_element_if_not_defined_js__WEBPACK_IMPORTED_MODULE_0__["default"])(swiper, swiper.originalParams.navigation, swiper.params.navigation, {
+      nextEl: 'swiper-button-next',
+      prevEl: 'swiper-button-prev'
+    });
+    if (!(params.nextEl || params.prevEl)) return;
+    let nextEl = getEl(params.nextEl);
+    let prevEl = getEl(params.prevEl);
+    Object.assign(swiper.navigation, {
+      nextEl,
+      prevEl
+    });
+    nextEl = makeElementsArray(nextEl);
+    prevEl = makeElementsArray(prevEl);
+    const initButton = (el, dir) => {
+      if (el) {
+        el.addEventListener('click', dir === 'next' ? onNextClick : onPrevClick);
+      }
+      if (!swiper.enabled && el) {
+        el.classList.add(...params.lockClass.split(' '));
+      }
+    };
+    nextEl.forEach(el => initButton(el, 'next'));
+    prevEl.forEach(el => initButton(el, 'prev'));
+  }
+  function destroy() {
+    let {
+      nextEl,
+      prevEl
+    } = swiper.navigation;
+    nextEl = makeElementsArray(nextEl);
+    prevEl = makeElementsArray(prevEl);
+    const destroyButton = (el, dir) => {
+      el.removeEventListener('click', dir === 'next' ? onNextClick : onPrevClick);
+      el.classList.remove(...swiper.params.navigation.disabledClass.split(' '));
+    };
+    nextEl.forEach(el => destroyButton(el, 'next'));
+    prevEl.forEach(el => destroyButton(el, 'prev'));
+  }
+  on('init', () => {
+    if (swiper.params.navigation.enabled === false) {
+      // eslint-disable-next-line
+      disable();
+    } else {
+      init();
+      update();
+    }
+  });
+  on('toEdge fromEdge lock unlock', () => {
+    update();
+  });
+  on('destroy', () => {
+    destroy();
+  });
+  on('enable disable', () => {
+    let {
+      nextEl,
+      prevEl
+    } = swiper.navigation;
+    nextEl = makeElementsArray(nextEl);
+    prevEl = makeElementsArray(prevEl);
+    [...nextEl, ...prevEl].filter(el => !!el).forEach(el => el.classList[swiper.enabled ? 'remove' : 'add'](swiper.params.navigation.lockClass));
+  });
+  on('click', (_s, e) => {
+    let {
+      nextEl,
+      prevEl
+    } = swiper.navigation;
+    nextEl = makeElementsArray(nextEl);
+    prevEl = makeElementsArray(prevEl);
+    const targetEl = e.target;
+    if (swiper.params.navigation.hideOnClick && !prevEl.includes(targetEl) && !nextEl.includes(targetEl)) {
+      if (swiper.pagination && swiper.params.pagination && swiper.params.pagination.clickable && (swiper.pagination.el === targetEl || swiper.pagination.el.contains(targetEl))) return;
+      let isHidden;
+      if (nextEl.length) {
+        isHidden = nextEl[0].classList.contains(swiper.params.navigation.hiddenClass);
+      } else if (prevEl.length) {
+        isHidden = prevEl[0].classList.contains(swiper.params.navigation.hiddenClass);
+      }
+      if (isHidden === true) {
+        emit('navigationShow');
+      } else {
+        emit('navigationHide');
+      }
+      [...nextEl, ...prevEl].filter(el => !!el).forEach(el => el.classList.toggle(swiper.params.navigation.hiddenClass));
+    }
+  });
+  const enable = () => {
+    swiper.el.classList.remove(...swiper.params.navigation.navigationDisabledClass.split(' '));
+    init();
+    update();
+  };
+  const disable = () => {
+    swiper.el.classList.add(...swiper.params.navigation.navigationDisabledClass.split(' '));
+    destroy();
+  };
+  Object.assign(swiper.navigation, {
+    enable,
+    disable,
+    update,
+    init,
+    destroy
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/pagination/pagination.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/modules/pagination/pagination.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Pagination)
+/* harmony export */ });
+/* harmony import */ var _shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/classes-to-selector.js */ "./node_modules/swiper/shared/classes-to-selector.js");
+/* harmony import */ var _shared_create_element_if_not_defined_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/create-element-if-not-defined.js */ "./node_modules/swiper/shared/create-element-if-not-defined.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+
+function Pagination({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  const pfx = 'swiper-pagination';
+  extendParams({
+    pagination: {
+      el: null,
+      bulletElement: 'span',
+      clickable: false,
+      hideOnClick: false,
+      renderBullet: null,
+      renderProgressbar: null,
+      renderFraction: null,
+      renderCustom: null,
+      progressbarOpposite: false,
+      type: 'bullets',
+      // 'bullets' or 'progressbar' or 'fraction' or 'custom'
+      dynamicBullets: false,
+      dynamicMainBullets: 1,
+      formatFractionCurrent: number => number,
+      formatFractionTotal: number => number,
+      bulletClass: `${pfx}-bullet`,
+      bulletActiveClass: `${pfx}-bullet-active`,
+      modifierClass: `${pfx}-`,
+      currentClass: `${pfx}-current`,
+      totalClass: `${pfx}-total`,
+      hiddenClass: `${pfx}-hidden`,
+      progressbarFillClass: `${pfx}-progressbar-fill`,
+      progressbarOppositeClass: `${pfx}-progressbar-opposite`,
+      clickableClass: `${pfx}-clickable`,
+      lockClass: `${pfx}-lock`,
+      horizontalClass: `${pfx}-horizontal`,
+      verticalClass: `${pfx}-vertical`,
+      paginationDisabledClass: `${pfx}-disabled`
+    }
+  });
+  swiper.pagination = {
+    el: null,
+    bullets: []
+  };
+  let bulletSize;
+  let dynamicBulletIndex = 0;
+  const makeElementsArray = el => {
+    if (!Array.isArray(el)) el = [el].filter(e => !!e);
+    return el;
+  };
+  function isPaginationDisabled() {
+    return !swiper.params.pagination.el || !swiper.pagination.el || Array.isArray(swiper.pagination.el) && swiper.pagination.el.length === 0;
+  }
+  function setSideBullets(bulletEl, position) {
+    const {
+      bulletActiveClass
+    } = swiper.params.pagination;
+    if (!bulletEl) return;
+    bulletEl = bulletEl[`${position === 'prev' ? 'previous' : 'next'}ElementSibling`];
+    if (bulletEl) {
+      bulletEl.classList.add(`${bulletActiveClass}-${position}`);
+      bulletEl = bulletEl[`${position === 'prev' ? 'previous' : 'next'}ElementSibling`];
+      if (bulletEl) {
+        bulletEl.classList.add(`${bulletActiveClass}-${position}-${position}`);
+      }
+    }
+  }
+  function onBulletClick(e) {
+    const bulletEl = e.target.closest((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(swiper.params.pagination.bulletClass));
+    if (!bulletEl) {
+      return;
+    }
+    e.preventDefault();
+    const index = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_2__.elementIndex)(bulletEl) * swiper.params.slidesPerGroup;
+    if (swiper.params.loop) {
+      if (swiper.realIndex === index) return;
+      const newSlideIndex = swiper.getSlideIndexByData(index);
+      const currentSlideIndex = swiper.getSlideIndexByData(swiper.realIndex);
+      if (newSlideIndex > swiper.slides.length - swiper.loopedSlides) {
+        swiper.loopFix({
+          direction: newSlideIndex > currentSlideIndex ? 'next' : 'prev',
+          activeSlideIndex: newSlideIndex,
+          slideTo: false
+        });
+      }
+      swiper.slideToLoop(index);
+    } else {
+      swiper.slideTo(index);
+    }
+  }
+  function update() {
+    // Render || Update Pagination bullets/items
+    const rtl = swiper.rtl;
+    const params = swiper.params.pagination;
+    if (isPaginationDisabled()) return;
+    let el = swiper.pagination.el;
+    el = makeElementsArray(el);
+    // Current/Total
+    let current;
+    let previousIndex;
+    const slidesLength = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.slides.length : swiper.slides.length;
+    const total = swiper.params.loop ? Math.ceil(slidesLength / swiper.params.slidesPerGroup) : swiper.snapGrid.length;
+    if (swiper.params.loop) {
+      previousIndex = swiper.previousRealIndex || 0;
+      current = swiper.params.slidesPerGroup > 1 ? Math.floor(swiper.realIndex / swiper.params.slidesPerGroup) : swiper.realIndex;
+    } else if (typeof swiper.snapIndex !== 'undefined') {
+      current = swiper.snapIndex;
+      previousIndex = swiper.previousSnapIndex;
+    } else {
+      previousIndex = swiper.previousIndex || 0;
+      current = swiper.activeIndex || 0;
+    }
+    // Types
+    if (params.type === 'bullets' && swiper.pagination.bullets && swiper.pagination.bullets.length > 0) {
+      const bullets = swiper.pagination.bullets;
+      let firstIndex;
+      let lastIndex;
+      let midIndex;
+      if (params.dynamicBullets) {
+        bulletSize = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_2__.elementOuterSize)(bullets[0], swiper.isHorizontal() ? 'width' : 'height', true);
+        el.forEach(subEl => {
+          subEl.style[swiper.isHorizontal() ? 'width' : 'height'] = `${bulletSize * (params.dynamicMainBullets + 4)}px`;
+        });
+        if (params.dynamicMainBullets > 1 && previousIndex !== undefined) {
+          dynamicBulletIndex += current - (previousIndex || 0);
+          if (dynamicBulletIndex > params.dynamicMainBullets - 1) {
+            dynamicBulletIndex = params.dynamicMainBullets - 1;
+          } else if (dynamicBulletIndex < 0) {
+            dynamicBulletIndex = 0;
+          }
+        }
+        firstIndex = Math.max(current - dynamicBulletIndex, 0);
+        lastIndex = firstIndex + (Math.min(bullets.length, params.dynamicMainBullets) - 1);
+        midIndex = (lastIndex + firstIndex) / 2;
+      }
+      bullets.forEach(bulletEl => {
+        const classesToRemove = [...['', '-next', '-next-next', '-prev', '-prev-prev', '-main'].map(suffix => `${params.bulletActiveClass}${suffix}`)].map(s => typeof s === 'string' && s.includes(' ') ? s.split(' ') : s).flat();
+        bulletEl.classList.remove(...classesToRemove);
+      });
+      if (el.length > 1) {
+        bullets.forEach(bullet => {
+          const bulletIndex = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_2__.elementIndex)(bullet);
+          if (bulletIndex === current) {
+            bullet.classList.add(...params.bulletActiveClass.split(' '));
+          } else if (swiper.isElement) {
+            bullet.setAttribute('part', 'bullet');
+          }
+          if (params.dynamicBullets) {
+            if (bulletIndex >= firstIndex && bulletIndex <= lastIndex) {
+              bullet.classList.add(...`${params.bulletActiveClass}-main`.split(' '));
+            }
+            if (bulletIndex === firstIndex) {
+              setSideBullets(bullet, 'prev');
+            }
+            if (bulletIndex === lastIndex) {
+              setSideBullets(bullet, 'next');
+            }
+          }
+        });
+      } else {
+        const bullet = bullets[current];
+        if (bullet) {
+          bullet.classList.add(...params.bulletActiveClass.split(' '));
+        }
+        if (swiper.isElement) {
+          bullets.forEach((bulletEl, bulletIndex) => {
+            bulletEl.setAttribute('part', bulletIndex === current ? 'bullet-active' : 'bullet');
+          });
+        }
+        if (params.dynamicBullets) {
+          const firstDisplayedBullet = bullets[firstIndex];
+          const lastDisplayedBullet = bullets[lastIndex];
+          for (let i = firstIndex; i <= lastIndex; i += 1) {
+            if (bullets[i]) {
+              bullets[i].classList.add(...`${params.bulletActiveClass}-main`.split(' '));
+            }
+          }
+          setSideBullets(firstDisplayedBullet, 'prev');
+          setSideBullets(lastDisplayedBullet, 'next');
+        }
+      }
+      if (params.dynamicBullets) {
+        const dynamicBulletsLength = Math.min(bullets.length, params.dynamicMainBullets + 4);
+        const bulletsOffset = (bulletSize * dynamicBulletsLength - bulletSize) / 2 - midIndex * bulletSize;
+        const offsetProp = rtl ? 'right' : 'left';
+        bullets.forEach(bullet => {
+          bullet.style[swiper.isHorizontal() ? offsetProp : 'top'] = `${bulletsOffset}px`;
+        });
+      }
+    }
+    el.forEach((subEl, subElIndex) => {
+      if (params.type === 'fraction') {
+        subEl.querySelectorAll((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params.currentClass)).forEach(fractionEl => {
+          fractionEl.textContent = params.formatFractionCurrent(current + 1);
+        });
+        subEl.querySelectorAll((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params.totalClass)).forEach(totalEl => {
+          totalEl.textContent = params.formatFractionTotal(total);
+        });
+      }
+      if (params.type === 'progressbar') {
+        let progressbarDirection;
+        if (params.progressbarOpposite) {
+          progressbarDirection = swiper.isHorizontal() ? 'vertical' : 'horizontal';
+        } else {
+          progressbarDirection = swiper.isHorizontal() ? 'horizontal' : 'vertical';
+        }
+        const scale = (current + 1) / total;
+        let scaleX = 1;
+        let scaleY = 1;
+        if (progressbarDirection === 'horizontal') {
+          scaleX = scale;
+        } else {
+          scaleY = scale;
+        }
+        subEl.querySelectorAll((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params.progressbarFillClass)).forEach(progressEl => {
+          progressEl.style.transform = `translate3d(0,0,0) scaleX(${scaleX}) scaleY(${scaleY})`;
+          progressEl.style.transitionDuration = `${swiper.params.speed}ms`;
+        });
+      }
+      if (params.type === 'custom' && params.renderCustom) {
+        subEl.innerHTML = params.renderCustom(swiper, current + 1, total);
+        if (subElIndex === 0) emit('paginationRender', subEl);
+      } else {
+        if (subElIndex === 0) emit('paginationRender', subEl);
+        emit('paginationUpdate', subEl);
+      }
+      if (swiper.params.watchOverflow && swiper.enabled) {
+        subEl.classList[swiper.isLocked ? 'add' : 'remove'](params.lockClass);
+      }
+    });
+  }
+  function render() {
+    // Render Container
+    const params = swiper.params.pagination;
+    if (isPaginationDisabled()) return;
+    const slidesLength = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.slides.length : swiper.slides.length;
+    let el = swiper.pagination.el;
+    el = makeElementsArray(el);
+    let paginationHTML = '';
+    if (params.type === 'bullets') {
+      let numberOfBullets = swiper.params.loop ? Math.ceil(slidesLength / swiper.params.slidesPerGroup) : swiper.snapGrid.length;
+      if (swiper.params.freeMode && swiper.params.freeMode.enabled && numberOfBullets > slidesLength) {
+        numberOfBullets = slidesLength;
+      }
+      for (let i = 0; i < numberOfBullets; i += 1) {
+        if (params.renderBullet) {
+          paginationHTML += params.renderBullet.call(swiper, i, params.bulletClass);
+        } else {
+          // prettier-ignore
+          paginationHTML += `<${params.bulletElement} ${swiper.isElement ? 'part="bullet"' : ''} class="${params.bulletClass}"></${params.bulletElement}>`;
+        }
+      }
+    }
+    if (params.type === 'fraction') {
+      if (params.renderFraction) {
+        paginationHTML = params.renderFraction.call(swiper, params.currentClass, params.totalClass);
+      } else {
+        paginationHTML = `<span class="${params.currentClass}"></span>` + ' / ' + `<span class="${params.totalClass}"></span>`;
+      }
+    }
+    if (params.type === 'progressbar') {
+      if (params.renderProgressbar) {
+        paginationHTML = params.renderProgressbar.call(swiper, params.progressbarFillClass);
+      } else {
+        paginationHTML = `<span class="${params.progressbarFillClass}"></span>`;
+      }
+    }
+    swiper.pagination.bullets = [];
+    el.forEach(subEl => {
+      if (params.type !== 'custom') {
+        subEl.innerHTML = paginationHTML || '';
+      }
+      if (params.type === 'bullets') {
+        swiper.pagination.bullets.push(...subEl.querySelectorAll((0,_shared_classes_to_selector_js__WEBPACK_IMPORTED_MODULE_0__["default"])(params.bulletClass)));
+      }
+    });
+    if (params.type !== 'custom') {
+      emit('paginationRender', el[0]);
+    }
+  }
+  function init() {
+    swiper.params.pagination = (0,_shared_create_element_if_not_defined_js__WEBPACK_IMPORTED_MODULE_1__["default"])(swiper, swiper.originalParams.pagination, swiper.params.pagination, {
+      el: 'swiper-pagination'
+    });
+    const params = swiper.params.pagination;
+    if (!params.el) return;
+    let el;
+    if (typeof params.el === 'string' && swiper.isElement) {
+      el = swiper.el.shadowRoot.querySelector(params.el);
+    }
+    if (!el && typeof params.el === 'string') {
+      el = [...document.querySelectorAll(params.el)];
+    }
+    if (!el) {
+      el = params.el;
+    }
+    if (!el || el.length === 0) return;
+    if (swiper.params.uniqueNavElements && typeof params.el === 'string' && Array.isArray(el) && el.length > 1) {
+      el = [...swiper.el.querySelectorAll(params.el)];
+      // check if it belongs to another nested Swiper
+      if (el.length > 1) {
+        el = el.filter(subEl => {
+          if ((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_2__.elementParents)(subEl, '.swiper')[0] !== swiper.el) return false;
+          return true;
+        })[0];
+      }
+    }
+    if (Array.isArray(el) && el.length === 1) el = el[0];
+    Object.assign(swiper.pagination, {
+      el
+    });
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      if (params.type === 'bullets' && params.clickable) {
+        subEl.classList.add(params.clickableClass);
+      }
+      subEl.classList.add(params.modifierClass + params.type);
+      subEl.classList.add(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+      if (params.type === 'bullets' && params.dynamicBullets) {
+        subEl.classList.add(`${params.modifierClass}${params.type}-dynamic`);
+        dynamicBulletIndex = 0;
+        if (params.dynamicMainBullets < 1) {
+          params.dynamicMainBullets = 1;
+        }
+      }
+      if (params.type === 'progressbar' && params.progressbarOpposite) {
+        subEl.classList.add(params.progressbarOppositeClass);
+      }
+      if (params.clickable) {
+        subEl.addEventListener('click', onBulletClick);
+      }
+      if (!swiper.enabled) {
+        subEl.classList.add(params.lockClass);
+      }
+    });
+  }
+  function destroy() {
+    const params = swiper.params.pagination;
+    if (isPaginationDisabled()) return;
+    let el = swiper.pagination.el;
+    if (el) {
+      el = makeElementsArray(el);
+      el.forEach(subEl => {
+        subEl.classList.remove(params.hiddenClass);
+        subEl.classList.remove(params.modifierClass + params.type);
+        subEl.classList.remove(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+        if (params.clickable) {
+          subEl.removeEventListener('click', onBulletClick);
+        }
+      });
+    }
+    if (swiper.pagination.bullets) swiper.pagination.bullets.forEach(subEl => subEl.classList.remove(...params.bulletActiveClass.split(' ')));
+  }
+  on('changeDirection', () => {
+    if (!swiper.pagination || !swiper.pagination.el) return;
+    const params = swiper.params.pagination;
+    let {
+      el
+    } = swiper.pagination;
+    el = makeElementsArray(el);
+    el.forEach(subEl => {
+      subEl.classList.remove(params.horizontalClass, params.verticalClass);
+      subEl.classList.add(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+    });
+  });
+  on('init', () => {
+    if (swiper.params.pagination.enabled === false) {
+      // eslint-disable-next-line
+      disable();
+    } else {
+      init();
+      render();
+      update();
+    }
+  });
+  on('activeIndexChange', () => {
+    if (typeof swiper.snapIndex === 'undefined') {
+      update();
+    }
+  });
+  on('snapIndexChange', () => {
+    update();
+  });
+  on('snapGridLengthChange', () => {
+    render();
+    update();
+  });
+  on('destroy', () => {
+    destroy();
+  });
+  on('enable disable', () => {
+    let {
+      el
+    } = swiper.pagination;
+    if (el) {
+      el = makeElementsArray(el);
+      el.forEach(subEl => subEl.classList[swiper.enabled ? 'remove' : 'add'](swiper.params.pagination.lockClass));
+    }
+  });
+  on('lock unlock', () => {
+    update();
+  });
+  on('click', (_s, e) => {
+    const targetEl = e.target;
+    let {
+      el
+    } = swiper.pagination;
+    if (!Array.isArray(el)) el = [el].filter(element => !!element);
+    if (swiper.params.pagination.el && swiper.params.pagination.hideOnClick && el && el.length > 0 && !targetEl.classList.contains(swiper.params.pagination.bulletClass)) {
+      if (swiper.navigation && (swiper.navigation.nextEl && targetEl === swiper.navigation.nextEl || swiper.navigation.prevEl && targetEl === swiper.navigation.prevEl)) return;
+      const isHidden = el[0].classList.contains(swiper.params.pagination.hiddenClass);
+      if (isHidden === true) {
+        emit('paginationShow');
+      } else {
+        emit('paginationHide');
+      }
+      el.forEach(subEl => subEl.classList.toggle(swiper.params.pagination.hiddenClass));
+    }
+  });
+  const enable = () => {
+    swiper.el.classList.remove(swiper.params.pagination.paginationDisabledClass);
+    let {
+      el
+    } = swiper.pagination;
+    if (el) {
+      el = makeElementsArray(el);
+      el.forEach(subEl => subEl.classList.remove(swiper.params.pagination.paginationDisabledClass));
+    }
+    init();
+    render();
+    update();
+  };
+  const disable = () => {
+    swiper.el.classList.add(swiper.params.pagination.paginationDisabledClass);
+    let {
+      el
+    } = swiper.pagination;
+    if (el) {
+      el = makeElementsArray(el);
+      el.forEach(subEl => subEl.classList.add(swiper.params.pagination.paginationDisabledClass));
+    }
+    destroy();
+  };
+  Object.assign(swiper.pagination, {
+    enable,
+    disable,
+    render,
+    update,
+    init,
+    destroy
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/parallax/parallax.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/swiper/modules/parallax/parallax.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Parallax)
+/* harmony export */ });
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function Parallax({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    parallax: {
+      enabled: false
+    }
+  });
+  const setTransform = (el, progress) => {
+    const {
+      rtl
+    } = swiper;
+    const rtlFactor = rtl ? -1 : 1;
+    const p = el.getAttribute('data-swiper-parallax') || '0';
+    let x = el.getAttribute('data-swiper-parallax-x');
+    let y = el.getAttribute('data-swiper-parallax-y');
+    const scale = el.getAttribute('data-swiper-parallax-scale');
+    const opacity = el.getAttribute('data-swiper-parallax-opacity');
+    const rotate = el.getAttribute('data-swiper-parallax-rotate');
+    if (x || y) {
+      x = x || '0';
+      y = y || '0';
+    } else if (swiper.isHorizontal()) {
+      x = p;
+      y = '0';
+    } else {
+      y = p;
+      x = '0';
+    }
+    if (x.indexOf('%') >= 0) {
+      x = `${parseInt(x, 10) * progress * rtlFactor}%`;
+    } else {
+      x = `${x * progress * rtlFactor}px`;
+    }
+    if (y.indexOf('%') >= 0) {
+      y = `${parseInt(y, 10) * progress}%`;
+    } else {
+      y = `${y * progress}px`;
+    }
+    if (typeof opacity !== 'undefined' && opacity !== null) {
+      const currentOpacity = opacity - (opacity - 1) * (1 - Math.abs(progress));
+      el.style.opacity = currentOpacity;
+    }
+    let transform = `translate3d(${x}, ${y}, 0px)`;
+    if (typeof scale !== 'undefined' && scale !== null) {
+      const currentScale = scale - (scale - 1) * (1 - Math.abs(progress));
+      transform += ` scale(${currentScale})`;
+    }
+    if (rotate && typeof rotate !== 'undefined' && rotate !== null) {
+      const currentRotate = rotate * progress * -1;
+      transform += ` rotate(${currentRotate}deg)`;
+    }
+    el.style.transform = transform;
+  };
+  const setTranslate = () => {
+    const {
+      el,
+      slides,
+      progress,
+      snapGrid
+    } = swiper;
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(el, '[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]').forEach(subEl => {
+      setTransform(subEl, progress);
+    });
+    slides.forEach((slideEl, slideIndex) => {
+      let slideProgress = slideEl.progress;
+      if (swiper.params.slidesPerGroup > 1 && swiper.params.slidesPerView !== 'auto') {
+        slideProgress += Math.ceil(slideIndex / 2) - progress * (snapGrid.length - 1);
+      }
+      slideProgress = Math.min(Math.max(slideProgress, -1), 1);
+      slideEl.querySelectorAll('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale], [data-swiper-parallax-rotate]').forEach(subEl => {
+        setTransform(subEl, slideProgress);
+      });
+    });
+  };
+  const setTransition = (duration = swiper.params.speed) => {
+    const {
+      el
+    } = swiper;
+    el.querySelectorAll('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y], [data-swiper-parallax-opacity], [data-swiper-parallax-scale]').forEach(parallaxEl => {
+      let parallaxDuration = parseInt(parallaxEl.getAttribute('data-swiper-parallax-duration'), 10) || duration;
+      if (duration === 0) parallaxDuration = 0;
+      parallaxEl.style.transitionDuration = `${parallaxDuration}ms`;
+    });
+  };
+  on('beforeInit', () => {
+    if (!swiper.params.parallax.enabled) return;
+    swiper.params.watchSlidesProgress = true;
+    swiper.originalParams.watchSlidesProgress = true;
+  });
+  on('init', () => {
+    if (!swiper.params.parallax.enabled) return;
+    setTranslate();
+  });
+  on('setTranslate', () => {
+    if (!swiper.params.parallax.enabled) return;
+    setTranslate();
+  });
+  on('setTransition', (_swiper, duration) => {
+    if (!swiper.params.parallax.enabled) return;
+    setTransition(duration);
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/scrollbar/scrollbar.js":
+/*!************************************************************!*\
+  !*** ./node_modules/swiper/modules/scrollbar/scrollbar.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Scrollbar)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+/* harmony import */ var _shared_create_element_if_not_defined_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/create-element-if-not-defined.js */ "./node_modules/swiper/shared/create-element-if-not-defined.js");
+
+
+
+function Scrollbar({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  let isTouched = false;
+  let timeout = null;
+  let dragTimeout = null;
+  let dragStartPos;
+  let dragSize;
+  let trackSize;
+  let divider;
+  extendParams({
+    scrollbar: {
+      el: null,
+      dragSize: 'auto',
+      hide: false,
+      draggable: false,
+      snapOnRelease: true,
+      lockClass: 'swiper-scrollbar-lock',
+      dragClass: 'swiper-scrollbar-drag',
+      scrollbarDisabledClass: 'swiper-scrollbar-disabled',
+      horizontalClass: `swiper-scrollbar-horizontal`,
+      verticalClass: `swiper-scrollbar-vertical`
+    }
+  });
+  swiper.scrollbar = {
+    el: null,
+    dragEl: null
+  };
+  function setTranslate() {
+    if (!swiper.params.scrollbar.el || !swiper.scrollbar.el) return;
+    const {
+      scrollbar,
+      rtlTranslate: rtl
+    } = swiper;
+    const {
+      dragEl,
+      el
+    } = scrollbar;
+    const params = swiper.params.scrollbar;
+    const progress = swiper.params.loop ? swiper.progressLoop : swiper.progress;
+    let newSize = dragSize;
+    let newPos = (trackSize - dragSize) * progress;
+    if (rtl) {
+      newPos = -newPos;
+      if (newPos > 0) {
+        newSize = dragSize - newPos;
+        newPos = 0;
+      } else if (-newPos + dragSize > trackSize) {
+        newSize = trackSize + newPos;
+      }
+    } else if (newPos < 0) {
+      newSize = dragSize + newPos;
+      newPos = 0;
+    } else if (newPos + dragSize > trackSize) {
+      newSize = trackSize - newPos;
+    }
+    if (swiper.isHorizontal()) {
+      dragEl.style.transform = `translate3d(${newPos}px, 0, 0)`;
+      dragEl.style.width = `${newSize}px`;
+    } else {
+      dragEl.style.transform = `translate3d(0px, ${newPos}px, 0)`;
+      dragEl.style.height = `${newSize}px`;
+    }
+    if (params.hide) {
+      clearTimeout(timeout);
+      el.style.opacity = 1;
+      timeout = setTimeout(() => {
+        el.style.opacity = 0;
+        el.style.transitionDuration = '400ms';
+      }, 1000);
+    }
+  }
+  function setTransition(duration) {
+    if (!swiper.params.scrollbar.el || !swiper.scrollbar.el) return;
+    swiper.scrollbar.dragEl.style.transitionDuration = `${duration}ms`;
+  }
+  function updateSize() {
+    if (!swiper.params.scrollbar.el || !swiper.scrollbar.el) return;
+    const {
+      scrollbar
+    } = swiper;
+    const {
+      dragEl,
+      el
+    } = scrollbar;
+    dragEl.style.width = '';
+    dragEl.style.height = '';
+    trackSize = swiper.isHorizontal() ? el.offsetWidth : el.offsetHeight;
+    divider = swiper.size / (swiper.virtualSize + swiper.params.slidesOffsetBefore - (swiper.params.centeredSlides ? swiper.snapGrid[0] : 0));
+    if (swiper.params.scrollbar.dragSize === 'auto') {
+      dragSize = trackSize * divider;
+    } else {
+      dragSize = parseInt(swiper.params.scrollbar.dragSize, 10);
+    }
+    if (swiper.isHorizontal()) {
+      dragEl.style.width = `${dragSize}px`;
+    } else {
+      dragEl.style.height = `${dragSize}px`;
+    }
+    if (divider >= 1) {
+      el.style.display = 'none';
+    } else {
+      el.style.display = '';
+    }
+    if (swiper.params.scrollbar.hide) {
+      el.style.opacity = 0;
+    }
+    if (swiper.params.watchOverflow && swiper.enabled) {
+      scrollbar.el.classList[swiper.isLocked ? 'add' : 'remove'](swiper.params.scrollbar.lockClass);
+    }
+  }
+  function getPointerPosition(e) {
+    return swiper.isHorizontal() ? e.clientX : e.clientY;
+  }
+  function setDragPosition(e) {
+    const {
+      scrollbar,
+      rtlTranslate: rtl
+    } = swiper;
+    const {
+      el
+    } = scrollbar;
+    let positionRatio;
+    positionRatio = (getPointerPosition(e) - (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementOffset)(el)[swiper.isHorizontal() ? 'left' : 'top'] - (dragStartPos !== null ? dragStartPos : dragSize / 2)) / (trackSize - dragSize);
+    positionRatio = Math.max(Math.min(positionRatio, 1), 0);
+    if (rtl) {
+      positionRatio = 1 - positionRatio;
+    }
+    const position = swiper.minTranslate() + (swiper.maxTranslate() - swiper.minTranslate()) * positionRatio;
+    swiper.updateProgress(position);
+    swiper.setTranslate(position);
+    swiper.updateActiveIndex();
+    swiper.updateSlidesClasses();
+  }
+  function onDragStart(e) {
+    const params = swiper.params.scrollbar;
+    const {
+      scrollbar,
+      wrapperEl
+    } = swiper;
+    const {
+      el,
+      dragEl
+    } = scrollbar;
+    isTouched = true;
+    dragStartPos = e.target === dragEl ? getPointerPosition(e) - e.target.getBoundingClientRect()[swiper.isHorizontal() ? 'left' : 'top'] : null;
+    e.preventDefault();
+    e.stopPropagation();
+    wrapperEl.style.transitionDuration = '100ms';
+    dragEl.style.transitionDuration = '100ms';
+    setDragPosition(e);
+    clearTimeout(dragTimeout);
+    el.style.transitionDuration = '0ms';
+    if (params.hide) {
+      el.style.opacity = 1;
+    }
+    if (swiper.params.cssMode) {
+      swiper.wrapperEl.style['scroll-snap-type'] = 'none';
+    }
+    emit('scrollbarDragStart', e);
+  }
+  function onDragMove(e) {
+    const {
+      scrollbar,
+      wrapperEl
+    } = swiper;
+    const {
+      el,
+      dragEl
+    } = scrollbar;
+    if (!isTouched) return;
+    if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+    setDragPosition(e);
+    wrapperEl.style.transitionDuration = '0ms';
+    el.style.transitionDuration = '0ms';
+    dragEl.style.transitionDuration = '0ms';
+    emit('scrollbarDragMove', e);
+  }
+  function onDragEnd(e) {
+    const params = swiper.params.scrollbar;
+    const {
+      scrollbar,
+      wrapperEl
+    } = swiper;
+    const {
+      el
+    } = scrollbar;
+    if (!isTouched) return;
+    isTouched = false;
+    if (swiper.params.cssMode) {
+      swiper.wrapperEl.style['scroll-snap-type'] = '';
+      wrapperEl.style.transitionDuration = '';
+    }
+    if (params.hide) {
+      clearTimeout(dragTimeout);
+      dragTimeout = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.nextTick)(() => {
+        el.style.opacity = 0;
+        el.style.transitionDuration = '400ms';
+      }, 1000);
+    }
+    emit('scrollbarDragEnd', e);
+    if (params.snapOnRelease) {
+      swiper.slideToClosest();
+    }
+  }
+  function events(method) {
+    const {
+      scrollbar,
+      params
+    } = swiper;
+    const el = scrollbar.el;
+    if (!el) return;
+    const target = el;
+    const activeListener = params.passiveListeners ? {
+      passive: false,
+      capture: false
+    } : false;
+    const passiveListener = params.passiveListeners ? {
+      passive: true,
+      capture: false
+    } : false;
+    if (!target) return;
+    const eventMethod = method === 'on' ? 'addEventListener' : 'removeEventListener';
+    target[eventMethod]('pointerdown', onDragStart, activeListener);
+    document[eventMethod]('pointermove', onDragMove, activeListener);
+    document[eventMethod]('pointerup', onDragEnd, passiveListener);
+  }
+  function enableDraggable() {
+    if (!swiper.params.scrollbar.el || !swiper.scrollbar.el) return;
+    events('on');
+  }
+  function disableDraggable() {
+    if (!swiper.params.scrollbar.el || !swiper.scrollbar.el) return;
+    events('off');
+  }
+  function init() {
+    const {
+      scrollbar,
+      el: swiperEl
+    } = swiper;
+    swiper.params.scrollbar = (0,_shared_create_element_if_not_defined_js__WEBPACK_IMPORTED_MODULE_2__["default"])(swiper, swiper.originalParams.scrollbar, swiper.params.scrollbar, {
+      el: 'swiper-scrollbar'
+    });
+    const params = swiper.params.scrollbar;
+    if (!params.el) return;
+    let el;
+    if (typeof params.el === 'string' && swiper.isElement) {
+      el = swiper.el.shadowRoot.querySelector(params.el);
+    }
+    if (!el && typeof params.el === 'string') {
+      el = document.querySelectorAll(params.el);
+    } else if (!el) {
+      el = params.el;
+    }
+    if (swiper.params.uniqueNavElements && typeof params.el === 'string' && el.length > 1 && swiperEl.querySelectorAll(params.el).length === 1) {
+      el = swiperEl.querySelector(params.el);
+    }
+    if (el.length > 0) el = el[0];
+    el.classList.add(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+    let dragEl;
+    if (el) {
+      dragEl = el.querySelector(`.${swiper.params.scrollbar.dragClass}`);
+      if (!dragEl) {
+        dragEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', swiper.params.scrollbar.dragClass);
+        el.append(dragEl);
+      }
+    }
+    Object.assign(scrollbar, {
+      el,
+      dragEl
+    });
+    if (params.draggable) {
+      enableDraggable();
+    }
+    if (el) {
+      el.classList[swiper.enabled ? 'remove' : 'add'](swiper.params.scrollbar.lockClass);
+    }
+  }
+  function destroy() {
+    const params = swiper.params.scrollbar;
+    const el = swiper.scrollbar.el;
+    if (el) {
+      el.classList.remove(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+    }
+    disableDraggable();
+  }
+  on('init', () => {
+    if (swiper.params.scrollbar.enabled === false) {
+      // eslint-disable-next-line
+      disable();
+    } else {
+      init();
+      updateSize();
+      setTranslate();
+    }
+  });
+  on('update resize observerUpdate lock unlock', () => {
+    updateSize();
+  });
+  on('setTranslate', () => {
+    setTranslate();
+  });
+  on('setTransition', (_s, duration) => {
+    setTransition(duration);
+  });
+  on('enable disable', () => {
+    const {
+      el
+    } = swiper.scrollbar;
+    if (el) {
+      el.classList[swiper.enabled ? 'remove' : 'add'](swiper.params.scrollbar.lockClass);
+    }
+  });
+  on('destroy', () => {
+    destroy();
+  });
+  const enable = () => {
+    swiper.el.classList.remove(swiper.params.scrollbar.scrollbarDisabledClass);
+    if (swiper.scrollbar.el) {
+      swiper.scrollbar.el.classList.remove(swiper.params.scrollbar.scrollbarDisabledClass);
+    }
+    init();
+    updateSize();
+    setTranslate();
+  };
+  const disable = () => {
+    swiper.el.classList.add(swiper.params.scrollbar.scrollbarDisabledClass);
+    if (swiper.scrollbar.el) {
+      swiper.scrollbar.el.classList.add(swiper.params.scrollbar.scrollbarDisabledClass);
+    }
+    destroy();
+  };
+  Object.assign(swiper.scrollbar, {
+    enable,
+    disable,
+    updateSize,
+    setTranslate,
+    init,
+    destroy
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/thumbs/thumbs.js":
+/*!******************************************************!*\
+  !*** ./node_modules/swiper/modules/thumbs/thumbs.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Thumb)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function Thumb({
+  swiper,
+  extendParams,
+  on
+}) {
+  extendParams({
+    thumbs: {
+      swiper: null,
+      multipleActiveThumbs: true,
+      autoScrollOffset: 0,
+      slideThumbActiveClass: 'swiper-slide-thumb-active',
+      thumbsContainerClass: 'swiper-thumbs'
+    }
+  });
+  let initialized = false;
+  let swiperCreated = false;
+  swiper.thumbs = {
+    swiper: null
+  };
+  function onThumbClick() {
+    const thumbsSwiper = swiper.thumbs.swiper;
+    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+    const clickedIndex = thumbsSwiper.clickedIndex;
+    const clickedSlide = thumbsSwiper.clickedSlide;
+    if (clickedSlide && clickedSlide.classList.contains(swiper.params.thumbs.slideThumbActiveClass)) return;
+    if (typeof clickedIndex === 'undefined' || clickedIndex === null) return;
+    let slideToIndex;
+    if (thumbsSwiper.params.loop) {
+      slideToIndex = parseInt(thumbsSwiper.clickedSlide.getAttribute('data-swiper-slide-index'), 10);
+    } else {
+      slideToIndex = clickedIndex;
+    }
+    if (swiper.params.loop) {
+      swiper.slideToLoop(slideToIndex);
+    } else {
+      swiper.slideTo(slideToIndex);
+    }
+  }
+  function init() {
+    const {
+      thumbs: thumbsParams
+    } = swiper.params;
+    if (initialized) return false;
+    initialized = true;
+    const SwiperClass = swiper.constructor;
+    if (thumbsParams.swiper instanceof SwiperClass) {
+      swiper.thumbs.swiper = thumbsParams.swiper;
+      Object.assign(swiper.thumbs.swiper.originalParams, {
+        watchSlidesProgress: true,
+        slideToClickedSlide: false
+      });
+      Object.assign(swiper.thumbs.swiper.params, {
+        watchSlidesProgress: true,
+        slideToClickedSlide: false
+      });
+      swiper.thumbs.swiper.update();
+    } else if ((0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.isObject)(thumbsParams.swiper)) {
+      const thumbsSwiperParams = Object.assign({}, thumbsParams.swiper);
+      Object.assign(thumbsSwiperParams, {
+        watchSlidesProgress: true,
+        slideToClickedSlide: false
+      });
+      swiper.thumbs.swiper = new SwiperClass(thumbsSwiperParams);
+      swiperCreated = true;
+    }
+    swiper.thumbs.swiper.el.classList.add(swiper.params.thumbs.thumbsContainerClass);
+    swiper.thumbs.swiper.on('tap', onThumbClick);
+    return true;
+  }
+  function update(initial) {
+    const thumbsSwiper = swiper.thumbs.swiper;
+    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+    const slidesPerView = thumbsSwiper.params.slidesPerView === 'auto' ? thumbsSwiper.slidesPerViewDynamic() : thumbsSwiper.params.slidesPerView;
+
+    // Activate thumbs
+    let thumbsToActivate = 1;
+    const thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
+    if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) {
+      thumbsToActivate = swiper.params.slidesPerView;
+    }
+    if (!swiper.params.thumbs.multipleActiveThumbs) {
+      thumbsToActivate = 1;
+    }
+    thumbsToActivate = Math.floor(thumbsToActivate);
+    thumbsSwiper.slides.forEach(slideEl => slideEl.classList.remove(thumbActiveClass));
+    if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) {
+      for (let i = 0; i < thumbsToActivate; i += 1) {
+        (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(thumbsSwiper.slidesEl, `[data-swiper-slide-index="${swiper.realIndex + i}"]`).forEach(slideEl => {
+          slideEl.classList.add(thumbActiveClass);
+        });
+      }
+    } else {
+      for (let i = 0; i < thumbsToActivate; i += 1) {
+        if (thumbsSwiper.slides[swiper.realIndex + i]) {
+          thumbsSwiper.slides[swiper.realIndex + i].classList.add(thumbActiveClass);
+        }
+      }
+    }
+    const autoScrollOffset = swiper.params.thumbs.autoScrollOffset;
+    const useOffset = autoScrollOffset && !thumbsSwiper.params.loop;
+    if (swiper.realIndex !== thumbsSwiper.realIndex || useOffset) {
+      const currentThumbsIndex = thumbsSwiper.activeIndex;
+      let newThumbsIndex;
+      let direction;
+      if (thumbsSwiper.params.loop) {
+        const newThumbsSlide = thumbsSwiper.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') === `${swiper.realIndex}`)[0];
+        newThumbsIndex = thumbsSwiper.slides.indexOf(newThumbsSlide);
+        direction = swiper.activeIndex > swiper.previousIndex ? 'next' : 'prev';
+      } else {
+        newThumbsIndex = swiper.realIndex;
+        direction = newThumbsIndex > swiper.previousIndex ? 'next' : 'prev';
+      }
+      if (useOffset) {
+        newThumbsIndex += direction === 'next' ? autoScrollOffset : -1 * autoScrollOffset;
+      }
+      if (thumbsSwiper.visibleSlidesIndexes && thumbsSwiper.visibleSlidesIndexes.indexOf(newThumbsIndex) < 0) {
+        if (thumbsSwiper.params.centeredSlides) {
+          if (newThumbsIndex > currentThumbsIndex) {
+            newThumbsIndex = newThumbsIndex - Math.floor(slidesPerView / 2) + 1;
+          } else {
+            newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1;
+          }
+        } else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1) {
+          // newThumbsIndex = newThumbsIndex - slidesPerView + 1;
+        }
+        thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : undefined);
+      }
+    }
+  }
+  on('beforeInit', () => {
+    const {
+      thumbs
+    } = swiper.params;
+    if (!thumbs || !thumbs.swiper) return;
+    if (typeof thumbs.swiper === 'string' || thumbs.swiper instanceof HTMLElement) {
+      const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+      const getThumbsElementAndInit = () => {
+        const thumbsElement = typeof thumbs.swiper === 'string' ? document.querySelector(thumbs.swiper) : thumbs.swiper;
+        if (thumbsElement && thumbsElement.swiper) {
+          thumbs.swiper = thumbsElement.swiper;
+          init();
+          update(true);
+        } else if (thumbsElement) {
+          const onThumbsSwiper = e => {
+            thumbs.swiper = e.detail[0];
+            thumbsElement.removeEventListener('init', onThumbsSwiper);
+            init();
+            update(true);
+            thumbs.swiper.update();
+            swiper.update();
+          };
+          thumbsElement.addEventListener('init', onThumbsSwiper);
+        }
+        return thumbsElement;
+      };
+      const watchForThumbsToAppear = () => {
+        if (swiper.destroyed) return;
+        const thumbsElement = getThumbsElementAndInit();
+        if (!thumbsElement) {
+          requestAnimationFrame(watchForThumbsToAppear);
+        }
+      };
+      requestAnimationFrame(watchForThumbsToAppear);
+    } else {
+      init();
+      update(true);
+    }
+  });
+  on('slideChange update resize observerUpdate', () => {
+    update();
+  });
+  on('setTransition', (_s, duration) => {
+    const thumbsSwiper = swiper.thumbs.swiper;
+    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+    thumbsSwiper.setTransition(duration);
+  });
+  on('beforeDestroy', () => {
+    const thumbsSwiper = swiper.thumbs.swiper;
+    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
+    if (swiperCreated) {
+      thumbsSwiper.destroy();
+    }
+  });
+  Object.assign(swiper.thumbs, {
+    init,
+    update
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/virtual/virtual.js":
+/*!********************************************************!*\
+  !*** ./node_modules/swiper/modules/virtual/virtual.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Virtual)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function Virtual({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  extendParams({
+    virtual: {
+      enabled: false,
+      slides: [],
+      cache: true,
+      renderSlide: null,
+      renderExternal: null,
+      renderExternalUpdate: true,
+      addSlidesBefore: 0,
+      addSlidesAfter: 0
+    }
+  });
+  let cssModeTimeout;
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  swiper.virtual = {
+    cache: {},
+    from: undefined,
+    to: undefined,
+    slides: [],
+    offset: 0,
+    slidesGrid: []
+  };
+  const tempDOM = document.createElement('div');
+  function renderSlide(slide, index) {
+    const params = swiper.params.virtual;
+    if (params.cache && swiper.virtual.cache[index]) {
+      return swiper.virtual.cache[index];
+    }
+    // eslint-disable-next-line
+    let slideEl;
+    if (params.renderSlide) {
+      slideEl = params.renderSlide.call(swiper, slide, index);
+      if (typeof slideEl === 'string') {
+        tempDOM.innerHTML = slideEl;
+        slideEl = tempDOM.children[0];
+      }
+    } else if (swiper.isElement) {
+      slideEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('swiper-slide');
+    } else {
+      slideEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', swiper.params.slideClass);
+    }
+    slideEl.setAttribute('data-swiper-slide-index', index);
+    if (!params.renderSlide) {
+      slideEl.innerHTML = slide;
+    }
+    if (params.cache) swiper.virtual.cache[index] = slideEl;
+    return slideEl;
+  }
+  function update(force) {
+    const {
+      slidesPerView,
+      slidesPerGroup,
+      centeredSlides,
+      loop: isLoop
+    } = swiper.params;
+    const {
+      addSlidesBefore,
+      addSlidesAfter
+    } = swiper.params.virtual;
+    const {
+      from: previousFrom,
+      to: previousTo,
+      slides,
+      slidesGrid: previousSlidesGrid,
+      offset: previousOffset
+    } = swiper.virtual;
+    if (!swiper.params.cssMode) {
+      swiper.updateActiveIndex();
+    }
+    const activeIndex = swiper.activeIndex || 0;
+    let offsetProp;
+    if (swiper.rtlTranslate) offsetProp = 'right';else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
+    let slidesAfter;
+    let slidesBefore;
+    if (centeredSlides) {
+      slidesAfter = Math.floor(slidesPerView / 2) + slidesPerGroup + addSlidesAfter;
+      slidesBefore = Math.floor(slidesPerView / 2) + slidesPerGroup + addSlidesBefore;
+    } else {
+      slidesAfter = slidesPerView + (slidesPerGroup - 1) + addSlidesAfter;
+      slidesBefore = (isLoop ? slidesPerView : slidesPerGroup) + addSlidesBefore;
+    }
+    let from = activeIndex - slidesBefore;
+    let to = activeIndex + slidesAfter;
+    if (!isLoop) {
+      from = Math.max(from, 0);
+      to = Math.min(to, slides.length - 1);
+    }
+    let offset = (swiper.slidesGrid[from] || 0) - (swiper.slidesGrid[0] || 0);
+    if (isLoop && activeIndex >= slidesBefore) {
+      from -= slidesBefore;
+      if (!centeredSlides) offset += swiper.slidesGrid[0];
+    } else if (isLoop && activeIndex < slidesBefore) {
+      from = -slidesBefore;
+      if (centeredSlides) offset += swiper.slidesGrid[0];
+    }
+    Object.assign(swiper.virtual, {
+      from,
+      to,
+      offset,
+      slidesGrid: swiper.slidesGrid,
+      slidesBefore,
+      slidesAfter
+    });
+    function onRendered() {
+      swiper.updateSlides();
+      swiper.updateProgress();
+      swiper.updateSlidesClasses();
+      emit('virtualUpdate');
+    }
+    if (previousFrom === from && previousTo === to && !force) {
+      if (swiper.slidesGrid !== previousSlidesGrid && offset !== previousOffset) {
+        swiper.slides.forEach(slideEl => {
+          slideEl.style[offsetProp] = `${offset - Math.abs(swiper.cssOverflowAdjustment())}px`;
+        });
+      }
+      swiper.updateProgress();
+      emit('virtualUpdate');
+      return;
+    }
+    if (swiper.params.virtual.renderExternal) {
+      swiper.params.virtual.renderExternal.call(swiper, {
+        offset,
+        from,
+        to,
+        slides: function getSlides() {
+          const slidesToRender = [];
+          for (let i = from; i <= to; i += 1) {
+            slidesToRender.push(slides[i]);
+          }
+          return slidesToRender;
+        }()
+      });
+      if (swiper.params.virtual.renderExternalUpdate) {
+        onRendered();
+      } else {
+        emit('virtualUpdate');
+      }
+      return;
+    }
+    const prependIndexes = [];
+    const appendIndexes = [];
+    const getSlideIndex = index => {
+      let slideIndex = index;
+      if (index < 0) {
+        slideIndex = slides.length + index;
+      } else if (slideIndex >= slides.length) {
+        // eslint-disable-next-line
+        slideIndex = slideIndex - slides.length;
+      }
+      return slideIndex;
+    };
+    if (force) {
+      swiper.slidesEl.querySelectorAll(`.${swiper.params.slideClass}, swiper-slide`).forEach(slideEl => {
+        slideEl.remove();
+      });
+    } else {
+      for (let i = previousFrom; i <= previousTo; i += 1) {
+        if (i < from || i > to) {
+          const slideIndex = getSlideIndex(i);
+          swiper.slidesEl.querySelectorAll(`.${swiper.params.slideClass}[data-swiper-slide-index="${slideIndex}"], swiper-slide[data-swiper-slide-index="${slideIndex}"]`).forEach(slideEl => {
+            slideEl.remove();
+          });
+        }
+      }
+    }
+    const loopFrom = isLoop ? -slides.length : 0;
+    const loopTo = isLoop ? slides.length * 2 : slides.length;
+    for (let i = loopFrom; i < loopTo; i += 1) {
+      if (i >= from && i <= to) {
+        const slideIndex = getSlideIndex(i);
+        if (typeof previousTo === 'undefined' || force) {
+          appendIndexes.push(slideIndex);
+        } else {
+          if (i > previousTo) appendIndexes.push(slideIndex);
+          if (i < previousFrom) prependIndexes.push(slideIndex);
+        }
+      }
+    }
+    appendIndexes.forEach(index => {
+      swiper.slidesEl.append(renderSlide(slides[index], index));
+    });
+    if (isLoop) {
+      for (let i = prependIndexes.length - 1; i >= 0; i -= 1) {
+        const index = prependIndexes[i];
+        swiper.slidesEl.prepend(renderSlide(slides[index], index));
+      }
+    } else {
+      prependIndexes.sort((a, b) => b - a);
+      prependIndexes.forEach(index => {
+        swiper.slidesEl.prepend(renderSlide(slides[index], index));
+      });
+    }
+    (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(swiper.slidesEl, '.swiper-slide, swiper-slide').forEach(slideEl => {
+      slideEl.style[offsetProp] = `${offset - Math.abs(swiper.cssOverflowAdjustment())}px`;
+    });
+    onRendered();
+  }
+  function appendSlide(slides) {
+    if (typeof slides === 'object' && 'length' in slides) {
+      for (let i = 0; i < slides.length; i += 1) {
+        if (slides[i]) swiper.virtual.slides.push(slides[i]);
+      }
+    } else {
+      swiper.virtual.slides.push(slides);
+    }
+    update(true);
+  }
+  function prependSlide(slides) {
+    const activeIndex = swiper.activeIndex;
+    let newActiveIndex = activeIndex + 1;
+    let numberOfNewSlides = 1;
+    if (Array.isArray(slides)) {
+      for (let i = 0; i < slides.length; i += 1) {
+        if (slides[i]) swiper.virtual.slides.unshift(slides[i]);
+      }
+      newActiveIndex = activeIndex + slides.length;
+      numberOfNewSlides = slides.length;
+    } else {
+      swiper.virtual.slides.unshift(slides);
+    }
+    if (swiper.params.virtual.cache) {
+      const cache = swiper.virtual.cache;
+      const newCache = {};
+      Object.keys(cache).forEach(cachedIndex => {
+        const cachedEl = cache[cachedIndex];
+        const cachedElIndex = cachedEl.getAttribute('data-swiper-slide-index');
+        if (cachedElIndex) {
+          cachedEl.setAttribute('data-swiper-slide-index', parseInt(cachedElIndex, 10) + numberOfNewSlides);
+        }
+        newCache[parseInt(cachedIndex, 10) + numberOfNewSlides] = cachedEl;
+      });
+      swiper.virtual.cache = newCache;
+    }
+    update(true);
+    swiper.slideTo(newActiveIndex, 0);
+  }
+  function removeSlide(slidesIndexes) {
+    if (typeof slidesIndexes === 'undefined' || slidesIndexes === null) return;
+    let activeIndex = swiper.activeIndex;
+    if (Array.isArray(slidesIndexes)) {
+      for (let i = slidesIndexes.length - 1; i >= 0; i -= 1) {
+        swiper.virtual.slides.splice(slidesIndexes[i], 1);
+        if (swiper.params.virtual.cache) {
+          delete swiper.virtual.cache[slidesIndexes[i]];
+        }
+        if (slidesIndexes[i] < activeIndex) activeIndex -= 1;
+        activeIndex = Math.max(activeIndex, 0);
+      }
+    } else {
+      swiper.virtual.slides.splice(slidesIndexes, 1);
+      if (swiper.params.virtual.cache) {
+        delete swiper.virtual.cache[slidesIndexes];
+      }
+      if (slidesIndexes < activeIndex) activeIndex -= 1;
+      activeIndex = Math.max(activeIndex, 0);
+    }
+    update(true);
+    swiper.slideTo(activeIndex, 0);
+  }
+  function removeAllSlides() {
+    swiper.virtual.slides = [];
+    if (swiper.params.virtual.cache) {
+      swiper.virtual.cache = {};
+    }
+    update(true);
+    swiper.slideTo(0, 0);
+  }
+  on('beforeInit', () => {
+    if (!swiper.params.virtual.enabled) return;
+    let domSlidesAssigned;
+    if (typeof swiper.passedParams.virtual.slides === 'undefined') {
+      const slides = [...swiper.slidesEl.children].filter(el => el.matches(`.${swiper.params.slideClass}, swiper-slide`));
+      if (slides && slides.length) {
+        swiper.virtual.slides = [...slides];
+        domSlidesAssigned = true;
+        slides.forEach((slideEl, slideIndex) => {
+          slideEl.setAttribute('data-swiper-slide-index', slideIndex);
+          swiper.virtual.cache[slideIndex] = slideEl;
+          slideEl.remove();
+        });
+      }
+    }
+    if (!domSlidesAssigned) {
+      swiper.virtual.slides = swiper.params.virtual.slides;
+    }
+    swiper.classNames.push(`${swiper.params.containerModifierClass}virtual`);
+    swiper.params.watchSlidesProgress = true;
+    swiper.originalParams.watchSlidesProgress = true;
+    if (!swiper.params.initialSlide) {
+      update();
+    }
+  });
+  on('setTranslate', () => {
+    if (!swiper.params.virtual.enabled) return;
+    if (swiper.params.cssMode && !swiper._immediateVirtual) {
+      clearTimeout(cssModeTimeout);
+      cssModeTimeout = setTimeout(() => {
+        update();
+      }, 100);
+    } else {
+      update();
+    }
+  });
+  on('init update resize', () => {
+    if (!swiper.params.virtual.enabled) return;
+    if (swiper.params.cssMode) {
+      (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.setCSSProperty)(swiper.wrapperEl, '--swiper-virtual-size', `${swiper.virtualSize}px`);
+    }
+  });
+  Object.assign(swiper.virtual, {
+    appendSlide,
+    prependSlide,
+    removeSlide,
+    removeAllSlides,
+    update
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/zoom/zoom.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/modules/zoom/zoom.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Zoom)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _shared_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/utils.js */ "./node_modules/swiper/shared/utils.js");
+
+
+function Zoom({
+  swiper,
+  extendParams,
+  on,
+  emit
+}) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  extendParams({
+    zoom: {
+      enabled: false,
+      maxRatio: 3,
+      minRatio: 1,
+      toggle: true,
+      containerClass: 'swiper-zoom-container',
+      zoomedSlideClass: 'swiper-slide-zoomed'
+    }
+  });
+  swiper.zoom = {
+    enabled: false
+  };
+  let currentScale = 1;
+  let isScaling = false;
+  let fakeGestureTouched;
+  let fakeGestureMoved;
+  const evCache = [];
+  const gesture = {
+    originX: 0,
+    originY: 0,
+    slideEl: undefined,
+    slideWidth: undefined,
+    slideHeight: undefined,
+    imageEl: undefined,
+    imageWrapEl: undefined,
+    maxRatio: 3
+  };
+  const image = {
+    isTouched: undefined,
+    isMoved: undefined,
+    currentX: undefined,
+    currentY: undefined,
+    minX: undefined,
+    minY: undefined,
+    maxX: undefined,
+    maxY: undefined,
+    width: undefined,
+    height: undefined,
+    startX: undefined,
+    startY: undefined,
+    touchesStart: {},
+    touchesCurrent: {}
+  };
+  const velocity = {
+    x: undefined,
+    y: undefined,
+    prevPositionX: undefined,
+    prevPositionY: undefined,
+    prevTime: undefined
+  };
+  let scale = 1;
+  Object.defineProperty(swiper.zoom, 'scale', {
+    get() {
+      return scale;
+    },
+    set(value) {
+      if (scale !== value) {
+        const imageEl = gesture.imageEl;
+        const slideEl = gesture.slideEl;
+        emit('zoomChange', value, imageEl, slideEl);
+      }
+      scale = value;
+    }
+  });
+  function getDistanceBetweenTouches() {
+    if (evCache.length < 2) return 1;
+    const x1 = evCache[0].pageX;
+    const y1 = evCache[0].pageY;
+    const x2 = evCache[1].pageX;
+    const y2 = evCache[1].pageY;
+    const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    return distance;
+  }
+  function getScaleOrigin() {
+    if (evCache.length < 2) return {
+      x: null,
+      y: null
+    };
+    const box = gesture.imageEl.getBoundingClientRect();
+    return [(evCache[0].pageX + (evCache[1].pageX - evCache[0].pageX) / 2 - box.x) / currentScale, (evCache[0].pageY + (evCache[1].pageY - evCache[0].pageY) / 2 - box.y) / currentScale];
+  }
+  function getSlideSelector() {
+    return swiper.isElement ? `swiper-slide` : `.${swiper.params.slideClass}`;
+  }
+  function eventWithinSlide(e) {
+    const slideSelector = getSlideSelector();
+    if (e.target.matches(slideSelector)) return true;
+    if (swiper.slides.filter(slideEl => slideEl.contains(e.target)).length > 0) return true;
+    return false;
+  }
+  function eventWithinZoomContainer(e) {
+    const selector = `.${swiper.params.zoom.containerClass}`;
+    if (e.target.matches(selector)) return true;
+    if ([...swiper.el.querySelectorAll(selector)].filter(containerEl => containerEl.contains(e.target)).length > 0) return true;
+    return false;
+  }
+
+  // Events
+  function onGestureStart(e) {
+    if (e.pointerType === 'mouse') {
+      evCache.splice(0, evCache.length);
+    }
+    if (!eventWithinSlide(e)) return;
+    const params = swiper.params.zoom;
+    fakeGestureTouched = false;
+    fakeGestureMoved = false;
+    evCache.push(e);
+    if (evCache.length < 2) {
+      return;
+    }
+    fakeGestureTouched = true;
+    gesture.scaleStart = getDistanceBetweenTouches();
+    if (!gesture.slideEl) {
+      gesture.slideEl = e.target.closest(`.${swiper.params.slideClass}, swiper-slide`);
+      if (!gesture.slideEl) gesture.slideEl = swiper.slides[swiper.activeIndex];
+      let imageEl = gesture.slideEl.querySelector(`.${params.containerClass}`);
+      if (imageEl) {
+        imageEl = imageEl.querySelectorAll('picture, img, svg, canvas, .swiper-zoom-target')[0];
+      }
+      gesture.imageEl = imageEl;
+      if (imageEl) {
+        gesture.imageWrapEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementParents)(gesture.imageEl, `.${params.containerClass}`)[0];
+      } else {
+        gesture.imageWrapEl = undefined;
+      }
+      if (!gesture.imageWrapEl) {
+        gesture.imageEl = undefined;
+        return;
+      }
+      gesture.maxRatio = gesture.imageWrapEl.getAttribute('data-swiper-zoom') || params.maxRatio;
+    }
+    if (gesture.imageEl) {
+      const [originX, originY] = getScaleOrigin();
+      gesture.originX = originX;
+      gesture.originY = originY;
+      gesture.imageEl.style.transitionDuration = '0ms';
+    }
+    isScaling = true;
+  }
+  function onGestureChange(e) {
+    if (!eventWithinSlide(e)) return;
+    const params = swiper.params.zoom;
+    const zoom = swiper.zoom;
+    const pointerIndex = evCache.findIndex(cachedEv => cachedEv.pointerId === e.pointerId);
+    if (pointerIndex >= 0) evCache[pointerIndex] = e;
+    if (evCache.length < 2) {
+      return;
+    }
+    fakeGestureMoved = true;
+    gesture.scaleMove = getDistanceBetweenTouches();
+    if (!gesture.imageEl) {
+      return;
+    }
+    zoom.scale = gesture.scaleMove / gesture.scaleStart * currentScale;
+    if (zoom.scale > gesture.maxRatio) {
+      zoom.scale = gesture.maxRatio - 1 + (zoom.scale - gesture.maxRatio + 1) ** 0.5;
+    }
+    if (zoom.scale < params.minRatio) {
+      zoom.scale = params.minRatio + 1 - (params.minRatio - zoom.scale + 1) ** 0.5;
+    }
+    gesture.imageEl.style.transform = `translate3d(0,0,0) scale(${zoom.scale})`;
+  }
+  function onGestureEnd(e) {
+    if (!eventWithinSlide(e)) return;
+    if (e.pointerType === 'mouse' && e.type === 'pointerout') return;
+    const params = swiper.params.zoom;
+    const zoom = swiper.zoom;
+    const pointerIndex = evCache.findIndex(cachedEv => cachedEv.pointerId === e.pointerId);
+    if (pointerIndex >= 0) evCache.splice(pointerIndex, 1);
+    if (!fakeGestureTouched || !fakeGestureMoved) {
+      return;
+    }
+    fakeGestureTouched = false;
+    fakeGestureMoved = false;
+    if (!gesture.imageEl) return;
+    zoom.scale = Math.max(Math.min(zoom.scale, gesture.maxRatio), params.minRatio);
+    gesture.imageEl.style.transitionDuration = `${swiper.params.speed}ms`;
+    gesture.imageEl.style.transform = `translate3d(0,0,0) scale(${zoom.scale})`;
+    currentScale = zoom.scale;
+    isScaling = false;
+    if (zoom.scale > 1 && gesture.slideEl) {
+      gesture.slideEl.classList.add(`${params.zoomedSlideClass}`);
+    } else if (zoom.scale <= 1 && gesture.slideEl) {
+      gesture.slideEl.classList.remove(`${params.zoomedSlideClass}`);
+    }
+    if (zoom.scale === 1) {
+      gesture.originX = 0;
+      gesture.originY = 0;
+      gesture.slideEl = undefined;
+    }
+  }
+  function onTouchStart(e) {
+    const device = swiper.device;
+    if (!gesture.imageEl) return;
+    if (image.isTouched) return;
+    if (device.android && e.cancelable) e.preventDefault();
+    image.isTouched = true;
+    const event = evCache.length > 0 ? evCache[0] : e;
+    image.touchesStart.x = event.pageX;
+    image.touchesStart.y = event.pageY;
+  }
+  function onTouchMove(e) {
+    if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
+    const zoom = swiper.zoom;
+    if (!gesture.imageEl) return;
+    if (!image.isTouched || !gesture.slideEl) return;
+    if (!image.isMoved) {
+      image.width = gesture.imageEl.offsetWidth;
+      image.height = gesture.imageEl.offsetHeight;
+      image.startX = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.getTranslate)(gesture.imageWrapEl, 'x') || 0;
+      image.startY = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.getTranslate)(gesture.imageWrapEl, 'y') || 0;
+      gesture.slideWidth = gesture.slideEl.offsetWidth;
+      gesture.slideHeight = gesture.slideEl.offsetHeight;
+      gesture.imageWrapEl.style.transitionDuration = '0ms';
+    }
+    // Define if we need image drag
+    const scaledWidth = image.width * zoom.scale;
+    const scaledHeight = image.height * zoom.scale;
+    if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) return;
+    image.minX = Math.min(gesture.slideWidth / 2 - scaledWidth / 2, 0);
+    image.maxX = -image.minX;
+    image.minY = Math.min(gesture.slideHeight / 2 - scaledHeight / 2, 0);
+    image.maxY = -image.minY;
+    image.touchesCurrent.x = evCache.length > 0 ? evCache[0].pageX : e.pageX;
+    image.touchesCurrent.y = evCache.length > 0 ? evCache[0].pageY : e.pageY;
+    const touchesDiff = Math.max(Math.abs(image.touchesCurrent.x - image.touchesStart.x), Math.abs(image.touchesCurrent.y - image.touchesStart.y));
+    if (touchesDiff > 5) {
+      swiper.allowClick = false;
+    }
+    if (!image.isMoved && !isScaling) {
+      if (swiper.isHorizontal() && (Math.floor(image.minX) === Math.floor(image.startX) && image.touchesCurrent.x < image.touchesStart.x || Math.floor(image.maxX) === Math.floor(image.startX) && image.touchesCurrent.x > image.touchesStart.x)) {
+        image.isTouched = false;
+        return;
+      }
+      if (!swiper.isHorizontal() && (Math.floor(image.minY) === Math.floor(image.startY) && image.touchesCurrent.y < image.touchesStart.y || Math.floor(image.maxY) === Math.floor(image.startY) && image.touchesCurrent.y > image.touchesStart.y)) {
+        image.isTouched = false;
+        return;
+      }
+    }
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+    e.stopPropagation();
+    image.isMoved = true;
+    const scaleRatio = (zoom.scale - currentScale) / (gesture.maxRatio - swiper.params.zoom.minRatio);
+    const {
+      originX,
+      originY
+    } = gesture;
+    image.currentX = image.touchesCurrent.x - image.touchesStart.x + image.startX + scaleRatio * (image.width - originX * 2);
+    image.currentY = image.touchesCurrent.y - image.touchesStart.y + image.startY + scaleRatio * (image.height - originY * 2);
+    if (image.currentX < image.minX) {
+      image.currentX = image.minX + 1 - (image.minX - image.currentX + 1) ** 0.8;
+    }
+    if (image.currentX > image.maxX) {
+      image.currentX = image.maxX - 1 + (image.currentX - image.maxX + 1) ** 0.8;
+    }
+    if (image.currentY < image.minY) {
+      image.currentY = image.minY + 1 - (image.minY - image.currentY + 1) ** 0.8;
+    }
+    if (image.currentY > image.maxY) {
+      image.currentY = image.maxY - 1 + (image.currentY - image.maxY + 1) ** 0.8;
+    }
+
+    // Velocity
+    if (!velocity.prevPositionX) velocity.prevPositionX = image.touchesCurrent.x;
+    if (!velocity.prevPositionY) velocity.prevPositionY = image.touchesCurrent.y;
+    if (!velocity.prevTime) velocity.prevTime = Date.now();
+    velocity.x = (image.touchesCurrent.x - velocity.prevPositionX) / (Date.now() - velocity.prevTime) / 2;
+    velocity.y = (image.touchesCurrent.y - velocity.prevPositionY) / (Date.now() - velocity.prevTime) / 2;
+    if (Math.abs(image.touchesCurrent.x - velocity.prevPositionX) < 2) velocity.x = 0;
+    if (Math.abs(image.touchesCurrent.y - velocity.prevPositionY) < 2) velocity.y = 0;
+    velocity.prevPositionX = image.touchesCurrent.x;
+    velocity.prevPositionY = image.touchesCurrent.y;
+    velocity.prevTime = Date.now();
+    gesture.imageWrapEl.style.transform = `translate3d(${image.currentX}px, ${image.currentY}px,0)`;
+  }
+  function onTouchEnd() {
+    const zoom = swiper.zoom;
+    if (!gesture.imageEl) return;
+    if (!image.isTouched || !image.isMoved) {
+      image.isTouched = false;
+      image.isMoved = false;
+      return;
+    }
+    image.isTouched = false;
+    image.isMoved = false;
+    let momentumDurationX = 300;
+    let momentumDurationY = 300;
+    const momentumDistanceX = velocity.x * momentumDurationX;
+    const newPositionX = image.currentX + momentumDistanceX;
+    const momentumDistanceY = velocity.y * momentumDurationY;
+    const newPositionY = image.currentY + momentumDistanceY;
+
+    // Fix duration
+    if (velocity.x !== 0) momentumDurationX = Math.abs((newPositionX - image.currentX) / velocity.x);
+    if (velocity.y !== 0) momentumDurationY = Math.abs((newPositionY - image.currentY) / velocity.y);
+    const momentumDuration = Math.max(momentumDurationX, momentumDurationY);
+    image.currentX = newPositionX;
+    image.currentY = newPositionY;
+    // Define if we need image drag
+    const scaledWidth = image.width * zoom.scale;
+    const scaledHeight = image.height * zoom.scale;
+    image.minX = Math.min(gesture.slideWidth / 2 - scaledWidth / 2, 0);
+    image.maxX = -image.minX;
+    image.minY = Math.min(gesture.slideHeight / 2 - scaledHeight / 2, 0);
+    image.maxY = -image.minY;
+    image.currentX = Math.max(Math.min(image.currentX, image.maxX), image.minX);
+    image.currentY = Math.max(Math.min(image.currentY, image.maxY), image.minY);
+    gesture.imageWrapEl.style.transitionDuration = `${momentumDuration}ms`;
+    gesture.imageWrapEl.style.transform = `translate3d(${image.currentX}px, ${image.currentY}px,0)`;
+  }
+  function onTransitionEnd() {
+    const zoom = swiper.zoom;
+    if (gesture.slideEl && swiper.activeIndex !== swiper.slides.indexOf(gesture.slideEl)) {
+      if (gesture.imageEl) {
+        gesture.imageEl.style.transform = 'translate3d(0,0,0) scale(1)';
+      }
+      if (gesture.imageWrapEl) {
+        gesture.imageWrapEl.style.transform = 'translate3d(0,0,0)';
+      }
+      gesture.slideEl.classList.remove(`${swiper.params.zoom.zoomedSlideClass}`);
+      zoom.scale = 1;
+      currentScale = 1;
+      gesture.slideEl = undefined;
+      gesture.imageEl = undefined;
+      gesture.imageWrapEl = undefined;
+      gesture.originX = 0;
+      gesture.originY = 0;
+    }
+  }
+  function zoomIn(e) {
+    const zoom = swiper.zoom;
+    const params = swiper.params.zoom;
+    if (!gesture.slideEl) {
+      if (e && e.target) {
+        gesture.slideEl = e.target.closest(`.${swiper.params.slideClass}, swiper-slide`);
+      }
+      if (!gesture.slideEl) {
+        if (swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual) {
+          gesture.slideEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(swiper.slidesEl, `.${swiper.params.slideActiveClass}`)[0];
+        } else {
+          gesture.slideEl = swiper.slides[swiper.activeIndex];
+        }
+      }
+      let imageEl = gesture.slideEl.querySelector(`.${params.containerClass}`);
+      if (imageEl) {
+        imageEl = imageEl.querySelectorAll('picture, img, svg, canvas, .swiper-zoom-target')[0];
+      }
+      gesture.imageEl = imageEl;
+      if (imageEl) {
+        gesture.imageWrapEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementParents)(gesture.imageEl, `.${params.containerClass}`)[0];
+      } else {
+        gesture.imageWrapEl = undefined;
+      }
+    }
+    if (!gesture.imageEl || !gesture.imageWrapEl) return;
+    if (swiper.params.cssMode) {
+      swiper.wrapperEl.style.overflow = 'hidden';
+      swiper.wrapperEl.style.touchAction = 'none';
+    }
+    gesture.slideEl.classList.add(`${params.zoomedSlideClass}`);
+    let touchX;
+    let touchY;
+    let offsetX;
+    let offsetY;
+    let diffX;
+    let diffY;
+    let translateX;
+    let translateY;
+    let imageWidth;
+    let imageHeight;
+    let scaledWidth;
+    let scaledHeight;
+    let translateMinX;
+    let translateMinY;
+    let translateMaxX;
+    let translateMaxY;
+    let slideWidth;
+    let slideHeight;
+    if (typeof image.touchesStart.x === 'undefined' && e) {
+      touchX = e.pageX;
+      touchY = e.pageY;
+    } else {
+      touchX = image.touchesStart.x;
+      touchY = image.touchesStart.y;
+    }
+    const forceZoomRatio = typeof e === 'number' ? e : null;
+    if (currentScale === 1 && forceZoomRatio) {
+      touchX = undefined;
+      touchY = undefined;
+    }
+    zoom.scale = forceZoomRatio || gesture.imageWrapEl.getAttribute('data-swiper-zoom') || params.maxRatio;
+    currentScale = forceZoomRatio || gesture.imageWrapEl.getAttribute('data-swiper-zoom') || params.maxRatio;
+    if (e && !(currentScale === 1 && forceZoomRatio)) {
+      slideWidth = gesture.slideEl.offsetWidth;
+      slideHeight = gesture.slideEl.offsetHeight;
+      offsetX = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementOffset)(gesture.slideEl).left + window.scrollX;
+      offsetY = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementOffset)(gesture.slideEl).top + window.scrollY;
+      diffX = offsetX + slideWidth / 2 - touchX;
+      diffY = offsetY + slideHeight / 2 - touchY;
+      imageWidth = gesture.imageEl.offsetWidth;
+      imageHeight = gesture.imageEl.offsetHeight;
+      scaledWidth = imageWidth * zoom.scale;
+      scaledHeight = imageHeight * zoom.scale;
+      translateMinX = Math.min(slideWidth / 2 - scaledWidth / 2, 0);
+      translateMinY = Math.min(slideHeight / 2 - scaledHeight / 2, 0);
+      translateMaxX = -translateMinX;
+      translateMaxY = -translateMinY;
+      translateX = diffX * zoom.scale;
+      translateY = diffY * zoom.scale;
+      if (translateX < translateMinX) {
+        translateX = translateMinX;
+      }
+      if (translateX > translateMaxX) {
+        translateX = translateMaxX;
+      }
+      if (translateY < translateMinY) {
+        translateY = translateMinY;
+      }
+      if (translateY > translateMaxY) {
+        translateY = translateMaxY;
+      }
+    } else {
+      translateX = 0;
+      translateY = 0;
+    }
+    if (forceZoomRatio && zoom.scale === 1) {
+      gesture.originX = 0;
+      gesture.originY = 0;
+    }
+    gesture.imageWrapEl.style.transitionDuration = '300ms';
+    gesture.imageWrapEl.style.transform = `translate3d(${translateX}px, ${translateY}px,0)`;
+    gesture.imageEl.style.transitionDuration = '300ms';
+    gesture.imageEl.style.transform = `translate3d(0,0,0) scale(${zoom.scale})`;
+  }
+  function zoomOut() {
+    const zoom = swiper.zoom;
+    const params = swiper.params.zoom;
+    if (!gesture.slideEl) {
+      if (swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual) {
+        gesture.slideEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementChildren)(swiper.slidesEl, `.${swiper.params.slideActiveClass}`)[0];
+      } else {
+        gesture.slideEl = swiper.slides[swiper.activeIndex];
+      }
+      let imageEl = gesture.slideEl.querySelector(`.${params.containerClass}`);
+      if (imageEl) {
+        imageEl = imageEl.querySelectorAll('picture, img, svg, canvas, .swiper-zoom-target')[0];
+      }
+      gesture.imageEl = imageEl;
+      if (imageEl) {
+        gesture.imageWrapEl = (0,_shared_utils_js__WEBPACK_IMPORTED_MODULE_1__.elementParents)(gesture.imageEl, `.${params.containerClass}`)[0];
+      } else {
+        gesture.imageWrapEl = undefined;
+      }
+    }
+    if (!gesture.imageEl || !gesture.imageWrapEl) return;
+    if (swiper.params.cssMode) {
+      swiper.wrapperEl.style.overflow = '';
+      swiper.wrapperEl.style.touchAction = '';
+    }
+    zoom.scale = 1;
+    currentScale = 1;
+    gesture.imageWrapEl.style.transitionDuration = '300ms';
+    gesture.imageWrapEl.style.transform = 'translate3d(0,0,0)';
+    gesture.imageEl.style.transitionDuration = '300ms';
+    gesture.imageEl.style.transform = 'translate3d(0,0,0) scale(1)';
+    gesture.slideEl.classList.remove(`${params.zoomedSlideClass}`);
+    gesture.slideEl = undefined;
+    gesture.originX = 0;
+    gesture.originY = 0;
+  }
+
+  // Toggle Zoom
+  function zoomToggle(e) {
+    const zoom = swiper.zoom;
+    if (zoom.scale && zoom.scale !== 1) {
+      // Zoom Out
+      zoomOut();
+    } else {
+      // Zoom In
+      zoomIn(e);
+    }
+  }
+  function getListeners() {
+    const passiveListener = swiper.params.passiveListeners ? {
+      passive: true,
+      capture: false
+    } : false;
+    const activeListenerWithCapture = swiper.params.passiveListeners ? {
+      passive: false,
+      capture: true
+    } : true;
+    return {
+      passiveListener,
+      activeListenerWithCapture
+    };
+  }
+
+  // Attach/Detach Events
+  function enable() {
+    const zoom = swiper.zoom;
+    if (zoom.enabled) return;
+    zoom.enabled = true;
+    const {
+      passiveListener,
+      activeListenerWithCapture
+    } = getListeners();
+
+    // Scale image
+    swiper.wrapperEl.addEventListener('pointerdown', onGestureStart, passiveListener);
+    swiper.wrapperEl.addEventListener('pointermove', onGestureChange, activeListenerWithCapture);
+    ['pointerup', 'pointercancel', 'pointerout'].forEach(eventName => {
+      swiper.wrapperEl.addEventListener(eventName, onGestureEnd, passiveListener);
+    });
+
+    // Move image
+    swiper.wrapperEl.addEventListener('pointermove', onTouchMove, activeListenerWithCapture);
+  }
+  function disable() {
+    const zoom = swiper.zoom;
+    if (!zoom.enabled) return;
+    zoom.enabled = false;
+    const {
+      passiveListener,
+      activeListenerWithCapture
+    } = getListeners();
+
+    // Scale image
+    swiper.wrapperEl.removeEventListener('pointerdown', onGestureStart, passiveListener);
+    swiper.wrapperEl.removeEventListener('pointermove', onGestureChange, activeListenerWithCapture);
+    ['pointerup', 'pointercancel', 'pointerout'].forEach(eventName => {
+      swiper.wrapperEl.removeEventListener(eventName, onGestureEnd, passiveListener);
+    });
+
+    // Move image
+    swiper.wrapperEl.removeEventListener('pointermove', onTouchMove, activeListenerWithCapture);
+  }
+  on('init', () => {
+    if (swiper.params.zoom.enabled) {
+      enable();
+    }
+  });
+  on('destroy', () => {
+    disable();
+  });
+  on('touchStart', (_s, e) => {
+    if (!swiper.zoom.enabled) return;
+    onTouchStart(e);
+  });
+  on('touchEnd', (_s, e) => {
+    if (!swiper.zoom.enabled) return;
+    onTouchEnd(e);
+  });
+  on('doubleTap', (_s, e) => {
+    if (!swiper.animating && swiper.params.zoom.enabled && swiper.zoom.enabled && swiper.params.zoom.toggle) {
+      zoomToggle(e);
+    }
+  });
+  on('transitionEnd', () => {
+    if (swiper.zoom.enabled && swiper.params.zoom.enabled) {
+      onTransitionEnd();
+    }
+  });
+  on('slideChange', () => {
+    if (swiper.zoom.enabled && swiper.params.zoom.enabled && swiper.params.cssMode) {
+      onTransitionEnd();
+    }
+  });
+  Object.assign(swiper.zoom, {
+    enable,
+    disable,
+    in: zoomIn,
+    out: zoomOut,
+    toggle: zoomToggle
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/classes-to-selector.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/swiper/shared/classes-to-selector.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ classesToSelector)
+/* harmony export */ });
+function classesToSelector(classes = '') {
+  return `.${classes.trim().replace(/([\.:!+\/])/g, '\\$1') // eslint-disable-line
+  .replace(/ /g, '.')}`;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/create-element-if-not-defined.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/swiper/shared/create-element-if-not-defined.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createElementIfNotDefined)
+/* harmony export */ });
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
+  if (swiper.params.createElements) {
+    Object.keys(checkProps).forEach(key => {
+      if (!params[key] && params.auto === true) {
+        let element = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementChildren)(swiper.el, `.${checkProps[key]}`)[0];
+        if (!element) {
+          element = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('div', checkProps[key]);
+          element.className = checkProps[key];
+          swiper.el.append(element);
+        }
+        params[key] = element;
+        originalParams[key] = element;
+      }
+    });
+  }
+  return params;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/create-shadow.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/shared/create-shadow.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createShadow)
+/* harmony export */ });
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function createShadow(params, slideEl, side) {
+  const shadowClass = `swiper-slide-shadow${side ? `-${side}` : ''}`;
+  const shadowContainer = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.getSlideTransformEl)(slideEl);
+  let shadowEl = shadowContainer.querySelector(`.${shadowClass}`);
+  if (!shadowEl) {
+    shadowEl = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.createElement)('div', `swiper-slide-shadow${side ? `-${side}` : ''}`);
+    shadowContainer.append(shadowEl);
+  }
+  return shadowEl;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/effect-init.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/shared/effect-init.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ effectInit)
+/* harmony export */ });
+function effectInit(params) {
+  const {
+    effect,
+    swiper,
+    on,
+    setTranslate,
+    setTransition,
+    overwriteParams,
+    perspective,
+    recreateShadows,
+    getEffectParams
+  } = params;
+  on('beforeInit', () => {
+    if (swiper.params.effect !== effect) return;
+    swiper.classNames.push(`${swiper.params.containerModifierClass}${effect}`);
+    if (perspective && perspective()) {
+      swiper.classNames.push(`${swiper.params.containerModifierClass}3d`);
+    }
+    const overwriteParamsResult = overwriteParams ? overwriteParams() : {};
+    Object.assign(swiper.params, overwriteParamsResult);
+    Object.assign(swiper.originalParams, overwriteParamsResult);
+  });
+  on('setTranslate', () => {
+    if (swiper.params.effect !== effect) return;
+    setTranslate();
+  });
+  on('setTransition', (_s, duration) => {
+    if (swiper.params.effect !== effect) return;
+    setTransition(duration);
+  });
+  on('transitionEnd', () => {
+    if (swiper.params.effect !== effect) return;
+    if (recreateShadows) {
+      if (!getEffectParams || !getEffectParams().slideShadows) return;
+      // remove shadows
+      swiper.slides.forEach(slideEl => {
+        slideEl.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left').forEach(shadowEl => shadowEl.remove());
+      });
+      // create new one
+      recreateShadows();
+    }
+  });
+  let requireUpdateOnVirtual;
+  on('virtualUpdate', () => {
+    if (swiper.params.effect !== effect) return;
+    if (!swiper.slides.length) {
+      requireUpdateOnVirtual = true;
+    }
+    requestAnimationFrame(() => {
+      if (requireUpdateOnVirtual && swiper.slides && swiper.slides.length) {
+        setTranslate();
+        requireUpdateOnVirtual = false;
+      }
+    });
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/effect-target.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swiper/shared/effect-target.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ effectTarget)
+/* harmony export */ });
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function effectTarget(effectParams, slideEl) {
+  const transformEl = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.getSlideTransformEl)(slideEl);
+  if (transformEl !== slideEl) {
+    transformEl.style.backfaceVisibility = 'hidden';
+    transformEl.style['-webkit-backface-visibility'] = 'hidden';
+  }
+  return transformEl;
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/effect-virtual-transition-end.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/swiper/shared/effect-virtual-transition-end.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ effectVirtualTransitionEnd)
+/* harmony export */ });
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./node_modules/swiper/shared/utils.js");
+
+function effectVirtualTransitionEnd({
+  swiper,
+  duration,
+  transformElements,
+  allSlides
+}) {
+  const {
+    activeIndex
+  } = swiper;
+  const getSlide = el => {
+    if (!el.parentElement) {
+      // assume shadow root
+      const slide = swiper.slides.filter(slideEl => slideEl.shadowEl && slideEl.shadowEl === el.parentNode)[0];
+      return slide;
+    }
+    return el.parentElement;
+  };
+  if (swiper.params.virtualTranslate && duration !== 0) {
+    let eventTriggered = false;
+    let transitionEndTarget;
+    if (allSlides) {
+      transitionEndTarget = transformElements;
+    } else {
+      transitionEndTarget = transformElements.filter(transformEl => {
+        const el = transformEl.classList.contains('swiper-slide-transform') ? getSlide(transformEl) : transformEl;
+        return swiper.getSlideIndex(el) === activeIndex;
+      });
+    }
+    transitionEndTarget.forEach(el => {
+      (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.elementTransitionEnd)(el, () => {
+        if (eventTriggered) return;
+        if (!swiper || swiper.destroyed) return;
+        eventTriggered = true;
+        swiper.animating = false;
+        const evt = new window.CustomEvent('transitionend', {
+          bubbles: true,
+          cancelable: true
+        });
+        swiper.wrapperEl.dispatchEvent(evt);
+      });
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/get-browser.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/shared/get-browser.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBrowser: () => (/* binding */ getBrowser)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+
+let browser;
+function calcBrowser() {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  let needPerspectiveFix = false;
+  function isSafari() {
+    const ua = window.navigator.userAgent.toLowerCase();
+    return ua.indexOf('safari') >= 0 && ua.indexOf('chrome') < 0 && ua.indexOf('android') < 0;
+  }
+  if (isSafari()) {
+    const ua = String(window.navigator.userAgent);
+    if (ua.includes('Version/')) {
+      const [major, minor] = ua.split('Version/')[1].split(' ')[0].split('.').map(num => Number(num));
+      needPerspectiveFix = major < 16 || major === 16 && minor < 2;
+    }
+  }
+  return {
+    isSafari: needPerspectiveFix || isSafari(),
+    needPerspectiveFix,
+    isWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(window.navigator.userAgent)
+  };
+}
+function getBrowser() {
+  if (!browser) {
+    browser = calcBrowser();
+  }
+  return browser;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/get-device.js":
+/*!**************************************************!*\
+  !*** ./node_modules/swiper/shared/get-device.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getDevice: () => (/* binding */ getDevice)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+/* harmony import */ var _get_support_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./get-support.js */ "./node_modules/swiper/shared/get-support.js");
+
+
+let deviceCached;
+function calcDevice({
+  userAgent
+} = {}) {
+  const support = (0,_get_support_js__WEBPACK_IMPORTED_MODULE_1__.getSupport)();
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const platform = window.navigator.platform;
+  const ua = userAgent || window.navigator.userAgent;
+  const device = {
+    ios: false,
+    android: false
+  };
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const android = ua.match(/(Android);?[\s\/]+([\d.]+)?/); // eslint-disable-line
+  let ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
+  const ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
+  const iphone = !ipad && ua.match(/(iPhone\sOS|iOS)\s([\d_]+)/);
+  const windows = platform === 'Win32';
+  let macos = platform === 'MacIntel';
+
+  // iPadOs 13 fix
+  const iPadScreens = ['1024x1366', '1366x1024', '834x1194', '1194x834', '834x1112', '1112x834', '768x1024', '1024x768', '820x1180', '1180x820', '810x1080', '1080x810'];
+  if (!ipad && macos && support.touch && iPadScreens.indexOf(`${screenWidth}x${screenHeight}`) >= 0) {
+    ipad = ua.match(/(Version)\/([\d.]+)/);
+    if (!ipad) ipad = [0, 1, '13_0_0'];
+    macos = false;
+  }
+
+  // Android
+  if (android && !windows) {
+    device.os = 'android';
+    device.android = true;
+  }
+  if (ipad || iphone || ipod) {
+    device.os = 'ios';
+    device.ios = true;
+  }
+
+  // Export object
+  return device;
+}
+function getDevice(overrides = {}) {
+  if (!deviceCached) {
+    deviceCached = calcDevice(overrides);
+  }
+  return deviceCached;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/get-support.js":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/shared/get-support.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getSupport: () => (/* binding */ getSupport)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+
+let support;
+function calcSupport() {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  return {
+    smoothScroll: document.documentElement && document.documentElement.style && 'scrollBehavior' in document.documentElement.style,
+    touch: !!('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch)
+  };
+}
+function getSupport() {
+  if (!support) {
+    support = calcSupport();
+  }
+  return support;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/process-lazy-preloader.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/swiper/shared/process-lazy-preloader.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   preload: () => (/* binding */ preload),
+/* harmony export */   processLazyPreloader: () => (/* binding */ processLazyPreloader)
+/* harmony export */ });
+const processLazyPreloader = (swiper, imageEl) => {
+  if (!swiper || swiper.destroyed || !swiper.params) return;
+  const slideSelector = () => swiper.isElement ? `swiper-slide` : `.${swiper.params.slideClass}`;
+  const slideEl = imageEl.closest(slideSelector());
+  if (slideEl) {
+    const lazyEl = slideEl.querySelector(`.${swiper.params.lazyPreloaderClass}`);
+    if (lazyEl) lazyEl.remove();
+  }
+};
+const unlazy = (swiper, index) => {
+  if (!swiper.slides[index]) return;
+  const imageEl = swiper.slides[index].querySelector('[loading="lazy"]');
+  if (imageEl) imageEl.removeAttribute('loading');
+};
+const preload = swiper => {
+  if (!swiper || swiper.destroyed || !swiper.params) return;
+  let amount = swiper.params.lazyPreloadPrevNext;
+  const len = swiper.slides.length;
+  if (!len || !amount || amount < 0) return;
+  amount = Math.min(amount, len);
+  const slidesPerView = swiper.params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : Math.ceil(swiper.params.slidesPerView);
+  const activeIndex = swiper.activeIndex;
+  if (swiper.params.grid && swiper.params.grid.rows > 1) {
+    const activeColumn = activeIndex;
+    const preloadColumns = [activeColumn - amount];
+    preloadColumns.push(...Array.from({
+      length: amount
+    }).map((_, i) => {
+      return activeColumn + slidesPerView + i;
+    }));
+    swiper.slides.forEach((slideEl, i) => {
+      if (preloadColumns.includes(slideEl.column)) unlazy(swiper, i);
+    });
+    return;
+  }
+  const slideIndexLastInView = activeIndex + slidesPerView - 1;
+  if (swiper.params.rewind || swiper.params.loop) {
+    for (let i = activeIndex - amount; i <= slideIndexLastInView + amount; i += 1) {
+      const realIndex = (i % len + len) % len;
+      if (realIndex < activeIndex || realIndex > slideIndexLastInView) unlazy(swiper, realIndex);
+    }
+  } else {
+    for (let i = Math.max(activeIndex - amount, 0); i <= Math.min(slideIndexLastInView + amount, len - 1); i += 1) {
+      if (i !== activeIndex && (i > slideIndexLastInView || i < activeIndex)) {
+        unlazy(swiper, i);
+      }
+    }
+  }
+};
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/utils.js":
+/*!*********************************************!*\
+  !*** ./node_modules/swiper/shared/utils.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   animateCSSModeScroll: () => (/* binding */ animateCSSModeScroll),
+/* harmony export */   createElement: () => (/* binding */ createElement),
+/* harmony export */   deleteProps: () => (/* binding */ deleteProps),
+/* harmony export */   elementChildren: () => (/* binding */ elementChildren),
+/* harmony export */   elementIndex: () => (/* binding */ elementIndex),
+/* harmony export */   elementNextAll: () => (/* binding */ elementNextAll),
+/* harmony export */   elementOffset: () => (/* binding */ elementOffset),
+/* harmony export */   elementOuterSize: () => (/* binding */ elementOuterSize),
+/* harmony export */   elementParents: () => (/* binding */ elementParents),
+/* harmony export */   elementPrevAll: () => (/* binding */ elementPrevAll),
+/* harmony export */   elementStyle: () => (/* binding */ elementStyle),
+/* harmony export */   elementTransitionEnd: () => (/* binding */ elementTransitionEnd),
+/* harmony export */   extend: () => (/* binding */ extend),
+/* harmony export */   findElementsInElements: () => (/* binding */ findElementsInElements),
+/* harmony export */   getComputedStyle: () => (/* binding */ getComputedStyle),
+/* harmony export */   getSlideTransformEl: () => (/* binding */ getSlideTransformEl),
+/* harmony export */   getTranslate: () => (/* binding */ getTranslate),
+/* harmony export */   isObject: () => (/* binding */ isObject),
+/* harmony export */   nextTick: () => (/* binding */ nextTick),
+/* harmony export */   now: () => (/* binding */ now),
+/* harmony export */   setCSSProperty: () => (/* binding */ setCSSProperty)
+/* harmony export */ });
+/* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
+
+function deleteProps(obj) {
+  const object = obj;
+  Object.keys(object).forEach(key => {
+    try {
+      object[key] = null;
+    } catch (e) {
+      // no getter for object
+    }
+    try {
+      delete object[key];
+    } catch (e) {
+      // something got wrong
+    }
+  });
+}
+function nextTick(callback, delay = 0) {
+  return setTimeout(callback, delay);
+}
+function now() {
+  return Date.now();
+}
+function getComputedStyle(el) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  let style;
+  if (window.getComputedStyle) {
+    style = window.getComputedStyle(el, null);
+  }
+  if (!style && el.currentStyle) {
+    style = el.currentStyle;
+  }
+  if (!style) {
+    style = el.style;
+  }
+  return style;
+}
+function getTranslate(el, axis = 'x') {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  let matrix;
+  let curTransform;
+  let transformMatrix;
+  const curStyle = getComputedStyle(el, null);
+  if (window.WebKitCSSMatrix) {
+    curTransform = curStyle.transform || curStyle.webkitTransform;
+    if (curTransform.split(',').length > 6) {
+      curTransform = curTransform.split(', ').map(a => a.replace(',', '.')).join(', ');
+    }
+    // Some old versions of Webkit choke when 'none' is passed; pass
+    // empty string instead in this case
+    transformMatrix = new window.WebKitCSSMatrix(curTransform === 'none' ? '' : curTransform);
+  } else {
+    transformMatrix = curStyle.MozTransform || curStyle.OTransform || curStyle.MsTransform || curStyle.msTransform || curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
+    matrix = transformMatrix.toString().split(',');
+  }
+  if (axis === 'x') {
+    // Latest Chrome and webkits Fix
+    if (window.WebKitCSSMatrix) curTransform = transformMatrix.m41;
+    // Crazy IE10 Matrix
+    else if (matrix.length === 16) curTransform = parseFloat(matrix[12]);
+    // Normal Browsers
+    else curTransform = parseFloat(matrix[4]);
+  }
+  if (axis === 'y') {
+    // Latest Chrome and webkits Fix
+    if (window.WebKitCSSMatrix) curTransform = transformMatrix.m42;
+    // Crazy IE10 Matrix
+    else if (matrix.length === 16) curTransform = parseFloat(matrix[13]);
+    // Normal Browsers
+    else curTransform = parseFloat(matrix[5]);
+  }
+  return curTransform || 0;
+}
+function isObject(o) {
+  return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object';
+}
+function isNode(node) {
+  // eslint-disable-next-line
+  if (typeof window !== 'undefined' && typeof window.HTMLElement !== 'undefined') {
+    return node instanceof HTMLElement;
+  }
+  return node && (node.nodeType === 1 || node.nodeType === 11);
+}
+function extend(...args) {
+  const to = Object(args[0]);
+  const noExtend = ['__proto__', 'constructor', 'prototype'];
+  for (let i = 1; i < args.length; i += 1) {
+    const nextSource = args[i];
+    if (nextSource !== undefined && nextSource !== null && !isNode(nextSource)) {
+      const keysArray = Object.keys(Object(nextSource)).filter(key => noExtend.indexOf(key) < 0);
+      for (let nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex += 1) {
+        const nextKey = keysArray[nextIndex];
+        const desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+        if (desc !== undefined && desc.enumerable) {
+          if (isObject(to[nextKey]) && isObject(nextSource[nextKey])) {
+            if (nextSource[nextKey].__swiper__) {
+              to[nextKey] = nextSource[nextKey];
+            } else {
+              extend(to[nextKey], nextSource[nextKey]);
+            }
+          } else if (!isObject(to[nextKey]) && isObject(nextSource[nextKey])) {
+            to[nextKey] = {};
+            if (nextSource[nextKey].__swiper__) {
+              to[nextKey] = nextSource[nextKey];
+            } else {
+              extend(to[nextKey], nextSource[nextKey]);
+            }
+          } else {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+    }
+  }
+  return to;
+}
+function setCSSProperty(el, varName, varValue) {
+  el.style.setProperty(varName, varValue);
+}
+function animateCSSModeScroll({
+  swiper,
+  targetPosition,
+  side
+}) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const startPosition = -swiper.translate;
+  let startTime = null;
+  let time;
+  const duration = swiper.params.speed;
+  swiper.wrapperEl.style.scrollSnapType = 'none';
+  window.cancelAnimationFrame(swiper.cssModeFrameID);
+  const dir = targetPosition > startPosition ? 'next' : 'prev';
+  const isOutOfBound = (current, target) => {
+    return dir === 'next' && current >= target || dir === 'prev' && current <= target;
+  };
+  const animate = () => {
+    time = new Date().getTime();
+    if (startTime === null) {
+      startTime = time;
+    }
+    const progress = Math.max(Math.min((time - startTime) / duration, 1), 0);
+    const easeProgress = 0.5 - Math.cos(progress * Math.PI) / 2;
+    let currentPosition = startPosition + easeProgress * (targetPosition - startPosition);
+    if (isOutOfBound(currentPosition, targetPosition)) {
+      currentPosition = targetPosition;
+    }
+    swiper.wrapperEl.scrollTo({
+      [side]: currentPosition
+    });
+    if (isOutOfBound(currentPosition, targetPosition)) {
+      swiper.wrapperEl.style.overflow = 'hidden';
+      swiper.wrapperEl.style.scrollSnapType = '';
+      setTimeout(() => {
+        swiper.wrapperEl.style.overflow = '';
+        swiper.wrapperEl.scrollTo({
+          [side]: currentPosition
+        });
+      });
+      window.cancelAnimationFrame(swiper.cssModeFrameID);
+      return;
+    }
+    swiper.cssModeFrameID = window.requestAnimationFrame(animate);
+  };
+  animate();
+}
+function getSlideTransformEl(slideEl) {
+  return slideEl.querySelector('.swiper-slide-transform') || slideEl.shadowEl && slideEl.shadowEl.querySelector('.swiper-slide-transform') || slideEl;
+}
+function findElementsInElements(elements = [], selector = '') {
+  const found = [];
+  elements.forEach(el => {
+    found.push(...el.querySelectorAll(selector));
+  });
+  return found;
+}
+function elementChildren(element, selector = '') {
+  return [...element.children].filter(el => el.matches(selector));
+}
+function createElement(tag, classes = []) {
+  const el = document.createElement(tag);
+  el.classList.add(...(Array.isArray(classes) ? classes : [classes]));
+  return el;
+}
+function elementOffset(el) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  const document = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getDocument)();
+  const box = el.getBoundingClientRect();
+  const body = document.body;
+  const clientTop = el.clientTop || body.clientTop || 0;
+  const clientLeft = el.clientLeft || body.clientLeft || 0;
+  const scrollTop = el === window ? window.scrollY : el.scrollTop;
+  const scrollLeft = el === window ? window.scrollX : el.scrollLeft;
+  return {
+    top: box.top + scrollTop - clientTop,
+    left: box.left + scrollLeft - clientLeft
+  };
+}
+function elementPrevAll(el, selector) {
+  const prevEls = [];
+  while (el.previousElementSibling) {
+    const prev = el.previousElementSibling; // eslint-disable-line
+    if (selector) {
+      if (prev.matches(selector)) prevEls.push(prev);
+    } else prevEls.push(prev);
+    el = prev;
+  }
+  return prevEls;
+}
+function elementNextAll(el, selector) {
+  const nextEls = [];
+  while (el.nextElementSibling) {
+    const next = el.nextElementSibling; // eslint-disable-line
+    if (selector) {
+      if (next.matches(selector)) nextEls.push(next);
+    } else nextEls.push(next);
+    el = next;
+  }
+  return nextEls;
+}
+function elementStyle(el, prop) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  return window.getComputedStyle(el, null).getPropertyValue(prop);
+}
+function elementIndex(el) {
+  let child = el;
+  let i;
+  if (child) {
+    i = 0;
+    // eslint-disable-next-line
+    while ((child = child.previousSibling) !== null) {
+      if (child.nodeType === 1) i += 1;
+    }
+    return i;
+  }
+  return undefined;
+}
+function elementParents(el, selector) {
+  const parents = []; // eslint-disable-line
+  let parent = el.parentElement; // eslint-disable-line
+  while (parent) {
+    if (selector) {
+      if (parent.matches(selector)) parents.push(parent);
+    } else {
+      parents.push(parent);
+    }
+    parent = parent.parentElement;
+  }
+  return parents;
+}
+function elementTransitionEnd(el, callback) {
+  function fireCallBack(e) {
+    if (e.target !== el) return;
+    callback.call(el, e);
+    el.removeEventListener('transitionend', fireCallBack);
+  }
+  if (callback) {
+    el.addEventListener('transitionend', fireCallBack);
+  }
+}
+function elementOuterSize(el, size, includeMargins) {
+  const window = (0,ssr_window__WEBPACK_IMPORTED_MODULE_0__.getWindow)();
+  if (includeMargins) {
+    return el[size === 'width' ? 'offsetWidth' : 'offsetHeight'] + parseFloat(window.getComputedStyle(el, null).getPropertyValue(size === 'width' ? 'margin-right' : 'margin-top')) + parseFloat(window.getComputedStyle(el, null).getPropertyValue(size === 'width' ? 'margin-left' : 'margin-bottom'));
+  }
+  return el.offsetWidth;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/swiper.esm.js":
+/*!*******************************************!*\
+  !*** ./node_modules/swiper/swiper.esm.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A11y: () => (/* reexport safe */ _modules_a11y_a11y_js__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   Autoplay: () => (/* reexport safe */ _modules_autoplay_autoplay_js__WEBPACK_IMPORTED_MODULE_13__["default"]),
+/* harmony export */   Controller: () => (/* reexport safe */ _modules_controller_controller_js__WEBPACK_IMPORTED_MODULE_9__["default"]),
+/* harmony export */   EffectCards: () => (/* reexport safe */ _modules_effect_cards_effect_cards_js__WEBPACK_IMPORTED_MODULE_23__["default"]),
+/* harmony export */   EffectCoverflow: () => (/* reexport safe */ _modules_effect_coverflow_effect_coverflow_js__WEBPACK_IMPORTED_MODULE_21__["default"]),
+/* harmony export */   EffectCreative: () => (/* reexport safe */ _modules_effect_creative_effect_creative_js__WEBPACK_IMPORTED_MODULE_22__["default"]),
+/* harmony export */   EffectCube: () => (/* reexport safe */ _modules_effect_cube_effect_cube_js__WEBPACK_IMPORTED_MODULE_19__["default"]),
+/* harmony export */   EffectFade: () => (/* reexport safe */ _modules_effect_fade_effect_fade_js__WEBPACK_IMPORTED_MODULE_18__["default"]),
+/* harmony export */   EffectFlip: () => (/* reexport safe */ _modules_effect_flip_effect_flip_js__WEBPACK_IMPORTED_MODULE_20__["default"]),
+/* harmony export */   FreeMode: () => (/* reexport safe */ _modules_free_mode_free_mode_js__WEBPACK_IMPORTED_MODULE_15__["default"]),
+/* harmony export */   Grid: () => (/* reexport safe */ _modules_grid_grid_js__WEBPACK_IMPORTED_MODULE_16__["default"]),
+/* harmony export */   HashNavigation: () => (/* reexport safe */ _modules_hash_navigation_hash_navigation_js__WEBPACK_IMPORTED_MODULE_12__["default"]),
+/* harmony export */   History: () => (/* reexport safe */ _modules_history_history_js__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   Keyboard: () => (/* reexport safe */ _modules_keyboard_keyboard_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   Manipulation: () => (/* reexport safe */ _modules_manipulation_manipulation_js__WEBPACK_IMPORTED_MODULE_17__["default"]),
+/* harmony export */   Mousewheel: () => (/* reexport safe */ _modules_mousewheel_mousewheel_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   Navigation: () => (/* reexport safe */ _modules_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   Pagination: () => (/* reexport safe */ _modules_pagination_pagination_js__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   Parallax: () => (/* reexport safe */ _modules_parallax_parallax_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   Scrollbar: () => (/* reexport safe */ _modules_scrollbar_scrollbar_js__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   Swiper: () => (/* reexport safe */ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   Thumbs: () => (/* reexport safe */ _modules_thumbs_thumbs_js__WEBPACK_IMPORTED_MODULE_14__["default"]),
+/* harmony export */   Virtual: () => (/* reexport safe */ _modules_virtual_virtual_js__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   Zoom: () => (/* reexport safe */ _modules_zoom_zoom_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   "default": () => (/* reexport safe */ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _core_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core/core.js */ "./node_modules/swiper/core/core.js");
+/* harmony import */ var _modules_virtual_virtual_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/virtual/virtual.js */ "./node_modules/swiper/modules/virtual/virtual.js");
+/* harmony import */ var _modules_keyboard_keyboard_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/keyboard/keyboard.js */ "./node_modules/swiper/modules/keyboard/keyboard.js");
+/* harmony import */ var _modules_mousewheel_mousewheel_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/mousewheel/mousewheel.js */ "./node_modules/swiper/modules/mousewheel/mousewheel.js");
+/* harmony import */ var _modules_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/navigation/navigation.js */ "./node_modules/swiper/modules/navigation/navigation.js");
+/* harmony import */ var _modules_pagination_pagination_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/pagination/pagination.js */ "./node_modules/swiper/modules/pagination/pagination.js");
+/* harmony import */ var _modules_scrollbar_scrollbar_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/scrollbar/scrollbar.js */ "./node_modules/swiper/modules/scrollbar/scrollbar.js");
+/* harmony import */ var _modules_parallax_parallax_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/parallax/parallax.js */ "./node_modules/swiper/modules/parallax/parallax.js");
+/* harmony import */ var _modules_zoom_zoom_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/zoom/zoom.js */ "./node_modules/swiper/modules/zoom/zoom.js");
+/* harmony import */ var _modules_controller_controller_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/controller/controller.js */ "./node_modules/swiper/modules/controller/controller.js");
+/* harmony import */ var _modules_a11y_a11y_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/a11y/a11y.js */ "./node_modules/swiper/modules/a11y/a11y.js");
+/* harmony import */ var _modules_history_history_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/history/history.js */ "./node_modules/swiper/modules/history/history.js");
+/* harmony import */ var _modules_hash_navigation_hash_navigation_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/hash-navigation/hash-navigation.js */ "./node_modules/swiper/modules/hash-navigation/hash-navigation.js");
+/* harmony import */ var _modules_autoplay_autoplay_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/autoplay/autoplay.js */ "./node_modules/swiper/modules/autoplay/autoplay.js");
+/* harmony import */ var _modules_thumbs_thumbs_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/thumbs/thumbs.js */ "./node_modules/swiper/modules/thumbs/thumbs.js");
+/* harmony import */ var _modules_free_mode_free_mode_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/free-mode/free-mode.js */ "./node_modules/swiper/modules/free-mode/free-mode.js");
+/* harmony import */ var _modules_grid_grid_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/grid/grid.js */ "./node_modules/swiper/modules/grid/grid.js");
+/* harmony import */ var _modules_manipulation_manipulation_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/manipulation/manipulation.js */ "./node_modules/swiper/modules/manipulation/manipulation.js");
+/* harmony import */ var _modules_effect_fade_effect_fade_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/effect-fade/effect-fade.js */ "./node_modules/swiper/modules/effect-fade/effect-fade.js");
+/* harmony import */ var _modules_effect_cube_effect_cube_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/effect-cube/effect-cube.js */ "./node_modules/swiper/modules/effect-cube/effect-cube.js");
+/* harmony import */ var _modules_effect_flip_effect_flip_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/effect-flip/effect-flip.js */ "./node_modules/swiper/modules/effect-flip/effect-flip.js");
+/* harmony import */ var _modules_effect_coverflow_effect_coverflow_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/effect-coverflow/effect-coverflow.js */ "./node_modules/swiper/modules/effect-coverflow/effect-coverflow.js");
+/* harmony import */ var _modules_effect_creative_effect_creative_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/effect-creative/effect-creative.js */ "./node_modules/swiper/modules/effect-creative/effect-creative.js");
+/* harmony import */ var _modules_effect_cards_effect_cards_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/effect-cards/effect-cards.js */ "./node_modules/swiper/modules/effect-cards/effect-cards.js");
+/**
+ * Swiper 9.4.1
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2023 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: June 13, 2023
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***/ })
 
@@ -9025,6 +20598,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tooltip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/tooltip */ "./src/modules/tooltip.js");
 /* harmony import */ var _modules_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/datepicker */ "./src/modules/datepicker.js");
 /* harmony import */ var _modules_inputs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/inputs */ "./src/modules/inputs.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider */ "./src/modules/slider.js");
+
 
 
 
@@ -9042,6 +20617,7 @@ _modules_datepicker__WEBPACK_IMPORTED_MODULE_5__["default"].changeDays();
 _modules_inputs__WEBPACK_IMPORTED_MODULE_6__["default"].showPassword();
 _modules_inputs__WEBPACK_IMPORTED_MODULE_6__["default"].changeView();
 _modules_inputs__WEBPACK_IMPORTED_MODULE_6__["default"].checkError();
+_modules_slider__WEBPACK_IMPORTED_MODULE_7__["default"].init();
 })();
 
 /******/ })()

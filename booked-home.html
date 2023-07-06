@@ -78,15 +78,15 @@
           
         </div>
         <div class="aside__btn-tablet-text">
-          <span class="pc">Бронировать домик</span>
-          <span class="mob">Бронь</span>
+          <span class="pc">Официант в беседку</span>
+          <span class="mob">Официант</span>
         </div>
       </div>
 
     </aside>
 
 
-    <main class="main authorized__main book-authorized">
+    <main class="main authorized__main booked-home booked-header">
       <header class="header authorized">
   <div class="header__container">
     <div class="header__logo">
@@ -132,168 +132,131 @@
 
   </div>
 </header>
-      <section class="pick">
-        <div class="pick__container container">
+       <header class="header authorized add-tablet">
 
-          <div class="pick__content">
+    <div class="header__booked-home">
+      <img src="assets/booked-home.svg" alt="">
+      <div class='header__booked-home-inner'>
+        <div class="number">Домик №3</div>
+        <div class="date">10.21.23 - 10.21.23</div>
+      </div>
+    </div>
 
+    <div class='header__right'>
+      <div class="rest-time">
+        <div class="rest-time-img"></div>
+        <div class="rest-time-info">
+          <span class="txt">
+            до окончания
+          </span>
 
-            <div class="pick__content-img ">
-              <div class="book-authorized__steps step-1">
-                <div class="book-authorized__step">шаг 1 из 2</div>
-                <h3 class="h3 book-authorized__title">Выбранный домик №1</h3>
-              </div>
-              <img class='pc' src="assets/book-authorized-img.png" alt="">
-              <img class='mob' src="assets/book-authorized-img-mob.png" alt="">
-              <div class="choose__map-btn-wrap">
-                    <div class="choose__map-btn _1">
-                      <svg class="choose__svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="24" fill="white"/>
-                        <path d="M24.043 13C18.0011 13 13 17.9152 13 23.957C13 29.9989 18.0011 35 24.043 35C30.0848 35 35 29.9989 35 23.957C35 17.9152 30.0848 13 24.043 13ZM29.8438 25.2461H25.332V29.8438C25.332 30.5545 24.7532 31.1328 24.043 31.1328C23.3323 31.1328 22.7539 30.5545 22.7539 29.8438V25.2461H18.1562C17.4455 25.2461 16.8672 24.6677 16.8672 23.957C16.8672 23.2463 17.4455 22.668 18.1562 22.668H22.7539V18.1562C22.7539 17.4455 23.3323 16.8672 24.043 16.8672C24.7532 16.8672 25.332 17.4455 25.332 18.1562V22.668H29.8438C30.554 22.668 31.1328 23.2463 31.1328 23.957C31.1328 24.6677 30.554 25.2461 29.8438 25.2461Z" fill="#7EA373"/>
-                      </svg> 
-                      
-                      <div class="tooltip"> 
-                        <div class="tooltip__title">Домик № 1</div>
-                        <button class="tooltip__btn btn">бронировать домик</button>
-                      </div>
-                    </div>
-
-                    <div class="choose__map-btn _2">
-                      <svg class="choose__svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="24" fill="white"/>
-                        <path d="M24.043 13C18.0011 13 13 17.9152 13 23.957C13 29.9989 18.0011 35 24.043 35C30.0848 35 35 29.9989 35 23.957C35 17.9152 30.0848 13 24.043 13ZM29.8438 25.2461H25.332V29.8438C25.332 30.5545 24.7532 31.1328 24.043 31.1328C23.3323 31.1328 22.7539 30.5545 22.7539 29.8438V25.2461H18.1562C17.4455 25.2461 16.8672 24.6677 16.8672 23.957C16.8672 23.2463 17.4455 22.668 18.1562 22.668H22.7539V18.1562C22.7539 17.4455 23.3323 16.8672 24.043 16.8672C24.7532 16.8672 25.332 17.4455 25.332 18.1562V22.668H29.8438C30.554 22.668 31.1328 23.2463 31.1328 23.957C31.1328 24.6677 30.554 25.2461 29.8438 25.2461Z" fill="#7EA373"/>
-                      </svg>  
-                      
-                      <div class="tooltip"> 
-                        <div class="tooltip__title">Домик № 2</div>
-                        <button class="tooltip__btn btn">бронировать домик</button>
-                      </div>
-                    </div>
-
-                    <div class="choose__map-btn _3">
-                      <svg class="choose__svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="24" fill="white"/>
-                        <path d="M24.043 13C18.0011 13 13 17.9152 13 23.957C13 29.9989 18.0011 35 24.043 35C30.0848 35 35 29.9989 35 23.957C35 17.9152 30.0848 13 24.043 13ZM29.8438 25.2461H25.332V29.8438C25.332 30.5545 24.7532 31.1328 24.043 31.1328C23.3323 31.1328 22.7539 30.5545 22.7539 29.8438V25.2461H18.1562C17.4455 25.2461 16.8672 24.6677 16.8672 23.957C16.8672 23.2463 17.4455 22.668 18.1562 22.668H22.7539V18.1562C22.7539 17.4455 23.3323 16.8672 24.043 16.8672C24.7532 16.8672 25.332 17.4455 25.332 18.1562V22.668H29.8438C30.554 22.668 31.1328 23.2463 31.1328 23.957C31.1328 24.6677 30.554 25.2461 29.8438 25.2461Z" fill="#7EA373"/>
-                      </svg> 
-                      
-                      <div class="tooltip"> 
-                        <div class="tooltip__title">Домик № 3</div>
-                        <button class="tooltip__btn btn">бронировать домик</button>
-                      </div>
-                    </div>
-
-                    <div class="choose__map-btn _4">
-                      <svg class="choose__svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="24" fill="white"/>
-                        <path d="M24.043 13C18.0011 13 13 17.9152 13 23.957C13 29.9989 18.0011 35 24.043 35C30.0848 35 35 29.9989 35 23.957C35 17.9152 30.0848 13 24.043 13ZM29.8438 25.2461H25.332V29.8438C25.332 30.5545 24.7532 31.1328 24.043 31.1328C23.3323 31.1328 22.7539 30.5545 22.7539 29.8438V25.2461H18.1562C17.4455 25.2461 16.8672 24.6677 16.8672 23.957C16.8672 23.2463 17.4455 22.668 18.1562 22.668H22.7539V18.1562C22.7539 17.4455 23.3323 16.8672 24.043 16.8672C24.7532 16.8672 25.332 17.4455 25.332 18.1562V22.668H29.8438C30.554 22.668 31.1328 23.2463 31.1328 23.957C31.1328 24.6677 30.554 25.2461 29.8438 25.2461Z" fill="#7EA373"/>
-                      </svg> 
-                      
-                      <div class="tooltip"> 
-                        <div class="tooltip__title">Домик № 4</div>
-                        <button class="tooltip__btn btn">бронировать домик</button>
-                      </div>
-                    </div>
-
-                    <div class="choose__map-btn _5">
-                      <svg class="choose__svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="24" fill="white"/>
-                        <path d="M24.043 13C18.0011 13 13 17.9152 13 23.957C13 29.9989 18.0011 35 24.043 35C30.0848 35 35 29.9989 35 23.957C35 17.9152 30.0848 13 24.043 13ZM29.8438 25.2461H25.332V29.8438C25.332 30.5545 24.7532 31.1328 24.043 31.1328C23.3323 31.1328 22.7539 30.5545 22.7539 29.8438V25.2461H18.1562C17.4455 25.2461 16.8672 24.6677 16.8672 23.957C16.8672 23.2463 17.4455 22.668 18.1562 22.668H22.7539V18.1562C22.7539 17.4455 23.3323 16.8672 24.043 16.8672C24.7532 16.8672 25.332 17.4455 25.332 18.1562V22.668H29.8438C30.554 22.668 31.1328 23.2463 31.1328 23.957C31.1328 24.6677 30.554 25.2461 29.8438 25.2461Z" fill="#7EA373"/>
-                      </svg> 
-                      
-                      <div class="tooltip"> 
-                        <div class="tooltip__title">Домик № 5</div>
-                        <button class="tooltip__btn btn">бронировать домик</button>
-                      </div>
-                    </div> 
-              </div>
-
-              <div class="choose__top-info">Выберите понравившийся домик на карте. Перед арендой вы сможете уточнить любую информацию о бронировании.</div>
-
-                   <button class="book-authorized__btn-next btn">далее</button>
-            </div>
-
-        
-            <div class="pick__content-book ">
-
-            <div class="book-authorized__steps step-2">
-              <div class="book-authorized__step">шаг 2 из 2</div>
-              <button class="h3 book-authorized__back"></button>
-            </div>
-
-              <div class="pick__date">
-                <h3 class="h3 pick__date-title"> Дата бронирования</h3>
-                <div class="pick__date-wrap">
-                  <input class="pick__date-calendar input-small input" type="text" placeholder="выберете дату"
-                    value='выберете дату'>
-                  <div class="pick__date-picked input-small  input" type="text"> </div>
-
-                  <div class="pick__date-days">
-                    <div class="pick__date-days-count input-small  input" type="text" value=""> <span
-                        class='text-hide'>срок:</span> <span><span class='counter'>1</span> день </span>
-                      <button class="pick__date-days-btn increase"></button>
-                      <button class="pick__date-days-btn decrease"></button>
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class="pick__confirm">
-                <h3 class="pick__confirm-title h3">Подтверждения телефона</h3>
-
-                <div class="pick__confirm-txt txt-light">
-                  Укажите номер, отправте запрос, sms с кодом прыйдет в течени 60 сек.
-                  После отправки кода, вам придет sms код с 4 цифр для подтверждения.
-                  Лимит до 3х sms в день. Если не приходит код, то <a href='#'> оборатитесь к оператору. </a>
-                </div>
-
-                <div class="pick__confirm-input-wrap">
-
-                  <div class='input-wrap' data-type='tel'>
-                    <input class="pick__confirm-input js-tel input" type="text">
-                    <span class='input-text'>error</span>
-                    <span class='input-confirm'></span>
-                  </div>
-                  <button class="pick__confirm-btn btn"><span>отправить &nbsp; </span> sms код </button>
-                </div>
-
-              </div>
-
-              <div class="pick__payment">
-                <h3 class="pick__payment-title h3">15 000 руб</h3>
-                <div class="pick__payment-txt txt-light">После оплаты вы автоматически регистрируетесь и попадаете в
-                  кабинет</div>
-
-                <div class="pick__payment-promo">
-                  <div class='input-wrap' data-type='promo'>
-                    <input class="pick__payment-promo-input input" type="text" placeholder="Промокод">
-                    <span class='input-text'>error</span>
-                    <span class='input-confirm'></span>
-                  </div>
-                  <button class="pick__payment-promo-btn btn">проверить</button>
-                </div>
-
-                <div class="pick__payment-choose">
-                  <div class="pick__payment-choose-info">Подтвердите оплату одним
-                    из&nbsp;указанных способов</div>
-
-                  <div class="pick__payment-choose-method">
-                    <a class="visa" href="#"></a>
-                    <a class="masterCard" href="#"></a>
-                    <a class="qiwi" href="#"></a>
-                  </div>
-                </div>
-
-
-              </div>
-
-
-            </div>
-          </div>
+          <div class="time">01.23:45</div>
         </div>
+      </div>
+    </div>
 
+</header>
+      <section class="pick">
+        <div class="pick__container swiper">
+        <div class="swiper-wrapper">
+
+            <div class="pick__content swiper-slide">
+
+              <div class="pick__content-img ">
+                <img class='pc' src="assets/slider-img-1.svg" alt="">
+              </div>
+
+          
+              <div class="pick__content-book ">
+                  <div class="tag-list">
+                    <div class="tag-item">#советы</div>
+                    <div class="tag-item">#рекомендации</div>
+                    <div class="tag-item">#инструкции</div>
+                  </div>
+
+                  <div class="pick__content-img ">
+                    <img class='pc' src="assets/slider-img-1.svg" alt="">
+                  </div>
+
+                  <div class="info">
+                    <div class="book-authorized__step h3">Вызов официанта</div>
+                    <div class="book-authorized__step info">Вы можете вызвать официанта в беседку вашего домика, в любое и удобное для вас время. Если у вас возникнут какие либо пожелания, то вы всегда можете также предварительно написать о них нашему менеджеру в чате.</div>
+                  </div>
+
+       
+              </div>
+            </div>
+
+            <div class="pick__content swiper-slide">
+
+              <div class="pick__content-img ">
+                <img class='pc' src="assets/slider-img-2.svg" alt="">
+              </div>
+
+
+              <div class="pick__content-book ">
+                <div class="tag-list">
+                  <div class="tag-item">#советы</div>
+                  <div class="tag-item">#рекомендации</div>
+                  <div class="tag-item">#инструкции</div>
+                </div>
+
+                   <div class="pick__content-img ">
+                <img class='pc' src="assets/slider-img-2.svg" alt="">
+              </div>
+
+                <div class="info">
+                  <div class="book-authorized__step h3">Зарабатывайте с нами</div>
+                  <div class="book-authorized__step info"><a href='#'>Предлагайте людям </a> отдыхать у нас и зарабатывайте комиссионные с привлеченных заказов </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="pick__content swiper-slide">
+
+              <div class="pick__content-img ">
+                <img class='pc' src="assets/slider-img-3.svg" alt="">
+              </div>
+
+
+              <div class="pick__content-book ">
+                <div class="tag-list">
+                  <div class="tag-item">#советы</div>
+                  <div class="tag-item">#рекомендации</div>
+                  <div class="tag-item">#инструкции</div>
+                </div>
+
+                <div class="pick__content-img ">
+                <img class='pc' src="assets/slider-img-3.svg" alt="">
+              </div>
+
+                <div class="info">
+                  <div class="book-authorized__step h3">Используйте баланс для брони </div>
+                  <div class="book-authorized__step info">Вы можете использовать средства с вашего баланса для оплаты бронирования либо вывести их на карту.</div>
+                </div>
+
+      
+              </div>
+            </div>
+
+        </div>
+            <div class='swiper-nav'>
+              <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev">
+                  
+                  <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.175955 0.750548L0.175954 11.2504C0.175954 11.4536 0.280617 11.6294 0.490118 11.7778C0.69956 11.9261 0.947577 12.0005 1.23423 12.0005C1.52088 12.0005 1.76878 11.9261 1.97851 11.7778L9.38701 6.52782C9.59622 6.37949 9.70117 6.20377 9.70117 6.00052C9.70117 5.79726 9.59622 5.62155 9.38701 5.47309L1.97851 0.223117C1.76901 0.0746566 1.52088 0.000487924 1.23423 0.000487911C0.947636 0.000487899 0.69956 0.0746566 0.490118 0.223117C0.280618 0.371742 0.175955 0.547456 0.175955 0.750548Z" fill="white"/>
+                  </svg>
+                </div>
+                <div class="swiper-button-next">
+                  <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.175955 0.750548L0.175954 11.2504C0.175954 11.4536 0.280617 11.6294 0.490118 11.7778C0.69956 11.9261 0.947577 12.0005 1.23423 12.0005C1.52088 12.0005 1.76878 11.9261 1.97851 11.7778L9.38701 6.52782C9.59622 6.37949 9.70117 6.20377 9.70117 6.00052C9.70117 5.79726 9.59622 5.62155 9.38701 5.47309L1.97851 0.223117C1.76901 0.0746566 1.52088 0.000487924 1.23423 0.000487911C0.947636 0.000487899 0.69956 0.0746566 0.490118 0.223117C0.280618 0.371742 0.175955 0.547456 0.175955 0.750548Z" fill="white"/>
+                  </svg>
+                </div>
+    </div>
+        </div>
       </section>
       
       
