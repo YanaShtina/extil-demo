@@ -32,12 +32,356 @@
       <li> <a href='ref-link-tasks-3.html'>Задания шаг 3</a></li>
       <li> <a href='balance-1.html'>Баланс 1</a></li>
       <li> <a href='balance-2.html'>Баланс 2</a></li>
-     
-    
+      <li> <a href='withdraw.html'>Вывод средств</a></li>
+      <li> <a href='cabinet.html'>Личный кабинет персонала</a></li>
+      <li> <a href='cabinet-orders.html'>Личный кабинет персонала. Заявки</a></li>
+      <li> <a href='cabinet-tasks.html'>Личный кабинет персонала. Задания</a></li>
+      <li> <a href='notifications.html'>Уведомления пустое</a></li>
+      <li> <a href='notifications-show.html'>Уведомления с сообщением</a></li>
 
     </ol>
 
+      <div class='page-title'>попапы   </div>
+       <ol class='page-list popups'>
+          <li> <div data-type='message' class='open-popup' href='ref-link.html'>Уведомление (планшет и мобильная версии)</div></li>
+          <li> <div data-type='ref' class='open-popup' href='ref-link.html'>Реферальная ссылка</div></li>
+          <li> <div data-type='send-message' class='open-popup' href='popup-send-message.html'>Написать оператору </div></li>
+          <li> <div data-type='sended' class='open-popup' href='popup-send-message.html'>заявка отправлена </div></li>
+          <li> <div data-type='cansel-withdraw' class='open-popup' href='popup-cansel-withdraw.html'>Отмена заявки на вывод</div></li>
+          <li> <div data-type='cansel-task' class='open-popup' href='popup-cansel-task.html'>Отмена выполненного задания</div></li>
+          <li> <div data-type='approve' class='open-popup' href='popup-approve.html'>Подтверждение заявки </div></li>
+          <li> <div data-type='booked' class='open-popup' href='popup-booked.html'>Вы забронировали домик №3 </div></li>
+
+          
+        </ol>
+
     
+      <div class="popup__bg message"> 
+  <div class="popup">
+  <img src="assets/close.svg" class="close-popup close-popup-btn">
+      <div class="popup__content">
+                    <div class="notifications__content-left-top">
+            <div class="message-subinfo">Тема уведомления</div>
+            <div class="message-info">Новое реферальное зачисления</div>
+          </div>
+
+
+          <div class="message-wrap">
+            <div class="message-content">
+              <div class="message-icon"></div>
+              <div class="message-txt">Нам очень жаль, однако ваша заявка на вывод средств была отклонена! Для того, чтобы уточнить причину отказа, откройте детализацию заявки в разделе «Средства». Возможно, дело в нехватке денежных средств на балансе, или же вы неверно указали данные для перевода. Проверить их вы можете в своём личном кабинете. Если же ни одна из причин к вам не относится, обратитесь в службу поддержки. </div>
+
+            </div>
+
+            <button class="message-btn btn">удалить</button>
+          </div>
+
+  
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg ref"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+            <div class="popup__content-title h3"> Реферальная ссылка  </div>
+
+            <div>Реферальная ссылка — специальная ссылка, благодаря которой управляющий и его партнер по привлечению могут контролировать и учитывать привлечение инвесторов на ПАММ-счет. Реферальная ссылка на публичный ПАММ-счет доступна на странице ПАММ-счета в Рейтинге ПАММ-счетов (раздел «Баннеры и информеры»).
+ПАММ-партнер может воспользоваться реферальной ссылкой одним из следующих способов:
+Непубличный ПАММ-партнер получает реферальную ссылку в Личном кабинете партнера после того, как какой-либо управляющий добавит его в число своих партнеров. После этого партнер может предоставлять полученную ссылку привлекаемым инвесторам. Как только инвестор создал инвестиционный счет, используя полученную реферальную ссылку, управляющий и его партнер будут об этом проинформированы в своих Личных кабинетах партнера. Список реферальных ссылок доступен в Личном кабинете партнера в разделе «ПАММ-сервис» — «Непубличные партнеры».
+Публичный ПАММ-партнер имеет доступ ко всем реферальным ссылкам ПАММ-счетов, управляющие которых установили публичный процент для партнеров по привлечению. Список ссылок доступен в Личном кабинете </div>
+        </div>
+
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg send-message"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+            <div class="popup__content-title h3"> Реферальная ссылка  </div>
+
+
+            <div class="popup__content-subtitle">
+  Если  возникли технические проблемы, то можете написать нашему оператору
+</div>
+
+       <input class="popup-input input" type="text" placeholder='Ваше имя'>
+        <input class="popup-input input js-tel" type="text" placeholder='Ваш телефон'>
+        <button class="btn popup-btn green">отправить заявку</button>
+        </div>
+
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg sended"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+          <img src='assets/sended.png'>
+            <div class="popup__content-title h3"> Ваша заявка отправлена </div>
+
+
+            <div class="popup__content-subtitle">
+Мы с вами свяжемся в ближайшее время
+</div>
+        <button class="btn popup-btn green close-popup-btn">закрыть окно</button>
+        </div>
+
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg cansel-withdraw"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+            <div class="popup__content-title h3"> Отмена заявки на вывод</div>
+
+            <div class="cansel-withdraw-inner ">
+                <div class="withdraw__item-left _name">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">Антон</span>
+                    <span class="info">(3532) 90-00-00</span>
+
+                  </div>
+                </div>
+                <div class="withdraw__item-left _budget">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">бюджет задания</span>
+                    <span class="info">100-1000 руб</span>
+
+                  </div>
+                </div>
+
+                  
+                <div class="withdraw__item-left _money">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">10 000 руб</span>
+                    <span class="info">6 марта, 22:13</span>
+
+                  </div>
+                </div>
+            </div>
+
+
+        <div class="popup__content-subtitle">
+          Для отмены заявки выберете одну из причин ниже
+        </div>
+
+        <div class="checkbox-wrap">
+<div class="notifications__checkbox">
+  <input id="44" class="checkbox" name='44'  type="checkbox">
+  <label for="44">
+    Технические проблемы с системой выплат
+  </label>
+</div>
+
+<div class="notifications__checkbox">
+  <input id="44" class="checkbox" name='44'  type="checkbox">
+  <label for="44">
+    Подозрения в нарушении правил платформы
+  </label>
+</div>
+</div>
+
+        <button class="btn popup-btn red">отклонить заявку</button>
+            <button class="btn popup-btn red-light close-popup-btn">отмена</button>
+        </div>
+
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg cansel-withdraw cansel-task"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+            <div class="popup__content-title h3"> Отмена заявки на вывод</div>
+
+            <div class="cansel-withdraw-inner">
+                <div class="withdraw__item-left _name">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">Антон</span>
+                    <span class="info">(3532) 90-00-00</span>
+
+                  </div>
+                </div>
+                  <div class="withdraw__item-left _card">
+        <div class="withdraw__item-left-icon"></div>
+        <div class="withdraw__item-left-info">
+            <span class="date">реквезиты</span>
+          <span class="info">************4545</span>
+        
+        </div>
+      </div>
+
+                  
+        
+              <div class="withdraw__item-left _link ">
+                <div class="withdraw__item-left-icon"></div>
+                <div class="withdraw__item-left-info">
+                  <span class="date">сторис в instagram </span>
+                  <a href='#' class="info link">instagram.com/fkirkorovvv...</a>
+
+                </div>
+              </div>
+            </div>
+
+
+        <div class="popup__content-subtitle">
+          Для отмены заявки выберете одну из причин ниже
+        </div>
+
+        <div class="checkbox-wrap">
+<div class="notifications__checkbox">
+  <input id="44" class="checkbox" name='44'  type="checkbox">
+  <label for="44">
+    Технические проблемы с системой выплат
+  </label>
+</div>
+
+<div class="notifications__checkbox">
+  <input id="44" class="checkbox" name='44'  type="checkbox">
+  <label for="44">
+    Подозрения в нарушении правил платформы
+  </label>
+</div>
+</div>
+
+        <button class="btn popup-btn red">отклонить заявку</button>
+            <button class="btn popup-btn red-light close-popup-btn">отмена</button>
+        </div>
+
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg cansel-withdraw approve"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+            <div class="popup__content-title h3"> Подтверждение заявки </div>
+
+            <div class="cansel-withdraw-inner ">
+                <div class="withdraw__item-left _name">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">Антон</span>
+                    <span class="info">(3532) 90-00-00</span>
+
+                  </div>
+                </div>
+                <div class="withdraw__item-left _budget">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">бюджет задания</span>
+                    <span class="info">100-1000 руб</span>
+
+                  </div>
+                </div>
+
+                  
+                <div class="withdraw__item-left _money">
+                  <div class="withdraw__item-left-icon"></div>
+                  <div class="withdraw__item-left-info">
+                    <span class="date">10 000 руб</span>
+                    <span class="info">6 марта, 22:13</span>
+
+                  </div>
+                </div>
+            </div>
+            </div>
+
+
+
+
+
+        <button class="btn popup-btn green">отклонить заявку</button>
+            <button class="btn popup-btn green-light close-popup-btn">отмена</button>
+        </div>
+
+      </div>
+  </div>
+</div> 
+      <div class="popup__bg cansel-withdraw booked"> 
+  <div class="popup">
+
+      <div class="popup__content">
+        <div class="popup__content-top">
+            <img src="assets/close.svg" class="close-popup close-popup-btn">
+             <div>
+            <img src="assets/logo.png"  class="logo-popup">
+              </div>
+        </div>
+
+        <div class="popup__content-inner">
+            <div class="popup__content-title h3">Вы забронировали домик №3</div>
+                <div class="popup__content-subtitle">
+          Для завершения регистрации и перехода в кабинет укажите ваше имя
+        </div>
+ <input class="popup-input input" type="text" placeholder='Ваше имя'>
+  <button class="btn popup-btn green">войти в кабинет</button>
+            </div>
+
+
+    
+
+        
+        </div>
+
+      </div>
+  </div>
+</div> 
     
   </main>
      <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>

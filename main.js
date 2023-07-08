@@ -236,7 +236,9 @@ __webpack_require__.r(__webpack_exports__);
       placeholderChar: '_'
     };
     masks.forEach(function (m) {
-      var isBook = m.closest('.pick__confirm').classList.contains('book');
+      var wrap = m.closest('.pick__confirm');
+      if (!wrap) return;
+      var isBook = wrap.classList.contains('book');
       if (!isBook) {
         var mask = (0,imask__WEBPACK_IMPORTED_MODULE_0__["default"])(m, maskOptions);
         console.log('mask.masked.isComplete', mask.masked.isComplete);
@@ -277,6 +279,7 @@ var enableBodyScroll = bodyScrollLock.enableBodyScroll;
   init: function init() {
     var openPopupButtons = document.querySelectorAll('.open-popup');
     var targetElement = document.querySelector('.popup');
+    console.log('openPopupButtons', openPopupButtons, targetElement);
     var isApple = function iOS() {
       return ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(navigator.platform)
       // iPad on iOS 13 detection
@@ -298,15 +301,19 @@ var enableBodyScroll = bodyScrollLock.enableBodyScroll;
         if (title) {
           popupTitle.textContent = "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 \u043F\u043E\u0434\u0431\u043E\u0440\u043A\u0443 ".concat(title);
         }
-        if (type !== 'policy') {
-          disableBodyScroll(targetElement);
-        }
-        var closePopupButton = popupBg.querySelector('.close-popup');
-        closePopupButton.addEventListener('click', function () {
-          //  console.log('closePopupButton');
-          popupBg.classList.remove('active');
-          popup.classList.remove('active');
-          enableBodyScroll(targetElement);
+
+        /*    if (type !== 'policy') {
+             disableBodyScroll(targetElement);
+           }  */
+
+        var closePopupButton = popupBg.querySelectorAll('.close-popup-btn');
+        closePopupButton.forEach(function (b) {
+          b.addEventListener('click', function () {
+            //  console.log('closePopupButton');
+            popupBg.classList.remove('active');
+            popup.classList.remove('active');
+            enableBodyScroll(targetElement);
+          });
         });
         document.addEventListener('click', function (e) {
           if (e.target === popupBg) {
@@ -362,6 +369,84 @@ var enableBodyScroll = bodyScrollLock.enableBodyScroll;
           top: offsetPosition,
           behavior: 'smooth'
         });
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./src/modules/select.js":
+/*!*******************************!*\
+  !*** ./src/modules/select.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  init: function init() {
+    document.querySelectorAll('.dropdown').forEach(function (dropdownWrapper) {
+      console.log('dgfgdfg');
+      var dropdownBtn = dropdownWrapper.querySelector('.dropdown__button');
+      var dropdownList = dropdownWrapper.querySelector('.dropdown__list');
+      var dropdownItems = dropdownList.querySelectorAll('.dropdown__list-item');
+      var dropdownInput = dropdownWrapper.querySelector('.dropdown__input_hidden');
+      dropdownBtn.addEventListener('click', function () {
+        dropdownList.classList.toggle('dropdown__list_visible');
+        this.classList.toggle('dropdown__button_active');
+      });
+      dropdownItems.forEach(function (listItem) {
+        listItem.addEventListener('click', function (e) {
+          dropdownItems.forEach(function (el) {
+            el.classList.remove('dropdown__list-item_active');
+          });
+          e.target.classList.add('dropdown__list-item_active');
+          dropdownBtn.innerText = this.innerText;
+          dropdownInput.value = this.dataset.value;
+          dropdownList.classList.remove('dropdown__list_visible');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        if (e.target !== dropdownBtn) {
+          dropdownBtn.classList.remove('dropdown__button_active');
+          dropdownList.classList.remove('dropdown__list_visible');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Tab' || e.key === 'Escape') {
+          dropdownBtn.classList.remove('dropdown__button_active');
+          dropdownList.classList.remove('dropdown__list_visible');
+        }
+      });
+    });
+    document.querySelectorAll('.dropdown_with-chk').forEach(function (dropdownWrapper) {
+      var dropdownBtn = dropdownWrapper.querySelector('.dropdown_with-chk__button');
+      var dropdownList = dropdownWrapper.querySelector('.dropdown_with-chk__list');
+      var dropdownItems = dropdownList.querySelectorAll('.dropdown_with-chk__list-item');
+      dropdownBtn.addEventListener('click', function () {
+        dropdownList.classList.toggle('dropdown_with-chk__list_visible');
+        this.classList.toggle('dropdown_with-chk__button_active');
+      });
+      dropdownItems.forEach(function (listItem) {
+        listItem.addEventListener('click', function (e) {
+          e.target.classList.toggle('dropdown_with-chk__list-item_active');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        if (e.target !== dropdownBtn && e.target !== dropdownItems && !e.target.classList.contains('dropdown_with-chk__list-item') && !e.target.classList.contains('dropdown_with-chk__list-item_label')) {
+          dropdownBtn.classList.remove('dropdown_with-chk__button_active');
+          dropdownList.classList.remove('dropdown_with-chk__list_visible');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Tab' || e.key === 'Escape') {
+          dropdownBtn.classList.remove('dropdown_with-chk__button_active');
+          dropdownList.classList.remove('dropdown_with-chk__list_visible');
+        }
       });
     });
   }
@@ -1212,20 +1297,36 @@ var ___CSS_LOADER_URL_IMPORT_5___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_URL_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./img/visa.svg */ "./src/img/visa.svg"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./img/mcard.svg */ "./src/img/mcard.svg"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./img/clock.svg */ "./src/img/clock.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-icon.svg */ "./src/img/warning-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-gradient.png */ "./src/img/bg-gradient.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms-white.svg */ "./src/img/sms-white.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ./img/show-password-icon.svg */ "./src/img/show-password-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pick-bg.png */ "./src/img/pick-bg.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ./img/calendat-icon.svg */ "./src/img/calendat-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-i.svg */ "./src/img/change-days-icon-i.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-d.svg */ "./src/img/change-days-icon-d.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-gray-icon.svg */ "./src/img/warning-gray-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ./img/qiwi.svg */ "./src/img/qiwi.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_19___ = new URL(/* asset import */ __webpack_require__(/*! ./img/file-icon.svg */ "./src/img/file-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_20___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-aside.png */ "./src/img/bg-aside.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_21___ = new URL(/* asset import */ __webpack_require__(/*! ./img/back-icon.svg */ "./src/img/back-icon.svg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_22___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms.svg */ "./src/img/sms.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./img/person-icon.svg */ "./src/img/person-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./img/budget.svg */ "./src/img/budget.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./img/icon-card.svg */ "./src/img/icon-card.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ./img/insta-bg.svg */ "./src/img/insta-bg.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ./img/exel-icon.svg */ "./src/img/exel-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ./img/appr-icon.svg */ "./src/img/appr-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ./img/cansel-icon.svg */ "./src/img/cansel-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-icon.svg */ "./src/img/warning-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-gradient.png */ "./src/img/bg-gradient.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms-white.svg */ "./src/img/sms-white.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_19___ = new URL(/* asset import */ __webpack_require__(/*! ./img/show-password-icon.svg */ "./src/img/show-password-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_20___ = new URL(/* asset import */ __webpack_require__(/*! ./img/notification-1.png */ "./src/img/notification-1.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_21___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-message.png */ "./src/img/bg-message.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_22___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pick-bg.png */ "./src/img/pick-bg.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_23___ = new URL(/* asset import */ __webpack_require__(/*! ./img/calendat-icon.svg */ "./src/img/calendat-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_24___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-i.svg */ "./src/img/change-days-icon-i.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_25___ = new URL(/* asset import */ __webpack_require__(/*! ./img/change-days-icon-d.svg */ "./src/img/change-days-icon-d.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_26___ = new URL(/* asset import */ __webpack_require__(/*! ./img/warning-gray-icon.svg */ "./src/img/warning-gray-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_27___ = new URL(/* asset import */ __webpack_require__(/*! ./img/qiwi.svg */ "./src/img/qiwi.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_28___ = new URL(/* asset import */ __webpack_require__(/*! ./img/file-icon.svg */ "./src/img/file-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_29___ = new URL(/* asset import */ __webpack_require__(/*! ./img/dropdown.svg */ "./src/img/dropdown.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_30___ = new URL(/* asset import */ __webpack_require__(/*! ./img/search-icon.svg */ "./src/img/search-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_31___ = new URL(/* asset import */ __webpack_require__(/*! ./img/done-icon.svg */ "./src/img/done-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_32___ = new URL(/* asset import */ __webpack_require__(/*! ./img/reject-icon.svg */ "./src/img/reject-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_33___ = new URL(/* asset import */ __webpack_require__(/*! ./img/pending-icon.svg */ "./src/img/pending-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_34___ = new URL(/* asset import */ __webpack_require__(/*! ./img/ruble-icon-grey.svg */ "./src/img/ruble-icon-grey.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_35___ = new URL(/* asset import */ __webpack_require__(/*! ./img/bg-aside.png */ "./src/img/bg-aside.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_36___ = new URL(/* asset import */ __webpack_require__(/*! ./img/back-icon.svg */ "./src/img/back-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_37___ = new URL(/* asset import */ __webpack_require__(/*! ./img/waiter-icon.svg */ "./src/img/waiter-icon.svg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_38___ = new URL(/* asset import */ __webpack_require__(/*! ./img/sms.svg */ "./src/img/sms.svg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_node_modules_normalize_css_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_style_libs_reset_css__WEBPACK_IMPORTED_MODULE_3__["default"]);
@@ -1256,8 +1357,25 @@ var ___CSS_LOADER_URL_REPLACEMENT_19___ = _node_modules_css_loader_dist_runtime_
 var ___CSS_LOADER_URL_REPLACEMENT_20___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_20___);
 var ___CSS_LOADER_URL_REPLACEMENT_21___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_21___);
 var ___CSS_LOADER_URL_REPLACEMENT_22___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_22___);
+var ___CSS_LOADER_URL_REPLACEMENT_23___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_23___);
+var ___CSS_LOADER_URL_REPLACEMENT_24___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_24___);
+var ___CSS_LOADER_URL_REPLACEMENT_25___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_25___);
+var ___CSS_LOADER_URL_REPLACEMENT_26___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_26___);
+var ___CSS_LOADER_URL_REPLACEMENT_27___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_27___);
+var ___CSS_LOADER_URL_REPLACEMENT_28___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_28___);
+var ___CSS_LOADER_URL_REPLACEMENT_29___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_29___);
+var ___CSS_LOADER_URL_REPLACEMENT_30___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_30___);
+var ___CSS_LOADER_URL_REPLACEMENT_31___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_31___);
+var ___CSS_LOADER_URL_REPLACEMENT_32___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_32___);
+var ___CSS_LOADER_URL_REPLACEMENT_33___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_33___);
+var ___CSS_LOADER_URL_REPLACEMENT_34___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_34___);
+var ___CSS_LOADER_URL_REPLACEMENT_35___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_35___);
+var ___CSS_LOADER_URL_REPLACEMENT_36___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_36___);
+var ___CSS_LOADER_URL_REPLACEMENT_37___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_37___);
+var ___CSS_LOADER_URL_REPLACEMENT_38___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_8___default()(___CSS_LOADER_URL_IMPORT_38___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
+@font-face {
   font-family: "Gilroy-Regular";
   src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format("woff");
   font-weight: normal;
@@ -2136,6 +2254,163 @@ body.active main::after {
   background-color: #B5BBDB;
 }
 
+.cabinet .header__person {
+  display: flex;
+  align-items: center;
+}
+.cabinet .header__person img {
+  width: 0.48rem;
+  height: 0.48rem;
+  object-fit: contain;
+  border-radius: 100%;
+  margin-right: 0.12rem;
+}
+.cabinet .header__booked-home {
+  width: 0.89rem;
+  height: 0.46rem;
+  align-self: center;
+  align-items: center;
+}
+.cabinet .header__booked-home img {
+  flex-shrink: 0;
+  width: 100%;
+  object-fit: contain;
+}
+.cabinet .header__booked-home-inner {
+  min-width: 1.5rem;
+}
+.cabinet .header__booked-home-inner .date {
+  font-size: 0.16rem;
+  line-height: 0.2rem;
+}
+.cabinet .withdraw__item-left-wrap {
+  display: flex;
+}
+.cabinet .withdraw__item-left {
+  margin-right: 0.24rem;
+}
+.cabinet .withdraw__item-left:last-child {
+  margin-right: 0;
+}
+.cabinet .withdraw__item-left._name .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_9___});
+}
+.cabinet .withdraw__item-left._budget .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_10___});
+}
+.cabinet .withdraw__item-left._card .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_11___});
+}
+.cabinet .withdraw__item-left._link .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_12___});
+}
+.cabinet .withdraw__item-left._link .link {
+  color: #7EA373;
+}
+.cabinet .cabinet-chat-wrap {
+  display: flex;
+}
+.cabinet .cabinet-chat {
+  padding: 0.24rem;
+  background-color: #fff;
+  border-radius: 0.16rem;
+  display: flex;
+  justify-content: space-between;
+  width: 5.62rem;
+}
+.cabinet .cabinet-chat:first-child {
+  margin-right: 0.12rem;
+}
+.cabinet .cabinet-chat-info-btn {
+  background-color: #eaf0e9;
+  color: #7EA373;
+  width: 1.92rem;
+}
+.cabinet .cabinet-chat-mobile {
+  display: none;
+}
+.cabinet .cabinet-download-btn {
+  background-color: #fff;
+  position: relative;
+  color: #B5BBDB;
+  justify-content: flex-start;
+  padding-left: 0.35rem;
+  width: 1.57rem;
+  margin-right: 0.08rem;
+}
+.cabinet .cabinet-download-btn::before {
+  content: "";
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  left: 0.16rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_13___});
+  background-size: contain;
+}
+.cabinet .cabinet-download-btn svg {
+  position: absolute;
+  right: 0.1rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0.15rem;
+  height: 0.15rem;
+}
+.cabinet .cabinet-chat-btn {
+  background-color: #fff;
+  color: #7EA373;
+  width: 0.92rem;
+}
+.cabinet .cabinet-download-btn-round {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.22rem;
+}
+.cabinet .cabinet-download-btn-round.accept {
+  background-color: #ECF0EA;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_14___});
+}
+.cabinet .cabinet-download-btn-round.reject {
+  background-color: #F2EBEC;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_15___});
+  margin-right: 0.08rem;
+}
+.cabinet .withdraw__bottom {
+  margin-top: 0.24rem;
+}
+.cabinet .ref-link__tab {
+  position: relative;
+}
+.cabinet .ref-link__tab div {
+  font-size: 0.16rem;
+  line-height: 0.12rem;
+  /*    width: rem(22px);
+     height: rem(22px); */
+  padding: 0.1rem 0.12rem;
+  margin-left: 0.08rem;
+  border-radius: 0.16rem;
+  display: inline-block;
+  background-color: #fff;
+}
+.cabinet .ref-link__tab.active div {
+  background-color: #7EA373;
+  color: #fff;
+}
+.cabinet .cabinet-task-btn {
+  background-color: #fff;
+  padding: 0 0.16rem;
+  width: 1.26rem;
+  justify-content: space-between;
+  color: #B5BBDB;
+}
+.cabinet .cabinet-task-btn .amount {
+  color: #1B2E3F;
+}
+
 .choose {
   margin-bottom: 0.48rem;
 }
@@ -2165,7 +2440,7 @@ body.active main::after {
 .choose__top-info::after {
   content: "";
   position: absolute;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_9___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_16___});
   background-repeat: repeat;
   background-size: contain;
   width: 0.24rem;
@@ -2264,7 +2539,7 @@ body.active main::after {
   color: #1B2E3F;
 }
 .event__img {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_10___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_17___});
   background-color: #F6F8FC;
   width: 58%;
   height: 4.32rem;
@@ -2405,7 +2680,7 @@ body.active main::after {
   background-color: #7EA373;
 }
 .login .pick__confirm-btn::before {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_11___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_18___});
 }
 .login .pick__content-img {
   width: 57%;
@@ -2434,7 +2709,7 @@ body.active main::after {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 0.24rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_12___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_19___});
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -2455,6 +2730,223 @@ body.active main::after {
   bottom: 0;
 }
 
+.notifications {
+  width: 15.84rem;
+}
+.notifications__top {
+  padding: 0.24rem;
+  width: calc(100% - 0.48rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F1F3FB;
+  height: 0.42rem;
+  border-top-left-radius: 0.24rem;
+  border-top-right-radius: 0.24rem;
+}
+.notifications__top-logo {
+  width: 0.93rem;
+  height: 0.4rem;
+}
+.notifications__top-logo img {
+  width: 100%;
+  object-fit: contain;
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+}
+.notifications__content {
+  display: flex;
+  background: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);
+}
+.notifications__content-right {
+  padding: 0 0.16rem;
+  width: 5.68rem;
+  flex-shrink: 0;
+}
+.notifications__content-right-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.12rem;
+  border-bottom: 1px solid #B5BBDB;
+}
+.notifications__content-right-search {
+  margin-top: 0.12rem;
+  margin-bottom: 0.24rem;
+}
+.notifications__checkbox {
+  display: flex;
+  align-items: center;
+}
+.notifications__list {
+  display: flex;
+  flex-direction: column;
+  max-height: 6.32rem;
+  overflow-y: scroll;
+}
+.notifications__item {
+  margin-bottom: 0.24rem;
+  position: relative;
+  padding: 0.12rem 0;
+}
+.notifications__item.active {
+  background-color: #eaf0e9;
+}
+.notifications__item-info-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.notifications__item-info-inner {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.72rem;
+}
+.notifications__item-info-inner::before {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_20___});
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0.24rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.notifications__item-title {
+  font-size: 0.2rem;
+  line-height: 0.26rem;
+  font-family: "Gilroy-Medium";
+  margin-bottom: 0.02rem;
+}
+.notifications__item-info {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  font-family: "Gilroy-Regular";
+}
+.notifications__item-time-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.notifications__item-new {
+  background-color: #DF536C;
+  color: #fff;
+  padding: 0.01rem 0.05rem;
+  border-radius: 0.12rem;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  margin-bottom: 0.08rem;
+}
+.notifications__item-time {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  color: #B5BBDB;
+}
+.notifications__content-left {
+  width: 100%;
+  height: 100%;
+}
+.notifications__content-left._empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notifications__content-left._empty .notifications__content-left-inner {
+  display: flex;
+  align-items: center;
+  color: #B5BBDB;
+  flex-direction: column;
+  font-family: 0.2rem;
+  line-height: 0.26rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.notifications__content-left._empty img {
+  width: 1.4rem;
+  object-fit: contain;
+  margin-top: 0.24rem;
+}
+.notifications__content-left._message {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_21___});
+  background-size: cover;
+}
+.notifications__content-left-top {
+  background: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);
+  padding: 0.11rem 0.24rem;
+  width: calc(100% - 0.48rem);
+}
+.notifications .dropdown__button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 1.4rem;
+  padding-left: 0;
+}
+.notifications .withdraw__top-input {
+  width: 100%;
+}
+
+.message-wrap {
+  padding: 0.85rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.message-subinfo {
+  color: #B5BBDB;
+  font-size: 0.12rem;
+  line-height: 0.16rem;
+}
+
+.message-info {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+}
+
+.message-content {
+  background-color: #fff;
+  border-radius: 0.24rem;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  padding: 0.24rem 0.48rem;
+  width: 5.04rem;
+}
+
+.message-icon {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_20___});
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 0.16rem;
+}
+
+.message-title {
+  font-size: 0.2rem;
+  line-height: 0.26rem;
+  margin-bottom: 0.08rem;
+}
+
+.message-txt {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+}
+
+.message-btn {
+  margin-top: 0.24rem;
+  background-color: #fff;
+  color: #7EA373;
+}
+
 .pick .choose__top-info {
   max-width: 7.44rem;
 }
@@ -2473,7 +2965,7 @@ body.active main::after {
   flex-shrink: 0;
   border-radius: 0.24rem;
   overflow: hidden;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_13___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_22___});
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2506,7 +2998,7 @@ body.active main::after {
   position: absolute;
   top: 1.27rem;
   left: 0.7rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_14___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_23___});
   width: 0.24rem;
   height: 0.24rem;
   z-index: 15;
@@ -2564,12 +3056,12 @@ body.active main::after {
 .pick__date-days-btn.decrease {
   top: 0.3rem;
   border-bottom-right-radius: 0.3rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_15___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_24___});
   background-position: center;
 }
 .pick__date-days-btn.increase {
   border-top-right-radius: 0.3rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_16___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_25___});
   background-position: center;
 }
 .pick__confirm {
@@ -2652,7 +3144,7 @@ body.active main::after {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_17___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_26___});
   width: 0.24rem;
   height: 0.24rem;
   background-repeat: no-repeat;
@@ -2688,7 +3180,7 @@ body.active main::after {
   background-size: 0.5rem, 0.2rem;
 }
 .pick__payment-choose-method a.qiwi {
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_18___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_27___});
   background-size: 0.7rem, 0.3rem;
 }
 .pick .air-datepicker {
@@ -2788,6 +3280,207 @@ body.active main::after {
 .pick .select-btn {
   background-color: #eaf0e9;
   border-radius: 0.24rem;
+}
+
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(1, 5, 13, 0.7);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 15;
+}
+
+.popup {
+  letter-spacing: -0.02em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  background: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);
+  width: -webkit-max-content;
+  width: max-content;
+  border-radius: 0.24rem;
+  transition: 0.5s all;
+  overflow: hidden;
+}
+
+.popup.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+}
+
+.close-popup {
+  position: absolute;
+  top: 0.24rem;
+  right: 0.24rem;
+  cursor: pointer;
+}
+
+.popup__content {
+  border-radius: 0.24rem;
+  padding: 0.48rem;
+  width: 6rem;
+  max-height: 4rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.logo-popup {
+  width: 0.93rem;
+  height: 0.4rem;
+  object-fit: contain;
+  position: absolute;
+  left: 0.24rem;
+  top: 0.1rem;
+}
+
+.popup__content-top {
+  width: 100%;
+  height: 0.6rem;
+  background-color: #F1F3FB;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup__content-inner {
+  padding-top: 0.6rem;
+}
+
+.popup__content-title {
+  text-align: center;
+}
+
+.popup__content-subtitle {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  margin-bottom: 0.24rem;
+  color: #B5BBDB;
+  text-align: center;
+}
+
+.popup-btn {
+  width: 100%;
+  margin-top: 0.24rem;
+  color: #fff;
+}
+.popup-btn.green {
+  color: #fff;
+  background-color: #7EA373;
+}
+.popup-btn.red {
+  background-color: #DF536C;
+}
+.popup-btn.red-light {
+  background-color: #F2EBEC;
+  color: #DF536C;
+}
+.popup-btn.green-light {
+  background-color: #eaf0e9;
+  color: #7EA373;
+}
+
+.popup-input {
+  margin-bottom: 0.08rem;
+  width: 100%;
+}
+.popup-input:first-child {
+  margin-bottom: 0.08rem;
+}
+
+/* уведомление */
+.popup__bg.message .popup__content {
+  position: relative;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_21___});
+  background-size: cover;
+}
+.popup__bg.message .notifications__content-left-top {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.popup__bg.message .message-content {
+  width: 100%;
+  padding: 0.24rem;
+}
+
+/* Написать оператору */
+.popup__bg.send-message .popup__content-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* заявка отправлена*/
+.popup__bg.sended .popup__content-inner img {
+  width: 2.65rem;
+  height: 1.28rem;
+  object-fit: contain;
+  margin-bottom: 0.24rem;
+}
+
+/* Отмена заявки на вывод */
+.popup__bg.cansel-withdraw .withdraw__item-left {
+  margin-right: 0.24rem;
+}
+.popup__bg.cansel-withdraw .withdraw__item-left:last-child {
+  margin-right: 0;
+}
+.popup__bg.cansel-withdraw .withdraw__item-left._name .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_9___});
+}
+.popup__bg.cansel-withdraw .withdraw__item-left._card .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_11___});
+}
+.popup__bg.cansel-withdraw .withdraw__item-left._link .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_12___});
+}
+.popup__bg.cansel-withdraw .withdraw__item-left._link .link {
+  color: #7EA373;
+  max-width: 0.8rem;
+  overflow: hidden;
+}
+.popup__bg.cansel-withdraw .withdraw__item-left._budget .withdraw__item-left-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_10___});
+}
+.popup__bg.cansel-withdraw .cansel-withdraw-inner {
+  display: flex;
+  margin-bottom: 0.24rem;
+  margin-top: 0.24rem;
+}
+.popup__bg.cansel-withdraw .checkbox-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.popup__bg.cansel-withdraw .notifications__checkbox {
+  background-color: #fff;
+  padding: 0.16rem;
+  border-radius: 0.16rem;
+  width: calc(100% - 0.32rem);
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+}
+.popup__bg.cansel-withdraw .notifications__checkbox:first-child {
+  margin-bottom: 0.08rem;
 }
 
 .ref-link__top {
@@ -3029,7 +3722,7 @@ body.active main::after {
   position: absolute;
   width: 0.14rem;
   height: 0.14rem;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_19___});
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_28___});
   background-size: contain;
   background-repeat: no-repeat;
   left: -0.22rem;
@@ -3049,17 +3742,498 @@ body.active main::after {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.dropdown {
+  width: 1.58rem;
+  position: relative;
+}
+.dropdown__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  color: #1B2E3F;
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #e6eaed;
+  border-radius: 0.24rem;
+  height: 0.48rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.15rem;
+  padding-right: 0.3rem;
+  cursor: pointer;
+}
+.dropdown__button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.15rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0.08rem;
+  height: 0.08rem;
+  background: url(${___CSS_LOADER_URL_REPLACEMENT_29___}) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  transition: 200ms ease;
+}
+.dropdown__button_active::after {
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
+}
+.dropdown__list {
+  border-radius: 0.24rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  box-shadow: 0px 10px 20px 0px rgba(136, 145, 157, 0.3019607843);
+  border: 1px solid #e6eaed;
+  background: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms ease;
+}
+.dropdown__list_visible {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown__list-item {
+  margin: 0;
+  padding: 0;
+  padding: 0.12rem;
+  cursor: pointer;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  color: #1B2E3F;
+  transition: 200ms ease;
+}
+.dropdown__list-item_active {
+  background: #f5f8fa;
+}
+.dropdown__list-item:hover {
+  background: rgba(245, 248, 250, 0.5647058824);
+}
+.dropdown__input_hidden {
+  display: none;
+}
+
+.dropdown_with-chk {
+  max-width: 343px;
+  position: relative;
+}
+.dropdown_with-chk__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  line-height: 18px;
+  color: #444444;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #e6eaed;
+  border-radius: 4px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 40px;
+}
+.dropdown_with-chk__button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  /*       background: url("../img/dropdown.svg") 100% 100%; */
+  pointer-events: none;
+  transition: 200ms ease;
+}
+.dropdown_with-chk__button_active::after {
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
+}
+.dropdown_with-chk__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  box-shadow: 0px 10px 20px 0px rgba(136, 145, 157, 0.3019607843);
+  border: 1px solid #e6eaed;
+  border-radius: 4px;
+  background: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms ease;
+}
+.dropdown_with-chk__list_visible {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown_with-chk__list-item {
+  margin: 0;
+  padding: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 18px;
+  color: #444444;
+  transition: 200ms ease;
+  isolation: isolate;
+}
+.dropdown_with-chk__list-item input[type=checkbox],
+.dropdown_with-chk__list-item input[type=radio] {
+  pointer-events: none;
+}
+.dropdown_with-chk__list-item label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-left: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: -1;
+}
+.dropdown_with-chk__list-item_active {
+  background: #f5f8fa;
+}
+.dropdown_with-chk__list-item:hover {
+  background: rgba(245, 248, 250, 0.5647058824);
+}
+.dropdown_with-chk__input_hidden {
+  display: none;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 0.16rem;
+  height: 0.16rem;
+  border-radius: 0.04rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E6EAED;
+  transition: 600ms ease;
+  margin-right: 0.12rem;
+}
+input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #B5BBDB;
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms ease;
+}
+input[type=checkbox]:checked {
+  transition: 300ms ease;
+}
+input[type=checkbox]:checked::after {
+  opacity: 1;
+  visibility: visible;
+  transition: 600ms ease;
+}
+
+.withdraw {
+  width: calc(100% - 0.48rem);
+}
+.withdraw__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.08rem;
+  width: calc(100% - 0.16rem);
+  background-color: #F1F3FB;
+  border-top-right-radius: 0.24rem;
+  border-top-left-radius: 0.24rem;
+}
+.withdraw__top-left {
+  display: flex;
+  align-items: center;
+}
+.withdraw__top-wrap {
+  position: relative;
+}
+.withdraw__top-wrap::before {
+  content: "";
+  position: absolute;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_30___});
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.16rem;
+  height: 0.16rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0.16rem;
+}
+.withdraw__top-input {
+  padding: 0 0.48rem;
+  width: 3.88rem;
+  height: 0.48rem;
+}
+.withdraw__top-right {
+  display: flex;
+  align-items: center;
+}
+.withdraw .select {
+  margin-right: 0.24rem;
+}
+.withdraw__top-btn {
+  background-color: #fff;
+  color: #7EA373;
+}
+.withdraw__top-btn-mob {
+  display: none;
+}
+.withdraw .select-mob {
+  display: none;
+}
+.withdraw .withdraw-section {
+  padding: 0.24rem 0.24rem 0.48rem 0.24rem;
+  background-color: #fff;
+  border-bottom-right-radius: 0.24rem;
+  border-bottom-left-radius: 0.24rem;
+}
+.withdraw__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.24rem;
+}
+.withdraw__item {
+  margin-bottom: 0.08rem;
+  width: calc(100% - 0.48rem);
+  background-color: #F6F8FC;
+  padding: 0.12rem 0.24rem;
+  border-radius: 0.24rem;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+.withdraw__item.done .withdraw__item-right-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_31___});
+}
+.withdraw__item.rejected .withdraw__item-right-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_32___});
+}
+.withdraw__item.pending .withdraw__item-right-icon {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_33___});
+}
+.withdraw__item-left {
+  display: flex;
+  align-items: center;
+}
+.withdraw__item-left-icon {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 0.16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_34___});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.22rem;
+  margin-right: 0.16rem;
+}
+.withdraw__item-left-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+}
+.withdraw__item-left-info .date {
+  color: #B5BBDB;
+}
+.withdraw__item-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.withdraw__item-right-status {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+}
+.withdraw__item-right-status .status {
+  color: #B5BBDB;
+  display: flex;
+  position: relative;
+}
+.withdraw__item-right-status .status svg {
+  width: 0.16rem;
+  height: 0.16rem;
+  margin-left: 0.04rem;
+}
+.withdraw__item-right-status .status:hover {
+  cursor: pointer;
+}
+.withdraw__item-right-status .status:hover .status-tooltip {
+  display: block;
+}
+.withdraw__item .status-tooltip {
+  display: none;
+  position: absolute;
+  font-size: 0.12rem;
+  line-height: 0.14rem;
+  background-color: #fff;
+  padding: 0.08rem;
+  min-width: 1.48rem;
+  top: -0.6rem;
+  left: -0.5rem;
+  border-radius: 0.04rem;
+}
+.withdraw__item .status-tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  right: 0.12rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_3___});
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 0.12rem;
+  height: 0.12rem;
+  background-size: contain;
+}
+.withdraw__item-right-icon {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 0.16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_33___});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.22rem;
+  margin-left: 0.16rem;
+}
+.withdraw__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+.pagination__list {
+  display: flex;
+  margin: 0 0.08rem;
+}
+.pagination__item {
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  margin-right: 0.08rem;
+  width: 0.24rem;
+  height: 0.24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__item:last-child {
+  margin-right: 0;
+}
+.pagination__item.active {
+  background-color: #F6F8FC;
+  border-radius: 100%;
+}
+.pagination__item.dots {
+  color: #B5BBDB;
+}
+.pagination__arrow {
+  width: 0.24rem;
+  height: 0.24rem;
+  background-color: #eaf0e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.export {
+  display: flex;
+  align-items: center;
+  font-size: 0.16rem;
+  line-height: 0.22rem;
+  color: #B5BBDB;
+}
+.export svg {
+  width: 0.22rem;
+  height: 0.22rem;
+  margin-right: 0.09rem;
+}
+.export span {
+  display: inline-block;
+}
+
+/* .withdraw__item-left-info {
+  display: flex;
+  flex-direction: column;
+  font-size: rem(16px);
+  line-height: rem(22px);
+
+  @include mobile {
+    font-size: rem(12px);
+    line-height: rem(16px);
+  }
+
+  .date {
+    color: \$y-dop-4-element;
+  }
+} */
+
 @media screen and (max-width: 1919px){
   html {
     font-size: 100px !important;
     font-size: calc(26.1096605744px + (100 - 26.1096605744) * ((100vw - 500px) / (1915 - 500))) !important;
   }
 }
+
 @media screen and (max-width: 1919px) and (max-width: 500px){
   html {
     font-size: 26.1096605744px !important;
   }
 }
+
 @media screen and (max-width: 899px){
   html {
     font-size: 133.203125px !important;
@@ -3094,7 +4268,7 @@ body.active main::after {
     flex-direction: column;
   }
   .authorized__aside {
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_20___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_35___});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3220,7 +4394,7 @@ body.active main::after {
   .book-authorized .book-authorized__back {
     width: 0.48rem;
     height: 48px;
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_21___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_36___});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -3274,6 +4448,95 @@ body.active main::after {
   }
   .booked-home .book-authorized__step.info {
     margin-bottom: 1.26rem;
+  }
+  .cabinet .header__person {
+    display: none;
+  }
+  .cabinet .header__booked-home {
+    display: flex;
+  }
+  .cabinet .withdraw__item-left._name {
+    display: none;
+  }
+  .cabinet .withdraw__item-left._card {
+    display: none;
+  }
+  .cabinet .cabinet-chat {
+    width: 1.34rem;
+  }
+  .cabinet .cabinet-chat-info-btn {
+    width: 0.48rem;
+    height: 0.48rem;
+    background-color: #F6F8FC;
+    border-radius: 0.16rem;
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_37___});
+    background-size: 0.2rem;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+  }
+  .cabinet .cabinet-download-btn {
+    display: none;
+  }
+  .cabinet .cabinet-chat-btn {
+    display: none;
+  }
+  .cabinet span.pc {
+    display: none;
+  }
+  .cabinet span.mob {
+    display: block;
+  }
+  .cabinet.cabinet .select {
+    display: flex;
+  }
+  .cabinet.cabinet .select .dropdown {
+    width: auto;
+    width: initial;
+  }
+  .cabinet.cabinet .select .dropdown__button {
+    width: 1.46rem;
+    justify-content: flex-start;
+    padding-left: 0.12rem;
+  }
+  .cabinet.cabinet .select .dropdown__button::after {
+    top: 50%;
+    right: 0.15rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0.08rem;
+    height: 0.08rem;
+    background: url(${___CSS_LOADER_URL_REPLACEMENT_29___}) 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .cabinet.cabinet .select .dropdown__button_active::after {
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+            transform: translateY(-50%) rotate(-180deg);
+  }
+  .cabinet.cabinet .select .dropdown__list {
+    left: auto;
+    left: initial;
+    right: auto;
+    right: initial;
+  }
+  .cabinet.cabinet .dropdown {
+    width: auto;
+    width: initial;
+  }
+  .cabinet .cabinet-task-btn {
+    padding: 0 0.06rem;
+    width: 0.79rem;
+  }
+  .cabinet .cabinet-task-btn .edit-btn {
+    display: none;
+  }
+  .cabinet.cabinet-task .withdraw__item-left._name {
+    display: none;
+  }
+  .cabinet.cabinet-task .withdraw__item-left._money {
+    display: none;
   }
   .choose__top {
     flex-direction: column;
@@ -3352,6 +4615,83 @@ body.active main::after {
     max-width: 6.2rem;
     margin-bottom: 0.52rem;
   }
+  .notifications__content {
+    width: 100%;
+  }
+  .notifications__content-right {
+    width: calc(100% - 0.32rem);
+  }
+  .notifications__content-left._empty {
+    display: none;
+  }
+  .notifications__content-left {
+    display: none;
+  }
+  .notifications .dropdown__button {
+    padding: 0;
+    justify-content: flex-start;
+    padding-left: 0.12rem;
+  }
+  .notifications .dropdown__button::after {
+    top: 50%;
+    right: 0.15rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0.08rem;
+    height: 0.08rem;
+    background: url(${___CSS_LOADER_URL_REPLACEMENT_29___}) 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .notifications .withdraw__top-wrap {
+    position: relative;
+    top: auto;
+    top: initial;
+    left: auto;
+    left: initial;
+    right: auto;
+    right: initial;
+    width: 100%;
+    height: 0.36rem;
+  }
+  .notifications .withdraw__top-wrap::before {
+    left: 0.16rem;
+  }
+  .notifications .withdraw__top-input {
+    display: inline-block;
+    height: 0.36rem;
+  }
+  .notifications .select {
+    display: flex;
+  }
+  .notifications .select .dropdown {
+    width: auto;
+    width: initial;
+  }
+  .notifications .select .dropdown__button {
+    width: 1.46rem;
+    justify-content: flex-start;
+    padding-left: 0.12rem;
+  }
+  .notifications .select .dropdown__button::after {
+    top: 50%;
+    right: 0.15rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0.08rem;
+    height: 0.08rem;
+    background: url(${___CSS_LOADER_URL_REPLACEMENT_29___}) 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .notifications .select .dropdown__button_active::after {
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+            transform: translateY(-50%) rotate(-180deg);
+  }
+  .notifications .select .dropdown__list {
+    left: auto;
+    left: initial;
+    right: auto;
+    right: initial;
+  }
   .pick .choose__top-info {
     width: 87%;
   }
@@ -3392,6 +4732,30 @@ body.active main::after {
     line-height: 0.2rem;
     height: 0.36rem;
   }
+  .popup__content {
+    padding: 0.24rem 0.16rem;
+    width: 2.96rem;
+  }
+  .popup__content-subtitle {
+    font-size: 0.16rem;
+    line-height: 0.16rem;
+    margin-bottom: 0.08rem;
+  }
+  .popup__bg.cansel-withdraw .withdraw__item-left._card {
+    display: none;
+  }
+  .popup__bg.cansel-withdraw .withdraw__item-left._budget {
+    display: none;
+  }
+  .popup__bg.cansel-withdraw .popup__content-subtitle {
+    margin-bottom: 0.08rem;
+  }
+  .popup__bg.cansel-withdraw .notifications__checkbox {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+    padding: 0.1rem 0.12rem;
+    width: calc(100% - 0.24rem);
+  }
   .ref-link__info-field {
     width: 4.2rem;
   }
@@ -3402,12 +4766,70 @@ body.active main::after {
     width: 1.6rem;
     height: 0.48rem;
   }
+  .dropdown {
+    width: 0.48rem;
+  }
+  .dropdown__button {
+    width: 0.48rem;
+    height: 0.48rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdown__button::after {
+    background: url(${___CSS_LOADER_URL_REPLACEMENT_34___});
+    background-position: center;
+    background-size: contain;
+    width: 0.22rem;
+    height: 0.22rem;
+    right: 25%;
+  }
+  .dropdown__button_active::after {
+    -webkit-transform: translateY(-50%) rotate(0);
+            transform: translateY(-50%) rotate(0);
+  }
+  .dropdown__list {
+    width: 2.5rem;
+    left: auto;
+    left: initial;
+    right: 0;
+  }
+  .withdraw__top-input {
+    width: 2.04rem;
+  }
+  .withdraw .select {
+    display: none;
+  }
+  .withdraw__top-btn {
+    display: none;
+  }
+  .withdraw__top-btn-mob {
+    width: 0.48rem !important;
+    height: 0.48rem !important;
+  }
+  .withdraw__top-btn-mob {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  }
+  .withdraw .select-mob {
+    display: block;
+    margin-right: 0.08rem;
+  }
+  .withdraw .withdraw-section {
+    padding: 0.24rem 0.08rem;
+  }
 }
+
 @media screen and (max-width: 899px) and (max-width: 768px){
   html {
     font-size: 100px !important;
   }
 }
+
 @media screen and (max-width: 767px){
   html {
     font-size: 100px !important;
@@ -3722,6 +5144,61 @@ body.active main::after {
     width: 0.24rem;
     height: 0.06rem;
   }
+  .cabinet .header__booked-home-inner .date {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .cabinet .withdraw__item-left .withdraw__item-left-icon {
+    margin-right: 0.08rem;
+  }
+  .cabinet .cabinet-chat {
+    display: none;
+  }
+  .cabinet .cabinet-chat-info-btn {
+    background-color: #fff;
+    width: 0.36rem;
+    height: 0.36rem;
+    margin-right: 0.04rem;
+  }
+  .cabinet .cabinet-chat-mobile {
+    display: flex;
+  }
+  .cabinet .cabinet-download-btn-round {
+    width: 0.36rem;
+    height: 0.36rem;
+    background-size: 0.15rem;
+  }
+  .cabinet .ref-link__tab {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+  }
+  .cabinet .ref-link__tab div {
+    font-size: 0.12rem;
+    line-height: 0.09rem;
+    padding: 0.06rem 0.08rem;
+    margin-left: 0.04rem;
+  }
+  .cabinet.cabinet .select {
+    margin-right: 0.08rem;
+  }
+  .cabinet.cabinet .select .dropdown__button {
+    width: 1.2rem;
+    height: 0.48rem;
+    background-color: #fff;
+    font-size: 0.14rem;
+  }
+  .cabinet.cabinet .withdraw__top-wrap {
+    right: 0.32rem;
+  }
+  .cabinet .cabinet-task-btn {
+    padding: 0 0.04rem;
+    width: 0.82rem;
+    margin-right: 0.04rem;
+  }
+  .cabinet.cabinet-task .withdraw__item-left-info {
+    max-width: 0.55rem;
+    overflow: hidden;
+  }
   .choose {
     margin-bottom: 0.24rem;
   }
@@ -3841,6 +5318,42 @@ body.active main::after {
   .login .login-confirm {
     position: relative;
   }
+  .notifications__content-right {
+    padding: 0 0.12rem;
+    width: calc(100% - 0.24rem);
+  }
+  .notifications__item-info-inner {
+    padding-left: 0.42rem;
+  }
+  .notifications__item-info-inner::before {
+    width: 0.36rem;
+    height: 0.36rem;
+  }
+  .notifications__item-title {
+    font-size: 0.14rem;
+    line-height: 0.16rem;
+  }
+  .notifications__item-info {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .notifications__item-new {
+    font-size: 0.1rem;
+    line-height: 0.12rem;
+  }
+  .notifications__item-time {
+    font-size: 0.12rem;
+    line-height: 0.12rem;
+  }
+  .notifications .select {
+    margin-right: 0.08rem;
+  }
+  .notifications .select .dropdown__button {
+    width: 1.2rem;
+    height: 0.48rem;
+    background-color: #fff;
+    font-size: 0.14rem;
+  }
   .pick__date-wrap::before {
     width: 0.16rem;
     height: 0.16rem;
@@ -3905,7 +5418,7 @@ body.active main::after {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_22___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_38___});
     background-repeat: no-repeat;
     background-size: contain;
     width: 0.15rem;
@@ -3957,6 +5470,35 @@ body.active main::after {
     line-height: 0.2rem;
     height: 0.36rem;
     width: 95%;
+  }
+  .popup {
+    width: 3.23rem;
+    padding: 0;
+  }
+  .close-popup {
+    width: 0.15rem;
+    height: 0.15rem;
+    top: 0.22rem;
+    right: 0.22rem;
+  }
+  .logo-popup {
+    left: 0.1rem;
+  }
+  .popup-btn {
+    width: 100%;
+    margin-top: 0.1rem;
+    height: 0.48rem;
+  }
+  .popup-input {
+    height: 0.48rem;
+  }
+  .popup__bg.sended .popup__content-inner img {
+    width: 1.68rem;
+    height: 0.8rem;
+    margin-bottom: 0.12rem;
+  }
+  .popup__bg.cansel-withdraw .withdraw__item-left .withdraw__item-left-icon {
+    margin-right: 0.08rem;
   }
   .ref-link__tab:first-child {
     margin-right: 0.06rem;
@@ -4049,47 +5591,152 @@ body.active main::after {
     line-height: 0.16rem;
     margin-bottom: 0;
   }
+  .dropdown {
+    width: 0.16rem;
+  }
+  .dropdown__button {
+    width: 0.16rem;
+    height: 0.16rem;
+    background-color: transparent;
+  }
+  .dropdown__button::after {
+    width: 0.16rem;
+    height: 0.16rem;
+    right: 0;
+  }
+  .dropdown__list {
+    top: 0.2rem;
+    width: 1.5rem;
+    left: auto;
+    left: initial;
+    right: 0;
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .withdraw .ref-link__tabs .ref-link__tab {
+    width: 1.05rem;
+  }
+  .withdraw .ref-link__tabs span {
+    display: none;
+  }
+  .withdraw__top-wrap {
+    width: 0.16rem;
+    height: 0.16rem;
+    background-color: transparent;
+    position: absolute;
+    right: 0.7rem;
+  }
+  .withdraw__top-wrap::before {
+    left: 0;
+  }
+  .withdraw__top-input {
+    display: none;
+  }
+  .withdraw__top-btn-mob {
+    width: 0.16rem !important;
+    height: 0.16rem !important;
+  }
+  .withdraw__top-btn-mob {
+    background-color: transparent;
+  }
+  .withdraw__item {
+    padding: 0.06rem 0.08rem;
+    width: calc(100% - 0.16rem);
+  }
+  .withdraw__item-left-icon {
+    width: 0.36rem;
+    height: 0.36rem;
+    background-size: 0.14rem;
+  }
+  .withdraw__item-left-info {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .withdraw__item-right-status .status svg {
+    width: 0.12rem;
+    height: 0.12rem;
+  }
+  .withdraw__item-right-status {
+    font-size: 0.12rem;
+    line-height: 0.16rem;
+  }
+  .withdraw__item-right-icon {
+    width: 0.36rem;
+    height: 0.36rem;
+    background-size: 0.14rem;
+  }
+  .pagination__item {
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    margin-right: 0.04rem;
+  }
+  .export svg {
+    width: 0.15rem;
+    height: 0.15rem;
+  }
+  .export span {
+    display: none;
+  }
 }
+
 @media screen and (max-width: 767px) and (max-width: 300px){
   html {
     font-size: 83.3333333333px !important;
   }
 }
+
 @media screen and (max-width: 899px) and (max-width: 767px){
   .aside__item-wrap-left .aside__item:first-child, .aside__item-wrap-right .aside__item:first-child {
     margin-right: 0.2rem;
   }
 }
+
+@media screen and (max-width: 899px) and (max-width: 899px){
+  .cabinet.cabinet .select .dropdown__button_active::after {
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+            transform: translateY(-50%) rotate(-180deg);
+  }
+  .notifications .select .dropdown__button_active::after {
+    -webkit-transform: translateY(-50%) rotate(-180deg);
+            transform: translateY(-50%) rotate(-180deg);
+  }
+}
+
 @media screen and (max-width: 767px) and (max-width: 767px){
   .ref-link-tasks .download-filename {
     margin-right: 0.1rem;
   }
 }
+
 @media screen and (max-width: 1919px) and (min-width: 1915px){
   html {
     font-size: 100px !important;
   }
 }
+
 @media screen and (max-width: 899px) and (min-width: 1023px){
   html {
     font-size: 133.203125px !important;
   }
 }
+
 @media only screen and (max-width: 767px) and (max-width: 360px) and (min-width: 300px){
   html {
     font-size: calc(83.3333333333px + (100 - 83.3333333333) * ((100vw - 300px) / (360 - 300))) !important;
   }
 }
+
 @media only screen and (max-width: 767px) and (max-width: 760px) and (min-width: 360px){
   html {
     font-size: calc(100px + (211.1111111111 - 100) * ((100vw - 360px) / (760 - 360))) !important;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 760px){
   html {
     font-size: 211.1111111111px !important;
   }
-}`, "",{"version":3,"sources":["webpack://./src/style/_settings/_fonts.scss","webpack://./src/index.scss","webpack://./src/style/_style.scss","webpack://./src/style/_var.scss","webpack://./src/style/_parts/404.scss","webpack://./src/style/_parts/authorized.scss","webpack://./src/style/_parts/balance.scss","webpack://./src/style/_parts/book-authorized.scss","webpack://./src/style/_parts/book.scss","webpack://./src/style/_parts/booked-header.scss","webpack://./src/style/_parts/booked-home.scss","webpack://./src/style/_parts/choose.scss","webpack://./src/style/_parts/event.scss","webpack://./src/style/_parts/footer.scss","webpack://./src/style/_parts/header.scss","webpack://./src/style/_parts/login.scss","webpack://./src/style/_parts/pick.scss","webpack://./src/style/_parts/ref-link.scss","webpack://./<no source>","webpack://./src/style/scale/scale.scss"],"names":[],"mappings":"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","sourcesContent":["@font-face {\n  font-family: 'Gilroy-Regular';\n  src: \n    url('../../fonts/Gilroy-Regular.woff') format('woff');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Gilroy-Medium';\n  src: url('../../fonts/Gilroy-Medium.woff') format('woff');\n  font-weight: 500;\n  font-style: normal;\n  font-display: swap;\n}\n\n\n","@import '~normalize.css';\n@import 'style/libs/*';\n@import 'air-datepicker/air-datepicker.css';\n@import '../node_modules/swiper/swiper-bundle.css';\n@import '../node_modules/swiper/modules/pagination/pagination.min.css';\n@import '../node_modules/swiper/modules/autoplay/autoplay.min.css';\n@import 'style/_settings/*.scss';\n@import 'style/_var';\n@import 'style/_style';\n@import 'style/_parts/*.scss'; \n@import 'style/_blocks/*.scss'; \n\n\n\n","@use 'sass:math';\n@import 'scale/scale.scss'; \n@import 'scale/settings.scss'; \n@import 'scale/breakpoints.scss'; \n\n$root-font-size: 100;\n/* $wide-desktop-width: 1920px; */\n$low-desktop-width: 900px;\n$desktop-width: 1920px;\n$tablet-width: 768px;\n$mobile-width: 360px;\n\nhtml {\n  --root-font-size: #{$root-font-size}px;\n  font-size: #{$root-font-size}px;\n\n  @include low-desktop {\n    $min-screen-width: 500;\n    $mid-screen-width: 1915;\n\n    @include css-lock(#{$min-screen-width * calc($root-font-size / $mid-screen-width)}, $root-font-size, $min-screen-width, $mid-screen-width);\n  }\n\n\n  @include tablet {\n    $mid-screen-width: 768;\n    $max-screen-width: 1023;\n\n    @include css-lock(\n      $root-font-size, #{$root-font-size * calc($max-screen-width / $mid-screen-width)},\n      $mid-screen-width,\n      $max-screen-width\n    );\n  }\n\n  @include mobile {\n    $min-screen-width: 300;\n    $mid-screen-width: 360;\n    $max-screen-width: 760;\n\n    @include css-lock-full(#{calc($min-screen-width * $root-font-size / $mid-screen-width)}, $root-font-size, #{calc($max-screen-width * $root-font-size / $mid-screen-width)}, $min-screen-width, $mid-screen-width, $max-screen-width);\n  }\n}\n\nmain {\n  max-width: rem(1920px);\n  margin-right: auto;\n  margin-left: auto;\n}\n\nmain, header, footer {\n  /* overflow: hidden; */\n}\n\nsvg {\n  display: inline-block;\n/*   width: 100%;\n  height: 100%; */\n}\n\na {\n  display: inline-block;\n  text-decoration: none;\n  color: inherit;\n}\n\nbody {\n  font-family: $y-font-regular;\n  background: $y-bg-gradient-1;\n  font-size: rem(20px);\n  line-height: 130%;\n  // color:  #1B1F28;\n  height: 100%;\n  max-width: rem(1920px);\n  margin: 0 auto;\n\n \n\n  &.active {\n   \n\n    main {\n      position: relative;\n   \n\n      &::after {\n        content: '';\n        position: absolute;\n        background: rgba(1, 5, 13, 0.7);\n        backdrop-filter: blur(rem(7px));\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 1;\n      }\n    }\n\n  }\n}\n\n.main-wrap {\n  height: 100%;\n  padding: 0 rem(48px);\n\n  @include tablet {\n    padding: 0 rem(24px);\n  }\n\n  @include mobile {\n    padding: 0 rem(16px);\n  }\n}\n\n// отличные от проекта настройки\n.container {\n  max-width: rem(1826px);\n  margin: 0 auto;\n  // padding: 0 rem(48px);\n\n}\n\n.h1 {\n  font-family: $y-font-medium;\n  font-weight: 700;\n  font-size: rem(72px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  margin-bottom: rem(34px);\n  max-width: rem(960px);\n  color: #fff;\n\n  @include mobile {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    font-weight: 400;\n    margin-bottom: rem(10px);\n    color: #1B1F28;\n  }\n}\n\n.h2 {\n  font-family: $y-font-regular;\n  font-size: rem(66px);\n  line-height: rem(72px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    line-height: rem(34px);\n  }\n}\n\n.h3 {\n  font-family: $y-font-regular;\n  font-size: rem(40px);\n  line-height: rem(46px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(4px);\n  }\n}\n\n.h4 {\n  font-family: $y-font-regular;\n  font-size: rem(48px);\n  line-height: 120%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(22px);\n  }\n}\n\n.h5 {\n  font-family: $y-font-regular;\n  font-size: rem(46px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(24px);\n  }\n}\n\n.h6 {\n  font-family: $y-font-regular;\n  font-size: rem(42px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  color: #1B1F28;\n  max-width: rem(600px);\n\n  @include mobile {\n    font-size: rem(22px);\n    max-width: rem(340px);\n  }\n}\n\n.middle {\n  margin-right: auto;\n  margin-left: auto;\n}\n\n\n.btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: $y-dop-1-bg;\n  border-radius: rem(24px);\n  color: $y-body-1;\n  height: rem(48px);\n  font-size: rem(16px);\n  line-height: rem(22px);\n  font-family: $y-font-medium;\n  width: rem(192px);\n  transition: all 0.3s ease-in;\n\n  svg {\n    path {\n      transition: all 0.3s ease-in;\n      fill: #B5BBDB;\n    }\n  }\n\n  @include mobile {\n    width: rem(158px);\n    height: rem(36px);\n    font-size: rem(14px);\n    line-height: rem(20px);\n  }\n\n\n  &:hover {\n    cursor: pointer;\n    background: $y-body-3;\n    color:  #fff;\n    transition: all 0.3s ease-in;\n\n    svg {\n      path {\n        transition: all 0.3s ease-in;\n        fill: #fff;\n      }\n    }\n  }\n}\n\n\n.input {\n  border: none;\n  outline: 1px solid $y-dop-2-bg;\n  height: rem(60px);\n  font-family: $y-font-regular;\n  font-size: rem(20px);\n  line-height: rem(29px);\n  border-radius: rem(30px);\n  padding-left: rem(15px);\n  vertical-align: middle;\n\n  &::placeholder {\n    font-family: $y-font-regular;\n    color: #81899B;\n    font-size: rem(16px);\n    line-height: rem(22px)\n  }\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(18px);\n  }\n\n\n}\n\n.input-small {\n  width: rem(164px);\n}\n\n.txt-light {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n}\n\n.js-tel {\n  color: #81899B;\n}\n\n.input-wrap {\n  position: relative;\n\n  &.error {\n    .input-text {\n      display: block;\n    }\n\n    .input {\n      outline: 1px solid $y-special-1;\n    }\n  }\n\n  &.confirm {\n    .input-confirm  {\n      display: block;\n    }\n  }\n}\n\n.input-text {\n  position: absolute;\n  left: rem(24px);\n  top: rem(-10px);\n  color: $y-special-1;\n  font-size: rem(12px);\n  line-height: rem(14px);\n  background-color: #fff;\n  padding: rem(2px);\n  display: none;\n\n  @include mobile {\n    font-size: rem(8px);\n    line-height: rem(12px);\n  }\n}\n\n.input-confirm {\n  position: absolute;\n  width: rem(22px);\n  height: rem(22px);\n  right: rem(39px);\n  top: 50%;\n  transform: translateY(-50%);\n  background-image: url('../img/confirm-icon.svg');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: none;\n\n  @include mobile {\n    width: rem(17px);\n    height: rem(17px);\n    right: rem(19px);\n  }\n}\n\n\n.tooltip {\n  display: block;\n  background-color: #fff;\n /*  width: rem(216px);\n  height: rem(114px); */\n  padding: rem(24px);\n  border-radius: rem(24px);\n  position: absolute;\n  top: rem(-192px);\n  left: rem(-50px);\n  z-index: 5;\n\n  display: none;\n\n\n  @include tablet {\n    top: initial;\n    bottom: rem(-162px);\n  }\n\n  @include mobile {\n    padding: rem(16px);\n    bottom: rem(-110px);\n    left: rem(-20px);\n  }\n\n  &::after {\n    content: '';\n    position: absolute;\n    bottom: rem(-20px);\n    background-image: url('../img/before.svg');\n    left: rem(48px);\n    width: rem(30px);\n    height: rem(24px);\n    background-repeat: no-repeat;\n    background-size: contain;\n\n\n  @include tablet {\n    top: rem(-20px);\n    transform: rotate(180deg);\n    left: rem(58px);\n  }\n\n  @include mobile {\n    left: rem(18px);\n  }\n  }\n\n  &__title {\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      font-size: rem(16px);\n      line-height: rem(22px);\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__btn {\n    color: #fff;\n    background-color: $y-body-3;\n  }\n\n  &._active {\n    display: block;\n  }\n}\n\n.page-list {\n  padding: rem(50px);\n  list-style-type: decimal ;\n}\n.page-title {\n  color: teal;\n  font-family: $y-font-medium;\n  font-weight: 700;\n  margin-bottom: rem(15px);\n}\n\n\n","$y-text: #1B2E3F;\n\n$y-font-regular:  'Gilroy-Regular';\n$y-font-medium:  'Gilroy-Medium';\n\n$y-bg-gradient-1: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);\n$y-dop-1-bg: #F6F8FC;\n$y-dop-2-bg: #F1F3FB;\n$y-dop-3: #DDE0F0;\n$y-dop-4-element: #B5BBDB;\n$y-body-1: #1B2E3F;\n$y-body-2: #fff;\n$y-body-3: #7EA373;\n$y-body-4: #eaf0e9;\n$y-special-1: #DF536C;\n\n\n\n$y-border-radius: 24px;\n\n\n\n\n\n\n","$b: '.error';\n\n#{$b} {\n  &__container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: rem(120px);\n\n    @include tablet {\n      padding: rem(120px) rem(45px);\n    }\n\n    @include mobile {\n      padding: rem(80px) rem(16px);\n    }\n  }\n\n  &__title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n    }\n\n    @include mobile {\n      font-size: rem(28px);\n      line-height: rem(34px);\n    }\n  }\n\n  &__subtitle {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    max-width: rem(600px);\n    margin-bottom: rem(24px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      max-width: rem(328px);\n      margin-bottom: rem(16px);\n    }\n  }\n\n  &__btn {\n    background-color: $y-body-3;\n    color: #fff;\n    margin-bottom: rem(60px);\n\n    @include mobile {\n      margin-bottom: rem(48px);\n    }\n  }\n\n  &__img {\n    width: rem(1013px);\n    height: rem(326px);\n\n    @include tablet {\n      width: rem(678px);\n      height: rem(218px);\n    }\n\n    @include mobile {\n      width: rem(328px);\n      height: rem(106px);\n    }\n  }\n}","$b: '.authorized';\n\n#{$b} {\n  display: flex;\n  @include tablet {\n    flex-direction: column;\n  }\n\n  &__aside {\n    width: rem(240px);\n    padding: rem(24px);\n    background-color: #fff;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n\n    @include tablet {\n      background-image: url('../../img/bg-aside.png');\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat;\n      order: 2;\n      width: calc(100% - rem(48px));\n      background-color:#f7f8fc;\n      margin-top: rem(120px);\n    }\n\n    @include tablet {\n      padding: rem(8px) rem(18px);\n       width: calc(100% - rem(36px));\n    }\n  }\n\n  &__main {\n    padding: 0 rem(48px);\n/*     width: calc(100% - rem(96px)); */\n\n    @include tablet {\n      padding: 0 rem(24px);\n      width: calc(100% - rem(48px));\n    }\n\n    @include mobile {\n       padding: 0 rem(16px);\n       width: calc(100% - rem(32px));\n    }\n  }\n\n  .pick__content-img {\n    width: 50%;\n  }\n}\n\n.aside {\n  position: relative;\n\n  &__logo {\n    margin-bottom: rem(28px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__list {\n    padding: rem(24px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(24px);\n    display: flex;\n    flex-direction: column;\n    width: calc(100% - rem(48px));\n\n    @include tablet {\n      flex-direction: row;\n      padding: 0;\n      justify-content: space-between;\n      background-color:transparent;\n    }\n\n    @include mobile {\n      padding: 0;\n      width: 100%;\n    }\n  }\n\n  &__item-wrap-left,\n  &__item-wrap-right {\n    display: flex;\n    flex-direction: column;\n\n    @include tablet {\n      flex-direction: row;\n      justify-content: space-between;\n\n      .aside__item  {\n        &:first-child {\n          margin-right: rem(70px);\n\n             @include mobile {\n              margin-right: rem(20px);\n            }\n        }\n      }\n    }\n\n \n  }\n\n  &__item-wrap-right {\n    .aside__item {\n      margin-bottom: 0;\n      &:last-child {\n        margin-bottom: 0;\n      }\n    }\n\n  }\n\n  &__item {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    margin-bottom: rem(24px);\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      flex-direction: column;\n      margin-bottom: 0;\n    }\n\n    @include mobile {\n        font-size: rem(10px);\n    line-height: rem(14px);\n    }\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n\n      @include tablet {\n        margin-bottom: rem(5px);\n        margin-right:0;\n      }\n\n      @include mobile {\n        width: rem(22px);\n        height: rem(22px);\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    &.profile {\n      display: none;\n\n      @include tablet {\n        display: flex;\n      }\n    }\n\n\n    &.active {\n      color: $y-body-3;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n\n  &__logout {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    display: flex;\n    align-items: center;\n    background-color: $y-dop-1-bg;\n    padding: rem(12px) 0;\n    border-radius: rem(24px);\n    width: calc(100% - rem(48px));\n    justify-content: center;\n    position: absolute;\n    bottom: rem(24px);\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__btn-tablet-wrap {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    top: rem(-15px); \n    flex-direction: column;\n    align-items: center;\n    display: none;\n\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  &__btn-tablet {\n    width: rem(48px);\n    height: rem(48px);\n    background-image: url('../../img/book-close-btn.svg');\n    background-repeat: no-repeat;\n    background-size: contain;\n    margin-bottom: rem(15px);\n\n    @include tablet {\n      width: rem(40px);\n      height: rem(40px);\n      margin-bottom: rem(10px);\n/*       background-position-y: rem(-5px) ; */\n    }\n\n     @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n        margin-bottom: rem(13px);\n     }\n  }\n\n  &__btn-tablet-text {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    .pc {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    .mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n\n    @include mobile {\n      font-size: rem(10px);\n      line-height: rem(14px);\n    }\n  }\n}\n\n.main {\n  .header__notifications {\n    display: flex;\n  }\n\n  .header__container {\n    padding: rem(16px) rem(24px);\n    width: calc(100% - rem(48px));\n\n    @include mobile {\n      padding: rem(6px) rem(12px);\n      width: calc(100% - rem(24px));\n    }\n  }\n\n  .header__notification {\n    position: relative;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n    }\n\n    &.messages {\n      margin-right: rem(8px);\n \n    }\n\n    .messages-txt {\n      position: absolute;\n      font-size: rem(10px);\n      line-height: rem(15px);\n      color: #fff;\n      background-color: $y-special-1;\n      border: 2px solid $y-dop-1-bg;\n      border-radius: 100%;\n      width: rem(20px);\n      height: rem(20px);\n      text-align: center;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      right: 0;\n      bottom: rem(5px);\n\n      @include mobile {\n         font-size: rem(8px);\n        line-height: rem(8px);\n         width: rem(15px);\n      height: rem(15px);\n      }\n    }\n\n    &:hover {\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n}\n\n.footer {\n  @include tablet {\n    display: none;\n  }\n}","$b: '.balance';\n\n#{$b} {\n  .ref-link__info  {\n    height: rem(769px);\n    position: relative;\n\n    @include mobile {\n      height: rem(460px);\n    }\n  }\n  .ref-link__top {\n    justify-content: flex-start;\n  }\n\n  .ref-link__history {\n    &:first-child {\n      margin-right: rem(8px);\n    }\n\n    @include mobile {\n      display: flex;\n      padding: 0 rem(10px);\n      font-size: rem(12px);\n      line-height: rem(16px);\n\n\n      svg {\n        display: none;\n      }\n    }\n  }\n\n  .choose__top-info {\n    a {\n      color: $y-body-3;\n    }\n  }\n  .balance-top-info {\n    margin-bottom: rem(8px);\n  }\n\n  .ref-link__info.ref {\n    padding-bottom: 0;\n    border: none;\n    margin-bottom: 0;\n  }\n\n  .balance-input-wrap {\n    position: relative;\n    padding: rem(16px);\n    border-radius: rem(24px);\n    background-color: $y-dop-1-bg;\n    width: 100%;\n    &::before {\n      content: '';\n      background-image: url('../../img/card-icon.svg');\n      width: rem(25px);\n      height: rem(18px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      position: absolute;\n      left: rem(16px);\n      top: 50%;\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(12px);\n      }\n    }\n  }\n\n  .balance-input-lable {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    display: block;\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n  .balance-input {\n    height: rem(30px);\n    background-color: transparent;\n    outline: none;\n      &::placeholder {\n        padding-left: rem(20px);\n        font-size: rem(20px);\n        line-height: rem(26px);\n        color: $y-body-1;\n\n        @include mobile {\n          padding-left: rem(12px);\n          font-size: rem(12px);\n          line-height: rem(16px);\n        }\n      }\n  }\n\n  .ref-link__info-btn {\n    position: absolute;\n    right: rem(16px);\n    background-color: #fff;\n    top: 50%;\n    transform: translateY(-50%);\n\n    span {\n      display: inline-block;\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      width: rem(106px);\n    } \n  }\n\n  .ref-link__info-field-wrap {\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n  }\n\n  &.balance-2 {\n    .ref-link__info-field-wrap {\n      display: flex;\n      flex-direction: column;\n    }\n\n    .balance-input-wrap {\n      margin-bottom: rem(4px);\n\n      @include mobile {\n        width: calc(100% - rem(24px));\n        padding: rem(12px);\n      }\n\n    }\n\n    .balance-out {\n      display: flex;\n      justify-content: space-between;\n      padding: rem(16px);\n      border-radius: rem(24px);\n      background-color: $y-dop-1-bg;\n      width: 100%;\n      margin-bottom: rem(24px);\n\n      @include mobile {\n        width: calc(100% - rem(24px));\n        padding: rem(12px);\n        margin-bottom: rem(12px);\n      }\n    }\n\n    .balance-out-card {\n      width: rem(49px);\n      height: rem(22px);\n      background-size: contain;\n      background-repeat: no-repeat;\n      display: inline-block;\n      margin-top: rem(8px);\n      margin-right: rem(8px);\n\n      background-position: center;\n\n      @include mobile {\n        width: rem(28px);\n        height: rem(12px);\n      }\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n\n      &.mc {\n        background-image: url('../../img/mcard.svg');\n      }\n    }\n  }\n\n  .balance-out-min {\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  .ref-link-task__next {\n    display: flex;\n    justify-content: space-between;\n    width: 100%;\n  }\n\n  .ref-link-task-input {\n    width: rem(226px);\n\n    @include mobile {\n      width: rem(166px);\n      height: rem(48px);\n    }\n  }\n\n  .ref-link-task-next-btn {\n    height: rem(60px);\n    background-color: $y-body-3;\n    color: #fff;\n    \n    @include mobile {\n      width: rem(106px);\n      height: rem(48px);\n    }\n  }\n\n\n\n  .ref-link__info {\n    @include mobile {\n      height: rem(600px);\n      \n    }\n  }\n}","\n$b: '.book-authorized';\n\n#{$b} {\n\n  .header__container {\n    justify-content: space-between;\n  }\n\n  .header__logo {\n    display: none;\n\n    @include tablet {\n      display: block;\n    }\n  }\n\n  .header__booked-home {\n    display: none;\n  }\n\n  .header__waiter {\n    display: none;\n  }\n\n  .header__book {\n    width: rem(192px);\n    background-color: $y-dop-1-bg;\n    color: $y-dop-4-element;\n\n    &.active {\n      background: $y-body-3;\n      color: #fff;\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  //\n\n  .pick__content {\n    @include tablet {\n      display: flex;\n      flex-direction: column;\n      background-color: transparent;\n    }\n  }\n\n  .book-authorized__steps {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      align-items: center;\n      margin-bottom: rem(27px);\n    }\n\n    @include mobile {\n      margin-bottom: rem(13px);\n    }\n\n    &.step-2 {\n      justify-content: space-between;\n    }\n  }\n\n  .book-authorized__step {\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(18px);\n      background-color: #fff;\n      color: $y-dop-4-element;\n      padding: rem(8px) rem(12px);\n      border-radius: rem(24px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      margin-right: rem(16px);\n    }\n  }\n\n  .book-authorized__title {\n    margin-bottom: 0;\n  }\n  .pick__content-img {\n    background-image: none;\n    position: relative;\n\n    @include tablet {\n      display: block;\n      width: 100%;\n      margin-right: 0;\n\n      &.hidden {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: 100%;\n      overflow: visible;\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    \n\n      &.pc {\n        @include mobile {\n          display: none;\n        }\n      }\n\n      &.mob {\n        display: none;\n\n        @include mobile {\n          display: block;\n          object-fit: contain;\n        }\n      }\n    }\n\n\n\n  }\n\n  .pick__content-book {\n    @include tablet {\n      display: none;\n\n      &.next {\n        display: block;\n      }\n    }\n  }\n\n  .choose__map-btn-wrap {\n    width: rem(713px);\n    height: rem(315px);\n    top: rem(190px);\n\n    @include tablet {\n      top: rem(270px);\n    }\n\n    @include mobile {\n      top: rem(50px);\n      width: rem(350px);\n    }\n  }\n\n  .choose__map-btn {\n\n    .tooltip {\n      top: rem(-162px);\n\n      @include tablet {\n        top: initial;\n      }\n    }\n\n    &._1 {\n      top: rem(60px);\n      left: rem(28px);\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n    }\n\n    &._2 {\n      top: rem(112px);\n      left: rem(183px);\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(100px);\n      }\n    }\n\n    &._3 {\n      top: rem(220px);\n      left: rem(353px);\n\n      @include mobile {\n        top: rem(123px);\n        left: rem(183px);\n      }\n    }\n\n    &._4 {\n      top: rem(250px);\n      left: rem(495px);\n\n      @include mobile {\n        top: rem(150px);\n        left: rem(235px);\n      }\n\n      .tooltip {\n  \n        @include mobile {\n          bottom: rem(-70px);\n        }\n      }\n    }\n\n    &._5 {\n      top: rem(120px);\n      left: rem(620px);\n\n      @include mobile {\n        top: rem(90px);\n        left: rem(300px);\n      }\n\n      .tooltip {\n        left: rem(-140px);\n\n        &::after {\n          left: rem(148px);\n        }\n      }\n    }\n  }\n\n  .choose__top-info {\n    position: absolute;\n    bottom: rem(88px);\n    width: rem(560px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  .book-authorized__btn-next {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      position: absolute;\n      bottom: rem(48px);\n      background-color: $y-body-3;\n      color: #fff;\n      width: calc(100% - rem(48px));\n      left: 50%;\n      transform: translateX(-50%);\n      height: rem(60px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      width: calc(100% - rem(32px));\n      bottom: rem(-60px);\n    }\n  }\n\n  .book-authorized__back {\n\n    @include tablet {\n      width: rem(48px);\n      height: 48px;\n      background-image: url('../../img/back-icon.svg');\n      background-size: contain;\n      background-position: center;\n      background-repeat: no-repeat;\n    }\n\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n  }\n\n  .pick__date-wrap {\n    &::before {\n      @include tablet {\n        top: rem(155px);\n      }\n\n      @include mobile {\n        top: rem(98px);\n      }\n    }\n  }\n}","$b: '.book';\n\n#{$b} {\n  .pick__confirm-book-btns {\n    display: flex;\n    justify-content: space-between;\n  }\n\n  .pick__confirm-btn {\n    display: none;\n  }\n  .book-btn {\n    padding: 0 rem(18px);\n    width: 100%;\n    min-height: rem(60px);\n    color: $y-body-3;\n\n    &.reset {\n      background-color: #fff;\n      margin-right: rem(8px);\n    }\n\n    &.send {\n      background-color: $y-body-4;\n    }\n    @include mobile {\n      min-height: rem(48px);\n    }\n  }\n\n  .pick__confirm-input {\n    @include mobile {\n      width: rem(140px);\n    }\n  }\n}","\n$b: '.booked-header';\n\n#{$b} {\n.header__right {\n  display: flex;\n}\n.header__waiter {\n  background-color: $y-body-3;\n  color: #fff;\n  margin-right: rem(16px);\n\n  @include tablet {\n    display: none;\n  }\n}\n.header__book{\n  display: none;\n}\n\n.header__logo {\n  display: none;\n\n  @include tablet {\n    display: block;\n  }\n}\n\n.header__booked-home {\n  display: flex;\n\n  @include tablet {\n    display: none;\n  }\n\n  @include mobile {\n    img {\n      width: rem(44px);\n      height: rem(24px);\n      object-fit: contain;\n    }\n  }\n}\n\n.header__booked-home-inner {\n  margin-left: rem(12px);\n\n  .number {\n    @include tablet {\n      font-size: rem(14px);\n      line-height: rem(20px);\n    }\n  }\n\n  .date {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    color: $y-dop-4-element;\n  }\n}\n\n.header.add-tablet {\n  display: none;\n\n  @include tablet {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 rem(24px);\n    height: rem(90px);\n    border-radius: rem(24px);\n    margin-bottom: rem(16px);\n  }\n\n  .header__booked-home {\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  .rest-time {\n    display: flex;\n    align-items: flex-start;\n\n    @include mobile {\n      align-items: center;\n    }\n  \n  }\n\n  .rest-time-img {\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    background-image: url('../../img/clock.svg');\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: rem(22px) rem(22px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(22px);\n      height: rem(22px);\n      background-color: transparent;\n      margin-right: rem(6px);\n    }\n  }\n\n  .rest-time-info {\n    display: flex;\n    flex-direction: column;\n\n    .txt {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      color: $y-dop-4-element;\n    }\n\n    .time {\n      font-size: rem(20px);\n      line-height: rem(26px);\n\n      @include mobile {\n        font-size: rem(14px);\n        line-height: rem(20px);\n      }\n    }\n  }\n}\n}","$b: '.booked-home';\n\n#{$b} {\n  .pick {\n    border-radius: rem(24px);\n    padding: rem(48px);\n    background-color: #fff;\n\n    @include tablet {\n      padding: rem(24px);\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  .pick__content {\n    border-radius: none;\n    padding: 0;\n  }\n\n  .swiper {\n    width: rem(1452px) !important;\n\n    @include tablet {\n      width: rem(672px) !important;\n    }\n\n    @include mobile {\n      width: rem(296px) !important;\n    }\n  }\n\n\n\n  .swiper-slide {\n    // width: rem(1452px) !important;\n  }\n\n  .swiper-wrapper {\n    //overflow: hidden;\n  }\n  .pick__content-img {\n    width: rem(744px);\n\n    img {\n      width: 100%;\n      height: rem(477px);\n      object-fit: contain;\n    }\n  }\n  .pick__content-book {\n    padding: 0;\n    background: none;\n    position: relative;\n\n    .pick__content-img {\n      display: none;\n\n      @include tablet {\n        display: flex;\n        width: 100%;\n        height: rem(288px);\n        margin-bottom: rem(24px);\n\n        img {\n          height: rem(240px);\n        }\n      }\n\n      @include mobile {\n        height: rem(127px);\n        margin-bottom: rem(16px);\n\n        img {\n          height: rem(103px);\n        }\n      }\n    }\n  }\n\n  .tag-list {\n    display: flex;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-bottom: rem(48px);\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  .tag-item {\n    width: rem(227px);\n    height: rem(48px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color:$y-dop-1-bg;\n    border-radius: rem(24px);\n    margin-right: rem(8px);\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n    @include tablet {\n      margin-bottom: rem(16px);\n    }\n  }\n\n  .book-authorized__step {\n    margin-bottom: rem(12px);\n\n    &.info {\n      @include tablet {\n        margin-bottom: rem(126px);\n      }\n\n      @include mobile {\n        font-size: rem(14px);\n        line-height: rem(20px);\n        margin-bottom: rem(60px);\n      }\n    }\n\n    &.h3 {\n      @include mobile {\n        font-size: rem(20px);\n        line-height: rem(26px);\n      }\n    }\n  }\n\n  .swiper-nav {\n    position: absolute;\n    bottom: 0;\n    width: rem(660px);\n    height: rem(48px);\n    right: 0;\n\n    @include mobile {\n      width: 100%;\n    }\n  }\n\n  .swiper-button-next,\n  .swiper-button-prev {\n    top: initial;\n    bottom:0;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-body-3;\n    border-radius: 100%;\n\n    &::after {\n      content: '';\n    }\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(12px);\n      height: rem(12px);\n\n      @include mobile {\n        width: rem(8px);\n        height: rem(8px);\n      }\n    }\n  }\n\n  .swiper-button-next {\n    right: 0;\n  }\n\n  .swiper-button-prev {\n    right: initial;\n    left: 0;\n    svg {\n      transform: rotate(180deg);\n    }\n  }\n\n  .swiper-button-disabled {\n    background-color: $y-dop-2-bg;\n\n    svg {\n      path {\n        fill: $y-dop-4-element;\n      }\n    }\n  }\n\n  .swiper-pagination {\n    width: 50%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n  }\n\n  .swiper-pagination-bullet {\n    width: rem(60px);\n    height: rem(8px);\n    border-radius: rem(4px);\n    background-color: $y-dop-4-element;\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(6px);\n    }\n    \n  }\n\n  .swiper-pagination-bullet-active {\n    background-color: $y-dop-4-element;\n  }\n}","$b: '.choose';\n\n#{$b} {\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n  \n  &__top {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    margin-bottom: rem(24px);\n\n\n  @include tablet {\n    flex-direction: column;\n  }\n  }\n\n  &__map {\n    position: relative;\n    border-radius: rem(24px);\n  }\n\n  &__top-title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n      margin-bottom: rem(26px);\n    }\n  }\n\n  &__top-info {\n    background-color: #fff;\n    padding: rem(24px) rem(24px) rem(24px) rem(59px);\n    font-size: rem(20px);\n    line-height: rem(26px);\n    position: relative;\n    border-radius: rem(24px);\n    max-width: rem(662px);\n\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(22px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding: rem(12px) rem(12px) rem(12px) rem(38px);\n    }\n\n    &::after {\n      content: '';\n      position: absolute;\n      background-image: url('../../img/warning-icon.svg');\n      background-repeat: repeat;\n      background-size: contain;\n      width: rem(24px);\n      height: rem(24px);\n      top: 50%;\n      transform: translateY(-50%);\n      left: rem(24px);\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        left: rem(12px);\n      }\n     \n    }\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(-20px);\n      left: rem(48px);\n      background-image: url('../../img/before.svg');\n      width: rem(30px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      transform: rotate(180deg);\n\n\n      @include mobile {\n        left: rem(24px);\n      }\n    }\n  }\n\n  &__map-bg {\n    width: 100%;\n    height: rem(625px);\n    object-fit: cover;\n    position: relative;\n    border-radius: rem(24px);\n\n    @include tablet {\n      height: rem(424px);\n    }\n\n    @include mobile {\n      height: rem(212px);\n    }\n\n    &._desk {\n      @include tablet {\n        display: none;\n      }\n    }\n\n    &._tablet {\n      display: none;\n\n      @include tablet {\n        display: block;\n      }\n\n      @include mobile {\n        display: none;\n      }\n    }\n\n    &._mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n  }\n\n  &__map-btn-wrap {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n    width: rem(1000px);\n    height: rem(500px);\n\n    @include tablet {\n      width: rem(710px);\n      height: rem(300px);\n    }\n\n    @include mobile {\n      width: rem(330px);\n      height: rem(145px);\n    }\n  }\n\n  &__map-btn {\n    width: rem(48px);\n    height: rem(48px);\n    position: absolute;\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n\n    &._1 {\n      top: rem(152px);\n      left: rem(48px);\n\n      @include tablet {\n        top: rem(80px);\n        left: rem(38px);\n      }\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n\n      .tooltip {\n        top: rem(-152px);\n\n        @include tablet {\n          top: initial;\n          bottom: rem(-162px);\n        }\n\n        @include mobile {\n          bottom: rem(-122px);\n        }\n      }\n    }\n\n    &._2 {\n      top: rem(242px);\n      left: rem(283px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(198px);\n      }\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(88px);\n      }\n    }\n\n    &._3 {\n      top: rem(340px);\n      left: rem(513px);\n\n      @include tablet {\n        top: rem(230px);\n        left: rem(360px);\n      }\n\n      @include mobile {\n        top: rem(110px);\n        left: rem(158px);\n      }\n    }\n\n    &._4 {\n      top: rem(420px);\n      left: rem(695px);\n\n      @include tablet {\n        top: rem(280px);\n        left: rem(480px);\n      }\n\n      @include mobile {\n        top: rem(140px);\n        left: rem(228px);\n      }\n    }\n\n    &._5 {\n      top: rem(285px);\n      left: rem(875px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(595px);\n      }\n\n      @include mobile {\n        top: rem(70px);\n        left: rem(278px);\n      }\n\n      .tooltip {\n        @include tablet {\n          left: rem(-122px);\n        }\n\n        @include mobile {\n          &::after {\n            left: rem(120px);\n          }\n        }\n      }\n    }\n  }\n\n  &__container  {\n/*     padding: 0 48px; */\n    max-width: 1826px;\n  }\n\n\n\n}","$b: '.event';\n\n#{$b} {\n  &__container {\n    border-radius: rem(24px);\n    background-color: #fff;\n    display: flex;\n    padding: rem(24px);\n    color: $y-body-1;\n\n    @include tablet {\n     flex-direction: column;\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  &__img {\n    background-image: url('../../img/bg-gradient.png');\n    background-color: $y-dop-1-bg;\n    width: 58%;\n    height: rem(432px);\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-right: rem(48px);\n    border-radius: rem(24px);\n    overflow: hidden;\n\n    @include tablet {\n      width: 100%;\n      margin-right: 0;\n      margin-bottom: rem(24px);\n      height: rem(288px);\n     }\n\n    @include mobile {\n      height: rem(127px);\n      margin-bottom: rem(16px);\n    }\n\n    img {\n      width: rem(702px);\n      height: rem(331px);\n      object-fit: contain;\n\n\n    @include tablet {\n      width: rem(540px);\n      height: rem(240px);\n     }\n\n     @include mobile {\n      width: rem(225px);\n      height: rem(105px);\n     }\n    }\n  }\n\n  &__info {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 41%;\n\n    @include tablet {\n      width: 100%;\n     }\n  }\n\n  &__info-title {\n    margin-bottom: rem(15px);\n    padding-top: rem(24px);\n\n    @include tablet {\n      padding-top: 0;\n      margin-bottom: 0;\n     }\n  }\n\n  &__info-txt {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    max-width: rem(696px);\n\n    @include tablet {\n      max-width: rem(620px);\n      margin-bottom: rem(52px);\n     }\n\n     @include mobile  {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-bottom: rem(4px);\n    }\n  }\n\n  &__info-date {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    color: $y-dop-4-element;\n\n    @include mobile  {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n}","$b: '.footer';\n\n#{$b} {\n  &__container {\n    padding: rem(25px) 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    @include mobile  {\n      flex-direction: column;\n    }\n  }\n\n  &__left {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n\n    @include mobile {\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__link {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-right: rem(16px);\n    border-bottom: 1px solid $y-dop-4-element;\n\n    @include mobile {\n      font-size: rem(12px);\n    line-height: rem(16px);\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n  }\n\n  &__social-list {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n  }\n\n  &__social-item {\n    width: rem(30px);\n    height: rem(30px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n  }\n}","$b: '.header';\n\n#{$b} {\n  background-color: #fff;\n  border-bottom-left-radius: rem(24px);\n  border-bottom-right-radius: rem(24px);\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n\n\n  &__container {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(16px) rem(24px);\n    padding-bottom: rem(10px);\n  }\n\n  &__login {\n    display: flex;\n    align-items: center;\n  }\n\n  &__logo {\n    width: rem(98px);\n    height: rem(56px);\n\n    @include mobile {\n      width: rem(56px);\n      height: rem(36px);\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n    }\n  }\n\n  &__login-icon {\n    width: rem(18px);\n    height: rem(21px);\n    margin-right: rem(11px);\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(16px);\n      height: rem(16px);\n      margin-right: rem(8px);\n\n   \n    }\n  }\n}\n\n","$b: '.login';\n\n#{$b} {\n  .pick__content-img {\n    img {\n      width: rem(570px);\n      height: rem(504px);\n    }\n  }\n\n  .pick__content-book {\n    height: rem(673px);\n\n\n  }\n\n  .pick__confirm {\n    margin-bottom: 0;\n    padding-bottom: 0;\n    border-bottom: none;\n  }\n\n  .pick__confirm-btn {\n    color: #fff;\n    background-color: $y-body-3;\n\n    &::before {\n      background-image: url('../../img/sms-white.svg');\n    }\n  }\n\n  .pick__content-img {\n    width: 57%;\n  }\n\n  &-tel {\n    @include mobile {\n      height: rem(350px);\n    }\n  }\n\n  &-mail {\n\n    .pick__content-book {\n      @include mobile {\n        height: 100%;\n      }\n    }\n\n    .pick__confirm {\n      height: 100%;\n    }\n\n    .login-lable {\n        margin-bottom: rem(16px);\n      }\n    }\n\n    .login-wrap {\n      margin-bottom: rem(16px);\n      &:first-child {\n        border-bottom: 1px solid $y-dop-3;\n        padding-bottom: rem(24px);\n      }\n    }\n\n    .login-input-wrap {\n      position: relative;\n    }\n\n    .login-show-password {\n      position: absolute;\n      width: rem(22px);\n      height: rem(16px);\n      top: 50%;\n      transform: translateY(-50%);\n      right: rem(24px);\n      background-image: url('../../img/show-password-icon.svg');\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n      display: none;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n\n    .login-input {\n      width: calc(100% - rem(15px));\n    }\n\n    .login-confirm {\n      width: 100%;\n      background-color: $y-body-3;\n      color: #fff;\n      height: rem(60px);\n      position: absolute;\n      bottom: 0;\n\n      @include mobile {\n        position: relative;\n      }\n    }\n}","$b: '.pick';\n\n#{$b} {\n  .choose__top-info {\n    max-width: rem(744px);\n\n    @include tablet {\n      width: 87%;\n    }\n  }\n\n  &__content {\n    display: flex;\n    align-items: flex-start;\n    justify-content: flex-start;\n    padding: rem(48px);\n    background-color: #fff;\n    border-radius: rem(24px);\n\n    @include tablet {\n      padding: 0;\n    }\n  }\n\n  &__content-img {\n    width: 57%;\n    height: rem(769px);\n    margin-right: rem(48px);\n    flex-shrink: 0;\n    border-radius: rem(24px);\n    overflow: hidden;\n    background-image: url('../../img/pick-bg.png');\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include tablet {\n      display: none;\n    }\n    \n\n    img {\n      width: rem(648px);\n      height: rem(520px);\n      object-fit: contain;\n      object-position: top;\n    }\n  }\n\n  &__content-book {\n    width: rem(600px);\n    background: $y-bg-gradient-1;\n    padding: rem(48px);\n    border-radius: rem($y-border-radius);\n    position: relative;\n\n    @include tablet {\n      width: 100%;\n      padding: 0;\n    }\n  }\n\n  &__date-title {\n    margin-bottom: rem(16px);\n  }\n\n  &__date-wrap {\n    display: flex;\n    padding-bottom: rem(24px);\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    flex-wrap: nowrap;\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(127px);\n      left: rem(70px);\n      background-image: url('../../img/calendat-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      z-index: 15;\n      background-size: contain;\n\n      @include tablet {\n        top: rem(78px);\n        left: rem(20px);\n      }\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        top: rem(46px);\n        left: rem(27px);\n      }\n    }\n  }\n\n  &__date-calendar {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding-left: rem(56px);\n    width: rem(136px);\n    margin-right: rem(8px);\n    margin-bottom: rem(12px);\n    text-align: left;\n\n    @include mobile {\n      padding-left: rem(49px);\n      width: rem(59px);\n      border-top-right-radius: 0;\n      border-bottom-right-radius: 0;\n      height: rem(48px);\n      margin-right: 0;\n    }\n\n    &:hover {\n      cursor: pointer;\n    }\n  }\n\n\n  &__date-picked {\n    text-align: center;\n    margin-right: rem(16px);\n    padding-left: 0;\n    background-color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: rem(192px);\n\n    @include tablet {\n      width: rem(293px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      margin-right: rem(6px);\n      width: rem(96px);\n      border-top-left-radius: 0;\n      border-bottom-left-radius: 0;\n      padding-left: rem(12px);\n      justify-content: flex-start;\n    }\n  }\n\n  &__date-days-count {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background-color: #fff;\n    color: $y-dop-4-element;\n    position: relative;\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    width: rem(177px);\n\n    span {\n      color: $y-body-1;\n      margin-left: rem(8px);\n\n      @include mobile {\n        margin-left: 0;\n      }\n    }\n\n    .text-hide {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: rem(48px);\n      padding-left: rem(20px);\n      width: rem(86px);\n    }\n  }\n\n  &__date-days-btn {\n    position: absolute;\n    width: rem(24px);\n    height: rem(30px);\n    background-color: $y-dop-2-bg;\n    right: 0;\n    top: 0;\n    background-repeat: no-repeat;\n\n    @include mobile {\n      height: rem(24px);\n    }\n\n    &.decrease {\n      top: rem(30px);\n      border-bottom-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-i.svg');\n      background-position: center;\n\n      @include mobile {\n        top: rem(24px);\n      }\n    }\n\n\n    &.increase {\n      border-top-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-d.svg');\n      background-position: center;\n    }\n  }\n\n  &__confirm {\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    padding-bottom: rem(24px);\n    position: relative;\n  }\n\n  &__confirm-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__confirm-txt {\n    margin-bottom: rem(24px);\n    max-width: rem(570px);\n\n    a {\n      color: $y-body-3;\n      border-bottom: 1px solid $y-body-3 ;\n      display: inline-block;\n    width: max-content;\n    }\n  }\n\n  &__confirm-book-btns {\n    display: none;\n  }\n\n  &__confirm-input-wrap {\n    display: flex;\n \n  }\n\n  &__confirm-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(16px);\n      width: rem(200px);\n      margin-right: rem(6px);\n    }\n  }\n\n  &__confirm-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(38px);\n      position: relative;\n      justify-content: flex-start;\n      width: rem(106px);\n\n      &::before {\n        content: '';\n        position: absolute;\n        left: rem(16px);\n        top: 50%;\n        transform: translateY(-50%);\n        background-image: url('../../img/sms.svg');\n        background-repeat: no-repeat;\n        background-size: contain;\n        width: rem(15px);\n        height: rem(15px);\n      }\n    }\n\n    span {\n      @include mobile {\n        display: none;\n      }\n    }\n  }\n\n  &__payment-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__payment-txt {\n    margin-bottom: rem(24px);\n  }\n\n  &__payment-promo {\n    display: flex;\n    margin-bottom: rem(30px);\n  }\n\n  &__payment-promo-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      padding-left: rem(16px);\n      width: rem(200px);\n    }\n  }\n\n  &__payment-promo-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      width: rem(106px);\n    }\n\n  }\n\n  &__payment-choose {\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      justify-content: space-between;\n    }\n  }\n\n  &__payment-choose-info {\n    padding-left: rem(32px);\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    max-width: rem(252px);\n\n    &::before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      background-image: url('../../img/warning-gray-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__payment-choose-method {\n    display: flex;\n    align-items: center;\n\n    a {\n      width: rem(72px); \n      height: rem(60px);\n      padding: rem(0px) rem(10px);\n      border-radius: rem(30px);\n      background-color: #fff;\n      margin-right: rem(8px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-size: rem(60px), rem(20px);\n      background-repeat: no-repeat;\n      background-position: center;\n\n      @include mobile {\n        width: rem(72px); \n        height: rem(48px);\n        background-size: rem(50px), rem(20px);\n      }\n      \n\n      &:last-child {\n        margin-right: 0;\n      }\n\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n      &.masterCard {\n        background-image: url('../../img/mcard.svg');\n        background-size: rem(50px), rem(20px);\n\n        @include mobile {\n          background-size: rem(40px), rem(15px);\n        }\n      }\n      &.qiwi {\n        background-image: url('../../img/qiwi.svg');\n        background-size: rem(70px), rem(30px);\n\n        @include mobile {\n          background-size: rem(50px), rem(20px);\n        }\n      }\n    }\n  }\n\n\n  //стили календаря\n.air-datepicker {\n position: absolute;\n top: 0;\n left: 0;\n width: 100%;\n height: 100%;\n border-radius: rem(24px);\n background: $y-bg-gradient-1;\n border: none;\n display: none;\n z-index: -1;\n\n @include tablet {\n  border-radius: 0;\n}\n\n &.active {\n  display: block;\n  z-index: 20;\n }\n}\n\n.air-datepicker-nav {\n  height: rem(64px);\n  align-items: center;\n}\n\n.air-datepicker-nav--title {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  padding: rem(12px) rem(26px);\n  border-radius: rem(24px);\n  max-height: rem(24px);\n}\n\n.air-datepicker-nav--action {\n  width: rem(48px);\n  height: rem(48px);\n  border-radius: 100%;\n  background-color: #fff;\n  margin: 0 rem(8px);\n}\n\n.air-datepicker--content {\n  padding: rem(24px);\n\n  @include tablet {\n    padding: 0;\n  }\n}\n\n.air-datepicker-body--day-name {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n  text-transform: none;\n  margin-bottom: rem(8px);\n}\n\n.air-datepicker-body--cells {\n  gap: rem(8px);\n\n  // grid-auto-rows: rem(48px) !important;\n}\n\n.air-datepicker-body--cells.-days- {\n  grid-auto-rows:rem(48px);\n\n  @include mobile {\n    grid-auto-rows:rem(36px);\n  }\n}\n\n.air-datepicker-cell  {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  border-radius: rem(24px);\n  // width: rem(85px);\n  height: rem(48px);\n\n  @include tablet {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n  }\n\n}\n\n.air-datepicker-cell.-day-.-current- {\n  background: $y-body-4;\n  color: $y-text;\n}\n.air-datepicker-cell.-day-.-selected- {\n  color:#fff;\n  background-color: $y-body-3;\n}\n\n.air-datepicker-cell.-day-.-selected-.-focus-{\n  background-color: $y-body-3;\n}\n\n.air-datepicker-buttons {\n  padding: 0 rem(24px);\n\n  @include mobile {\n    padding: 0;\n    margin-top: rem(16px);\n  }\n}\n\n.air-datepicker--buttons {\n  padding: 0;\n  position: absolute;\n  width: 100%;\n  bottom: rem(24px);\n  border: none;\n\n  @include mobile {\n    position: static;\n  }\n}\n\n.air-datepicker-button {\n  width: 98%;\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-body-3;\n  height: rem(48px);\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n    width: 95%;\n  }\n}\n\n.clear-btn {\n  background-color: #fff;\n  border-radius: rem(24px);\n  // margin-left: rem(24px);\n}\n\n.select-btn {\n  background-color: $y-body-4;\n  border-radius: rem(24px);\n \n}\n}","$b: '.ref-link';\n$t: '.ref-link-tasks';\n\n\n#{$b} {\n  &__top {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(8px);\n    background-color: $y-dop-2-bg;\n    height: rem(48px);\n\n    border-top-left-radius:rem(24px);\n    border-top-right-radius:rem(24px);\n  }\n\n  &__tabs {\n    display: flex;\n  }\n\n  &__tab {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    width: rem(158px);\n    height: rem(48px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: $y-dop-4-element;\n    border-radius: rem(24px);\n    background-color: $y-dop-1-bg;\n\n    &:first-child {\n      margin-right: rem(8px);\n\n      @include mobile  {\n        margin-right: rem(6px);\n      }\n    }\n\n    &.active {\n      color: $y-body-1;\n      background-color: #fff;\n    }\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      height: rem(36px);\n      width: rem(155px);\n    }\n\n  }\n\n  &__history {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding-left: rem(49px);\n    padding-right: rem(16px);\n    width: calc(rem(220px) - rem(65px));\n    border-radius: rem(24px);\n    color: $y-body-3;\n    background-color: #fff;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    height: rem(48px);\n\n    svg {\n      position: absolute;\n      width: rem(20px);\n      height: rem(20px);\n      left: rem(16px);\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__info {\n\n    &.ref {\n      padding-bottom: rem(24px);\n      border-bottom: 1px solid $y-dop-3;\n      margin-bottom: rem(20px);\n    }\n  }\n\n  &__info-txt {\n    margin-bottom: rem(24px);\n\n    a {\n      display: inline-block; \n      color: $y-body-3;\n    }\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      margin-bottom: rem(12px);\n\n    }\n  }\n\n  &__info-field-wrap {\n    display: flex;\n  }\n\n  &__info-field {\n    display: flex;\n    position: relative;\n    align-items: center;\n    color: $y-body-3;\n    background-color: $y-body-4;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding: 0 rem(24px);\n    height: rem(60px);\n    margin-right: rem(16px);\n    border-radius: rem(30px);\n    width: calc(rem(392px) - rem(48px));\n\n    .copy-btn {\n      position: absolute;\n      right: rem(24px);\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n\n      @include mobile  {\n        right: rem(16px);\n        width: rem(16px);\n        height: rem(16px);\n      }\n    }\n\n    @include tablet{\n      width: rem(420px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      height: rem(48px);\n      padding: 0 rem(16px);\n      width: calc(rem(184px) - rem(32px));\n      .text {\n        max-width: 80%;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n      }\n    }\n  }\n\n  &__info-btn {\n    height: rem(60px);\n    color: $y-body-3;\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n    }\n  }\n\n\n  .pick__content {\n    border-top-left-radius: 0;\n    border-top-right-radius: 0;\n  }\n\n  .pick__content-book  {\n    display: flex;\n    flex-direction: column;\n    order: -1;\n    width: rem(748px);\n    padding: 0;\n    background: #fff;\n\n    @include tablet {\n      padding:rem(24px);\n    }\n\n    @include mobile {\n      padding:rem(16px);\n      width: rem(296px);\n    }\n    \n  }\n\n\n  .pick__content-img {\n    margin-right: 0;\n    margin-left: rem(48px);\n    width: 56%;\n    position: relative;\n  }\n\n  .choose__top-info {\n    position: absolute;\n    width: rem(600px);\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: rem(48px);\n  }\n}\n\n#{$t} {\n\n  .pick__content-book._1 {\n    .step-2 {\n      display: none;\n    }\n  \n    .step-3 {\n      display: none;\n    }\n  }\n\n  .pick__content-book._2 {\n    .step-1 {\n      display: none;\n    }\n  \n    .step-3 {\n      display: none;\n    }\n  }\n\n  .pick__content-book._3 {\n    .step-1 {\n      display: none;\n    }\n  \n    .step-2 {\n      display: none;\n    }\n\n    .ref-link-task-next-btn {\n      color: #fff;\n      background-color: $y-body-3;\n      border-radius: rem(30px);\n\n      @include mobile {\n        width: rem(106px);\n      }\n    }\n  }\n\n\n  .ref-link__info-title {\n    margin-bottom: rem(8px);\n  }\n\n  .pick__content-book  {\n    height: rem(769px);\n\n    @include mobile {\n      height: rem(400px);\n    }\n  }\n\n  .book-authorized__step {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(48px);\n    width: rem(92px);\n    color: $y-dop-4-element;\n    background-color: $y-dop-1-bg;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: rem(24px);\n    margin-bottom: rem(8px);\n    padding: 0 rem(8px);\n\n    @include mobile  {\n      height: rem(48px);\n    }\n  }\n\n  .book-authorized__step-info {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      margin-bottom: 0;\n    }\n  }\n\n  &__bottom {\n    margin-top: auto;\n  }\n\n  &__progress {\n    margin-bottom: rem(12px);\n\n    svg {\n      max-width: 100%;\n\n    }\n\n\n    @include mobile {\n      width: rem(296px);\n      margin-bottom: rem(12px);\n      svg {\n        width: 100%;\n      }\n    }\n  }\n\n\n  .ref-link-task__next {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n\n  .ref-link-task-list {\n    display: flex;\n    align-items: center;\n  }\n\n  .ref-link-task-item {\n    width: rem(60px);\n    height: rem(60px);\n    border-radius: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: $y-dop-1-bg;\n    margin-right: rem(8px);\n\n    @include mobile {\n      width: rem(48px);\n      height: rem(48px);\n    }\n\n    svg {\n      max-width: rem(25px);\n      max-height: rem(25px);\n\n\n    @include mobile {\n      width: rem(18px);\n      height: rem(18px);\n    }\n    }\n\n  }\n\n  .ref-link-task-next-btn {\n    height: rem(60px);\n    background-color: $y-body-4;\n    color: $y-body-3;\n\n    @include mobile  {\n      height: rem(48px);\n    }\n  }\n.defaulf {\n  display: none;\n}\n\n.ref-link-task-download {\n  display: flex;\n  align-items: center;\n}\n\n.download-icon {\n  width: rem(60px);\n  height: rem(60px);\n  background-color: $y-dop-1-bg;\n  border-radius: rem(16px);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: rem(32px);\n\n  @include mobile {\n    width: rem(48px);\n    height: rem(48px);\n    margin-right: rem(28px);\n  }\n\n\n\n  svg {\n    max-width: rem(25px);\n    max-height: rem(25px);\n    width: 100%;\n\n\n  @include mobile {\n    width: rem(18px);\n    height: rem(18px);\n  }\n  }\n}\n.download-filename {\n  font-size: rem(12px);\n  line-height: rem(16px);\n  position: relative;\n\n  @include mobile {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    margin-bottom: 0;\n\n    @include mobile {\n      margin-right: rem(10px);\n    }\n  }\n\n  &::before {\n    content: '';\n    position: absolute;\n    width: rem(14px);\n    height: rem(14px);\n    background-image: url('../../img/file-icon.svg');\n    background-size: contain;\n    background-repeat: no-repeat;\n    left: rem(-22px);\n  }\n}\n\n.ref-link-task-input {\n  width: rem(357px);\n\n  &::placeholder {\n    width: 80%;\n    white-space: nowrap; \n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  @include tablet {\n    width: rem(160px);\n    height: rem(48px);\n  }\n}\n}",null,"// @include css-lock(65, 100, 768, 1200);\n@mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width}))) !important;\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h(65, 100, 630, 950);\n@mixin css-lock-h($min-size: 1, $max-size: 1.4, $min-height: 20, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$max-height} - #{$min-height}))) !important;\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-full(65, 100, 500, 768, 1920, 9600);\n@mixin css-lock-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-width: 20, $mid-width: 30, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-width: $mid-width + 'px') and (min-width: $min-width + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$mid-width} - #{$min-width}))) !important;\n  }\n\n  @media only screen and (max-width: $max-width + 'px') and (min-width: $mid-width + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vw - #{$mid-width}#{$unit}) / (#{$max-width} - #{$mid-width}))) !important;\n  }\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h-full(65, 100, 200, 630, 950, 1900);\n@mixin css-lock-h-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-height: 20, $mid-height: 30, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-height: $mid-height + 'px') and (min-height: $min-height + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$mid-height} - #{$min-height}))) !important;\n  }\n\n  @media only screen and (max-height: $max-height + 'px') and (min-height: $mid-height + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vh - #{$mid-height}#{$unit}) / (#{$max-height} - #{$mid-height}))) !important;\n  }\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n//ПРИМЕРЫ:\n//\n//Равномерный скейл по ширине (скейл вниз):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//\n//@include css-lock(#{$min-screen-width * 100 / $mid-screen-width}, 100, $min-screen-width, $mid-screen-width);\n//\n//\n//Равномерный скейл по ширине до максимального экрана (скейл вверх):\n//$mid-screen-width: 1920;\n//$max-screen-width: 2560;\n//\n//@include css-lock(100, #{100 * ($max-screen-width / $mid-screen-width)}, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный полный скейл по ширине (скейл в обе стороны):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//$max-screen-width: 9000;\n//\n//@include css-lock-full(#{$min-screen-width * 100 / $mid-screen-width}, 100, #{$max-screen-width * 100 / $mid-screen-width}, $min-screen-width, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный скейл по высоте (скейл вниз):\n//$min-screen-height: 768;\n//$mid-screen-height: 1920;\n//\n//@include tablet-min {\n//  @include css-lock-h(#{$min-screen-height * 100 / $mid-screen-height}, 100, $min-screen-height, $mid-screen-height);\n//}\n//\n//\n//Равномерный скейл по высоте до максимального экрана (скейл вверх):\n//$mid-screen-height: 1920;\n//$max-screen-height: 2560;\n//\n//@include css-lock-h(100, #{100 * ($max-screen-height / $mid-screen-height)}, $mid-screen-height, $max-screen-height);\n//\n//\n//Равномерный полный скейл по высоте (скейл в обе стороны):\n//$min-screen-height: 630;\n//$mid-screen-height: 950;\n//$max-screen-height: 2000;\n//\n//@include tablet-min {\n//  @include css-lock-h-full(#{$min-screen-height * 100 / $mid-screen-height}, 100, #{$max-screen-height * 100 / $mid-screen-height}, $min-screen-height, $mid-screen-height, $max-screen-height);\n//}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/index.scss","webpack://./src/style/_settings/_fonts.scss","webpack://./src/style/_style.scss","webpack://./src/style/_var.scss","webpack://./src/style/_parts/404.scss","webpack://./src/style/_parts/authorized.scss","webpack://./src/style/_parts/balance.scss","webpack://./src/style/_parts/book-authorized.scss","webpack://./src/style/_parts/book.scss","webpack://./src/style/_parts/booked-header.scss","webpack://./src/style/_parts/booked-home.scss","webpack://./src/style/_parts/cabinet.scss","webpack://./src/style/_parts/choose.scss","webpack://./src/style/_parts/event.scss","webpack://./src/style/_parts/footer.scss","webpack://./src/style/_parts/header.scss","webpack://./src/style/_parts/login.scss","webpack://./src/style/_parts/notifications.scss","webpack://./src/style/_parts/pick.scss","webpack://./src/style/_parts/popup.scss","webpack://./src/style/_parts/ref-link.scss","webpack://./src/style/_parts/select.scss","webpack://./src/style/_parts/withdraw.scss","webpack://./<no source>","webpack://./src/style/scale/scale.scss"],"names":[],"mappings":"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","sourcesContent":["@import '~normalize.css';\n@import 'style/libs/*';\n@import 'air-datepicker/air-datepicker.css';\n@import '../node_modules/swiper/swiper-bundle.css';\n@import '../node_modules/swiper/modules/pagination/pagination.min.css';\n@import '../node_modules/swiper/modules/autoplay/autoplay.min.css';\n@import 'style/_settings/*.scss';\n@import 'style/_var';\n@import 'style/_style';\n@import 'style/_parts/*.scss'; \n@import 'style/_blocks/*.scss'; \n\n\n\n","@font-face {\n  font-family: 'Gilroy-Regular';\n  src: \n    url('../../fonts/Gilroy-Regular.woff') format('woff');\n  font-weight: normal;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Gilroy-Medium';\n  src: url('../../fonts/Gilroy-Medium.woff') format('woff');\n  font-weight: 500;\n  font-style: normal;\n  font-display: swap;\n}\n\n\n","@use 'sass:math';\n@import 'scale/scale.scss'; \n@import 'scale/settings.scss'; \n@import 'scale/breakpoints.scss'; \n\n$root-font-size: 100;\n/* $wide-desktop-width: 1920px; */\n$low-desktop-width: 900px;\n$desktop-width: 1920px;\n$tablet-width: 768px;\n$mobile-width: 360px;\n\nhtml {\n  --root-font-size: #{$root-font-size}px;\n  font-size: #{$root-font-size}px;\n\n  @include low-desktop {\n    $min-screen-width: 500;\n    $mid-screen-width: 1915;\n\n    @include css-lock(#{$min-screen-width * calc($root-font-size / $mid-screen-width)}, $root-font-size, $min-screen-width, $mid-screen-width);\n  }\n\n\n  @include tablet {\n    $mid-screen-width: 768;\n    $max-screen-width: 1023;\n\n    @include css-lock(\n      $root-font-size, #{$root-font-size * calc($max-screen-width / $mid-screen-width)},\n      $mid-screen-width,\n      $max-screen-width\n    );\n  }\n\n  @include mobile {\n    $min-screen-width: 300;\n    $mid-screen-width: 360;\n    $max-screen-width: 760;\n\n    @include css-lock-full(#{calc($min-screen-width * $root-font-size / $mid-screen-width)}, $root-font-size, #{calc($max-screen-width * $root-font-size / $mid-screen-width)}, $min-screen-width, $mid-screen-width, $max-screen-width);\n  }\n}\n\nmain {\n  max-width: rem(1920px);\n  margin-right: auto;\n  margin-left: auto;\n}\n\nmain, header, footer {\n  /* overflow: hidden; */\n}\n\nsvg {\n  display: inline-block;\n/*   width: 100%;\n  height: 100%; */\n}\n\na {\n  display: inline-block;\n  text-decoration: none;\n  color: inherit;\n}\n\nbody {\n  font-family: $y-font-regular;\n  background: $y-bg-gradient-1;\n  font-size: rem(20px);\n  line-height: 130%;\n  // color:  #1B1F28;\n  height: 100%;\n  max-width: rem(1920px);\n  margin: 0 auto;\n\n \n\n  &.active {\n   \n\n    main {\n      position: relative;\n   \n\n      &::after {\n        content: '';\n        position: absolute;\n        background: rgba(1, 5, 13, 0.7);\n        backdrop-filter: blur(rem(7px));\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 1;\n      }\n    }\n\n  }\n}\n\n.main-wrap {\n  height: 100%;\n  padding: 0 rem(48px);\n\n  @include tablet {\n    padding: 0 rem(24px);\n  }\n\n  @include mobile {\n    padding: 0 rem(16px);\n  }\n}\n\n// отличные от проекта настройки\n.container {\n  max-width: rem(1826px);\n  margin: 0 auto;\n  // padding: 0 rem(48px);\n\n}\n\n.h1 {\n  font-family: $y-font-medium;\n  font-weight: 700;\n  font-size: rem(72px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  margin-bottom: rem(34px);\n  max-width: rem(960px);\n  color: #fff;\n\n  @include mobile {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    font-weight: 400;\n    margin-bottom: rem(10px);\n    color: #1B1F28;\n  }\n}\n\n.h2 {\n  font-family: $y-font-regular;\n  font-size: rem(66px);\n  line-height: rem(72px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(28px);\n    line-height: rem(34px);\n  }\n}\n\n.h3 {\n  font-family: $y-font-regular;\n  font-size: rem(40px);\n  line-height: rem(46px);\n\n  @include mobile  {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(4px);\n  }\n}\n\n.h4 {\n  font-family: $y-font-regular;\n  font-size: rem(48px);\n  line-height: 120%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(22px);\n  }\n}\n\n.h5 {\n  font-family: $y-font-regular;\n  font-size: rem(46px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n\n  @include mobile {\n    font-size: rem(24px);\n  }\n}\n\n.h6 {\n  font-family: $y-font-regular;\n  font-size: rem(42px);\n  line-height: 110%;\n  letter-spacing: -0.02em;\n  color: #1B1F28;\n  max-width: rem(600px);\n\n  @include mobile {\n    font-size: rem(22px);\n    max-width: rem(340px);\n  }\n}\n\n.middle {\n  margin-right: auto;\n  margin-left: auto;\n}\n\n\n.btn {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: $y-dop-1-bg;\n  border-radius: rem(24px);\n  color: $y-body-1;\n  height: rem(48px);\n  font-size: rem(16px);\n  line-height: rem(22px);\n  font-family: $y-font-medium;\n  width: rem(192px);\n  transition: all 0.3s ease-in;\n\n  svg {\n    path {\n      transition: all 0.3s ease-in;\n      fill: #B5BBDB;\n    }\n  }\n\n  @include mobile {\n    width: rem(158px);\n    height: rem(36px);\n    font-size: rem(14px);\n    line-height: rem(20px);\n  }\n\n\n  &:hover {\n    cursor: pointer;\n    background: $y-body-3;\n    color:  #fff;\n    transition: all 0.3s ease-in;\n\n    svg {\n      path {\n        transition: all 0.3s ease-in;\n        fill: #fff;\n      }\n    }\n  }\n}\n\n\n.input {\n  border: none;\n  outline: 1px solid $y-dop-2-bg;\n  height: rem(60px);\n  font-family: $y-font-regular;\n  font-size: rem(20px);\n  line-height: rem(29px);\n  border-radius: rem(30px);\n  padding-left: rem(15px);\n  vertical-align: middle;\n\n  &::placeholder {\n    font-family: $y-font-regular;\n    color: #81899B;\n    font-size: rem(16px);\n    line-height: rem(22px)\n  }\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(18px);\n  }\n\n\n}\n\n.input-small {\n  width: rem(164px);\n}\n\n.txt-light {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n}\n\n.js-tel {\n  color: #81899B;\n}\n\n.input-wrap {\n  position: relative;\n\n  &.error {\n    .input-text {\n      display: block;\n    }\n\n    .input {\n      outline: 1px solid $y-special-1;\n    }\n  }\n\n  &.confirm {\n    .input-confirm  {\n      display: block;\n    }\n  }\n}\n\n.input-text {\n  position: absolute;\n  left: rem(24px);\n  top: rem(-10px);\n  color: $y-special-1;\n  font-size: rem(12px);\n  line-height: rem(14px);\n  background-color: #fff;\n  padding: rem(2px);\n  display: none;\n\n  @include mobile {\n    font-size: rem(8px);\n    line-height: rem(12px);\n  }\n}\n\n.input-confirm {\n  position: absolute;\n  width: rem(22px);\n  height: rem(22px);\n  right: rem(39px);\n  top: 50%;\n  transform: translateY(-50%);\n  background-image: url('../img/confirm-icon.svg');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n  display: none;\n\n  @include mobile {\n    width: rem(17px);\n    height: rem(17px);\n    right: rem(19px);\n  }\n}\n\n\n.tooltip {\n  display: block;\n  background-color: #fff;\n /*  width: rem(216px);\n  height: rem(114px); */\n  padding: rem(24px);\n  border-radius: rem(24px);\n  position: absolute;\n  top: rem(-192px);\n  left: rem(-50px);\n  z-index: 5;\n\n  display: none;\n\n\n  @include tablet {\n    top: initial;\n    bottom: rem(-162px);\n  }\n\n  @include mobile {\n    padding: rem(16px);\n    bottom: rem(-110px);\n    left: rem(-20px);\n  }\n\n  &::after {\n    content: '';\n    position: absolute;\n    bottom: rem(-20px);\n    background-image: url('../img/before.svg');\n    left: rem(48px);\n    width: rem(30px);\n    height: rem(24px);\n    background-repeat: no-repeat;\n    background-size: contain;\n\n\n  @include tablet {\n    top: rem(-20px);\n    transform: rotate(180deg);\n    left: rem(58px);\n  }\n\n  @include mobile {\n    left: rem(18px);\n  }\n  }\n\n  &__title {\n    font-size: rem(20px);\n    line-height: rem(26px);\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      font-size: rem(16px);\n      line-height: rem(22px);\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__btn {\n    color: #fff;\n    background-color: $y-body-3;\n  }\n\n  &._active {\n    display: block;\n  }\n}\n\n.page-list {\n  padding: rem(50px);\n  list-style-type: decimal ;\n}\n.page-title {\n  color: teal;\n  font-family: $y-font-medium;\n  font-weight: 700;\n  margin-bottom: rem(15px);\n}\n\n\n","$y-text: #1B2E3F;\n\n$y-font-regular:  'Gilroy-Regular';\n$y-font-medium:  'Gilroy-Medium';\n\n$y-bg-gradient-1: linear-gradient(180deg, #F6F8FC 0%, #FAFAFA 100%);\n$y-dop-1-bg: #F6F8FC;\n$y-dop-2-bg: #F1F3FB;\n$y-dop-3: #DDE0F0;\n$y-dop-4-element: #B5BBDB;\n$y-body-1: #1B2E3F;\n$y-body-2: #fff;\n$y-body-3: #7EA373;\n$y-body-4: #eaf0e9;\n$y-special-1: #DF536C;\n\n\n\n$y-border-radius: 24px;\n\n\n\n\n\n\n","$b: '.error';\n\n#{$b} {\n  &__container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: rem(120px);\n\n    @include tablet {\n      padding: rem(120px) rem(45px);\n    }\n\n    @include mobile {\n      padding: rem(80px) rem(16px);\n    }\n  }\n\n  &__title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n    }\n\n    @include mobile {\n      font-size: rem(28px);\n      line-height: rem(34px);\n    }\n  }\n\n  &__subtitle {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    max-width: rem(600px);\n    margin-bottom: rem(24px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      max-width: rem(328px);\n      margin-bottom: rem(16px);\n    }\n  }\n\n  &__btn {\n    background-color: $y-body-3;\n    color: #fff;\n    margin-bottom: rem(60px);\n\n    @include mobile {\n      margin-bottom: rem(48px);\n    }\n  }\n\n  &__img {\n    width: rem(1013px);\n    height: rem(326px);\n\n    @include tablet {\n      width: rem(678px);\n      height: rem(218px);\n    }\n\n    @include mobile {\n      width: rem(328px);\n      height: rem(106px);\n    }\n  }\n}","$b: '.authorized';\n\n#{$b} {\n  display: flex;\n  @include tablet {\n    flex-direction: column;\n  }\n\n  &__aside {\n    width: rem(240px);\n    padding: rem(24px);\n    background-color: #fff;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n\n    @include tablet {\n      background-image: url('../../img/bg-aside.png');\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat;\n      order: 2;\n      width: calc(100% - rem(48px));\n      background-color:#f7f8fc;\n      margin-top: rem(120px);\n    }\n\n    @include tablet {\n      padding: rem(8px) rem(18px);\n       width: calc(100% - rem(36px));\n    }\n  }\n\n  &__main {\n    padding: 0 rem(48px);\n/*     width: calc(100% - rem(96px)); */\n\n    @include tablet {\n      padding: 0 rem(24px);\n      width: calc(100% - rem(48px));\n    }\n\n    @include mobile {\n       padding: 0 rem(16px);\n       width: calc(100% - rem(32px));\n    }\n  }\n\n  .pick__content-img {\n    width: 50%;\n  }\n}\n\n.aside {\n  position: relative;\n\n  &__logo {\n    margin-bottom: rem(28px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__list {\n    padding: rem(24px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(24px);\n    display: flex;\n    flex-direction: column;\n    width: calc(100% - rem(48px));\n\n    @include tablet {\n      flex-direction: row;\n      padding: 0;\n      justify-content: space-between;\n      background-color:transparent;\n    }\n\n    @include mobile {\n      padding: 0;\n      width: 100%;\n    }\n  }\n\n  &__item-wrap-left,\n  &__item-wrap-right {\n    display: flex;\n    flex-direction: column;\n\n    @include tablet {\n      flex-direction: row;\n      justify-content: space-between;\n\n      .aside__item  {\n        &:first-child {\n          margin-right: rem(70px);\n\n             @include mobile {\n              margin-right: rem(20px);\n            }\n        }\n      }\n    }\n\n \n  }\n\n  &__item-wrap-right {\n    .aside__item {\n      margin-bottom: 0;\n      &:last-child {\n        margin-bottom: 0;\n      }\n    }\n\n  }\n\n  &__item {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    margin-bottom: rem(24px);\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      flex-direction: column;\n      margin-bottom: 0;\n    }\n\n    @include mobile {\n        font-size: rem(10px);\n    line-height: rem(14px);\n    }\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n\n      @include tablet {\n        margin-bottom: rem(5px);\n        margin-right:0;\n      }\n\n      @include mobile {\n        width: rem(22px);\n        height: rem(22px);\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    &.profile {\n      display: none;\n\n      @include tablet {\n        display: flex;\n      }\n    }\n\n\n    &.active {\n      color: $y-body-3;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n\n  &__logout {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    display: flex;\n    align-items: center;\n    background-color: $y-dop-1-bg;\n    padding: rem(12px) 0;\n    border-radius: rem(24px);\n    width: calc(100% - rem(48px));\n    justify-content: center;\n    position: absolute;\n    bottom: rem(24px);\n\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__btn-tablet-wrap {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    top: rem(-15px); \n    flex-direction: column;\n    align-items: center;\n    display: none;\n\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  &__btn-tablet {\n    width: rem(48px);\n    height: rem(48px);\n    background-image: url('../../img/book-close-btn.svg');\n    background-repeat: no-repeat;\n    background-size: contain;\n    margin-bottom: rem(15px);\n\n    @include tablet {\n      width: rem(40px);\n      height: rem(40px);\n      margin-bottom: rem(10px);\n/*       background-position-y: rem(-5px) ; */\n    }\n\n     @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n        margin-bottom: rem(13px);\n     }\n  }\n\n  &__btn-tablet-text {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    .pc {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    .mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n\n    @include mobile {\n      font-size: rem(10px);\n      line-height: rem(14px);\n    }\n  }\n}\n\n.main {\n  .header__notifications {\n    display: flex;\n  }\n\n  .header__container {\n    padding: rem(16px) rem(24px);\n    width: calc(100% - rem(48px));\n\n    @include mobile {\n      padding: rem(6px) rem(12px);\n      width: calc(100% - rem(24px));\n    }\n  }\n\n  .header__notification {\n    position: relative;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(24px);\n      height: rem(24px);\n    }\n\n    &.messages {\n      margin-right: rem(8px);\n \n    }\n\n    .messages-txt {\n      position: absolute;\n      font-size: rem(10px);\n      line-height: rem(15px);\n      color: #fff;\n      background-color: $y-special-1;\n      border: 2px solid $y-dop-1-bg;\n      border-radius: 100%;\n      width: rem(20px);\n      height: rem(20px);\n      text-align: center;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      right: 0;\n      bottom: rem(5px);\n\n      @include mobile {\n         font-size: rem(8px);\n        line-height: rem(8px);\n         width: rem(15px);\n      height: rem(15px);\n      }\n    }\n\n    &:hover {\n      svg {\n        path {\n          fill: $y-body-3;\n        }\n      }\n    }\n  }\n}\n\n.footer {\n  @include tablet {\n    display: none;\n  }\n}","$b: '.balance';\n\n#{$b} {\n  .ref-link__info  {\n    height: rem(769px);\n    position: relative;\n\n    @include mobile {\n      height: rem(460px);\n    }\n  }\n  .ref-link__top {\n    justify-content: flex-start;\n  }\n\n  .ref-link__history {\n    &:first-child {\n      margin-right: rem(8px);\n    }\n\n    @include mobile {\n      display: flex;\n      padding: 0 rem(10px);\n      font-size: rem(12px);\n      line-height: rem(16px);\n\n\n      svg {\n        display: none;\n      }\n    }\n  }\n\n  .choose__top-info {\n    a {\n      color: $y-body-3;\n    }\n  }\n  .balance-top-info {\n    margin-bottom: rem(8px);\n  }\n\n  .ref-link__info.ref {\n    padding-bottom: 0;\n    border: none;\n    margin-bottom: 0;\n  }\n\n  .balance-input-wrap {\n    position: relative;\n    padding: rem(16px);\n    border-radius: rem(24px);\n    background-color: $y-dop-1-bg;\n    width: 100%;\n    &::before {\n      content: '';\n      background-image: url('../../img/card-icon.svg');\n      width: rem(25px);\n      height: rem(18px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      position: absolute;\n      left: rem(16px);\n      top: 50%;\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(12px);\n      }\n    }\n  }\n\n  .balance-input-lable {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    display: block;\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n  .balance-input {\n    height: rem(30px);\n    background-color: transparent;\n    outline: none;\n      &::placeholder {\n        padding-left: rem(20px);\n        font-size: rem(20px);\n        line-height: rem(26px);\n        color: $y-body-1;\n\n        @include mobile {\n          padding-left: rem(12px);\n          font-size: rem(12px);\n          line-height: rem(16px);\n        }\n      }\n  }\n\n  .ref-link__info-btn {\n    position: absolute;\n    right: rem(16px);\n    background-color: #fff;\n    top: 50%;\n    transform: translateY(-50%);\n\n    span {\n      display: inline-block;\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      width: rem(106px);\n    } \n  }\n\n  .ref-link__info-field-wrap {\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n  }\n\n  &.balance-2 {\n    .ref-link__info-field-wrap {\n      display: flex;\n      flex-direction: column;\n    }\n\n    .balance-input-wrap {\n      margin-bottom: rem(4px);\n\n      @include mobile {\n        width: calc(100% - rem(24px));\n        padding: rem(12px);\n      }\n\n    }\n\n    .balance-out {\n      display: flex;\n      justify-content: space-between;\n      padding: rem(16px);\n      border-radius: rem(24px);\n      background-color: $y-dop-1-bg;\n      width: 100%;\n      margin-bottom: rem(24px);\n\n      @include mobile {\n        width: calc(100% - rem(24px));\n        padding: rem(12px);\n        margin-bottom: rem(12px);\n      }\n    }\n\n    .balance-out-card {\n      width: rem(49px);\n      height: rem(22px);\n      background-size: contain;\n      background-repeat: no-repeat;\n      display: inline-block;\n      margin-top: rem(8px);\n      margin-right: rem(8px);\n\n      background-position: center;\n\n      @include mobile {\n        width: rem(28px);\n        height: rem(12px);\n      }\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n\n      &.mc {\n        background-image: url('../../img/mcard.svg');\n      }\n    }\n  }\n\n  .balance-out-min {\n    margin-bottom: rem(16px);\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  .ref-link-task__next {\n    display: flex;\n    justify-content: space-between;\n    width: 100%;\n  }\n\n  .ref-link-task-input {\n    width: rem(226px);\n\n    @include mobile {\n      width: rem(166px);\n      height: rem(48px);\n    }\n  }\n\n  .ref-link-task-next-btn {\n    height: rem(60px);\n    background-color: $y-body-3;\n    color: #fff;\n    \n    @include mobile {\n      width: rem(106px);\n      height: rem(48px);\n    }\n  }\n\n\n\n  .ref-link__info {\n    @include mobile {\n      height: rem(600px);\n      \n    }\n  }\n}","\n$b: '.book-authorized';\n\n#{$b} {\n\n  .header__container {\n    justify-content: space-between;\n  }\n\n  .header__logo {\n    display: none;\n\n    @include tablet {\n      display: block;\n    }\n  }\n\n  .header__booked-home {\n    display: none;\n  }\n\n  .header__waiter {\n    display: none;\n  }\n\n  .header__book {\n    width: rem(192px);\n    background-color: $y-dop-1-bg;\n    color: $y-dop-4-element;\n\n    &.active {\n      background: $y-body-3;\n      color: #fff;\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  //\n\n  .pick__content {\n    @include tablet {\n      display: flex;\n      flex-direction: column;\n      background-color: transparent;\n    }\n  }\n\n  .book-authorized__steps {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      align-items: center;\n      margin-bottom: rem(27px);\n    }\n\n    @include mobile {\n      margin-bottom: rem(13px);\n    }\n\n    &.step-2 {\n      justify-content: space-between;\n    }\n  }\n\n  .book-authorized__step {\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(18px);\n      background-color: #fff;\n      color: $y-dop-4-element;\n      padding: rem(8px) rem(12px);\n      border-radius: rem(24px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      margin-right: rem(16px);\n    }\n  }\n\n  .book-authorized__title {\n    margin-bottom: 0;\n  }\n  .pick__content-img {\n    background-image: none;\n    position: relative;\n\n    @include tablet {\n      display: block;\n      width: 100%;\n      margin-right: 0;\n\n      &.hidden {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: 100%;\n      overflow: visible;\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    \n\n      &.pc {\n        @include mobile {\n          display: none;\n        }\n      }\n\n      &.mob {\n        display: none;\n\n        @include mobile {\n          display: block;\n          object-fit: contain;\n        }\n      }\n    }\n\n\n\n  }\n\n  .pick__content-book {\n    @include tablet {\n      display: none;\n\n      &.next {\n        display: block;\n      }\n    }\n  }\n\n  .choose__map-btn-wrap {\n    width: rem(713px);\n    height: rem(315px);\n    top: rem(190px);\n\n    @include tablet {\n      top: rem(270px);\n    }\n\n    @include mobile {\n      top: rem(50px);\n      width: rem(350px);\n    }\n  }\n\n  .choose__map-btn {\n\n    .tooltip {\n      top: rem(-162px);\n\n      @include tablet {\n        top: initial;\n      }\n    }\n\n    &._1 {\n      top: rem(60px);\n      left: rem(28px);\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n    }\n\n    &._2 {\n      top: rem(112px);\n      left: rem(183px);\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(100px);\n      }\n    }\n\n    &._3 {\n      top: rem(220px);\n      left: rem(353px);\n\n      @include mobile {\n        top: rem(123px);\n        left: rem(183px);\n      }\n    }\n\n    &._4 {\n      top: rem(250px);\n      left: rem(495px);\n\n      @include mobile {\n        top: rem(150px);\n        left: rem(235px);\n      }\n\n      .tooltip {\n  \n        @include mobile {\n          bottom: rem(-70px);\n        }\n      }\n    }\n\n    &._5 {\n      top: rem(120px);\n      left: rem(620px);\n\n      @include mobile {\n        top: rem(90px);\n        left: rem(300px);\n      }\n\n      .tooltip {\n        left: rem(-140px);\n\n        &::after {\n          left: rem(148px);\n        }\n      }\n    }\n  }\n\n  .choose__top-info {\n    position: absolute;\n    bottom: rem(88px);\n    width: rem(560px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  .book-authorized__btn-next {\n    display: none;\n\n    @include tablet {\n      display: flex;\n      position: absolute;\n      bottom: rem(48px);\n      background-color: $y-body-3;\n      color: #fff;\n      width: calc(100% - rem(48px));\n      left: 50%;\n      transform: translateX(-50%);\n      height: rem(60px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      width: calc(100% - rem(32px));\n      bottom: rem(-60px);\n    }\n  }\n\n  .book-authorized__back {\n\n    @include tablet {\n      width: rem(48px);\n      height: 48px;\n      background-image: url('../../img/back-icon.svg');\n      background-size: contain;\n      background-position: center;\n      background-repeat: no-repeat;\n    }\n\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n  }\n\n  .pick__date-wrap {\n    &::before {\n      @include tablet {\n        top: rem(155px);\n      }\n\n      @include mobile {\n        top: rem(98px);\n      }\n    }\n  }\n}","$b: '.book';\n\n#{$b} {\n  .pick__confirm-book-btns {\n    display: flex;\n    justify-content: space-between;\n  }\n\n  .pick__confirm-btn {\n    display: none;\n  }\n  .book-btn {\n    padding: 0 rem(18px);\n    width: 100%;\n    min-height: rem(60px);\n    color: $y-body-3;\n\n    &.reset {\n      background-color: #fff;\n      margin-right: rem(8px);\n    }\n\n    &.send {\n      background-color: $y-body-4;\n    }\n    @include mobile {\n      min-height: rem(48px);\n    }\n  }\n\n  .pick__confirm-input {\n    @include mobile {\n      width: rem(140px);\n    }\n  }\n}","\n$b: '.booked-header';\n\n#{$b} {\n.header__right {\n  display: flex;\n}\n.header__waiter {\n  background-color: $y-body-3;\n  color: #fff;\n  margin-right: rem(16px);\n\n  @include tablet {\n    display: none;\n  }\n}\n.header__book{\n  display: none;\n}\n\n.header__logo {\n  display: none;\n\n  @include tablet {\n    display: block;\n  }\n}\n\n.header__booked-home {\n  display: flex;\n\n  @include tablet {\n    display: none;\n  }\n\n  @include mobile {\n    img {\n      width: rem(44px);\n      height: rem(24px);\n      object-fit: contain;\n    }\n  }\n}\n\n.header__booked-home-inner {\n  margin-left: rem(12px);\n\n  .number {\n    @include tablet {\n      font-size: rem(14px);\n      line-height: rem(20px);\n    }\n  }\n\n  .date {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    color: $y-dop-4-element;\n  }\n}\n\n.header.add-tablet {\n  display: none;\n\n  @include tablet {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 rem(24px);\n    height: rem(90px);\n    border-radius: rem(24px);\n    margin-bottom: rem(16px);\n  }\n\n  .header__booked-home {\n    @include tablet {\n      display: flex;\n    }\n  }\n\n  .rest-time {\n    display: flex;\n    align-items: flex-start;\n\n    @include mobile {\n      align-items: center;\n    }\n  \n  }\n\n  .rest-time-img {\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    background-image: url('../../img/clock.svg');\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: rem(22px) rem(22px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(22px);\n      height: rem(22px);\n      background-color: transparent;\n      margin-right: rem(6px);\n    }\n  }\n\n  .rest-time-info {\n    display: flex;\n    flex-direction: column;\n\n    .txt {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      color: $y-dop-4-element;\n    }\n\n    .time {\n      font-size: rem(20px);\n      line-height: rem(26px);\n\n      @include mobile {\n        font-size: rem(14px);\n        line-height: rem(20px);\n      }\n    }\n  }\n}\n}","$b: '.booked-home';\n\n#{$b} {\n  .pick {\n    border-radius: rem(24px);\n    padding: rem(48px);\n    background-color: #fff;\n\n    @include tablet {\n      padding: rem(24px);\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  .pick__content {\n    border-radius: none;\n    padding: 0;\n  }\n\n  .swiper {\n    width: rem(1452px) !important;\n\n    @include tablet {\n      width: rem(672px) !important;\n    }\n\n    @include mobile {\n      width: rem(296px) !important;\n    }\n  }\n\n\n\n  .swiper-slide {\n    // width: rem(1452px) !important;\n  }\n\n  .swiper-wrapper {\n    //overflow: hidden;\n  }\n  .pick__content-img {\n    width: rem(744px);\n\n    img {\n      width: 100%;\n      height: rem(477px);\n      object-fit: contain;\n    }\n  }\n  .pick__content-book {\n    padding: 0;\n    background: none;\n    position: relative;\n\n    .pick__content-img {\n      display: none;\n\n      @include tablet {\n        display: flex;\n        width: 100%;\n        height: rem(288px);\n        margin-bottom: rem(24px);\n\n        img {\n          height: rem(240px);\n        }\n      }\n\n      @include mobile {\n        height: rem(127px);\n        margin-bottom: rem(16px);\n\n        img {\n          height: rem(103px);\n        }\n      }\n    }\n  }\n\n  .tag-list {\n    display: flex;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-bottom: rem(48px);\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  .tag-item {\n    width: rem(227px);\n    height: rem(48px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color:$y-dop-1-bg;\n    border-radius: rem(24px);\n    margin-right: rem(8px);\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n    @include tablet {\n      margin-bottom: rem(16px);\n    }\n  }\n\n  .book-authorized__step {\n    margin-bottom: rem(12px);\n\n    &.info {\n      @include tablet {\n        margin-bottom: rem(126px);\n      }\n\n      @include mobile {\n        font-size: rem(14px);\n        line-height: rem(20px);\n        margin-bottom: rem(60px);\n      }\n    }\n\n    &.h3 {\n      @include mobile {\n        font-size: rem(20px);\n        line-height: rem(26px);\n      }\n    }\n  }\n\n  .swiper-nav {\n    position: absolute;\n    bottom: 0;\n    width: rem(660px);\n    height: rem(48px);\n    right: 0;\n\n    @include mobile {\n      width: 100%;\n    }\n  }\n\n  .swiper-button-next,\n  .swiper-button-prev {\n    top: initial;\n    bottom:0;\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-body-3;\n    border-radius: 100%;\n\n    &::after {\n      content: '';\n    }\n\n    @include mobile {\n      width: rem(36px);\n      height: rem(36px);\n    }\n\n    svg {\n      width: rem(12px);\n      height: rem(12px);\n\n      @include mobile {\n        width: rem(8px);\n        height: rem(8px);\n      }\n    }\n  }\n\n  .swiper-button-next {\n    right: 0;\n  }\n\n  .swiper-button-prev {\n    right: initial;\n    left: 0;\n    svg {\n      transform: rotate(180deg);\n    }\n  }\n\n  .swiper-button-disabled {\n    background-color: $y-dop-2-bg;\n\n    svg {\n      path {\n        fill: $y-dop-4-element;\n      }\n    }\n  }\n\n  .swiper-pagination {\n    width: 50%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n  }\n\n  .swiper-pagination-bullet {\n    width: rem(60px);\n    height: rem(8px);\n    border-radius: rem(4px);\n    background-color: $y-dop-4-element;\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(6px);\n    }\n    \n  }\n\n  .swiper-pagination-bullet-active {\n    background-color: $y-dop-4-element;\n  }\n}","$b: '.cabinet';\n\n#{$b} {\n\n.header__person {\n  display: flex;\n  align-items: center;\n\n  img {\n    width: rem(48px);\n    height: rem(48px);\n    object-fit: contain;\n    border-radius: 100%;\n    margin-right: rem(12px);\n  }\n\n  @include tablet {\n    display: none;\n  }\n}\n\n.header__booked-home {\n  width: rem(89px);\n  height: rem(46px);\n  align-self: center;\n  align-items: center;\n    img {\n      flex-shrink: 0;\n      width: 100%;\n      object-fit: contain;\n    }\n\n  @include tablet {\n    display: flex;\n  }\n}\n\n.header__booked-home-inner {\n  min-width: rem(150px);\n\n  .date {\n    font-size: rem(16px);\n    line-height: rem(20px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n}\n.withdraw__item-left-wrap {\n  display: flex;\n}\n\n.withdraw__item-left {\n  margin-right: rem(24px);\n\n  .withdraw__item-left-icon {\n    @include mobile {\n      margin-right: rem(8px);\n    }\n  }\n\n  &:last-child {\n    margin-right: 0;\n  }\n\n\n\n  &._name {\n    @include tablet {\n      display: none;\n    }\n    .withdraw__item-left-icon {\n      background-image: url('../../img/person-icon.svg');\n\n \n    }\n  }\n\n  &._budget {\n    .withdraw__item-left-icon {\n      background-image: url('../../img/budget.svg');\n    }\n  }\n\n  &._card {\n\n    @include tablet {\n      display: none;\n    }\n    .withdraw__item-left-icon {\n      background-image: url('../../img/icon-card.svg');\n\n    }\n  }\n\n  &._link{\n\n    .withdraw__item-left-icon {\n      background-image: url('../../img/insta-bg.svg');\n\n    }\n\n  }\n\n  &._link {\n    .link {\n      color: $y-body-3;\n    }\n  }\n}\n\n.cabinet-chat-wrap {\n  display: flex;\n}\n\n.cabinet-chat {\n  padding: rem(24px);\n  background-color: #fff;\n  border-radius: rem(16px);\n  display: flex;\n  justify-content: space-between;\n  width: calc(rem(610px) - rem(24px) * 2);\n\n  &:first-child {\n    margin-right: rem(12px);\n  }\n\n  @include tablet {\n    width: calc(rem(182px) - rem(24px) * 2);\n  }\n\n  @include mobile {\n    display: none;\n  }\n}\n.cabinet-chat-info-btn {\n  background-color: $y-body-4;\n  color: $y-body-3;\n  width: rem(192px);\n\n  @include tablet {\n    width: rem(48px);\n    height: rem(48px);\n    background-color: $y-dop-1-bg;\n    border-radius: rem(16px);\n    background-image: url('../../img/waiter-icon.svg');\n    background-size: rem(20px);\n    background-repeat: no-repeat;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-position: center;\n  }\n\n  @include mobile  {\n    background-color: #fff;\n    width: rem(36px);\n    height: rem(36px);\n    margin-right: rem(4px);\n  }\n\n\n}\n.cabinet-chat-mobile {\n  display: none;\n\n  @include mobile {\n    display: flex;\n  }\n}\n\n.cabinet-download-btn {\n  background-color: #fff;\n  position: relative;\n  color: $y-dop-4-element;\n  justify-content: flex-start;\n  padding-left: rem(35px);\n  width: calc(rem(192px) - rem(35px));\n  margin-right: rem(8px);\n\n\n  @include tablet {\n    display: none;\n  }\n\n  &::before {\n    content: '';\n    position: absolute;\n    width: rem(15px);\n    height: rem(15px);\n    left: rem(16px);\n    background-image: url('../../img/exel-icon.svg');\n    background-size: contain;\n  }\n\n  svg {\n    position: absolute;\n    right: rem(10px);\n    top: 50%;\n    transform: translateY(-50%);\n\n    width: rem(15px);\n    height: rem(15px);\n  }\n}\n\n.cabinet-chat-btn {\n  background-color: #fff;\n  color: $y-body-3;\n  width: rem(92px);\n\n\n  @include tablet {\n    display: none;\n  }\n}\n\n.cabinet-download-btn-round {\n  width: rem(48px);\n  height: rem(48px);\n  border-radius: 100%;\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: rem(22px);\n\n  @include mobile {\n    width: rem(36px);\n    height: rem(36px);\n    background-size: rem(15px);\n  }\n\n  &.accept {\n    background-color: #ECF0EA;\n    background-image: url('../../img/appr-icon.svg');\n  }\n\n  &.reject {\n    background-color: #F2EBEC;\n    background-image: url('../../img/cansel-icon.svg');\n    margin-right: rem(8px);\n  }\n}\n.withdraw__bottom {\n  margin-top: rem(24px);\n}\n\nspan {\n\n  &.pc {\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &.mob {\n    @include tablet {\n      display: block;\n    }\n  }\n}\n\n.ref-link__tab {\n  position: relative;\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(20px);\n  }\n\n  div {\n    font-size: rem(16px);\n    line-height: rem(12px);\n /*    width: rem(22px);\n    height: rem(22px); */\n    padding: rem(10px) rem(12px);\n    margin-left: rem(8px);\n    border-radius: rem(16px);\n    display: inline-block;\n    background-color: #fff;\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(9px);\n      padding: rem(6px) rem(8px);\n      margin-left: rem(4px);\n    }\n  }\n\n  &.active {\n    div {\n      background-color: $y-body-3;\n      color: #fff;\n    }\n  }\n}\n\n&.cabinet {\n  .select {\n    @include tablet {\n      display: flex;\n\n      .dropdown {\n        width: initial;\n      }\n\n      .dropdown__button {\n        width: rem(146px);\n        justify-content: flex-start;\n        padding-left: rem(12px);\n\n        &::after {\n          top: 50%;\n          right: rem(15px);\n          transform: translateY(-50%);\n          width: rem(8px);\n          height: rem(8px);\n          background: url(\"../../img/dropdown.svg\") 100% 100%;\n          background-repeat: no-repeat;\n        }\n\n        &_active{\n          &::after{\n            transform: translateY(-50%) rotate(-180deg);\n    \n            @include tablet {\n              transform: translateY(-50%) rotate(-180deg);\n            }\n          }\n        }\n      }\n\n      .dropdown__list {\n        left: initial;\n        right: initial;\n      }\n    }\n\n    @include mobile {\n      margin-right: rem(8px);\n      .dropdown__button {\n        width: rem(120px);\n        height: rem(48px);\n        background-color: #fff;\n        font-size: rem(14px);\n      }\n    }\n  }\n\n  .dropdown {\n    @include tablet {\n      width: initial;\n    }\n  }\n}\n\n&.cabinet {\n  .withdraw__top-wrap {\n    @include mobile {\n      right: rem(32px);\n    }\n  }\n}\n\n.cabinet-task-btn {\n  background-color: #fff;\n  padding:  0 rem(16px);\n  width: calc(rem(158px) - rem(32px));\n  justify-content: space-between;\n  color: $y-dop-4-element;\n\n  .amount {\n    color: $y-body-1;\n  }\n\n  @include tablet {\n    padding:  0 rem(6px);\n    width: calc(rem(91px) - rem(12px));\n  }\n\n  @include mobile {\n    padding:  0 rem(4px);\n    width: calc(rem(90px) - rem(8px));\n    margin-right: rem(4px);\n  }\n\n  .edit-btn {\n    @include tablet {\n      display: none;\n    }\n  }\n}\n\n&.cabinet-task {\n  .withdraw__item-left {\n    &._name {\n      @include tablet {\n        display: none;\n      }\n    }\n\n    &._money {\n      @include tablet {\n        display: none;\n      }\n    }\n  }\n\n  .withdraw__item-left-info {\n    @include mobile {\n      max-width: rem(55px);\n      overflow: hidden;\n    }\n  }\n}\n\n\n}","$b: '.choose';\n\n#{$b} {\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n  \n  &__top {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    margin-bottom: rem(24px);\n\n\n  @include tablet {\n    flex-direction: column;\n  }\n  }\n\n  &__map {\n    position: relative;\n    border-radius: rem(24px);\n  }\n\n  &__top-title {\n    font-size: rem(66px);\n    line-height: rem(72px);\n\n    @include tablet {\n      font-size: rem(56px);\n      line-height: rem(62px);\n      margin-bottom: rem(26px);\n    }\n  }\n\n  &__top-info {\n    background-color: #fff;\n    padding: rem(24px) rem(24px) rem(24px) rem(59px);\n    font-size: rem(20px);\n    line-height: rem(26px);\n    position: relative;\n    border-radius: rem(24px);\n    max-width: rem(662px);\n\n    @include tablet {\n      font-size: rem(16px);\n      line-height: rem(22px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding: rem(12px) rem(12px) rem(12px) rem(38px);\n    }\n\n    &::after {\n      content: '';\n      position: absolute;\n      background-image: url('../../img/warning-icon.svg');\n      background-repeat: repeat;\n      background-size: contain;\n      width: rem(24px);\n      height: rem(24px);\n      top: 50%;\n      transform: translateY(-50%);\n      left: rem(24px);\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        left: rem(12px);\n      }\n     \n    }\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(-20px);\n      left: rem(48px);\n      background-image: url('../../img/before.svg');\n      width: rem(30px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-size: contain;\n      transform: rotate(180deg);\n\n\n      @include mobile {\n        left: rem(24px);\n      }\n    }\n  }\n\n  &__map-bg {\n    width: 100%;\n    height: rem(625px);\n    object-fit: cover;\n    position: relative;\n    border-radius: rem(24px);\n\n    @include tablet {\n      height: rem(424px);\n    }\n\n    @include mobile {\n      height: rem(212px);\n    }\n\n    &._desk {\n      @include tablet {\n        display: none;\n      }\n    }\n\n    &._tablet {\n      display: none;\n\n      @include tablet {\n        display: block;\n      }\n\n      @include mobile {\n        display: none;\n      }\n    }\n\n    &._mob {\n      display: none;\n\n      @include mobile {\n        display: block;\n      }\n    }\n  }\n\n  &__map-btn-wrap {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translate(-50%, 0);\n    width: rem(1000px);\n    height: rem(500px);\n\n    @include tablet {\n      width: rem(710px);\n      height: rem(300px);\n    }\n\n    @include mobile {\n      width: rem(330px);\n      height: rem(145px);\n    }\n  }\n\n  &__map-btn {\n    width: rem(48px);\n    height: rem(48px);\n    position: absolute;\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n    }\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n\n    &._1 {\n      top: rem(152px);\n      left: rem(48px);\n\n      @include tablet {\n        top: rem(80px);\n        left: rem(38px);\n      }\n\n      @include mobile {\n        top: rem(50px);\n        left: rem(18px);\n      }\n\n      .tooltip {\n        top: rem(-152px);\n\n        @include tablet {\n          top: initial;\n          bottom: rem(-162px);\n        }\n\n        @include mobile {\n          bottom: rem(-122px);\n        }\n      }\n    }\n\n    &._2 {\n      top: rem(242px);\n      left: rem(283px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(198px);\n      }\n\n      @include mobile {\n        top: rem(80px);\n        left: rem(88px);\n      }\n    }\n\n    &._3 {\n      top: rem(340px);\n      left: rem(513px);\n\n      @include tablet {\n        top: rem(230px);\n        left: rem(360px);\n      }\n\n      @include mobile {\n        top: rem(110px);\n        left: rem(158px);\n      }\n    }\n\n    &._4 {\n      top: rem(420px);\n      left: rem(695px);\n\n      @include tablet {\n        top: rem(280px);\n        left: rem(480px);\n      }\n\n      @include mobile {\n        top: rem(140px);\n        left: rem(228px);\n      }\n    }\n\n    &._5 {\n      top: rem(285px);\n      left: rem(875px);\n\n      @include tablet {\n        top: rem(150px);\n        left: rem(595px);\n      }\n\n      @include mobile {\n        top: rem(70px);\n        left: rem(278px);\n      }\n\n      .tooltip {\n        @include tablet {\n          left: rem(-122px);\n        }\n\n        @include mobile {\n          &::after {\n            left: rem(120px);\n          }\n        }\n      }\n    }\n  }\n\n  &__container  {\n/*     padding: 0 48px; */\n    max-width: 1826px;\n  }\n\n\n\n}","$b: '.event';\n\n#{$b} {\n  &__container {\n    border-radius: rem(24px);\n    background-color: #fff;\n    display: flex;\n    padding: rem(24px);\n    color: $y-body-1;\n\n    @include tablet {\n     flex-direction: column;\n    }\n\n    @include mobile {\n      padding: rem(16px);\n    }\n  }\n\n  &__img {\n    background-image: url('../../img/bg-gradient.png');\n    background-color: $y-dop-1-bg;\n    width: 58%;\n    height: rem(432px);\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-right: rem(48px);\n    border-radius: rem(24px);\n    overflow: hidden;\n\n    @include tablet {\n      width: 100%;\n      margin-right: 0;\n      margin-bottom: rem(24px);\n      height: rem(288px);\n     }\n\n    @include mobile {\n      height: rem(127px);\n      margin-bottom: rem(16px);\n    }\n\n    img {\n      width: rem(702px);\n      height: rem(331px);\n      object-fit: contain;\n\n\n    @include tablet {\n      width: rem(540px);\n      height: rem(240px);\n     }\n\n     @include mobile {\n      width: rem(225px);\n      height: rem(105px);\n     }\n    }\n  }\n\n  &__info {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 41%;\n\n    @include tablet {\n      width: 100%;\n     }\n  }\n\n  &__info-title {\n    margin-bottom: rem(15px);\n    padding-top: rem(24px);\n\n    @include tablet {\n      padding-top: 0;\n      margin-bottom: 0;\n     }\n  }\n\n  &__info-txt {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    max-width: rem(696px);\n\n    @include tablet {\n      max-width: rem(620px);\n      margin-bottom: rem(52px);\n     }\n\n     @include mobile  {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-bottom: rem(4px);\n    }\n  }\n\n  &__info-date {\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    color: $y-dop-4-element;\n\n    @include mobile  {\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n  }\n\n}","$b: '.footer';\n\n#{$b} {\n  &__container {\n    padding: rem(25px) 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n\n    @include mobile  {\n      flex-direction: column;\n    }\n  }\n\n  &__left {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n\n    @include mobile {\n      margin-bottom: rem(8px);\n    }\n  }\n\n  &__link {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n    margin-right: rem(16px);\n    border-bottom: 1px solid $y-dop-4-element;\n\n    @include mobile {\n      font-size: rem(12px);\n    line-height: rem(16px);\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n  }\n\n  &__social-list {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n  }\n\n  &__social-item {\n    width: rem(30px);\n    height: rem(30px);\n    margin-right: rem(16px);\n\n    @include mobile {\n      width: rem(24px);\n      height: rem(24px);\n      margin-right: rem(8px);\n    }\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n\n    &:hover {\n      cursor: pointer;\n\n      svg {\n        circle {\n          fill: $y-body-3;\n        }\n        path {\n          fill: #fff;\n        }\n      }\n    }\n  }\n}","$b: '.header';\n\n#{$b} {\n  background-color: #fff;\n  border-bottom-left-radius: rem(24px);\n  border-bottom-right-radius: rem(24px);\n  margin-bottom: rem(48px);\n\n  @include mobile {\n    margin-bottom: rem(24px);\n  }\n\n\n  &__container {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(16px) rem(24px);\n    padding-bottom: rem(10px);\n  }\n\n  &__login {\n    display: flex;\n    align-items: center;\n  }\n\n  &__logo {\n    width: rem(98px);\n    height: rem(56px);\n\n    @include mobile {\n      width: rem(56px);\n      height: rem(36px);\n    }\n\n    img {\n      width: 100%;\n      height: 100%;\n    }\n  }\n\n  &__login-icon {\n    width: rem(18px);\n    height: rem(21px);\n    margin-right: rem(11px);\n\n    svg {\n      width: 100%;\n      height: 100%;\n    }\n\n    @include mobile {\n      width: rem(16px);\n      height: rem(16px);\n      margin-right: rem(8px);\n\n   \n    }\n  }\n}\n\n","$b: '.login';\n\n#{$b} {\n  .pick__content-img {\n    img {\n      width: rem(570px);\n      height: rem(504px);\n    }\n  }\n\n  .pick__content-book {\n    height: rem(673px);\n\n\n  }\n\n  .pick__confirm {\n    margin-bottom: 0;\n    padding-bottom: 0;\n    border-bottom: none;\n  }\n\n  .pick__confirm-btn {\n    color: #fff;\n    background-color: $y-body-3;\n\n    &::before {\n      background-image: url('../../img/sms-white.svg');\n    }\n  }\n\n  .pick__content-img {\n    width: 57%;\n  }\n\n  &-tel {\n    @include mobile {\n      height: rem(350px);\n    }\n  }\n\n  &-mail {\n\n    .pick__content-book {\n      @include mobile {\n        height: 100%;\n      }\n    }\n\n    .pick__confirm {\n      height: 100%;\n    }\n\n    .login-lable {\n        margin-bottom: rem(16px);\n      }\n    }\n\n    .login-wrap {\n      margin-bottom: rem(16px);\n      &:first-child {\n        border-bottom: 1px solid $y-dop-3;\n        padding-bottom: rem(24px);\n      }\n    }\n\n    .login-input-wrap {\n      position: relative;\n    }\n\n    .login-show-password {\n      position: absolute;\n      width: rem(22px);\n      height: rem(16px);\n      top: 50%;\n      transform: translateY(-50%);\n      right: rem(24px);\n      background-image: url('../../img/show-password-icon.svg');\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n      display: none;\n\n      &:hover {\n        cursor: pointer;\n      }\n    }\n\n    .login-input {\n      width: calc(100% - rem(15px));\n    }\n\n    .login-confirm {\n      width: 100%;\n      background-color: $y-body-3;\n      color: #fff;\n      height: rem(60px);\n      position: absolute;\n      bottom: 0;\n\n      @include mobile {\n        position: relative;\n      }\n    }\n}","$b: '.notifications';\n\n#{$b} {\n  width: rem(1584px);\n\n  &__top {\n    padding: rem(24px);\n    width: calc(100% - rem(24px) * 2);\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    background: $y-dop-2-bg;\n    height: rem(42px);\n    border-top-left-radius: rem(24px);\n    border-top-right-radius: rem(24px);\n  }\n\n  &__top-logo {\n    width: rem(93px);\n    height: rem(40px);\n\n    img {\n      width: 100%;\n      object-fit: contain;\n      transform: translateY(rem(-10px));\n    }\n  }\n\n  &__content {\n    display: flex;\n    background: $y-bg-gradient-1;\n\n    @include tablet {\n      width: 100%;\n    }\n  }\n\n  &__content-right {\n    padding: 0 rem(16px);\n    width: calc(rem(600px) - rem(16px) * 2);\n    flex-shrink: 0;\n\n    @include tablet {\n      width: calc( 100% - rem(16px) * 2);\n    }\n\n    @include mobile {\n      padding: 0 rem(12px);\n      width: calc( 100% - rem(12px) * 2);\n    }\n  }\n\n  &__content-right-top {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding-top: rem(12px);\n    border-bottom: 1px solid $y-dop-4-element;\n  }\n\n  &__content-right-search {\n    margin-top: rem(12px);\n    margin-bottom: rem(24px);\n  }\n\n  &__checkbox {\n    display: flex;\n    align-items: center;\n  }\n\n  &__list {\n    display: flex;\n    flex-direction: column;\n    max-height: rem(632px);\n    overflow-y: scroll;\n  }\n\n  &__item {\n    margin-bottom: rem(24px);\n    position: relative;\n    padding: rem(12px) 0;\n\n    &.active {\n      background-color: #eaf0e9;\n    }\n  }\n\n  &__item-info-wrap {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n  }\n\n  &__item-info-inner {\n    display: flex;\n    flex-direction: column;\n    padding-left: rem(72px);\n\n    @include mobile {\n      padding-left: rem(42px);\n    }\n\n    &::before {\n      content: '';\n      position: absolute;\n      width: rem(60px);\n      height: rem(60px);\n      background-image: url('../../img/notification-1.png');\n      background-repeat: no-repeat;\n      background-size: contain;\n      left: rem(24px);\n      top: 50%;\n      transform: translateY(-50%);\n\n      @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n      }\n    }\n  }\n\n  &__item-title {\n    font-size: rem(20px);\n    line-height: rem(26px);\n    font-family: $y-font-medium;\n    margin-bottom: rem(2px);\n\n    @include mobile {\n      font-size: rem(14px);\n    line-height: rem(16px);\n    }\n  }\n\n  &__item-info {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    font-family: $y-font-regular;\n\n    @include mobile {\n      font-size: rem(12px);\n    line-height: rem(16px);\n    }\n  }\n\n  &__item-time-wrap {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n  }\n\n  &__item-new {\n    background-color: $y-special-1;\n    color: #fff;\n    padding: rem(1px) rem(5px);\n    border-radius: rem(12px);\n    font-size: rem(16px);\n    line-height: rem(22px);\n    margin-bottom: rem(8px);\n\n    @include mobile {\n      font-size: rem(10px);\n    line-height: rem(12px);\n    }\n  }\n\n  &__item-time {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-dop-4-element;\n\n    @include mobile {\n      font-size: rem(12px);\n    line-height: rem(12px);\n    }\n  }\n\n  &__content-left {\n    width: 100%;\n    height: 100%;\n\n    &._empty {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n\n      .notifications__content-left-inner {\n        display: flex;\n        align-items: center;\n        color: $y-dop-4-element;\n        flex-direction: column;\n        font-family: rem(20px);\n        line-height: rem(26px);\n        position: absolute;\n        top: 50%;\n        transform: translateY(-50%);\n      }\n\n      img {\n        width: rem(140px);\n        object-fit: contain;\n        margin-top: rem(24px);\n      }\n\n\n    @include tablet {\n      display: none;\n    }\n    }\n\n    &._message {\n      background-image: url('../../img/bg-message.png');\n      background-size: cover;\n    }\n\n    @include tablet {\n      display: none;\n    }\n\n\n\n  }\n\n  &__content-left-top {\n    background: $y-bg-gradient-1;\n    padding: rem(11px) rem(24px);\n    width: calc(100% - rem(48px));\n  }\n\n  .dropdown__button {\n    border: none;\n    outline: none;\n    background-color: transparent;\n    width: rem(140px);\n    padding-left: 0;\n\n    @include tablet {\n      padding: 0;\n      justify-content: flex-start;\n      padding-left: rem(12px);\n\n      &::after {\n        top: 50%;\n        right: rem(15px);\n        transform: translateY(-50%);\n        width: rem(8px);\n        height: rem(8px);\n        background: url(\"../../img/dropdown.svg\") 100% 100%;\n        background-repeat: no-repeat;\n      }\n    }\n  }\n\n  .withdraw__top-wrap {\n    @include tablet {\n     position: relative;\n     top: initial;\n     left: initial;\n     right: initial;\n     width: 100%;\n     height: rem(36px);\n\n     &::before {\n      left: rem(16px);\n     }\n     }\n  }\n\n  .withdraw__top-input {\n    width: 100%;\n\n    @include tablet {\n     display: inline-block;\n     height: rem(36px);\n    }\n  }\n\n  .select {\n    @include tablet {\n      display: flex;\n\n      .dropdown {\n        width: initial;\n      }\n\n      .dropdown__button {\n        width: rem(146px);\n        justify-content: flex-start;\n        padding-left: rem(12px);\n\n        &::after {\n          top: 50%;\n          right: rem(15px);\n          transform: translateY(-50%);\n          width: rem(8px);\n          height: rem(8px);\n          background: url(\"../../img/dropdown.svg\") 100% 100%;\n          background-repeat: no-repeat;\n        }\n\n        &_active{\n          &::after{\n            transform: translateY(-50%) rotate(-180deg);\n    \n            @include tablet {\n              transform: translateY(-50%) rotate(-180deg);\n            }\n          }\n        }\n      }\n\n      .dropdown__list {\n        left: initial;\n        right: initial;\n      }\n    }\n\n    @include mobile {\n      margin-right: rem(8px);\n      .dropdown__button {\n        width: rem(120px);\n        height: rem(48px);\n        background-color: #fff;\n        font-size: rem(14px);\n      }\n    }\n  }\n\n\n \n\n\n}\n\n\n.message-wrap {\n  padding: rem(85px) 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.message-subinfo {\n  color: $y-dop-4-element;\n  font-size: rem(12px);\n  line-height: rem(16px);\n}\n\n.message-info {\n  font-size: rem(16px);\n  line-height: rem(22px);\n}\n\n.message-content {\n  background-color: #fff;\n  border-radius: rem(24px);\n  flex-direction: column;\n  display: flex;\n  align-items: center;\n  padding: rem(24px) rem(48px);\n  width: calc(rem(600px) - rem(48px) * 2);\n}\n\n.message-icon {\n  width: rem(60px);\n  height: rem(60px);\n  background-image: url('../../img/notification-1.png');\n  background-repeat: no-repeat;\n  background-size: contain;\n  margin-bottom: rem(16px);\n\n}\n\n.message-title {\n  font-size: rem(20px);\n  line-height: rem(26px);\n  margin-bottom: rem(8px);\n}\n\n.message-txt {\n  font-size: rem(16px);\n  line-height: rem(22px);\n}\n\n.message-btn {\n  margin-top: rem(24px);\n  background-color: #fff;\n  color: $y-body-3;\n}","$b: '.pick';\n\n#{$b} {\n  .choose__top-info {\n    max-width: rem(744px);\n\n    @include tablet {\n      width: 87%;\n    }\n  }\n\n  &__content {\n    display: flex;\n    align-items: flex-start;\n    justify-content: flex-start;\n    padding: rem(48px);\n    background-color: #fff;\n    border-radius: rem(24px);\n\n    @include tablet {\n      padding: 0;\n    }\n  }\n\n  &__content-img {\n    width: 57%;\n    height: rem(769px);\n    margin-right: rem(48px);\n    flex-shrink: 0;\n    border-radius: rem(24px);\n    overflow: hidden;\n    background-image: url('../../img/pick-bg.png');\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include tablet {\n      display: none;\n    }\n    \n\n    img {\n      width: rem(648px);\n      height: rem(520px);\n      object-fit: contain;\n      object-position: top;\n    }\n  }\n\n  &__content-book {\n    width: rem(600px);\n    background: $y-bg-gradient-1;\n    padding: rem(48px);\n    border-radius: rem($y-border-radius);\n    position: relative;\n\n    @include tablet {\n      width: 100%;\n      padding: 0;\n    }\n  }\n\n  &__date-title {\n    margin-bottom: rem(16px);\n  }\n\n  &__date-wrap {\n    display: flex;\n    padding-bottom: rem(24px);\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    flex-wrap: nowrap;\n\n    &::before {\n      content: '';\n      position: absolute;\n      top: rem(127px);\n      left: rem(70px);\n      background-image: url('../../img/calendat-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      z-index: 15;\n      background-size: contain;\n\n      @include tablet {\n        top: rem(78px);\n        left: rem(20px);\n      }\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        top: rem(46px);\n        left: rem(27px);\n      }\n    }\n  }\n\n  &__date-calendar {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding-left: rem(56px);\n    width: rem(136px);\n    margin-right: rem(8px);\n    margin-bottom: rem(12px);\n    text-align: left;\n\n    @include mobile {\n      padding-left: rem(49px);\n      width: rem(59px);\n      border-top-right-radius: 0;\n      border-bottom-right-radius: 0;\n      height: rem(48px);\n      margin-right: 0;\n    }\n\n    &:hover {\n      cursor: pointer;\n    }\n  }\n\n\n  &__date-picked {\n    text-align: center;\n    margin-right: rem(16px);\n    padding-left: 0;\n    background-color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: rem(192px);\n\n    @include tablet {\n      width: rem(293px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      margin-right: rem(6px);\n      width: rem(96px);\n      border-top-left-radius: 0;\n      border-bottom-left-radius: 0;\n      padding-left: rem(12px);\n      justify-content: flex-start;\n    }\n  }\n\n  &__date-days-count {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background-color: #fff;\n    color: $y-dop-4-element;\n    position: relative;\n    font-family: $y-font-regular;\n    font-size: rem(20px);\n    line-height: rem(26px);\n    width: rem(177px);\n\n    span {\n      color: $y-body-1;\n      margin-left: rem(8px);\n\n      @include mobile {\n        margin-left: 0;\n      }\n    }\n\n    .text-hide {\n      @include mobile {\n        display: none;\n      }\n    }\n\n    @include mobile {\n      height: rem(48px);\n      padding-left: rem(20px);\n      width: rem(86px);\n    }\n  }\n\n  &__date-days-btn {\n    position: absolute;\n    width: rem(24px);\n    height: rem(30px);\n    background-color: $y-dop-2-bg;\n    right: 0;\n    top: 0;\n    background-repeat: no-repeat;\n\n    @include mobile {\n      height: rem(24px);\n    }\n\n    &.decrease {\n      top: rem(30px);\n      border-bottom-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-i.svg');\n      background-position: center;\n\n      @include mobile {\n        top: rem(24px);\n      }\n    }\n\n\n    &.increase {\n      border-top-right-radius: rem(30px);\n      background-image: url('../../img/change-days-icon-d.svg');\n      background-position: center;\n    }\n  }\n\n  &__confirm {\n    border-bottom: 1px solid $y-dop-4-element ;\n    margin-bottom: rem(16px);\n    padding-bottom: rem(24px);\n    position: relative;\n  }\n\n  &__confirm-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__confirm-txt {\n    margin-bottom: rem(24px);\n    max-width: rem(570px);\n\n    a {\n      color: $y-body-3;\n      border-bottom: 1px solid $y-body-3 ;\n      display: inline-block;\n    width: max-content;\n    }\n  }\n\n  &__confirm-book-btns {\n    display: none;\n  }\n\n  &__confirm-input-wrap {\n    display: flex;\n \n  }\n\n  &__confirm-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(16px);\n      width: rem(200px);\n      margin-right: rem(6px);\n    }\n  }\n\n  &__confirm-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      padding-left: rem(38px);\n      position: relative;\n      justify-content: flex-start;\n      width: rem(106px);\n\n      &::before {\n        content: '';\n        position: absolute;\n        left: rem(16px);\n        top: 50%;\n        transform: translateY(-50%);\n        background-image: url('../../img/sms.svg');\n        background-repeat: no-repeat;\n        background-size: contain;\n        width: rem(15px);\n        height: rem(15px);\n      }\n    }\n\n    span {\n      @include mobile {\n        display: none;\n      }\n    }\n  }\n\n  &__payment-title {\n    margin-bottom: rem(4px);\n  }\n\n  &__payment-txt {\n    margin-bottom: rem(24px);\n  }\n\n  &__payment-promo {\n    display: flex;\n    margin-bottom: rem(30px);\n  }\n\n  &__payment-promo-input {\n    width: rem(370px);\n    margin-right: rem(16px);\n    padding-left: rem(24px);\n\n    @include tablet {\n      width: rem(435px);\n    }\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      padding-left: rem(16px);\n      width: rem(200px);\n    }\n  }\n\n  &__payment-promo-btn {\n    background-color: #eaf0e9;\n    color: $y-body-3;\n    font-family: $y-font-regular;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(60px);\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n      width: rem(106px);\n    }\n\n  }\n\n  &__payment-choose {\n    display: flex;\n    align-items: center;\n\n    @include tablet {\n      justify-content: space-between;\n    }\n  }\n\n  &__payment-choose-info {\n    padding-left: rem(32px);\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    max-width: rem(252px);\n\n    &::before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: 50%;\n      transform: translateY(-50%);\n      background-image: url('../../img/warning-gray-icon.svg');\n      width: rem(24px);\n      height: rem(24px);\n      background-repeat: no-repeat;\n      background-position: center;\n      background-size: contain;\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__payment-choose-method {\n    display: flex;\n    align-items: center;\n\n    a {\n      width: rem(72px); \n      height: rem(60px);\n      padding: rem(0px) rem(10px);\n      border-radius: rem(30px);\n      background-color: #fff;\n      margin-right: rem(8px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-size: rem(60px), rem(20px);\n      background-repeat: no-repeat;\n      background-position: center;\n\n      @include mobile {\n        width: rem(72px); \n        height: rem(48px);\n        background-size: rem(50px), rem(20px);\n      }\n      \n\n      &:last-child {\n        margin-right: 0;\n      }\n\n      &.visa {\n        background-image: url('../../img/visa.svg');\n      }\n      &.masterCard {\n        background-image: url('../../img/mcard.svg');\n        background-size: rem(50px), rem(20px);\n\n        @include mobile {\n          background-size: rem(40px), rem(15px);\n        }\n      }\n      &.qiwi {\n        background-image: url('../../img/qiwi.svg');\n        background-size: rem(70px), rem(30px);\n\n        @include mobile {\n          background-size: rem(50px), rem(20px);\n        }\n      }\n    }\n  }\n\n\n  //стили календаря\n.air-datepicker {\n position: absolute;\n top: 0;\n left: 0;\n width: 100%;\n height: 100%;\n border-radius: rem(24px);\n background: $y-bg-gradient-1;\n border: none;\n display: none;\n z-index: -1;\n\n @include tablet {\n  border-radius: 0;\n}\n\n &.active {\n  display: block;\n  z-index: 20;\n }\n}\n\n.air-datepicker-nav {\n  height: rem(64px);\n  align-items: center;\n}\n\n.air-datepicker-nav--title {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  padding: rem(12px) rem(26px);\n  border-radius: rem(24px);\n  max-height: rem(24px);\n}\n\n.air-datepicker-nav--action {\n  width: rem(48px);\n  height: rem(48px);\n  border-radius: 100%;\n  background-color: #fff;\n  margin: 0 rem(8px);\n}\n\n.air-datepicker--content {\n  padding: rem(24px);\n\n  @include tablet {\n    padding: 0;\n  }\n}\n\n.air-datepicker-body--day-name {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n  text-transform: none;\n  margin-bottom: rem(8px);\n}\n\n.air-datepicker-body--cells {\n  gap: rem(8px);\n\n  // grid-auto-rows: rem(48px) !important;\n}\n\n.air-datepicker-body--cells.-days- {\n  grid-auto-rows:rem(48px);\n\n  @include mobile {\n    grid-auto-rows:rem(36px);\n  }\n}\n\n.air-datepicker-cell  {\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  background-color: #fff;\n  border-radius: rem(24px);\n  // width: rem(85px);\n  height: rem(48px);\n\n  @include tablet {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n  }\n\n}\n\n.air-datepicker-cell.-day-.-current- {\n  background: $y-body-4;\n  color: $y-text;\n}\n.air-datepicker-cell.-day-.-selected- {\n  color:#fff;\n  background-color: $y-body-3;\n}\n\n.air-datepicker-cell.-day-.-selected-.-focus-{\n  background-color: $y-body-3;\n}\n\n.air-datepicker-buttons {\n  padding: 0 rem(24px);\n\n  @include mobile {\n    padding: 0;\n    margin-top: rem(16px);\n  }\n}\n\n.air-datepicker--buttons {\n  padding: 0;\n  position: absolute;\n  width: 100%;\n  bottom: rem(24px);\n  border: none;\n\n  @include mobile {\n    position: static;\n  }\n}\n\n.air-datepicker-button {\n  width: 98%;\n  font-family: $y-font-regular;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-body-3;\n  height: rem(48px);\n\n  @include mobile {\n    font-size: rem(14px);\n    line-height: rem(20px);\n    height: rem(36px);\n    width: 95%;\n  }\n}\n\n.clear-btn {\n  background-color: #fff;\n  border-radius: rem(24px);\n  // margin-left: rem(24px);\n}\n\n.select-btn {\n  background-color: $y-body-4;\n  border-radius: rem(24px);\n \n}\n}",".popup__bg {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  background: rgba(1, 5, 13, 0.7);\nbackdrop-filter: blur(7px);\n  opacity: 0; \n  pointer-events: none; \n  // transition: 0.5s all;\n}\n\n.popup__bg.active { \n  opacity: 1; \n  pointer-events: all; \n  z-index: 15;\n  // transition: 0.5s all;\n}\n\n.popup {\n  letter-spacing: -0.02em;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%) scale(0);\n  background: $y-bg-gradient-1;\n  width: max-content;\n  // padding: rem(45px);\n  border-radius: rem(24px);\n  transition: 0.5s all;\n  overflow: hidden;\n\n  @include mobile {\n    width: rem(323px);\n    padding: 0;\n  }\n}\n\n.popup.active { \n  transform: translate(-50%, -50%) scale(1); \n  transition: 0.5s all;\n}\n\n.close-popup {\n  position: absolute;\n  top: rem(24px);\n  right: rem(24px);\n  cursor: pointer;\n\n  @include mobile {\n    width: rem(15px);\n    height: rem(15px);\n    top: rem(22px);\n    right: rem(22px);\n  }\n}\n\n.popup__content {\n\n \n  border-radius: rem(24px);\n  padding: rem(48px);\n  width: calc(rem(696px) - rem(48px) * 2);\n  max-height: rem(400px);\n  overflow-y: scroll;\n  overflow-x: hidden;\n\n  @include tablet {\n    padding: rem(24px) rem(16px);\n    width: calc(rem(328px) - rem(16px) * 2);\n  }\n}\n\n.logo-popup {\n  width: rem(93px);\n  height: rem(40px);\n  object-fit: contain;\n  position: absolute;\n  left: rem(24px);\n  top: rem(10px);\n\n  @include mobile {\n    left: rem(10px);\n  }\n\n}\n.popup__content-top {\n  width: 100%;\n  height: rem(60px);\n  background-color: $y-dop-2-bg;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.popup__content-inner {\n  padding-top: rem(60px);\n}\n\n.popup__content-title {\ntext-align: center;\n}\n\n.popup__content-subtitle {\n  font-size: rem(16px);\n  line-height: rem(22px);\n  margin-bottom: rem(24px);\n  color: $y-dop-4-element;\n  text-align: center;\n\n\n  @include tablet {\n    font-size: rem(16px);\n    line-height: rem(16px);\n    margin-bottom: rem(8px);\n  }\n}\n\n.popup-btn {\n  width: 100%;\n  margin-top: rem(24px);\n  color: #fff;\n\n  @include mobile {\n    width: 100%;\n    margin-top: rem(10px);\n    height: rem(48px);\n  }\n  &.green {\n    color: #fff;\n    background-color: $y-body-3;\n\n  }\n\n  &.red {\n    background-color: $y-special-1;\n  }\n\n  &.red-light {\n    background-color: #F2EBEC;\n    color:  $y-special-1;\n  }\n\n  &.green-light {\n    background-color: $y-body-4;\n    color: $y-body-3;\n  }\n}\n.popup-input {\n  margin-bottom: rem(8px);\n  width: 100%;\n\n  @include mobile {\n    height: rem(48px);\n  }\n  &:first-child{\n    margin-bottom: rem(8px);\n  }\n}\n\n/* уведомление */\n.popup__bg.message {\n  .popup__content {\n    position: relative;\n    background-image: url('../../img/bg-message.png');\n    background-size: cover;\n  }\n  .notifications__content-left-top {\n    position: absolute;\n    left: 0;\n    top: 0;\n\n  }\n\n  .message-content {\n    width: 100%;\n    padding: rem(24px);\n  }\n\n}\n\n/* Написать оператору */\n.popup__bg.send-message {\n  .popup__content-inner {\n    display: flex;\n    flex-direction: column;\n  }\n}\n\n.popup__content-inner {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n\n/* заявка отправлена*/\n.popup__bg.sended {\n  .popup__content-inner {\n    img {\n      width: rem(265px);\n      height: rem(128px);\n      object-fit: contain;\n      margin-bottom: rem(24px);\n  \n      @include mobile {\n        width: rem(168px);\n        height: rem(80px);\n        margin-bottom: rem(12px);\n      }\n    }\n  }\n\n\n}\n\n\n/* Отмена заявки на вывод */\n.popup__bg.cansel-withdraw {\n\n.withdraw__item-left {\n  margin-right: rem(24px);\n\n  &:last-child {\n    margin-right: 0;\n  }\n\n  .withdraw__item-left-icon {\n    @include mobile {\n      margin-right: rem(8px);\n    }\n  }\n\n\n\n  &._name {\n    .withdraw__item-left-icon {\n      background-image: url('../../img/person-icon.svg');\n\n \n    }\n  }\n\n  &._card {\n\n    @include tablet {\n      display: none;\n    }\n    .withdraw__item-left-icon {\n      background-image: url('../../img/icon-card.svg');\n\n    }\n  }\n\n  &._link{\n\n    .withdraw__item-left-icon {\n      background-image: url('../../img/insta-bg.svg');\n\n    }\n\n  }\n\n  &._link {\n    .link {\n      color: $y-body-3;\n      max-width: rem(80px);\n      overflow: hidden;\n    }\n  }\n\n  &._budget {\n    .withdraw__item-left-icon {\n      background-image: url('../../img/budget.svg');\n    }\n\n    @include tablet {\n      display: none;\n    }\n  }\n}\n\n.cansel-withdraw-inner {\n  display: flex;\n  margin-bottom: rem(24px);\n  margin-top: rem(24px);\n}\n\n.popup__content-subtitle {\n  @include tablet {\n    margin-bottom: rem(8px);\n  }\n}\n\n.checkbox-wrap {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n\n.notifications__checkbox {\n  background-color: #fff;\n  padding: rem(16px);\n  border-radius: rem(16px);\n  width: calc(100% - rem(16px) * 2);\n  font-size: rem(16px);\n  line-height: rem(22px);\n\n  &:first-child {\n    margin-bottom: rem(8px);\n  }\n\n  @include tablet {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    padding: rem(10px) rem(12px);\n    width: calc(100% - rem(12px) * 2);\n  }\n}\n}\n\n\n\n\n\n\n","$b: '.ref-link';\n$t: '.ref-link-tasks';\n\n\n#{$b} {\n  &__top {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(8px);\n    background-color: $y-dop-2-bg;\n    height: rem(48px);\n\n    border-top-left-radius:rem(24px);\n    border-top-right-radius:rem(24px);\n  }\n\n  &__tabs {\n    display: flex;\n  }\n\n  &__tab {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    width: rem(158px);\n    height: rem(48px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: $y-dop-4-element;\n    border-radius: rem(24px);\n    background-color: $y-dop-1-bg;\n\n    &:first-child {\n      margin-right: rem(8px);\n\n      @include mobile  {\n        margin-right: rem(6px);\n      }\n    }\n\n    &.active {\n      color: $y-body-1;\n      background-color: #fff;\n    }\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      height: rem(36px);\n      width: rem(155px);\n    }\n\n  }\n\n  &__history {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding-left: rem(49px);\n    padding-right: rem(16px);\n    width: calc(rem(220px) - rem(65px));\n    border-radius: rem(24px);\n    color: $y-body-3;\n    background-color: #fff;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    position: relative;\n    height: rem(48px);\n\n    svg {\n      position: absolute;\n      width: rem(20px);\n      height: rem(20px);\n      left: rem(16px);\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__info {\n\n    &.ref {\n      padding-bottom: rem(24px);\n      border-bottom: 1px solid $y-dop-3;\n      margin-bottom: rem(20px);\n    }\n  }\n\n  &__info-txt {\n    margin-bottom: rem(24px);\n\n    a {\n      display: inline-block; \n      color: $y-body-3;\n    }\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      margin-bottom: rem(12px);\n\n    }\n  }\n\n  &__info-field-wrap {\n    display: flex;\n  }\n\n  &__info-field {\n    display: flex;\n    position: relative;\n    align-items: center;\n    color: $y-body-3;\n    background-color: $y-body-4;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    padding: 0 rem(24px);\n    height: rem(60px);\n    margin-right: rem(16px);\n    border-radius: rem(30px);\n    width: calc(rem(392px) - rem(48px));\n\n    .copy-btn {\n      position: absolute;\n      right: rem(24px);\n      width: rem(24px);\n      height: rem(24px);\n\n      svg {\n        width: 100%;\n        height: 100%;\n      }\n\n      @include mobile  {\n        right: rem(16px);\n        width: rem(16px);\n        height: rem(16px);\n      }\n    }\n\n    @include tablet{\n      width: rem(420px);\n    }\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(6px);\n      height: rem(48px);\n      padding: 0 rem(16px);\n      width: calc(rem(184px) - rem(32px));\n      .text {\n        max-width: 80%;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n      }\n    }\n  }\n\n  &__info-btn {\n    height: rem(60px);\n    color: $y-body-3;\n\n    @include mobile {\n      height: rem(48px);\n      font-size: rem(14px);\n      line-height: rem(20px);\n    }\n  }\n\n\n  .pick__content {\n    border-top-left-radius: 0;\n    border-top-right-radius: 0;\n  }\n\n  .pick__content-book  {\n    display: flex;\n    flex-direction: column;\n    order: -1;\n    width: rem(748px);\n    padding: 0;\n    background: #fff;\n\n    @include tablet {\n      padding:rem(24px);\n    }\n\n    @include mobile {\n      padding:rem(16px);\n      width: rem(296px);\n    }\n    \n  }\n\n\n  .pick__content-img {\n    margin-right: 0;\n    margin-left: rem(48px);\n    width: 56%;\n    position: relative;\n  }\n\n  .choose__top-info {\n    position: absolute;\n    width: rem(600px);\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: rem(48px);\n  }\n}\n\n#{$t} {\n\n  .pick__content-book._1 {\n    .step-2 {\n      display: none;\n    }\n  \n    .step-3 {\n      display: none;\n    }\n  }\n\n  .pick__content-book._2 {\n    .step-1 {\n      display: none;\n    }\n  \n    .step-3 {\n      display: none;\n    }\n  }\n\n  .pick__content-book._3 {\n    .step-1 {\n      display: none;\n    }\n  \n    .step-2 {\n      display: none;\n    }\n\n    .ref-link-task-next-btn {\n      color: #fff;\n      background-color: $y-body-3;\n      border-radius: rem(30px);\n\n      @include mobile {\n        width: rem(106px);\n      }\n    }\n  }\n\n\n  .ref-link__info-title {\n    margin-bottom: rem(8px);\n  }\n\n  .pick__content-book  {\n    height: rem(769px);\n\n    @include mobile {\n      height: rem(400px);\n    }\n  }\n\n  .book-authorized__step {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    height: rem(48px);\n    width: rem(92px);\n    color: $y-dop-4-element;\n    background-color: $y-dop-1-bg;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: rem(24px);\n    margin-bottom: rem(8px);\n    padding: 0 rem(8px);\n\n    @include mobile  {\n      height: rem(48px);\n    }\n  }\n\n  .book-authorized__step-info {\n    font-size: rem(16px);\n    line-height: rem(22px);\n\n    @include mobile {\n      font-size: rem(12px);\n      line-height: rem(16px);\n      margin-bottom: 0;\n    }\n  }\n\n  &__bottom {\n    margin-top: auto;\n  }\n\n  &__progress {\n    margin-bottom: rem(12px);\n\n    svg {\n      max-width: 100%;\n\n    }\n\n\n    @include mobile {\n      width: rem(296px);\n      margin-bottom: rem(12px);\n      svg {\n        width: 100%;\n      }\n    }\n  }\n\n\n  .ref-link-task__next {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n\n  .ref-link-task-list {\n    display: flex;\n    align-items: center;\n  }\n\n  .ref-link-task-item {\n    width: rem(60px);\n    height: rem(60px);\n    border-radius: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: $y-dop-1-bg;\n    margin-right: rem(8px);\n\n    @include mobile {\n      width: rem(48px);\n      height: rem(48px);\n    }\n\n    svg {\n      max-width: rem(25px);\n      max-height: rem(25px);\n\n\n    @include mobile {\n      width: rem(18px);\n      height: rem(18px);\n    }\n    }\n\n  }\n\n  .ref-link-task-next-btn {\n    height: rem(60px);\n    background-color: $y-body-4;\n    color: $y-body-3;\n\n    @include mobile  {\n      height: rem(48px);\n    }\n  }\n.defaulf {\n  display: none;\n}\n\n.ref-link-task-download {\n  display: flex;\n  align-items: center;\n}\n\n.download-icon {\n  width: rem(60px);\n  height: rem(60px);\n  background-color: $y-dop-1-bg;\n  border-radius: rem(16px);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: rem(32px);\n\n  @include mobile {\n    width: rem(48px);\n    height: rem(48px);\n    margin-right: rem(28px);\n  }\n\n\n\n  svg {\n    max-width: rem(25px);\n    max-height: rem(25px);\n    width: 100%;\n\n\n  @include mobile {\n    width: rem(18px);\n    height: rem(18px);\n  }\n  }\n}\n.download-filename {\n  font-size: rem(12px);\n  line-height: rem(16px);\n  position: relative;\n\n  @include mobile {\n    font-size: rem(12px);\n    line-height: rem(16px);\n    margin-bottom: 0;\n\n    @include mobile {\n      margin-right: rem(10px);\n    }\n  }\n\n  &::before {\n    content: '';\n    position: absolute;\n    width: rem(14px);\n    height: rem(14px);\n    background-image: url('../../img/file-icon.svg');\n    background-size: contain;\n    background-repeat: no-repeat;\n    left: rem(-22px);\n  }\n}\n\n.ref-link-task-input {\n  width: rem(357px);\n\n  &::placeholder {\n    width: 80%;\n    white-space: nowrap; \n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  @include tablet {\n    width: rem(160px);\n    height: rem(48px);\n  }\n}\n}","\n\n.dropdown {\n  width: rem(158px);\n  position: relative;\n\n  @include tablet {\n    width: rem(48px);\n  }\n\n  @include mobile {\n    width: rem(16px);\n\n  }\n\n\n  &__button {\n    \n    position: relative;\n    display: flex;\n    align-items: center;\n    font-size: rem(16px);\n    line-height: rem(22px);\n    color: $y-body-1;\n    width: 100%;\n    text-align: left;\n    background: #ffffff;\n    border: 1px solid #e6eaed;\n    border-radius: rem(24px);\n    height:  rem(48px);\n    padding-top:  rem(10px);\n    padding-bottom:  rem(10px);\n    padding-left:  rem(15px);\n    padding-right: rem(30px);\n    cursor: pointer;\n\n    @include tablet {\n      width: rem(48px);\n      height: rem(48px);\n      padding: 0;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    @include mobile {\n      width: rem(16px);\n      height: rem(16px) ;\n      background-color: transparent;\n    }\n\n    &::after {\n      content: \"\";\n      position: absolute;\n      top: 50%;\n      right: rem(15px);\n      transform: translateY(-50%);\n      width: rem(8px);\n      height: rem(8px);\n      background: url(\"../../img/dropdown.svg\") 100% 100%;\n      background-repeat: no-repeat;\n      background-size: contain;\n      pointer-events: none;\n      transition: 200ms ease;\n\n      @include tablet {\n        background: url(\"../../img/ruble-icon-grey.svg\");\n        background-position: center;\n        background-size: contain;\n        width: rem(22px);\n        height: rem(22px);\n        right: 25%;\n      }\n\n      @include mobile {\n        width: rem(16px);\n        height: rem(16px);\n        right: 0;\n      }\n    }\n    &_active{\n      &::after{\n        transform: translateY(-50%) rotate(-180deg);\n\n        @include tablet {\n          transform: translateY(-50%) rotate(0);\n        }\n      }\n    }\n  }\n  &__list {\n    border-radius: rem(24px);\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    position: absolute;\n    left: 0;\n    top: rem(50px);\n    box-shadow: 0px 10px 20px 0px #88919d4d;\n    border: 1px solid #e6eaed;\n    background: #ffffff;\n    overflow: hidden;\n    width: 100%;\n    z-index: 1;\n    opacity: 0;\n    visibility: hidden;\n    transition: 200ms ease;\n\n    @include tablet {\n      width: rem(250px);\n      left: initial;\n      right: 0;\n    }\n\n    @include mobile {\n      top: rem(20px);\n      width: rem(150px);\n      left: initial;\n      right: 0;\n      font-size: rem(12px);\n      line-height: rem(16px);\n    }\n\n    &_visible{\n      opacity: 1;\n      visibility: visible;\n    }\n    &-item {\n      margin: 0;\n      padding: 0;\n      padding: rem(12px);\n      cursor: pointer;\n      font-size: rem(16px);\n      line-height: rem(22px);\n      color: $y-body-1;\n      transition: 200ms ease;\n      &_active {\n        background: #f5f8fa;\n      }\n      &:hover {\n        background: #f5f8fa90;\n      }\n    }\n  }\n  &__input{\n    &_hidden{\n      display: none;\n    }\n  }\n}\n\n.dropdown_with-chk {\n  max-width: 343px;\n  position: relative;\n  &__button {\n    position: relative;\n    display: flex;\n    align-items: center;\n    font-size: 15px;\n    line-height: 18px;\n    color: #444444;\n    cursor: pointer;\n    width: 100%;\n    text-align: left;\n    background: #ffffff;\n    border: 1px solid #e6eaed;\n    border-radius: 4px;\n    height: 50px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    padding-left: 15px;\n    padding-right: 40px;\n    &::after {\n      content: \"\";\n      position: absolute;\n      top: 50%;\n      right: 15px;\n      transform: translateY(-50%);\n      width: 15px;\n      height: 15px;\n/*       background: url(\"../img/dropdown.svg\") 100% 100%; */\n      pointer-events: none;\n      transition: 200ms ease;\n    }\n    &_active{\n      &::after{\n        transform: translateY(-50%) rotate(-180deg);\n      }\n    }\n  }\n  &__list {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    position: absolute;\n    left: 0;\n    top: 50px;\n    box-shadow: 0px 10px 20px 0px #88919d4d;\n    border: 1px solid #e6eaed;\n    border-radius: 4px;\n    background: #ffffff;\n    overflow: hidden;\n    width: 100%;\n    z-index: 1;\n    opacity: 0;\n    visibility: hidden;\n    transition: 200ms ease;\n    &_visible{\n      opacity: 1;\n      visibility: visible;\n    }\n    &-item {\n      margin: 0;\n      padding: 0;\n      padding: 15px;\n      display: flex;\n      justify-content: flex-start;\n      position: relative;\n      align-items: center;\n      cursor: pointer;\n      font-size: 15px;\n      line-height: 18px;\n      color: #444444;\n      transition: 200ms ease;\n      isolation: isolate;\n      input[type=\"checkbox\"],\n      input[type=\"radio\"]{\n        pointer-events: none;\n      }\n      label{\n        position: absolute;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        padding-left: 45px;\n        cursor: pointer;\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        z-index: -1;\n      }\n      &_active {\n        background: #f5f8fa;\n      }\n      &:hover {\n        background: #f5f8fa90;\n      }\n    }\n  }\n  &__input{\n    &_hidden{\n      display: none;\n    }\n  }\n}\n\ninput[type=\"checkbox\"]{\n    appearance: none;\n    position: relative;\n    width: rem(16px);\n    height: rem(16px);\n    border-radius: rem(4px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background: #FFFFFF;\n    border: 1px solid #E6EAED;\n    transition: 600ms ease;\n    margin-right: rem(12px);\n    &::after{\n        content: '';\n        position: absolute;\n        width: rem(10px);\n        height: rem(10px);\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        background-color: $y-dop-4-element ;\n        opacity: 0;\n        visibility: hidden;\n        transition: 300ms ease;\n    }\n    &:checked{\n        transition: 300ms ease;\n        &::after{\n            opacity: 1;\n            visibility: visible;\n            transition: 600ms ease;\n        }\n    }\n}\n","$b: '.withdraw';\n\n#{$b} {\n  width: calc(100% - rem(48px));\n\n\n  &__top {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: rem(8px);\n    width: calc(100% - rem(16px));\n    background-color: $y-dop-2-bg;\n    border-top-right-radius: rem(24px);\n    border-top-left-radius: rem(24px);\n  }\n\n  &__top-left {\n    display: flex;\n    align-items: center;\n   \n  }\n\n  .ref-link__tabs {\n\n    .ref-link__tab {\n\n      @include mobile {\n        width: rem(105px);\n      }\n  \n    }\n    \n    span {\n      @include mobile {\n        display: none;\n      }\n    }\n  }\n\n  &__top-wrap {\n    position: relative;\n\n    \n    @include mobile {\n      width: rem(16px);\n      height: rem(16px) ;\n      background-color: transparent;\n      position: absolute;\n      right: rem(70px)\n    }\n\n    &::before {\n      content: '';\n      position: absolute;\n      background-image: url('../../img/search-icon.svg');\n      background-size: contain;\n      background-repeat: no-repeat;\n      width: rem(16px);\n      height: rem(16px);\n      top: 50%;\n      transform: translateY(-50%);\n      left: rem(16px);\n\n      @include mobile{\n        left: 0;\n      }\n    }\n  }\n\n  &__top-input {\n    padding:  0 rem(48px);\n    width: calc(rem(484px) - rem(96px));\n    height: rem(48px);\n\n    @include tablet {\n      width: calc(rem(252px) - rem(48px));\n    }\n\n    @include mobile {\n      display: none;\n    }\n  }\n\n  &__top-right {\n    display: flex;\n    align-items: center;\n  }\n\n  .select {\n    margin-right: rem(24px);\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__top-btn {\n    background-color: #fff;\n    color: $y-body-3;\n\n    @include tablet {\n      display: none;\n    }\n  }\n\n  &__top-btn-mob {\n    display: none;\n    @include tablet {\n      width: rem(48px) !important;\n      height: rem(48px) !important;\n      padding: 0;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: #fff;\n    }\n\n    @include mobile {\n      width: rem(16px) !important;\n      height: rem(16px) !important;\n      background-color: transparent;\n    }\n  }\n\n  .select-mob {\n    display: none;\n\n    @include tablet {\n      display: block;\n      margin-right: rem(8px);\n    }\n  }\n\n  .withdraw-section {\n    padding: rem(24px) rem(24px) rem(48px) rem(24px);\n    background-color: #fff;\n    border-bottom-right-radius: rem(24px);\n    border-bottom-left-radius: rem(24px);\n\n    @include tablet {\n      padding: rem(24px) rem(8px) ;\n    }\n  }\n\n  &__list {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: rem(24px);\n  }\n\n  &__item {\n    margin-bottom: rem(8px);\n    width: calc(100% - rem(24px) *2);\n    background-color: $y-dop-1-bg;\n    padding: rem(12px) rem(24px);\n    border-radius: rem(24px);\n    display: flex;\n    justify-content: space-between;\n    align-self: center;\n\n    @include mobile {\n      padding: rem(6px) rem(8px);\n      width: calc(100% - rem(8px) *2);\n    }\n\n    &.done {\n      .withdraw__item-right-icon {\n        background-image: url('../../img/done-icon.svg');\n      }\n      \n    }\n\n    &.rejected {\n      .withdraw__item-right-icon  {\n        background-image: url('../../img/reject-icon.svg');\n      }\n      \n    }\n\n    &.pending {\n      .withdraw__item-right-icon  {\n        background-image: url('../../img/pending-icon.svg');\n      }\n  \n    }\n\n    \n\n    &-left {\n      display: flex;\n      align-items: center;\n    }\n\n    &-left-icon {\n      width: rem(48px);\n      height: rem(48px);\n      border-radius: rem(16px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: #fff;\n      background-image: url('../../img/ruble-icon-grey.svg');\n      background-position: center;\n      background-repeat: no-repeat;\n      background-size: rem(22px);\n      margin-right: rem(16px);\n\n      @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n        background-size: rem(14px);\n      }\n    }\n\n    &-left-info {\n      display: flex;\n      flex-direction: column;\n      font-size: rem(16px);\n      line-height: rem(22px);\n\n      @include mobile {\n        font-size: rem(12px);\n        line-height: rem(16px);\n      }\n\n      .date {\n        color: $y-dop-4-element;\n      }\n    }\n\n    &-right {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    &-right-status {\n      display: flex;\n      flex-direction: column;\n      font-size: rem(16px);\n      line-height: rem(22px);\n      // margin-right: rem(16px);\n\n      .status {\n        color: $y-dop-4-element;\n        display: flex;\n        position: relative;\n\n        svg {\n          width: rem(16px);\n          height: rem(16px);\n          margin-left: rem(4px);\n\n          @include mobile {\n            width: rem(12px);\n            height: rem(12px);\n          }\n        }\n\n        &:hover {\n          cursor: pointer;\n\n          .status-tooltip {\n            display: block;\n          }\n\n        }\n      }\n\n      @include mobile {\n        font-size: rem(12px);\n        line-height: rem(16px);\n      }\n    }\n\n    .status-tooltip {\n      display: none;\n      position: absolute;\n      font-size: rem(12px);\n      line-height: rem(14px);\n      background-color: #fff;\n      padding: rem(8px);\n      min-width: rem(148px);\n      top: rem(-60px);\n      left: rem(-50px);\n      border-radius: rem(4px);\n\n      &::before {\n        content: '';\n        position: absolute;\n        bottom: rem(-10px);\n        right: rem(12px);\n        background-image: url('../../img/before.svg');\n        background-position: center;\n        background-repeat: no-repeat;\n        width: rem(12px);\n        height: rem(12px);\n        background-size: contain;\n      }\n    }\n\n    &-right-icon {\n      width: rem(48px);\n      height: rem(48px);\n      border-radius: rem(16px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: #fff;\n      background-image: url('../../img/pending-icon.svg');\n      background-position: center;\n      background-repeat: no-repeat;\n      background-size: rem(22px);\n      margin-left: rem(16px);\n\n      @include mobile {\n        width: rem(36px);\n        height: rem(36px);\n        background-size: rem(14px);\n      }\n    }\n  }\n\n  &__bottom {\n    display: flex;\n    justify-content: space-between;\n  }\n\n}\n\n.pagination {\n  display: flex;\n  align-items: center;\n\n  &__list {\n    display: flex;\n    margin: 0 rem(8px);\n  }\n\n  &__item {\n    font-size: rem(16px);\n    line-height: rem(22px);\n    margin-right: rem(8px);\n    width: rem(24px);\n    height: rem(24px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    @include mobile {\n      font-size: rem(14px);\n      line-height: rem(20px);\n      margin-right: rem(4px);\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n\n    &.active {\n      background-color: $y-dop-1-bg;\n      border-radius: 100%;\n    }\n\n    &.dots {\n      color: $y-dop-4-element;\n    }\n  }\n\n  &__arrow {\n    width: rem(24px);\n    height: rem(24px);\n    background-color: $y-body-4;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: 100%;\n  }\n}\n\n.export {\n  display: flex;\n  align-items: center;\n  font-size: rem(16px);\n  line-height: rem(22px);\n  color: $y-dop-4-element;\n  svg {\n    width: rem(22px);\n    height: rem(22px);\n    margin-right: rem(9px);\n\n    @include mobile {\n      width: rem(15px);\n      height: rem(15px);\n    }\n  }\n\n  span {\n    display: inline-block;\n    @include mobile {\n      display: none;\n    }\n  }\n}\n\n\n/* .withdraw__item-left-info {\n  display: flex;\n  flex-direction: column;\n  font-size: rem(16px);\n  line-height: rem(22px);\n\n  @include mobile {\n    font-size: rem(12px);\n    line-height: rem(16px);\n  }\n\n  .date {\n    color: $y-dop-4-element;\n  }\n} */",null,"// @include css-lock(65, 100, 768, 1200);\n@mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width}))) !important;\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h(65, 100, 630, 950);\n@mixin css-lock-h($min-size: 1, $max-size: 1.4, $min-height: 20, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$max-size}#{$unit} !important;\n  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$max-height} - #{$min-height}))) !important;\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-full(65, 100, 500, 768, 1920, 9600);\n@mixin css-lock-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-width: 20, $mid-width: 30, $max-width: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-width: $mid-width + 'px') and (min-width: $min-width + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$mid-width} - #{$min-width}))) !important;\n  }\n\n  @media only screen and (max-width: $max-width + 'px') and (min-width: $mid-width + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vw - #{$mid-width}#{$unit}) / (#{$max-width} - #{$mid-width}))) !important;\n  }\n\n  @media (max-width: #{$min-width}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-width: #{$max-width}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n// @include css-lock-h-full(65, 100, 200, 630, 950, 1900);\n@mixin css-lock-h-full($min-size: 1, $mid-size: 1.2, $max-size: 1.4,  $min-height: 20, $mid-height: 30, $max-height: 100, $property: font-size, $unit: px) {\n  #{$property}: #{$mid-size}#{$unit} !important;\n\n  @media only screen and (max-height: $mid-height + 'px') and (min-height: $min-height + 'px') {\n    #{$property}: calc(#{$min-size}#{$unit} + (#{$mid-size} - #{$min-size}) * ((100vh - #{$min-height}#{$unit}) / (#{$mid-height} - #{$min-height}))) !important;\n  }\n\n  @media only screen and (max-height: $max-height + 'px') and (min-height: $mid-height + 'px') {\n    #{$property}: calc(#{$mid-size}#{$unit} + (#{$max-size} - #{$mid-size}) * ((100vh - #{$mid-height}#{$unit}) / (#{$max-height} - #{$mid-height}))) !important;\n  }\n\n  @media (max-height: #{$min-height}px) {\n    #{$property}: #{$min-size}#{$unit} !important;\n  }\n\n  @media (min-height: #{$max-height}px) {\n    #{$property}: #{$max-size}#{$unit} !important;\n  }\n}\n\n//ПРИМЕРЫ:\n//\n//Равномерный скейл по ширине (скейл вниз):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//\n//@include css-lock(#{$min-screen-width * 100 / $mid-screen-width}, 100, $min-screen-width, $mid-screen-width);\n//\n//\n//Равномерный скейл по ширине до максимального экрана (скейл вверх):\n//$mid-screen-width: 1920;\n//$max-screen-width: 2560;\n//\n//@include css-lock(100, #{100 * ($max-screen-width / $mid-screen-width)}, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный полный скейл по ширине (скейл в обе стороны):\n//$min-screen-width: 768;\n//$mid-screen-width: 1920;\n//$max-screen-width: 9000;\n//\n//@include css-lock-full(#{$min-screen-width * 100 / $mid-screen-width}, 100, #{$max-screen-width * 100 / $mid-screen-width}, $min-screen-width, $mid-screen-width, $max-screen-width);\n//\n//\n//Равномерный скейл по высоте (скейл вниз):\n//$min-screen-height: 768;\n//$mid-screen-height: 1920;\n//\n//@include tablet-min {\n//  @include css-lock-h(#{$min-screen-height * 100 / $mid-screen-height}, 100, $min-screen-height, $mid-screen-height);\n//}\n//\n//\n//Равномерный скейл по высоте до максимального экрана (скейл вверх):\n//$mid-screen-height: 1920;\n//$max-screen-height: 2560;\n//\n//@include css-lock-h(100, #{100 * ($max-screen-height / $mid-screen-height)}, $mid-screen-height, $max-screen-height);\n//\n//\n//Равномерный полный скейл по высоте (скейл в обе стороны):\n//$min-screen-height: 630;\n//$mid-screen-height: 950;\n//$max-screen-height: 2000;\n//\n//@include tablet-min {\n//  @include css-lock-h-full(#{$min-screen-height * 100 / $mid-screen-height}, 100, #{$max-screen-height * 100 / $mid-screen-height}, $min-screen-height, $mid-screen-height, $max-screen-height);\n//}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9572,6 +11219,17 @@ module.exports = __webpack_require__.p + "fonts/Gilroy-Regular.woff";
 
 /***/ }),
 
+/***/ "./src/img/appr-icon.svg":
+/*!*******************************!*\
+  !*** ./src/img/appr-icon.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/appr-icon.svg";
+
+/***/ }),
+
 /***/ "./src/img/back-icon.svg":
 /*!*******************************!*\
   !*** ./src/img/back-icon.svg ***!
@@ -9616,6 +11274,17 @@ module.exports = __webpack_require__.p + "assets/bg-gradient.png";
 
 /***/ }),
 
+/***/ "./src/img/bg-message.png":
+/*!********************************!*\
+  !*** ./src/img/bg-message.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/bg-message.png";
+
+/***/ }),
+
 /***/ "./src/img/book-close-btn.svg":
 /*!************************************!*\
   !*** ./src/img/book-close-btn.svg ***!
@@ -9627,6 +11296,17 @@ module.exports = __webpack_require__.p + "assets/book-close-btn.svg";
 
 /***/ }),
 
+/***/ "./src/img/budget.svg":
+/*!****************************!*\
+  !*** ./src/img/budget.svg ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/budget.svg";
+
+/***/ }),
+
 /***/ "./src/img/calendat-icon.svg":
 /*!***********************************!*\
   !*** ./src/img/calendat-icon.svg ***!
@@ -9635,6 +11315,17 @@ module.exports = __webpack_require__.p + "assets/book-close-btn.svg";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/calendat-icon.svg";
+
+/***/ }),
+
+/***/ "./src/img/cansel-icon.svg":
+/*!*********************************!*\
+  !*** ./src/img/cansel-icon.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/cansel-icon.svg";
 
 /***/ }),
 
@@ -9693,6 +11384,39 @@ module.exports = __webpack_require__.p + "assets/confirm-icon.svg";
 
 /***/ }),
 
+/***/ "./src/img/done-icon.svg":
+/*!*******************************!*\
+  !*** ./src/img/done-icon.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/done-icon.svg";
+
+/***/ }),
+
+/***/ "./src/img/dropdown.svg":
+/*!******************************!*\
+  !*** ./src/img/dropdown.svg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/dropdown.svg";
+
+/***/ }),
+
+/***/ "./src/img/exel-icon.svg":
+/*!*******************************!*\
+  !*** ./src/img/exel-icon.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/exel-icon.svg";
+
+/***/ }),
+
 /***/ "./src/img/file-icon.svg":
 /*!*******************************!*\
   !*** ./src/img/file-icon.svg ***!
@@ -9704,6 +11428,28 @@ module.exports = __webpack_require__.p + "assets/file-icon.svg";
 
 /***/ }),
 
+/***/ "./src/img/icon-card.svg":
+/*!*******************************!*\
+  !*** ./src/img/icon-card.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/icon-card.svg";
+
+/***/ }),
+
+/***/ "./src/img/insta-bg.svg":
+/*!******************************!*\
+  !*** ./src/img/insta-bg.svg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/insta-bg.svg";
+
+/***/ }),
+
 /***/ "./src/img/mcard.svg":
 /*!***************************!*\
   !*** ./src/img/mcard.svg ***!
@@ -9712,6 +11458,39 @@ module.exports = __webpack_require__.p + "assets/file-icon.svg";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/mcard.svg";
+
+/***/ }),
+
+/***/ "./src/img/notification-1.png":
+/*!************************************!*\
+  !*** ./src/img/notification-1.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/notification-1.png";
+
+/***/ }),
+
+/***/ "./src/img/pending-icon.svg":
+/*!**********************************!*\
+  !*** ./src/img/pending-icon.svg ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/pending-icon.svg";
+
+/***/ }),
+
+/***/ "./src/img/person-icon.svg":
+/*!*********************************!*\
+  !*** ./src/img/person-icon.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/person-icon.svg";
 
 /***/ }),
 
@@ -9734,6 +11513,39 @@ module.exports = __webpack_require__.p + "assets/pick-bg.png";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/qiwi.svg";
+
+/***/ }),
+
+/***/ "./src/img/reject-icon.svg":
+/*!*********************************!*\
+  !*** ./src/img/reject-icon.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/reject-icon.svg";
+
+/***/ }),
+
+/***/ "./src/img/ruble-icon-grey.svg":
+/*!*************************************!*\
+  !*** ./src/img/ruble-icon-grey.svg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/ruble-icon-grey.svg";
+
+/***/ }),
+
+/***/ "./src/img/search-icon.svg":
+/*!*********************************!*\
+  !*** ./src/img/search-icon.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/search-icon.svg";
 
 /***/ }),
 
@@ -9778,6 +11590,17 @@ module.exports = __webpack_require__.p + "assets/sms.svg";
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/visa.svg";
+
+/***/ }),
+
+/***/ "./src/img/waiter-icon.svg":
+/*!*********************************!*\
+  !*** ./src/img/waiter-icon.svg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/waiter-icon.svg";
 
 /***/ }),
 
@@ -20599,6 +22422,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/datepicker */ "./src/modules/datepicker.js");
 /* harmony import */ var _modules_inputs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/inputs */ "./src/modules/inputs.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider */ "./src/modules/slider.js");
+/* harmony import */ var _modules_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/select */ "./src/modules/select.js");
+
 
 
 
@@ -20618,6 +22443,7 @@ _modules_inputs__WEBPACK_IMPORTED_MODULE_6__["default"].showPassword();
 _modules_inputs__WEBPACK_IMPORTED_MODULE_6__["default"].changeView();
 _modules_inputs__WEBPACK_IMPORTED_MODULE_6__["default"].checkError();
 _modules_slider__WEBPACK_IMPORTED_MODULE_7__["default"].init();
+_modules_select__WEBPACK_IMPORTED_MODULE_8__["default"].init();
 })();
 
 /******/ })()
